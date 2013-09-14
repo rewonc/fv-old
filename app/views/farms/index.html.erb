@@ -1,0 +1,17 @@
+<h1>List of our farms</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Address</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @farms.each do |farm| %>
+    <tr>
+      <td><%= link_to farm.title, farm_path(farm.id) %></td>
+      <td><%= farm.address %></td>
+      <td><%= farm.description %></td>
+    </tr>
+  <% end %>
+</table>

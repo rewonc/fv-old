@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Farmapp</title>
+  <title>Farmivore</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,12 @@
 <body>
 
 <%= yield %>
+<br />
+<hr>
+
+<p>
+	<%= link_to 'Home', root_path %> - <%= link_to 'See all our farms', farms_path %> - <%= link_to 'About us', welcome_about_path %> - <%= link_to 'Contact us', welcome_contact_path %>
+</p>
 
 </body>
 </html>

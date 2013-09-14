@@ -1,0 +1,28 @@
+<h1>New Pickup Point</h1>
+
+<%= form_for :pickup, url: pickups_path do |f| %>
+  <p>
+    <%= f.label :'Farm id' %><br>
+    <%= f.number_field :farm_id %>
+  </p>
+ 
+ <p>
+    <%= f.label :'Place id' %><br>
+    <%= f.number_field :place_id %>
+  </p>
+
+  <p>
+    <%= f.label :Address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
