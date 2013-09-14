@@ -1,0 +1,34 @@
+<h1>New Farm Hereboy</h1>
+
+<%= form_for :farm, url: farms_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+ <p>
+    <%= f.label :'Street address of your farm' %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </p>
+
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_area(:description, rows: 20, cols:40) %>
+
+    </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

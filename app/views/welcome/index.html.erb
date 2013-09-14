@@ -1,0 +1,9 @@
+<h1>Welcome to Farmivore.</h1>
+<p>Find fresh produce growing in your area.</p>
+<h2>Current locations:</h2>
+<p><%= link_to 'New Haven, CT', place_path(1) %></p>
+<p><em>Don't see your city listed here? <%= link_to 'Let us know!', welcome_contact_path(message: 'My city is not listed. Please start listing farms in [enter your city name here]') %></em></p>
+<br /><br /><hr /><br />
+<h3>Have a small garden plot? Run a commercial farm?</h3>
+<p>Connect with people who love fresh food. List with us.</p>
+<p><%= link_to 'Find out more here', welcome_farmers_path %>.</p>
