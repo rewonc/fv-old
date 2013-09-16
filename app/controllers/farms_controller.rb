@@ -23,6 +23,7 @@ class FarmsController < ApplicationController
 	def show
   		@farm = Farm.find(params[:id])
   		@pickups = @farm.pickups
+  		@products = @farm.products
 	end
 
 	def index

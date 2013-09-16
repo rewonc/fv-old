@@ -23,7 +23,25 @@
   <%= @farm.description %>
 </p>
 
-<h2>Product listing to come.</h2>
+<h2>List of our products</h2>
+ 
+<table>
+  <tr>
+    <th>Farm id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+ 
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.farm_id %></td>
+      <td><%= product.title %></td>
+       <td><%= product.description %></td>
+      <td><%= product.price %></td>
+    </tr>
+  <% end %>
+</table>
 
 <h2>List of our pickups</h2>
  

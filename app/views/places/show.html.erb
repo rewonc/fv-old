@@ -8,6 +8,26 @@
   <%= @place.state %>
 </p>
 
+<h2>List of products you can buy here</h2>
+ 
+<table>
+  <tr>
+    <th>Farm id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+ 
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.farm_id %></td>
+      <td><%= product.title %></td>
+       <td><%= product.description %></td>
+      <td><%= product.price %></td>
+    </tr>
+  <% end %>
+</table>
+
 <h2>Farms in this location:</h2>
 <p>
 <table>
@@ -27,7 +47,7 @@
 </table>
 </p>
 
-<h2>List of spots to pick stuff up here</h2>
+<h2>List of spots where you can pick up stuff up here</h2>
 <table>
   <tr>
     <th>Farm ID</th>

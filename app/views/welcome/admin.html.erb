@@ -38,6 +38,8 @@
     <th>Delete</th>
     <th>Pickups</th>
     <th>Add a pickup</th>
+    <th>Products</th>
+    <th>Add a product</th>
   </tr>
  
   <% @farms.each do |farm| %>
@@ -53,6 +55,14 @@
           <% end %>
         </td>
       <td><%= link_to 'Create a new pickup', new_farm_pickup_path(farm.id) %></td>
+
+      <td> 
+          <% farm.products.each do |product| %>
+          <%= product.title %> (<%= link_to 'Edit', edit_farm_product_path(farm.id, product.id) %>, <%= link_to 'Delete', farm_product_path(farm.id, product.id), method:"delete" %>)
+          <% end %>
+        </td>
+      <td><%= link_to 'Create a new product', new_farm_product_path(farm.id) %></td>
+
     </tr>
   <% end %>
 </table>

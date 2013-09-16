@@ -21,7 +21,7 @@ Farmapp::Application.routes.draw do
   resources :places
 
   resources :farms do 
-    resources :pickups
+    resources :pickups, :products
   end
 
   # Example resource route with options:
