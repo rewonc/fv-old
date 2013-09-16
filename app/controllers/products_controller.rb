@@ -29,7 +29,10 @@ http_basic_authenticate_with name: "orange", password: "orangutan", except: [:in
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		render 'index'
+		respond_to do |format|
+    	format.html { redirect_to(farms_url) }
+    	format.xml  { head :ok }
+  		end
 	end
 
 	def update
