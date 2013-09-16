@@ -1,0 +1,24 @@
+<h1>New Product</h1>
+
+<%= form_for :product, url: farm_products_path do |f| %>
+
+  <p>
+    <%= f.label :'Title' %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :Description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :Price %><br>
+    <%= f.text_field :price, :value => (number_with_precision(0, :precision => 2) || 0) %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

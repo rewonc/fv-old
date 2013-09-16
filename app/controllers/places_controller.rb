@@ -23,6 +23,7 @@ class PlacesController < ApplicationController
   	@place = Place.find(params[:id])
     @farms = @place.farms.uniq
     @pickups = @place.pickups
+    @products = @place.products
   end
 
   def destroy
