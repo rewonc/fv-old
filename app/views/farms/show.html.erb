@@ -24,3 +24,23 @@
 </p>
 
 <h2>Product listing to come.</h2>
+
+<h2>List of our pickups</h2>
+ 
+<table>
+  <tr>
+    <th>Farm ID</th>
+    <th>Place ID</th>
+    <th>Address</th>
+    <th>Zip code</th>
+  </tr>
+ 
+  <% @pickups.each do |pickup| %>
+    <tr>
+      <td><%= pickup.farm_id %></td>
+      <td><%= pickup.place_id %></td>
+       <td><%= pickup.address %></td>
+      <td><%= pickup.zip %></td>
+    </tr>
+  <% end %>
+</table>

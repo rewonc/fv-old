@@ -3,6 +3,7 @@ Farmapp::Application.routes.draw do
   get "welcome/farmers"
   get "welcome/about"
   get "welcome/contact"
+  get "welcome/admin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
@@ -17,7 +18,12 @@ Farmapp::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :farms, :places, :pickups
+  resources :places
+
+  resources :farms do 
+    resources :pickups
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do

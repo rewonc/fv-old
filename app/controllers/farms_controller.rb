@@ -7,15 +7,32 @@ class FarmsController < ApplicationController
 	def create
 	  @farm = Farm.new(farm_params)
 	  @farm.save
-	  redirect_to @farm
+	  redirect_to @farm 
+	end
+
+	def edit
+		@farm = Farm.find(params[:id])
+	end
+
+	def update
+		@farm = Farm.find(params[:id])
+		@farm.update_attributes(farm_params)
+		redirect_to @farm
 	end
 
 	def show
   		@farm = Farm.find(params[:id])
+  		@pickups = @farm.pickups
 	end
 
 	def index
 		@farms = Farm.all
+	end
+
+	def destroy
+		@farm = Farm.find(params[:id])
+		@farm.destroy
+		render 'index'
 	end
 
 
