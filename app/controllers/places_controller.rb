@@ -8,6 +8,11 @@ class PlacesController < ApplicationController
   def new
   end
 
+  def edit
+        @place = Place.find(params[:id])
+  end
+
+
   def create
   	@place = Place.new(place_params)
 	  @place.save
@@ -16,7 +21,20 @@ class PlacesController < ApplicationController
 
   def show
   	@place = Place.find(params[:id])
-    @farms = @place.farms
+    @farms = @place.farms.uniq
+    @pickups = @place.pickups
+  end
+
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    render 'index'
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    @place.update_attributes(place_params)
+    redirect_to @place
   end
 
   private

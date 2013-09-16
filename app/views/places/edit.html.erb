@@ -1,0 +1,17 @@
+<h1>Edit Place Here</h1>
+
+<%= form_for @place, url: place_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+ <p>
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
