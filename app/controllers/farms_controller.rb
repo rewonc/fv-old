@@ -33,7 +33,10 @@ class FarmsController < ApplicationController
 	def destroy
 		@farm = Farm.find(params[:id])
 		@farm.destroy
-		render 'index'
+		respond_to do |format|
+    	format.html { redirect_to(farms_url) }
+    	format.xml  { head :ok }
+  		end
 	end
 
 

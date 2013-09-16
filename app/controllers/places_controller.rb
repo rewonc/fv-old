@@ -29,7 +29,10 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    render 'index'
+    respond_to do |format|
+      format.html { redirect_to(places_url) }
+      format.xml  { head :ok }
+      end
   end
 
   def update
