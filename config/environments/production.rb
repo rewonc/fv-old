@@ -77,4 +77,14 @@ Farmapp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['farmivore'],
+    :access_key_id => ENV['AKIAJEQCKYHKSLK4HP6A'],
+    :secret_access_key => ENV['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']
+  }
+}
+
 end

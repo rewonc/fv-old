@@ -37,6 +37,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#  Allow for paperclip to go to AWS
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
