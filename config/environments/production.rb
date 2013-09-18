@@ -81,12 +81,12 @@ Farmapp::Application.configure do
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['farmivore'],
-    :access_key_id => ENV['AKIAJEQCKYHKSLK4HP6A'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
 
-
+config.serve_static_assets = true
 
 end
