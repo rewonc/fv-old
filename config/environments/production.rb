@@ -87,4 +87,7 @@ config.paperclip_defaults = {
   }
 }
 
+#test if this solves missing image problem
+config.serve_static_assets = true
+
 end
