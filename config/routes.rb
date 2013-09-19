@@ -1,5 +1,9 @@
 Farmapp::Application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
   get "welcome/farmers"
   get "welcome/about"
   get "welcome/contact"
@@ -18,7 +22,7 @@ Farmapp::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :places
+  resources :places, :charges
 
   resources :farms do 
     resources :pickups, :products

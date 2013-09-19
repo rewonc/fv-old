@@ -16,6 +16,7 @@
     <th>Title</th>
     <th>Description</th>
     <th>Price</th>
+    <th>Purchase link</th>
   </tr>
  
   <% @products.each do |product| %>
@@ -24,6 +25,7 @@
       <td><%= product.title %></td>
        <td><%= product.description %></td>
       <td><%= product.price %></td>
+      <td><%= link_to "Add to cart", line_items_path(line_item: {product_id: product.id}), method: :post %></td>
     </tr>
   <% end %>
 </table>
