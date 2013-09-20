@@ -9,63 +9,10 @@
 </p>
 
 <h2>List of products you can buy here</h2>
- 
-<table>
-  <tr>
-    <th>Farm id</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Purchase link</th>
-  </tr>
- 
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= product.farm_id %></td>
-      <td><%= product.title %></td>
-       <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= link_to "Add to cart", line_items_path(line_item: {product_id: product.id}), method: :post %></td>
-    </tr>
-  <% end %>
-</table>
+ <%= render partial: "shared/products_table", locals: {products: @products}  %>
 
 <h2>Farms in this location:</h2>
-<p>
-<table>
-  <tr>
-    <th>Image</th>
-    <th>Title</th>
-    <th>Address</th>
-    <th>Description</th>
-  </tr>
- 
-  <% @farms.each do |farm| %>
-    <tr>
-      <td><%= image_tag farm.logo.url('thumb') %></td>
-      <td><%= link_to farm.title, farm_path(farm.id) %></td>
-      <td><%= farm.address %></td>
-      <td><%= farm.description %></td>
-    </tr>
-  <% end %>
-</table>
-</p>
+<%= render partial: "shared/farms_table", locals: {farms: @farms} %>
 
 <h2>List of spots where you can pick up stuff up here</h2>
-<table>
-  <tr>
-    <th>Farm ID</th>
-    <th>Place ID</th>
-    <th>Address</th>
-    <th>Zip code</th>
-  </tr>
- 
-  <% @pickups.each do |pickup| %>
-    <tr>
-      <td><%= pickup.farm_id %></td>
-      <td><%= pickup.place_id %></td>
-       <td><%= pickup.address %></td>
-      <td><%= pickup.zip %></td>
-    </tr>
-  <% end %>
-</table>
+<%= render partial: "shared/pickups_table", locals: {pickups: @pickups} %>

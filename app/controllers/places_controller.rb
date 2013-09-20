@@ -12,7 +12,6 @@ class PlacesController < ApplicationController
         @place = Place.find(params[:id])
   end
 
-
   def create
   	@place = Place.new(place_params)
 	  @place.save
@@ -20,6 +19,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    flash['alert'] = "This is a flash alert!"
   	@place = Place.find(params[:id])
     @farms = @place.farms.uniq
     @pickups = @place.pickups
