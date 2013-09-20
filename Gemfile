@@ -47,6 +47,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # use Twitter Bootstrap for styling
 gem 'bootstrap-sass'
 
+# use Devise for User model
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

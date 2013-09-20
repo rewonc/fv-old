@@ -19,7 +19,6 @@ class PlacesController < ApplicationController
   end
 
   def show
-    flash['alert'] = "This is a flash alert!"
   	@place = Place.find(params[:id])
     @farms = @place.farms.uniq
     @pickups = @place.pickups

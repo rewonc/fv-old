@@ -1,12 +1,13 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
+    	<h3>Alright, just enter your credit card info in this shady little box here...</h3>
+      <span>Amount: $<%= @amount/100 %>0</span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
+          data-description="Your order"
+          data-amount=<%= @amount%> ></script>
 <% end %>

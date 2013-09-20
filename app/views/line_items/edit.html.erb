@@ -1,6 +1,6 @@
-<h1>Editing line_item</h1>
+ <h1><%= @line_item.product.title %></h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @line_item %> |
-<%= link_to 'Back', line_items_path %>
+<%= link_to 'Back to shopping cart', cart_path(@line_item.cart.id) %>

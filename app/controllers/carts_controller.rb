@@ -57,7 +57,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to :root }
       format.json { head :no_content }
     end
   end
