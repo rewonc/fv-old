@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Farm</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @line_items %> 
+    <tr>
+      <td></td>
+      <td></td>
+      <td><strong>Total:</strong></td>
+      <td><%= @cart.total %></td>
+      <td><%= link_to 'Empty cart', cart_path(@cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to "Go to checkout", new_charge_path %></td>
+
+    </tr>
+  </tbody>
+</table>
