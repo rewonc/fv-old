@@ -44,6 +44,9 @@ gem 'aws-sdk'
 # Use Stripe for payment processing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+# use Twitter Bootstrap for styling
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

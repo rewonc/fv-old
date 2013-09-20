@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
 	end
 	
 	def new
+		@amount = params[:amount]
 	end
 
 	def create
