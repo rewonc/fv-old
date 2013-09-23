@@ -50,10 +50,13 @@ gem 'bootstrap-sass'
 # use Devise for User model
 gem 'devise'
 
-#use Rspec for testing
+#use Rspec and FactoryGirl for testing
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
