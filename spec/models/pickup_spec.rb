@@ -17,6 +17,6 @@ describe Pickup do
 	end
 
 
-	it "should be able to be located on a map"
+	it "should have valid geocoordinates (a la googlemaps)"
 
 end
