@@ -31,6 +31,12 @@ describe Farm do
   	FactoryGirl.build(:farm, description: "Hello. This is a description with many many many many many many many characters. It should not be apssing the validation--it should be less than a tweet, of which this message is far longer.  Yada Dada Dum di Diddely Poop.  Squatface in a partridge tree.").should_not be_valid
   end
 
-  it "should destroy its products/pickups when it is deleted" 
+  it "should not be deleted while it still has offspring products" 
+
+  it "should generate a list of its products"
+
+  it "should generate a list of its pickups service areas"
+
+  it "should belong to a farmer"
 
 end
