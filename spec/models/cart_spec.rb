@@ -5,10 +5,10 @@ describe Cart do
   	FactoryGirl.create(:cart).should be_valid
   end
 
-  it "holds line items, which refer to a product " do
+  it "should list the line items inside, and their corresponding pi_pickups and pi and products" do
   	a = FactoryGirl.create(:cart)
-  	a.line_items.build(product_id: 1)
-  	expect(a.line_items.first.product_id).to eq(1)
+  	a.line_items.build(pi_pickups_id: 1)
+  	expect(a.line_items.first.pi_pickups_id).to eq(1)
   end
 
   it "gives the total price for items in the cart" do
@@ -24,6 +24,12 @@ describe Cart do
 
     a.total.should eq(1+4+9)
   end
+
+  it "can be set to hold a userid"
+
+  it "can be cleared, before checkout, reached checkout, paid, past, but only one at a time"
+
+  it "can only be cleared and made history, not totally deleted"
 
 
 end

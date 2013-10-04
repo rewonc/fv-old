@@ -28,14 +28,18 @@ describe Product do
 	FactoryGirl.build(:product, price: 0.000001).should_not be_valid
   end
 
-  it "is not destroyable when line items are present" do
+  it "is not destroyable when p intervals are present" do
   	a = FactoryGirl.create(:product)
   	b = a.id
   	2.times do
-  		a.line_items.build()
+  		a.p_intervals.build()
   	end
   	a.destroy
   	Product.find(b).should be_valid
   end
+
+  it "should not have a price"
+  it "should list the p intervals and pickups it is available at"
+  it "should be linked with possible attributes"
 
 end

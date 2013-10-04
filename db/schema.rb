@@ -11,15 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920211245) do
+ActiveRecord::Schema.define(version: 20131004161427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attributes", force: true do |t|
+    t.integer  "product_id"
+    t.string   "options"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attributes", ["product_id"], name: "index_attributes_on_product_id", using: :btree
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "farmers", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "farmers", ["email"], name: "index_farmers_on_email", unique: true, using: :btree
+  add_index "farmers", ["reset_password_token"], name: "index_farmers_on_reset_password_token", unique: true, using: :btree
 
   create_table "farms", force: true do |t|
     t.string   "title"
@@ -34,6 +62,20 @@ ActiveRecord::Schema.define(version: 20130920211245) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
   end
+
+  create_table "interval_pickups", force: true do |t|
+    t.integer  "product_interval_id"
+    t.integer  "pickup_id"
+    t.integer  "processing_time"
+    t.integer  "charge"
+    t.integer  "charge1"
+    t.integer  "charge2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interval_pickups", ["pickup_id"], name: "index_interval_pickups_on_pickup_id", using: :btree
+  add_index "interval_pickups", ["product_interval_id"], name: "index_interval_pickups_on_product_interval_id", using: :btree
 
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
@@ -58,6 +100,19 @@ ActiveRecord::Schema.define(version: 20130920211245) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_intervals", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.decimal  "base_price"
+    t.datetime "time_start"
+    t.datetime "time_end"
+    t.string   "attributes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_intervals", ["product_id"], name: "index_product_intervals_on_product_id", using: :btree
 
   create_table "products", force: true do |t|
     t.string   "title"
