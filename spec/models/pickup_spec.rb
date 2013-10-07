@@ -2,15 +2,19 @@ require 'spec_helper'
 
 describe Pickup do
   
-  	it "should have a valid factory"
-  	
-  	it "should belong to a farm"
+  #validations
+  	it "should have a valid factory" do
+  		FactoryGirl.build(:pickup).should be_valid
+  	end
 
 	it "should not save without its proper fields" do
 		FactoryGirl.build(:pickup, farm_id: nil).should_not be_valid
 		FactoryGirl.build(:pickup, place_id: nil).should_not be_valid
 		FactoryGirl.build(:pickup, address: nil).should_not be_valid
 		FactoryGirl.build(:pickup, zip: nil).should_not be_valid
+		FactoryGirl.build(:pickup, period: nil).should_not be_valid
+		FactoryGirl.build(:pickup, latitude: nil).should_not be_valid
+		FactoryGirl.build(:pickup, longitude: nil).should_not be_valid
 	end
 
 	it "should have a valid zip" do
@@ -21,8 +25,30 @@ describe Pickup do
 		FactoryGirl.build(:pickup, zip: "12345-8982").should be_valid
 	end
 
-	it "should return the products available there"
+	it "should not have a description > 160 char" do
+		FactoryGirl.build(:pickup, description: "Hello. This is a description with many many many many many many many characters. It should not be apssing the validation--it should be less than a tweet, of which this message is far longer.  Yada Dada Dum di Diddely Poop.  Squatface in a partridge tree.").should_not be_valid
+	end
 
-    it "should have a field for days and times when you can pick up"
+	it "should have an interpretable field of pickup time data..."
+
+
+#parents and children
+	it "should return the farm" do
+		FactoryGirl.build(:pickup).farm.should_not be_nil
+	end
+
+ 	it "should return a place" do
+  		FactoryGirl.build(:pickup).place.should_not be_nil
+  	end
+
+  	it "should yield interval pickups" do
+		 a = FactoryGirl.build(:pickup)
+	    b = a.interval_pickups.build(FactoryGirl.attributes_for(:interval_pickup))
+	    a.interval_pickups.length.should eq(1)
+  	end
+
+#hooks
+
+#fxn
 
 end

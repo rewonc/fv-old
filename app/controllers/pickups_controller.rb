@@ -2,8 +2,6 @@ class PickupsController < ApplicationController
 
 #we should route SHOW to display pickups for a specific place id, or a specific farm id, or details for one with two specified things.
 # we should add in time period & description.
-
-http_basic_authenticate_with name: "orange", password: "orangutan", except: [:index, :show]
 	
 	def new
 	end

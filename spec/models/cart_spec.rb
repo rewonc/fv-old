@@ -5,24 +5,24 @@ describe Cart do
   	FactoryGirl.create(:cart).should be_valid
   end
 
-  it "should list the line items inside, and their corresponding pi_pickups and pi and products" do
+  it "should list the line items inside, and their corresponding interval pickups and intevals and products" do
   	a = FactoryGirl.create(:cart)
-  	a.line_items.build(pi_pickups_id: 1)
-  	expect(a.line_items.first.pi_pickups_id).to eq(1)
+  	a.line_items.build(interval_pickup_id: 1)
+  	expect(a.line_items.first.interval_pickup_id).to eq(1)
   end
 
   it "gives the total price for items in the cart" do
   	a = FactoryGirl.create(:cart)
-    b = Array.new
-    b[0] = FactoryGirl.create(:product, price: 1.00)
-    b[1] = FactoryGirl.create(:product, price: 2.00)
-    b[2] = FactoryGirl.create(:product, price: 3.00)
+    first = FactoryGirl.create(:product_interval, base_price: 500)
+    second = FactoryGirl.create(:product_interval, base_price: 600)
+    first_deriv = first.interval_pickups.create(FactoryGirl.attributes_for(:interval_pickup, charge: 100))
+    second_deriv = second.interval_pickups.create(FactoryGirl.attributes_for(:interval_pickup, charge: 100))
 
-    a.line_items.create(product_id: b[0].id, quantity: 1)
-    a.line_items.create(product_id: b[1].id, quantity: 2)
-    a.line_items.create(product_id: b[2].id, quantity: 3)
+    a.line_items.create(interval_pickup_id: first_deriv.id, quantity: 1)
+    a.line_items.create(interval_pickup_id: second_deriv.id, quantity: 2)
+   
 
-    a.total.should eq(1+4+9)
+    a.total.should eq((5+6*2+1+1)*100)
   end
 
   it "can be set to hold a userid"
@@ -30,6 +30,10 @@ describe Cart do
   it "can be cleared, before checkout, reached checkout, paid, past, but only one at a time"
 
   it "can only be cleared and made history, not totally deleted"
+
+  it "should calculate if two items from the same location have the same processing cost"
+
+  it "should calculate in all integers"
 
 
 end

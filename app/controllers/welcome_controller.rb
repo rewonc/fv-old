@@ -1,6 +1,4 @@
 class WelcomeController < ApplicationController
-
-http_basic_authenticate_with name: "orange", password: "orangutan", only: [:admin]
  
   def index
   end
