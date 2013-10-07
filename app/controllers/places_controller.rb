@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-   http_basic_authenticate_with name: "orange", password: "orangutan", except: [:index, :show]
 
   def index
   	@places = Place.all

@@ -4,9 +4,12 @@ class Cart < ActiveRecord::Base
 	def total
 		a = 0
 		line_items.each do |item|
-			a = a + item.quantity * item.product.price
+			fee = item.interval_pickup.charge  #account for if there's another thing
+			base = item.quantity * item.interval_pickup.product_interval.base_price
+			a = a + fee + base
 		end
 		return a
+
 	end
 
 end

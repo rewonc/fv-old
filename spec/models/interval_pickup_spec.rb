@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe IntervalPickup do
-  it "has a valid factory"
+it "has a valid factory" do
+  	FactoryGirl.create(:interval_pickup).should be_valid
+end
+
 	it "should have valid data"
 	it "should be backtraceable to a product interval, product, price, and pickup"
 	it "should have a processing time"
