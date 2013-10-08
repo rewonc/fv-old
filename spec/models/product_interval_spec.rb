@@ -46,12 +46,30 @@ describe ProductInterval do
   end
 
   ##hooks
-  	it "deletes pickups on destroy"
+  it "should destroy its children before it destroys itself" do
+      a = FactoryGirl.create(:product_interval)
+      pickup = FactoryGirl.create(:pickup)
+      b = a.interval_pickups.create(FactoryGirl.attributes_for(:interval_pickup, pickup_id: pickup.id))
+      b.should be_valid
+      id = b.id
+      a.destroy
+      IntervalPickup.where(id: id).should_not exist
+  end
 
   ##extra fxn
 
 	it "requires choosing attributes if those are available"
-	it "can check how many are left"
-	it "can see how many are sold"
-	it "can see how many are in cart"
+
+	it "can check how many are left" do
+     a = FactoryGirl.create(:product_interval, quantity: 20)
+     b = FactoryGirl.create(:interval_pickup, product_interval_id: a.id)
+     c = FactoryGirl.create(:line_item, interval_pickup_id: b.id, quantity: 6)
+     b.should be_valid
+     c.should be_valid
+     a.quantity_carted.should eq(6)
+     a.quantity_left.should eq(14)
+  end
+
+	it "can see how many are sold--adjust quantity_left"
+
 end

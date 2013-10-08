@@ -11,4 +11,17 @@ describe Farmer do
   	FactoryGirl.build(:farmer, age: 0).should_not be_valid
   	FactoryGirl.build(:farmer, age: 25).should be_valid
   end
+
+  #hooks
+  it "should destroy its children before it destroys itself" do
+      a = FactoryGirl.create(:farmer)
+      b = a.create_farm(FactoryGirl.attributes_for(:farm))
+      b.should be_valid
+      farm_id = b.id
+      a.destroy
+      Farm.where(id: farm_id).should_not exist
+  end
+
+  #fxn
+
 end

@@ -66,10 +66,10 @@ FactoryGirl.define do
 	factory :line_item do
 		interval_pickup
 		cart
-		quantity {[*1,5].sample}
+		quantity {[*1,3].sample}
 	end
 
-	factory :charges do
+	factory :charge do
 		cart
 	end
 
@@ -77,15 +77,12 @@ FactoryGirl.define do
 	    product 
 	    options {["red","blue","green"]}
 	    title "color"
+	    #not started yet
   	end
 
   	factory :cart do
   		active true
   		paid false
 	end
-
-	factory :charge do
-  	end
-
 
 end

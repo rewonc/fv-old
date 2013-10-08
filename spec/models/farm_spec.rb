@@ -38,7 +38,10 @@ describe Farm do
   it "should destroy its children before it destroys itself" do
       a = FactoryGirl.create(:farm)
       b = a.products.create(FactoryGirl.attributes_for(:product))
-      c = a.pickups.create(FactoryGirl.attributes_for(:pickup))
+      b.should be_valid
+      place = FactoryGirl.create(:place)
+      c = a.pickups.create(FactoryGirl.attributes_for(:pickup, place_id: place.id))
+      c.should be_valid
       product_id = b.id
       pickup_id = c.id
       a.destroy
