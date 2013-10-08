@@ -48,6 +48,15 @@ describe Pickup do
   	end
 
 #hooks
+	it "should destroy its children before it destroys itself" do
+      a = FactoryGirl.create(:pickup)
+      product_interval = FactoryGirl.create(:product_interval)
+      b = a.interval_pickups.create(FactoryGirl.attributes_for(:interval_pickup, product_interval_id: product_interval.id))
+      b.should be_valid
+      id = b.id
+      a.destroy
+      IntervalPickup.where(id: id).should_not exist
+  end
 
 #fxn
 

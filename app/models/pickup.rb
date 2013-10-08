@@ -1,7 +1,7 @@
 class Pickup < ActiveRecord::Base
 	belongs_to :farm
 	belongs_to :place
-	has_many :interval_pickups
+	has_many :interval_pickups, dependent: :destroy
 	has_many :product_intervals, through: :interval_pickups
 	serialize :period
 	validates :farm_id, presence: true

@@ -5,7 +5,7 @@ class Farmer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	has_one :farm
+	has_one :farm, dependent: :destroy
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :age, presence: true

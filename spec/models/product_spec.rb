@@ -30,16 +30,15 @@ describe Product do
 
   #hooks
 
-  it "should destroy its product intervals on destruction" do
-  	a = FactoryGirl.create(:product)
-  	b = a.id
-  	2.times do
-  		a.product_intervals.build()
-  	end
-  	a.destroy
-  	Product.find(b).should be_valid
+   it "should destroy its children before it destroys itself" do
+      a = FactoryGirl.create(:product)
+      b = a.product_intervals.create(FactoryGirl.attributes_for(:product_interval))
+      b.should be_valid
+      id = b.id
+      a.destroy
+      ProductInterval.where(id: id).should_not exist
   end
-
+  
   #other fxn
 
   it "should list the pickups it is available at"
