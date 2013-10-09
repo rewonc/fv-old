@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :farm
   has_many :product_intervals, dependent: :destroy
+  has_many :pickups, through: :product_intervals
   validates :title, presence: true
   validates :description, presence: true
   validates :farm_id, presence: true

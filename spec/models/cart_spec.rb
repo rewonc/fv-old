@@ -42,9 +42,20 @@ it "should optionally belong to a user"
       a.total.should eq(2*5900)
   end
 
-  it "can be cleared, before checkout, reached checkout, paid, past, but only one at a time"
+  it "can be finalized" do
+    cart = FactoryGirl.create(:cart)
+    cart.active.should be_false
+    cart.finalize
+    cart.active.should be_true
+  end
 
-  it "can only be cleared and made history, not totally deleted"
+  it "can be charged"
+
+  it "can be finished"
+
+  it "should check that finalization is valid--all items are active--before checkout"
+  
+  it "can only be cleared without being totally deleted"
 
   it "should calculate if two items from the same location have a lowered processing cost"
 

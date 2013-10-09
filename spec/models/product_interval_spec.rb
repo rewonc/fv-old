@@ -63,13 +63,62 @@ describe ProductInterval do
 	it "can check how many are left" do
      a = FactoryGirl.create(:product_interval, quantity: 20)
      b = FactoryGirl.create(:interval_pickup, product_interval_id: a.id)
-     c = FactoryGirl.create(:line_item, interval_pickup_id: b.id, quantity: 6)
+     cart = FactoryGirl.create(:cart)
+     c = FactoryGirl.create(:line_item, interval_pickup_id: b.id, quantity: 6, cart_id: cart.id)
      b.should be_valid
      c.should be_valid
-     a.quantity_carted.should eq(6)
+     cart.finalize
+     a.quantity_finalized.should eq(6)
+     a.quantity_purchased.should eq(0)
+     a.quantity_left.should eq(14)
+     cart.charge_card
+     a.reload
+     a.quantity_finalized.should eq(0)
+     a.quantity_purchased.should eq(6)
      a.quantity_left.should eq(14)
   end
 
-	it "can see how many are sold--adjust quantity_left"
+	it "can see how many have been purchased" do
+     a = FactoryGirl.create(:product_interval, quantity: 20)
+     b = FactoryGirl.create(:interval_pickup, product_interval_id: a.id)
+     i = 1
+     carts = Array.new
+
+     3.times do
+      carts[i] = FactoryGirl.create(:cart)
+      FactoryGirl.create(:line_item, interval_pickup_id: b.id, quantity: i, cart_id: carts[i].id)
+      i = i+1
+     end
+     carts[2].finalize.charge_card
+     carts[3].finalize.charge_card
+     carts[1].finalize
+     a.quantity_finalized.should eq(1)
+     a.quantity_purchased.should eq(5)
+  end
+
+  it "can unfinalize line items in a cart that have been finalized for at least 1 hr without checkout" do
+      product_interval = FactoryGirl.create(:product_interval, quantity: 20)
+      pickup = FactoryGirl.create(:pickup)
+      interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: product_interval.id, pickup_id: pickup.id)
+      i = 0
+      carts = Array.new
+      5.times do
+        carts[i] = FactoryGirl.create(:cart)
+        FactoryGirl.create(:line_item, cart_id: carts[i].id, interval_pickup_id: interval_pickup.id, quantity: 1)
+          i = i+1
+      end
+
+
+      i = 22
+      carts.each do |c|
+         c.finalize.update_attribute(:updated_at, (Time.now - i.minutes).to_datetime)
+         c.reload
+        i = i + 22
+      end
+
+      product_interval.quantity_left.should eq(15)
+      product_interval.refresh_line_items
+      product_interval.quantity_left.should eq(18)
+  end
 
 end
