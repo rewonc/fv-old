@@ -16,6 +16,6 @@ describe Charge do
   end
 
 #hooks	
-  it "it is linked to a current, validated cart before it is created"
+  it "it is linked to a current, finalized cart before it is created"
 
 end

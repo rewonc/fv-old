@@ -81,7 +81,7 @@ FactoryGirl.define do
   	end
 
   	factory :cart do
-  		active true
+  		active false
   		paid false
 	end
 

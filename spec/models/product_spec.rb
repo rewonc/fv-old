@@ -41,7 +41,16 @@ describe Product do
   
   #other fxn
 
-  it "should list the pickups it is available at"
+  it "should list the pickups it is available at" do
+    product = FactoryGirl.create(:product)
+    pickup = FactoryGirl.create(:pickup)
+    2.times do
+      product.product_intervals.create!(FactoryGirl.attributes_for(:product_interval)).interval_pickups.create(FactoryGirl.attributes_for(:interval_pickup, pickup_id: pickup.id))
+    end
+    product.pickups.should exist
+    product.pickups.length.should eq(2)
+  end
+
   it "should be linked with possible attributes"
 
 end

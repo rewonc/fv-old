@@ -9,18 +9,41 @@ class ProductInterval < ActiveRecord::Base
   validates :time_start, presence: true
   validates :time_end, presence: true
 
-  def quantity_carted
+  def refresh_line_items
+    interval_pickups.each do |ip|
+      ip.line_items.each do |li|
+        if li.cart.active 
+          li.cart.unfinalize_stale_cart
+        end
+      end
+    end
+  end
+
+  def quantity_purchased
+    a = 0
+    interval_pickups.each do |ip|
+      ip.line_items.each do |li|
+        if li.cart.paid 
+          a = a + li.quantity
+        end
+      end
+    end
+    return a
+  end
+  def quantity_finalized
   	a = 0
   	interval_pickups.each do |ip|
   		ip.line_items.each do |li|
-  			a = a + li.quantity
-  		end
+  		  if li.cart.active	
+          a = a + li.quantity
+  		  end
+      end
   	end
   	return a
   end
 
   def quantity_left
-  	return quantity - quantity_carted
+  	return quantity - quantity_finalized - quantity_purchased
   end
 
 end
