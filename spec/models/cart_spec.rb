@@ -55,7 +55,7 @@ it "should optionally belong to a user"
 
   it "should check that finalization is valid--all items are active--before checkout"
   
-  it "can only be cleared without being totally deleted"
+  it "can designate that the order is past -- i.e. delivered and paid out to farmer"
 
   it "should calculate if two items from the same location have a lowered processing cost"
 

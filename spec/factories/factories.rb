@@ -37,8 +37,8 @@ FactoryGirl.define do
 	    product
 	    quantity {[*5,200].sample}
 	    base_price {[*400,66000].sample}
-	    time_start "2013-10-20 12:05:59"
-	    time_end "2013-10-28 12:05:59"
+	    time_start {(Time.now - (10+rand(5)).days).to_datetime}
+	    time_end {(Time.now + (10+rand(5)).days).to_datetime}
 	    product_tags {{color: "red", size: "large"}}
   	end
 

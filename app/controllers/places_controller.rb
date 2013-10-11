@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-
+    http_basic_authenticate_with name: "orange", password: "orangutan"
   def index
   	@places = Place.all
   end

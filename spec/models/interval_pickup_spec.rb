@@ -49,8 +49,4 @@ describe IntervalPickup do
       LineItem.where(id: id).should_not exist
   end
 
-#fxn
-	it "should be able to guess the processing time from other stuff at that location"
-	it "should be able to guess the charge from other stuff at that location"
-
 end

@@ -32,7 +32,23 @@ describe ProductInterval do
 	FactoryGirl.build(:product_interval, quantity: 10001).should_not be_valid
   end
 
-	it "has a valid start date and an end date, in the future"
+	it "validates on create that the end date is greater than start date by at least a day, and that the end date is at least a day in advance" do
+    FactoryGirl.build(:product_interval, time_start: (Time.now - 10.days).to_datetime, time_end: (Time.now - 5.days).to_datetime).should_not be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now - 5.days).to_datetime, time_end: (Time.now + 5.days).to_datetime).should be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now + 5.days).to_datetime, time_end: (Time.now + 5.days).to_datetime).should_not be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now - 5.days).to_datetime, time_end: (Time.now).to_datetime).should_not be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now + 5.days).to_datetime, time_end: (Time.now + 3.days).to_datetime).should_not be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now + 5.days).to_datetime, time_end: (Time.now + 15.days).to_datetime).should be_valid
+    FactoryGirl.build(:product_interval, time_start: (Time.now).to_datetime, time_end: (Time.now + 15.days).to_datetime).should be_valid
+  end
+
+  it "the end date can be in the past on update" do
+    pi = FactoryGirl.create(:product_interval, time_start: (Time.now - 10.days).to_datetime, time_end: (Time.now + 15.days).to_datetime)
+    pi.time_end = (Time.now - 5.days).to_datetime
+    pi.save.should be_true
+    pi.reload
+    pi.time_end.to_time.should be < Time.now
+  end
 
   ##parents and children
   it "lists its parent product" do

@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :get_cart
-  http_basic_authenticate_with name: "orange", password: "orangutan", except: [:index, :show]
-
 
   private
 

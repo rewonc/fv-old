@@ -31,6 +31,8 @@ describe Pickup do
 
 	it "should have an interpretable field of pickup time data..."
 
+	it "should have a type to mark if its farmer's market?"
+
 
 #parents and children
 	it "should return the farm" do

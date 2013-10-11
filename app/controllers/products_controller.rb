@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	
+		  http_basic_authenticate_with name: "orange", password: "orangutan"
 	def new
 	end
 
