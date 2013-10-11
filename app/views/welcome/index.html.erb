@@ -16,13 +16,13 @@
 	<div class="small-8 large-4 small-centered large-centered columns">
 	<%= form_for :email, url: emails_path do |f| %>
 			  <p>
-			    <%= f.text_field :name, value: "The name of your farm" %>
+			    <%= f.text_field :name, placeholder: "The name of your farm" %>
 			  </p>
 			   <p>
-			    <%= f.text_field :email, value: "Your email address" %>
+			    <%= f.text_field :email, placeholder: "Your email address" %>
 			  </p>
 			 <p>
-			    <%= f.text_field :zip, value: "Your zip code" %>
+			    <%= f.text_field :zip, placeholder: "Your zip code" %>
 			  </p>
 
 			  <p>
