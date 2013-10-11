@@ -13,7 +13,7 @@ class Cart < ActiveRecord::Base
 	end
 
 	def finalize
-		##run checks on all the items
+		##run checks on all the items. make sure is valid
 		##hold the orders--make it unavailable to anyone else.
 		self.update_attribute(:active, true)
 		self.update_attribute(:paid, false)

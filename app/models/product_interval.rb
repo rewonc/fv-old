@@ -8,6 +8,21 @@ class ProductInterval < ActiveRecord::Base
   validates :product_id, presence: true
   validates :time_start, presence: true
   validates :time_end, presence: true
+  validate :check_temporality, on: :create
+
+
+  def check_temporality
+    if self.time_end.nil? || self.time_start.nil?
+      errors.add(:base, "a time must be present")
+    else 
+      if self.time_end.to_time < (Time.now + 1.day)
+        errors.add(:time_end, "Time end must be in the future")
+      end 
+      if self.time_end.to_time < (self.time_start.to_time + 1.day)
+        errors.add(:time_end, "End time must be at least 1 day after the start time")
+      end 
+    end
+  end
 
   def refresh_line_items
     interval_pickups.each do |ip|

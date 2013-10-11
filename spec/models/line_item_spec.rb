@@ -36,34 +36,49 @@ describe LineItem do
  end
 
 
-#hooks 
+#hooks, fxn
 
-  it "should check that the quantity is valid before creation" do
+  it "should validate quantity is within range of parent pi" do
       product_interval = FactoryGirl.create(:product_interval, quantity: 20)
       pickup = FactoryGirl.create(:pickup)
       interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: product_interval.id, pickup_id: pickup.id)
-      interval_pickup.should be_valid
       #order 1
       cart1 = FactoryGirl.create(:cart)
       saved = interval_pickup.line_items.create(FactoryGirl.attributes_for(:line_item, quantity: 10, cart_id: cart1.id))
       #order 2
       cart2 = FactoryGirl.create(:cart)
-      line_item1 = interval_pickup.line_items.build(FactoryGirl.attributes_for(:line_item, quantity: 15, cart_id: cart2.id))
+      line_item1 = interval_pickup.line_items.build(FactoryGirl.attributes_for(:line_item, quantity: 2, cart_id: cart2.id))
       line_item2 = interval_pickup.line_items.build(FactoryGirl.attributes_for(:line_item, quantity: 15, cart_id: cart2.id))
-      
-      line_item1.save.should be_true
-      cart1.finalize.charge_card
-      line_item2.save.should be_false
+         
+      line_item1.should be_valid
       line_item2.should be_valid
-     
+      cart1.finalize.charge_card
+      line_item1.should be_valid
+      line_item2.should_not be_valid
+      line_item2.save.should be_false
   end
 
-  it "should check the time is valid before creation"
+  it "must validate whether now is within the time of its parent pi" do
+      future_product_interval = FactoryGirl.create(:product_interval, time_start: (Time.now + 5.days).to_datetime, time_end: (Time.now + 35.days).to_datetime)
+      current_product_interval = FactoryGirl.create(:product_interval, time_start: (Time.now - 5.days).to_datetime, time_end: (Time.now + 25.days).to_datetime)
+      past_product_interval = FactoryGirl.create(:product_interval, time_start: (Time.now - 35.days).to_datetime, time_end: (Time.now + 2.days).to_datetime)
+      past_product_interval.time_end = (Time.now - 5.days).to_datetime
+      past_product_interval.save
+      
+      pickup = FactoryGirl.create(:pickup)
+      future_interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: future_product_interval.id, pickup_id: pickup.id)
+      current_interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: current_product_interval.id, pickup_id: pickup.id)
+      past_interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: past_product_interval.id, pickup_id: pickup.id)
+      cart = FactoryGirl.create(:cart)
+      line_item1 = FactoryGirl.build(:line_item, interval_pickup_id: future_interval_pickup.id)
+      line_item2 = FactoryGirl.build(:line_item, interval_pickup_id: current_interval_pickup.id)
+      line_item3 = FactoryGirl.build(:line_item, interval_pickup_id: past_interval_pickup.id)
+      line_item1.should_not be_valid
+      line_item2.should be_valid
+      line_item3.should_not be_valid
+  end
 
-#fxn
-  it "can check if the date is still valid"
-
-  it "can see if the desired qty is still available" do
+  it "can see if the desired qty is still available upon simultaneous checkout" do
       product_interval = FactoryGirl.create(:product_interval, quantity: 15)
       pickup = FactoryGirl.create(:pickup)
       interval_pickup = FactoryGirl.create(:interval_pickup, product_interval_id: product_interval.id, pickup_id: pickup.id)
@@ -73,11 +88,11 @@ describe LineItem do
       line_item1 = interval_pickup.line_items.create(FactoryGirl.attributes_for(:line_item, quantity: 10, cart_id: cart1.id))
       #order 2
       cart2 = FactoryGirl.create(:cart)
-      line_item2 = interval_pickup.line_items.create(FactoryGirl.attributes_for(:line_item, quantity: 10, cart_id: cart2.id))
+      line_item2 = interval_pickup.line_items.build(FactoryGirl.attributes_for(:line_item, quantity: 10, cart_id: cart2.id))
       
-      line_item1.ensure_quantity.should be_true
+      line_item2.should be_valid
       cart1.finalize
-      line_item2.ensure_quantity.should be_false
+      line_item2.should_not be_valid
   end 
 
   it "should be able to check that if it is active or purchased or not" do

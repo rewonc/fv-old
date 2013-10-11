@@ -5,7 +5,8 @@ class LineItem < ActiveRecord::Base
 	validates :interval_pickup_id, presence: true
 	validates :quantity, presence: true
     validates_numericality_of :quantity, only_integer: true, greater_than: 0, less_than: 100
-    before_create :ensure_quantity
+    validate :ensure_quantity
+    validate :ensure_date
 
     def purchased?
     	if cart.paid
@@ -34,16 +35,29 @@ class LineItem < ActiveRecord::Base
     end
 
     def ensure_quantity
-    	if interval_pickup.product_interval.quantity_left.nil?
-			return false
+    	if interval_pickup.nil? || (self.quantity == nil)
+		  errors.add(:base, 'No interval pickup associated w this item')
+
 		else 
 			if self.quantity > self.interval_pickup.product_interval.reload.quantity_left
-					return false
+				errors.add(:quantity, 'Quantity for this cart item exceeds the quantity available')
 			else 
 				return true
 			end
 		end
 	end
+
+    def ensure_date
+        if interval_pickup.nil?
+            errors.add(:base, 'No interval pickup associated with this object')
+        else 
+            if (Time.now > interval_pickup.product_interval.time_end) || (Time.now < interval_pickup.product_interval.time_start)
+                errors.add(:base, 'Now is outside of the range of valid times for this item')
+            else 
+                return true
+            end
+        end
+    end
 
 
 end

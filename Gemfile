@@ -44,8 +44,9 @@ gem 'aws-sdk'
 # Use Stripe for payment processing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-# use Twitter Bootstrap for styling
-gem 'bootstrap-sass'
+# use foundation for styling
+gem 'compass-rails'
+gem 'zurb-foundation', '~> 4.0.0'
 
 # use Devise for User model
 gem 'devise'

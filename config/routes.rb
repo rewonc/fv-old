@@ -5,6 +5,7 @@ Farmapp::Application.routes.draw do
   resources :line_items
 
   resources :carts
+  resources :emails
 
   get "welcome/farmers"
   get "welcome/about"
