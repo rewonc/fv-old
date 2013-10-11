@@ -1,17 +1,6 @@
 // Required global settings and mixins for Foundation
 @import "foundation/foundation-global";
 
-@media all and (max-width: 778px) {
-	  #photo{
-		background-image: image-url("cowboy_tallcrop.jpg");
-	}
-}
-@media all and (min-width: 778px) { 
-#photo{
-	background-image: image-url("cowboy_1280up.jpg");
-	}
-}
-
 $topbar-height: 55px;
 $header-font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $h1-font-size: 5.2em;
@@ -52,9 +41,10 @@ nav {
 		margin-top:40px;
 	}
 	.notgentri{
-		font-size: 20px;
+		font-size: 16px;
 		font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-		letter-spacing: 1px;
+		letter-spacing: 0.8px;
+		line-height:150%;
 	}
 }
 #photo{
@@ -87,13 +77,30 @@ nav {
 #emailform{
 	text-align:center;
 	a{color:white;}
+	margin-top:20px;
+	margin-bottom: 20px;
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #7fbba7;;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #7fbba7;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #7fbba7;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #7fbba7;
+}
+
 
 #copyright_message{
 	background-color:black;
 	color:#ccc;
 	max-width:100%;
 	text-align:center;
+	height:65px;
 }
 
 // Settings file to override Foundation variables
