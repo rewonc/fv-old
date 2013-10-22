@@ -1,10 +1,20 @@
 // Required global settings and mixins for Foundation
 @import "foundation/foundation-global";
 
+body {background-color: black}
 $topbar-height: 55px;
 $header-font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $h1-font-size: 5.2em;
 $h1-letter-spacing: 3px;
+$header-font-color: white;
+
+#bgimage {
+	margin-top: -25px;
+	margin-bottom: -25px;
+	background-image: url(image_path('carrotharvest-sm.jpg'));
+	background-size: 100%;
+	color: white;
+}
 nav {
 	img {
 	margin-left: 50px;
@@ -20,7 +30,7 @@ nav {
 			margin-right: 20px;
 		}
 		a{
-			color: #7fbba7;
+			color: #e59400;
 		}
 		a:hover{ color: white; }
 	}
@@ -28,8 +38,11 @@ nav {
 .gentrified{
 		font-family: 'Playfair Display',"Palatino Linotype", "Book Antiqua", Palatino, serif;
 		letter-spacing: 1px;
+		font-color: white;
+		color:white;
 	}
 #hero{
+
 	text-align: center;
 	h1 {
 		margin-top:20px;
@@ -82,16 +95,16 @@ nav {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #7fbba7;;
+    color:    black;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #7fbba7;
+    color:     black;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #7fbba7;
+    color:     black;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #7fbba7;
+    color:     black;
 }
 
 
