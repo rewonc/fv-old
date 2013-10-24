@@ -10,9 +10,11 @@ $header-font-color: white;
 #bgimage {
 	margin-top: -25px;
 	margin-bottom: -25px;
-	background-image: url(image_path('carrotharvest-sm.jpg'));
-	background-size: 100%;
+	background-image: url(image_path('carrotharvest1-sm.jpg'));
+	background-size: cover;
 	color: white;
+	background-repeat: no-repeat;
+	background-color: black;
 }
 nav {
 	img {
