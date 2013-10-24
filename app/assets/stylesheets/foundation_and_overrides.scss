@@ -2,6 +2,20 @@
 @import "foundation/foundation-global";
 @import 'foundation';
 
+$redAccent: rgb(243, 63, 0);
+$orangeAccent: rgb(249, 135, 0);
+$tealSoft: rgb(162, 204, 187);
+$oldOrange: #e59400;
+
+$darkGray3: rgb(33, 33, 33);
+$darkGray2: rgb(44, 44, 44);
+$darkGray1: rgb(55, 55, 55);
+
+$navBg: rgba($darkGray1, 0.4);
+
+$IMP: rgba(255,0,0,1);
+$IMPB: 1px solid $IMP;
+
 body {
   background-color: black;
   position: absolute;
