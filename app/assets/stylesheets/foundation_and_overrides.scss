@@ -18,52 +18,62 @@ $IMPB: 1px solid $IMP;
 
 body {
   background-color: black;
+  background-color: $IMP;
   position: absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-
 }
+
 $topbar-height: 55px;
 $header-font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $h1-font-size: 5.2em;
 $h1-letter-spacing: 3px;
 $header-font-color: white;
 
+nav.top-bar {
+  height: auto;
+  background: $navBg;
+  position: absolute;
+  width: 100%;
+  padding: 5px;
+
+  // TODO(syu): add class logo
+  img {
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+
+  .nav-menu {
+    float:right;
+    display: inline-block;
+    font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    letter-spacing: 1px;
+    font-weight:800;
+
+    li {
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    a {
+      color: $tealSoft;
+    }
+    a:hover{ color: white; }
+  }
+}
+
 #splash {
-  margin-top: -25px;
-  margin-bottom: -25px;
+  // margin-top: -25px;
+  // margin-bottom: -25px;
   background: url(image_path('carrotharvest-sm.jpg')) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  // background-repeat: no-repeat;
-   //background-size: 100%;
   height: 100%;
-  // width: 100%;
-  // color: white;
-}
-nav {
-  img {
-    margin-left: 50px;
-    margin-top: 15px;
-  }
-  .right{
-    font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 10pt;
-    letter-spacing: 1px;
-    font-weight:800;
-    li {
-      margin-top: 20px;
-      margin-right: 20px;
-    }
-    a{
-      color: #e59400;
-    }
-    a:hover{ color: white; }
-  }
 }
 .gentrified{
   font-family: 'Playfair Display',"Palatino Linotype", "Book Antiqua", Palatino, serif;
