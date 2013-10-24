@@ -7,18 +7,22 @@ $orangeAccent: rgb(249, 135, 0);
 $tealSoft: rgb(162, 204, 187);
 $oldOrange: #e59400;
 
+$black1: (22, 22, 22);
+$black2: (11, 11, 11);
+$black3: (0, 0, 0);
 $darkGray3: rgb(33, 33, 33);
 $darkGray2: rgb(44, 44, 44);
 $darkGray1: rgb(55, 55, 55);
 
 $navBg: rgba($darkGray1, 0.4);
+$navHeight: 55px;
 
 $IMP: rgba(255,0,0,1);
 $IMPB: 1px solid $IMP;
 
 body {
   background-color: black;
-  background-color: $IMP;
+  // background-color: $IMP;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -33,16 +37,17 @@ $h1-letter-spacing: 3px;
 $header-font-color: white;
 
 nav.top-bar {
-  height: auto;
+  height: $navHeight;
   background: $navBg;
   position: absolute;
   width: 100%;
   padding: 5px;
+  z-index: 100;
 
   // TODO(syu): add class logo
-  img {
-    margin-left: 50px;
-    margin-top: 15px;
+  img#logo {
+    margin-left: 10px;
+    margin-top: 10px;
   }
 
   .nav-menu {
@@ -53,11 +58,6 @@ nav.top-bar {
     letter-spacing: 1px;
     font-weight:800;
 
-    li {
-      margin-top: 20px;
-      margin-right: 20px;
-    }
-
     a {
       color: $tealSoft;
     }
@@ -65,7 +65,7 @@ nav.top-bar {
   }
 }
 
-#splash {
+#splashWrapper {
   // margin-top: -25px;
   // margin-bottom: -25px;
   background: url(image_path('carrotharvest-sm.jpg')) no-repeat center center fixed;
@@ -74,12 +74,32 @@ nav.top-bar {
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
+  width: 100%;
+  position: fixed;
+  display: block;
 }
-.gentrified{
+.splashBox {
+  margin-top: $navHeight + 25px;
+  padding: 15px;
+  border-radius: 6px;
+  width: 75%;
+  background: rgba(255,255,255,0.4);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.callout {
   font-family: 'Playfair Display',"Palatino Linotype", "Book Antiqua", Palatino, serif;
   letter-spacing: 1px;
-  font-color: white;
-  color:white;
+  color: $black1;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 75%;
+  display: block;
+  text-align: center;
+
 }
 #hero{
 
@@ -93,7 +113,7 @@ nav.top-bar {
   .gentrified{
     margin-top:40px;
   }
-  .notgentri{
+  .notgentrix{
     font-size: 16px;
     font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     letter-spacing: 0.8px;
