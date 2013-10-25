@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
- 
+
   def index
+    render layout: "welcome"
   end
 
   def farmers
@@ -11,10 +12,10 @@ class WelcomeController < ApplicationController
 
   def contact
   end
-   
+
   def admin
-  	@farms = Farm.all
-  	@places = Place.all
+    @farms = Farm.all
+    @places = Place.all
   end
 
 end

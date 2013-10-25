@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="LaYLwm2d995UlqRCnPcHJe4zHW76LqYYbw5NPY3hRfM" />
+  	<title><%= content_for?(:title) ? yield(:title) : "Farmivore.com" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body class="splashWrapper">
+    <%= render 'layouts/navigation' %>
+    <%= yield %>
+    <div class="row" id="footer">
+        <br /><br />&copy; Farmivore 2013. All rights reserved.
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
