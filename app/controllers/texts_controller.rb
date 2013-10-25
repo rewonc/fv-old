@@ -5,11 +5,11 @@ skip_before_filter :verify_authenticity_token
     message_body = params["Body"]
     from_number = params["From"]
     @fromcity = params["FromCity"]
-    if from_number == "17754121514"
+    if from_number == "7754121514"
     	@name = "Rewon"
-    elsif from_number == "15707987565"
+    elsif from_number == "5707987565"
     	@name = "Sherwin"
-    elsif from_number == "19018250094"
+    elsif from_number == "9018250094"
     	@name = "Ray"
     else
     	@name = "Good ol... what was your name again?"
