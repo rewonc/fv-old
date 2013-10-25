@@ -6,7 +6,7 @@
       A MARKETPLACE FOR THE MODERN FARMER
     </h1>
     <p>Thanks for visiting Farmivore. <br/>If you were invited to join our pilot, we will be in touch. <br/ >If not, we want to hear from you! Sign up below to learn more.</p>
-        <%= form_for :email, url: emails_path do |f| %>
+      <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
           <p>
             <%= f.text_field :name, placeholder: "Your name" %>
           </p>
