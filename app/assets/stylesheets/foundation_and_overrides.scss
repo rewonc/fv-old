@@ -10,9 +10,9 @@ $orangeSoft: lighten($orangeSoft, 15%);
 $tealSoft: rgb(162, 204, 187);
 $oldOrange: #e59400;
 
-$black1: (22, 22, 22);
-$black2: (11, 11, 11);
-$black3: (0, 0, 0);
+$black1: rgb(22, 22, 22);
+$black2: rgb(11, 11, 11);
+$black3: rgb(0, 0, 0);
 $darkGray3: rgb(33, 33, 33);
 $darkGray2: rgb(44, 44, 44);
 $darkGray1: rgb(55, 55, 55);
@@ -24,6 +24,7 @@ $lightGray1: rgb(155, 155, 155);
 $navBg: rgba($darkGray1, 0.6);
 $navHeight: 55px;
 
+$splashBoxBg: rgba(255,255,255,0.6);
 $IMP: rgba(255,0,0,1);
 $IMPB: 1px solid $IMP;
 
@@ -43,9 +44,26 @@ $h1-font-size: 5.2em;
 $h1-letter-spacing: 3px;
 $header-font-color: white;
 
+hr.style-eight {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    // background: $splashBoxBg;
+}
 nav.top-bar {
   height: $navHeight;
   background: $navBg;
+  border-bottom: 1px solid $black3;
   position: absolute;
   width: 100%;
   padding: 5px;
@@ -64,6 +82,8 @@ nav.top-bar {
     font-size: 10pt;
     letter-spacing: 1px;
     font-weight:800;
+    margin-top: 10px;
+    margin-right: 10px;
 
     a {
       color: $tealSoft;
@@ -89,11 +109,12 @@ nav.top-bar {
   margin-top: $navHeight + 25px;
   padding: 70px;
   border-radius: 6px;
-  background: rgba(255,255,255,0.6);
+  background: $splashBoxBg;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 750px;
+  max-width: 90%;
 }
 
 .callout {
@@ -111,8 +132,7 @@ nav.top-bar {
   max-width: 400px;
   margin: 0 auto;
   input {
-    // border: $IMPB;
-    border-radius: 2px;
+    border-radius: 3px;
     color: $lightGray1;
     &:focus {
       color: $darkGray1;
@@ -131,13 +151,15 @@ nav.top-bar {
   background-color: rgba($orangeSoft, 0.6);
   font-weight:600;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 8px;
   color: $darkGray1;
   border: 1px solid $orangeAccent;
   &:hover {
     color: white;
     background-color: $orangeAccent;
   }
+  margin-top: 15px;
+  display: inline-block;
 
 }
 
