@@ -1,0 +1,15 @@
+# Get twilio-ruby from twilio.com/docs/ruby/install
+require 'twilio-ruby'
+ 
+# Get your Account Sid and Auth Token from twilio.com/user/account
+account_sid = 'AC7f89cc329c591ff92476c2606459f215'
+auth_token = '97abaf7b5f45920a2f1d767401d54d3d'
+@client = Twilio::REST::Client.new account_sid, auth_token
+ 
+message = @client.account.messages.create(
+	:body => "This is a photo of a carrot",
+    :to => "+17754121514",
+    :from => "+16474963276",
+    :media_url => "http://www.ikea.com/us/en/images/products/torva-soft-toy__0118209_PE273774_S4.JPG"
+)
+puts message.to + ' ' + message.status
