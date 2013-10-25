@@ -1,0 +1,12 @@
+@import "constants";
+.messages {
+  margin: 0 auto;
+  top: $navHeight + 10px;
+  position: relative;
+  & .alert-box {
+    border-radius: 3px;
+  }
+  .welcome > & {
+    width: $splashBoxWidth;
+  }
+}

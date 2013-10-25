@@ -1,0 +1,27 @@
+@import "constants";
+nav.top-bar {
+  height: $navHeight;
+  background: $navBg;
+  border-bottom: 1px solid $black3;
+  position: absolute;
+  width: 100%;
+  padding: 5px;
+  z-index: 100;
+
+  .nav-menu {
+    float:right;
+    display: inline-block;
+    font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    letter-spacing: 1px;
+    font-weight:800;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    a {
+      color: $tealSoft;
+    }
+    a:hover{ color: white; }
+  }
+}
+

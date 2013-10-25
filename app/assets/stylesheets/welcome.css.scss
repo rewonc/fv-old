@@ -1,3 +1,77 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "constants";
+
+// TODO(syu): add class logo
+img#logo {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.welcome {
+  background: url(image_path('carrotharvest-sm.jpg')) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: block;
+}
+.splashBox {
+  margin-top: $navHeight + 25px;
+  padding: 70px;
+  border-radius: 6px;
+  background: $splashBoxBg;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: $splashBoxWidth;
+  max-width: 90%;
+}
+
+.callout {
+  font-family: 'Playfair Display',"Palatino Linotype", "Book Antiqua", Palatino, serif;
+  letter-spacing: 1px;
+  color: $black1;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 750px;
+  display: block;
+  text-align: center;
+}
+
+.form-signup {
+  max-width: 400px;
+  margin: 0 auto;
+  input {
+    border-radius: 3px;
+    color: $lightGray1;
+    &:focus {
+      color: $darkGray1;
+      &::-webkit-input-placeholder {
+        color: $darkGray1;
+      }
+    }
+    &::-webkit-input-placeholder {
+      color: $lightGray1;
+    }
+  }
+}
+
+.submit-button {
+  // TODO (syu): finish this!
+  background-color: rgba($orangeSoft, 0.6);
+  font-weight:600;
+  padding: 10px;
+  border-radius: 8px;
+  color: $darkGray1;
+  border: 1px solid $orangeAccent;
+  &:hover {
+    color: white;
+    background-color: $orangeAccent;
+  }
+  margin-top: 15px;
+  display: inline-block;
+
+}
