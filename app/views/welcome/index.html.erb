@@ -2,10 +2,14 @@
 <div id="splashWrapper">
 
   <div class="splashBox">
+
+
     <h1 class="callout">
-      A MARKETPLACE FOR THE MODERN FARMER
+
+MARKETING FOR THE MODERN FARMER.
     </h1>
     <p>Thanks for visiting Farmivore. <br/>If you were invited to join our pilot, we will be in touch. <br/ >If not, we want to hear from you! Sign up below to learn more.</p>
+      <hr class="style-eight"/>
       <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
           <p>
             <%= f.text_field :name, placeholder: "Your name" %>
@@ -17,11 +21,9 @@
             <%= f.text_field :zip, placeholder: "Your zip code" %>
           </p>
 
-          <p>
             <%= link_to_submit(class: 'round submit-button') do %>
               Submit
             <% end %>
-          </p>
         <% end %>
   </div>
 
