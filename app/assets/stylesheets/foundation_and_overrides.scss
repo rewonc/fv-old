@@ -30,6 +30,19 @@ $splashBoxWidth: 750px;
 $IMP: rgba(255,0,0,1);
 $IMPB: 1px solid $IMP;
 
+
+.footer {
+  background: $black3;
+  color: $lightGray1;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  padding-bottom: 10px;
+}
+
 body {
   background-color: black;
   // background-color: $IMP;
@@ -101,7 +114,7 @@ nav.top-bar {
   & .alert-box {
     border-radius: 3px;
   }
-  &.welcome {
+  .welcome > & {
     width: $splashBoxWidth;
   }
 }

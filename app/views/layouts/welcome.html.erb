@@ -25,9 +25,7 @@
   <body class="welcome">
     <%= render 'layouts/navigation' %>
     <%= yield %>
-    <div class="row" id="footer">
-        <br /><br />&copy; Farmivore 2013. All rights reserved.
-    </div>
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
