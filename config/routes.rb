@@ -6,11 +6,14 @@ Farmapp::Application.routes.draw do
 
   resources :carts
   resources :emails
+  resources :texts
 
   get "welcome/farmers"
   get "welcome/about"
   get "welcome/contact"
   get "welcome/admin"
+
+  post 'sms', to: 'texts#catch'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
