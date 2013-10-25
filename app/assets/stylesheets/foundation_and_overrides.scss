@@ -25,6 +25,8 @@ $navBg: rgba($darkGray1, 0.6);
 $navHeight: 55px;
 
 $splashBoxBg: rgba(255,255,255,0.6);
+$splashBoxWidth: 750px;
+
 $IMP: rgba(255,0,0,1);
 $IMPB: 1px solid $IMP;
 
@@ -45,20 +47,20 @@ $h1-letter-spacing: 3px;
 $header-font-color: white;
 
 hr.style-eight {
-    padding: 0;
-    border: none;
-    border-top: medium double #333;
-    color: #333;
-    text-align: center;
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
 }
 hr.style-eight:after {
-    content: "§";
-    display: inline-block;
-    position: relative;
-    top: -0.8em;
-    font-size: 1.5em;
-    padding: 0 0.25em;
-    // background: $splashBoxBg;
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  // background: $splashBoxBg;
 }
 nav.top-bar {
   height: $navHeight;
@@ -92,7 +94,19 @@ nav.top-bar {
   }
 }
 
-#splashWrapper {
+.messages {
+  margin: 0 auto;
+  top: $navHeight + 10px;
+  position: relative;
+  & .alert-box {
+    border-radius: 3px;
+  }
+  &.welcome {
+    width: $splashBoxWidth;
+  }
+}
+
+.splashWrapper {
   // margin-top: -25px;
   // margin-bottom: -25px;
   background: url(image_path('carrotharvest-sm.jpg')) no-repeat center center fixed;
@@ -113,7 +127,7 @@ nav.top-bar {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 750px;
+  width: $splashBoxWidth;
   max-width: 90%;
 }
 
