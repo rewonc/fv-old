@@ -1,39 +1,32 @@
 <% content_for :title, "Eat from farms. Farmivore.com" %>
-<div id="bgimage">
-<div class="row">
-	<div class="small-10 large-6 columns" id="hero">
-		<h2 class="gentrified"><span>&nbsp;</span></h2>
-		<h1>Marketing for the modern farmer. </h1>
-	
-		<p class="notgentri"></p>
+<div id="splashWrapper">
 
-		
-	</div>
-</div>
+  <div class="splashBox">
+    <h1 class="callout">
+      MARKETING FOR THE MODERN FARMER.
+    </h1>
+    <p>Thanks for visiting Farmivore. <br/>If you were invited to join our pilot, we will be in touch. <br/ >If not, we want to hear from you! Sign up below to learn more.</p>
+      <hr class="style-eight"/>
+      <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
+          <p>
+            <%= f.text_field :name, placeholder: "Your name" %>
+          </p>
+          <p>
+            <%= f.text_field :email, placeholder: "Your email address" %>
+          </p>
+          <p>
+            <%= f.text_field :zip, placeholder: "Your zip code" %>
+          </p>
 
-<div class="row" id="emailform">	
-	<div class="small-10 large-6 columns">
-	<%= form_for :email, url: emails_path do |f| %>
-			  <p>
-			    <%= f.text_field :name, placeholder: "Your name" %>
-			  </p>
-			   <p>
-			    <%= f.text_field :email, placeholder: "Your email address" %>
-			  </p>
-			 <p>
-			    <%= f.text_field :zip, placeholder: "Your zip code" %>
-			  </p>
+            <%= link_to_submit(class: 'round submit-button') do %>
+              Submit
+            <% end %>
+        <% end %>
+  </div>
 
-			  <p>
-			   <%= link_to_submit(class: 'round button') do %>
-						Submit
-						<% end %>
-			  </p>
-	<% end %>
-	</div>
-</div>
-</div>
-
-<div class="row" id="copyright_message">
-<br /><br />&copy; Farmivore 2013. All rights reserved.
-</div>
+    <div class="row" id="emailform">
+      <div class="small-2 large-4 columns"></div>
+      <div class="small-8 large-4 small-centered large-centered columns">
+      </div>
+    </div>
+  </div>

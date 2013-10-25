@@ -1,6 +1,6 @@
 class TextsController < ApplicationController
-skip_before_filter :verify_authenticity_token	
-  def catch 
+skip_before_filter :verify_authenticity_token
+  def catch
 
     message_body = params["Body"]
     from_number = params["From"]
