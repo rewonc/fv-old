@@ -7,6 +7,7 @@ skip_before_filter :verify_authenticity_token
     @fromcity = params["FromCity"]
     @number = from_number
     SmsLogger.log_text_message(from_number, message_body)
+    render :layout => false
   end
 
   def index
