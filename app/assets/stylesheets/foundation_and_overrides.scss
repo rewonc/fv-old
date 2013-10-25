@@ -4,6 +4,9 @@
 
 $redAccent: rgb(243, 63, 0);
 $orangeAccent: rgb(249, 135, 0);
+
+$orangeSoft: rgb(253, 145, 15);
+$orangeSoft: lighten($orangeSoft, 15%);
 $tealSoft: rgb(162, 204, 187);
 $oldOrange: #e59400;
 
@@ -80,13 +83,13 @@ nav.top-bar {
 }
 .splashBox {
   margin-top: $navHeight + 25px;
-  padding: 15px;
+  padding: 100px;
   border-radius: 6px;
-  width: 75%;
   background: rgba(255,255,255,0.4);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  width: 750px;
 }
 
 .callout {
@@ -96,11 +99,26 @@ nav.top-bar {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 75%;
+  max-width: 750px;
   display: block;
   text-align: center;
+}
+
+.submit-button {
+  // TODO (syu): finish this!
+  background-color: rgba($orangeSoft, 0.6);
+  font-weight:600;
+  padding: 10px;
+  border-radius: 5px;
+  color: $darkGray1;
+  border: 1px solid $orangeAccent;
+  &:hover {
+    color: white;
+    background-color: $orangeAccent;
+  }
 
 }
+
 #hero{
 
   text-align: center;
