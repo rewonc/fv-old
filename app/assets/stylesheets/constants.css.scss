@@ -1,0 +1,27 @@
+$redAccent: rgb(243, 63, 0);
+$orangeAccent: rgb(249, 135, 0);
+
+$orangeSoft: rgb(253, 145, 15);
+$orangeSoft: lighten($orangeSoft, 15%);
+$tealSoft: rgb(162, 204, 187);
+$oldOrange: #e59400;
+
+$black1: rgb(22, 22, 22);
+$black2: rgb(11, 11, 11);
+$black3: rgb(0, 0, 0);
+$darkGray3: rgb(33, 33, 33);
+$darkGray2: rgb(44, 44, 44);
+$darkGray1: rgb(55, 55, 55);
+
+$lightGray3: rgb(133, 133, 133);
+$lightGray2: rgb(144, 144, 144);
+$lightGray1: rgb(155, 155, 155);
+
+$navBg: rgba($darkGray1, 0.6);
+$navHeight: 55px;
+
+$splashBoxBg: rgba(255,255,255,0.6);
+$splashBoxWidth: 750px;
+
+$IMP: rgba(255,0,0,1);
+$IMPB: 1px solid $IMP;
