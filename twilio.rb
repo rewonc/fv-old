@@ -7,9 +7,8 @@ auth_token = '97abaf7b5f45920a2f1d767401d54d3d'
 @client = Twilio::REST::Client.new account_sid, auth_token
  
 message = @client.account.messages.create(
-	:body => "This is a photo of a carrot",
-    :to => "+17754121514",
+	:body => "www.farmivore.com/texts.   lol",
+    :to => "+19018250094",
     :from => "+16474963276",
-    :media_url => "http://www.ikea.com/us/en/images/products/torva-soft-toy__0118209_PE273774_S4.JPG"
 )
 puts message.to + ' ' + message.status
