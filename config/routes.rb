@@ -12,13 +12,14 @@ Farmapp::Application.routes.draw do
   get "welcome/about"
   get "welcome/contact"
   get "welcome/admin"
+  get "welcome/index"
 
   post 'sms', to: 'texts#catch'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'mvp#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -28,6 +29,7 @@ Farmapp::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :contacts
   resources :places, :charges
 
   resources :farms do 
