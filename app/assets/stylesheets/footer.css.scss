@@ -1,6 +1,20 @@
 @import "constants";
 
-.footer {
+footer {
+	font-size:11px;
+	padding: 40px;
+	.threesplit{
+		padding-top:20px;
+		background-color: #F0F0F0;
+		ul{
+		color: #A0A0A0;
+		margin-bottom: 0px;
+		}
+	}
+
+}
+
+/*.footer {
   background: $black3;
   color: $lightGray1;
   font-size: 12px;
@@ -10,4 +24,4 @@
   text-align: center;
   height: 40px;
   padding-bottom: 10px;
-}
+}*/

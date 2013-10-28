@@ -1,0 +1,48 @@
+@import "foundation_and_overrides";
+@import "utils";
+@import "footer";
+
+//@media (max-width: 800px) {
+ // .blockgrid {
+  //  display: none;
+  //}
+//}
+
+a {
+	color: $orangeSoft;
+}
+p {
+font-family: "Georgia", "Times", "Times New Roman", serif;
+}
+
+.centered {
+	text-align: center;
+}
+
+.blockgrid{
+	background-color: $tealSoft;
+	img {
+		min-width:600px;
+	}
+}
+
+@media (max-width: 500px) {
+  .blockgrid img {
+    position:relative;
+    right:110px;
+  }
+}
+
+header {
+	img {
+	margin-top: 20px;
+	width:220px;
+	margin-bottom: 20px;
+	}
+}
+
+
+
+// Place all the styles related to the mvp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

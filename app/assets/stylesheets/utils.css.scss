@@ -1,12 +1,16 @@
+
 hr.style-eight {
   padding: 0;
   border: none;
-  border-top: medium double #333;
+  //rc: changed from 333 to ccc for the white background
+  border-top: medium double #ccc;
   color: #333;
   text-align: center;
 }
 hr.style-eight:after {
   content: "§";
+  //rc: added in this color below for the white background
+  color: #ccc;
   display: inline-block;
   position: relative;
   top: -0.8em;
