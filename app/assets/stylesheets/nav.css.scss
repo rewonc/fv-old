@@ -3,17 +3,24 @@
 nav.top-bar {
   height: $navHeight;
   background: $navBg;
-  border-bottom: 1px solid $black3;
+  border-bottom: 1px solid $white3;
   //position: absolute;  rc: porque?
   width: 100%;
-  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
   z-index: 100;
+  padding-top: 10px;
+
+  img {
+    height: $logoHeight;
+    width: auto;
+  }
 
   .nav-menu {
     float:right;
     display: inline-block;
-    font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 10pt;
+    //font-family: 'Open Sans',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 9pt;
     letter-spacing: 1px;
     font-weight:800;
     margin-top: 10px;
@@ -22,7 +29,7 @@ nav.top-bar {
     a {
       color: $tealSoft;
     }
-    a:hover{ color: white; }
+    a:hover{ color: $black1; }
   }
 }
 

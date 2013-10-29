@@ -1,8 +1,13 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "constants";
 
-.panel .textmsg {
+.panel.callout .textmsg {
 	color: $orangeSoft;
 	font-family: "Courier New", Courier, monospace;
+}
+
+.panel .centered em {
+	color: $lightGray1;
 }

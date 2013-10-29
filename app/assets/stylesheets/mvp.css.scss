@@ -1,6 +1,4 @@
-@import "foundation_and_overrides";
-@import "utils";
-@import "footer";
+@import "constants";
 
 //@media (max-width: 800px) {
  // .blockgrid {
@@ -13,10 +11,6 @@ a {
 }
 p {
 font-family: "Georgia", "Times", "Times New Roman", serif;
-}
-
-.centered {
-	text-align: center;
 }
 
 .blockgrid{

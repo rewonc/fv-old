@@ -17,9 +17,14 @@ $lightGray3: rgb(133, 133, 133);
 $lightGray2: rgb(144, 144, 144);
 $lightGray1: rgb(155, 155, 155);
 
+$white1: #A0A0A0;
+$white2: #D0D0D0;
+$white3: #F0F0F0;
+
 //$navBg: rgba($darkGray1, 0.6);   rc: making opaque
-$navBg: $darkGray1;
+$navBg: white;
 $navHeight: 55px;
+$logoHeight: 35px;
 
 $splashBoxBg: rgba(255,255,255,0.6);
 $splashBoxWidth: 750px;
