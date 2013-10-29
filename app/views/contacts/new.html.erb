@@ -1,30 +1,43 @@
 <div class="row">
-	<h2>Update your customers on the fly.</h2>
-	<p><strong>Just one step:</strong>    Send us a description (and/or photo) of your crop through email or text message.</p>
+	<div class="centered"><h2>Update your customers on the fly.</h2></div>
 </div>
 <div class="row">
-	<div class="large-6 columns">
-		<div class="panel radius">
-			<h6>A sample email from your smartphone</h6>
-			<%= image_tag('email_photo.jpg') %>
+	<div class="panel">
+		<div class="row">
+			<div class="large-12 columns"><h4>An easy one step process:</h4></div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<div class="panel callout">
+					<h6>Email from your smartphone</h6>
+					<%= image_tag('email_photo.jpg') %>
+				</div>
+			</div>
+			<div class="large-6 columns">
+				<div class="row">
+					<hr />
+					<div class="centered"><p><em> Or ... </em></p></div>
+					<hr /><br />
+				</div>
+				<div class="panel callout">
+					<h6>A short text message:</h6>
+					<p class="textmsg">Carrots, purple sweet variety. 20 lbs, 1.25 dollars. Wooster.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">	
+			<div class="large-12 columns"><p><strong>That's all!</strong>    Restauranteurs or farmer's market customers will be able to see and reserve your products before the market each week.</p></div>
 		</div>
 	</div>
-	<div class="large-6 columns">
-		<div class="panel radius">
-			<h6>A sample text message:</h6>
-			<p class="textmsg">Carrots, purple sweet variety. 20 lbs, 1.25 dollars. Wooster.</p>
-		</div>
-	</div>
-</div>
-<div class="row">	
-	<p><strong>That's all!</strong>    Restauranteurs or farmer's market customers will be able to see and reserve your products before the market each week.</p>
 </div>
 
 <div class="row">
-		<p><em>Fill out the form below, and we'll set up your account lickety-split!</em></p>
+	<div class="large-12 columns">
+			<p><em><strong>Fill out the form below,</strong> and we'll set up your account lickety-split!</em></p>
+	</div>
 </div>
 
-
+<div class="row">
 <%= form_for :contact, url: contacts_path, :html => { :multipart => true } do |f| %>
 	<fieldset>
 		<legend>30 second signup</legend>
@@ -87,3 +100,4 @@
 			    <%= f.submit 'Submit', :class => "button" %>
 	</fieldset>		  
 <% end %>
+</div>

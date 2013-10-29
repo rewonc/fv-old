@@ -1,6 +1,5 @@
 class MvpController < ApplicationController
 	def index
-		render :layout => false
 	end
 
 

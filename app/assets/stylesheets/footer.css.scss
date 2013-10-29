@@ -5,13 +5,15 @@ footer {
 	padding: 40px;
 	.threesplit{
 		padding-top:20px;
-		background-color: #F0F0F0;
+		background-color: $white3;
 		ul{
-		color: #A0A0A0;
+		color: $white1;
 		margin-bottom: 0px;
 		}
 	}
-
+	a{
+		color: $orangeSoft;
+	}
 }
 
 /*.footer {
