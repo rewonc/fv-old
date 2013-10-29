@@ -6,35 +6,31 @@
   //}
 //}
 
-a {
+
+.mvp {
+
+	a {
 	color: $orangeSoft;
-}
-p {
-font-family: "Georgia", "Times", "Times New Roman", serif;
-}
-
-.blockgrid{
-	background-color: $tealSoft;
-	img {
-		min-width:600px;
 	}
-}
-
-@media (max-width: 500px) {
-  .blockgrid img {
-    position:relative;
-    right:110px;
-  }
-}
-
-header {
-	img {
-	margin-top: 20px;
-	width:220px;
-	margin-bottom: 20px;
+	p {
+	font-family: "Georgia", "Times", "Times New Roman", serif;
 	}
-}
 
+	.blockgrid{
+		background-color: $tealSoft;
+		img {
+			min-width:600px;
+		}
+	}
+
+	@media (max-width: 500px) {
+	  .blockgrid img {
+	    position:relative;
+	    right:110px;
+	  }
+	}
+
+}
 
 
 // Place all the styles related to the mvp controller here.
