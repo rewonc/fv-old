@@ -17,7 +17,8 @@ $lightGray3: rgb(133, 133, 133);
 $lightGray2: rgb(144, 144, 144);
 $lightGray1: rgb(155, 155, 155);
 
-$navBg: rgba($darkGray1, 0.6);
+//$navBg: rgba($darkGray1, 0.6);   rc: making opaque
+$navBg: $darkGray1;
 $navHeight: 55px;
 
 $splashBoxBg: rgba(255,255,255,0.6);

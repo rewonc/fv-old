@@ -14,7 +14,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="LaYLwm2d995UlqRCnPcHJe4zHW76LqYYbw5NPY3hRfM" />
 
-  	<title><%= "Farmivore.com" %></title>
+  	<title><%= "Farmer Grown - Farmivore" %></title>
     <%= favicon_link_tag 'favicon.ico' %>
   	<%= stylesheet_link_tag    "mvp" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -22,6 +22,7 @@
   </head>
 
   <body>
+  <%= render 'layouts/messages' %>
   <div class="centered">
      <header>
        <div class="row">
