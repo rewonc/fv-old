@@ -9,9 +9,9 @@
 
 .mvp {
 
-	a {
-	color: $orangeSoft;
-	}
+	a {color: $orangeSoft; }
+	a:hover{ color: $tealSoft; }
+
 	p {
 	font-family: "Georgia", "Times", "Times New Roman", serif;
 	}
@@ -21,6 +21,11 @@
 		img {
 			min-width:600px;
 		}
+	}
+
+	h1 {
+		letter-spacing: 0.5px;
+		color: black;
 	}
 
 	@media (max-width: 500px) {
