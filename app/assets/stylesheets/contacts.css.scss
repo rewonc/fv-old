@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "constants";
 
-.panel.callout .textmsg {
-	color: $orangeSoft;
+.panel.callout.textmsg p {
+	color: $orangeAccent;
 	font-family: "Courier New", Courier, monospace;
 }
 
