@@ -2,10 +2,28 @@
 
 footer {
 	font-size:11px;
-	padding: 40px;
+	padding: 0px;
+	.threesplit{
+		padding:30px;
+		background-color: $white3;
+		ul{
+		color: $white1;
+		margin-bottom: 0px;
+		}
+
+	a{color: $orangeSoft; }
+	a:hover{ color: $tealSoft; }
+
+	}
+
+}
+
+/*footer {
+	font-size:11px;
+	padding: 0px;
 	.threesplit{
 		padding-top:20px;
-		background-color: $white3;
+		background-color: $natural1;
 		ul{
 		color: $white1;
 		margin-bottom: 0px;
@@ -14,7 +32,7 @@ footer {
 	a{
 		color: $orangeSoft;
 	}
-}
+}*/
 
 /*.footer {
   background: $black3;
