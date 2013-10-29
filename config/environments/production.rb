@@ -88,6 +88,6 @@ config.paperclip_defaults = {
 }
 
     config.assets.precompile += [
-      'stylesheets/mvp'
+      'mvp.css'
     ]
 end
