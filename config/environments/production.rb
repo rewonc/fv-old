@@ -86,8 +86,8 @@ config.paperclip_defaults = {
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-
-    config.assets.precompile += [
-      'mvp.css','contacts.css','places.css'
-    ]
+    # include in application.css, so skip over this
+   # config.assets.precompile += [
+   #   'mvp.css','contacts.css','places.css'
+   # ]
 end

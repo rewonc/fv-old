@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "constants";
 
-.panel.callout.textmsg p {
-	color: $orangeSoft;
-	font-family: "Courier New", Courier, monospace;
-}
+.contacts{
+	.panel.callout.textmsg p {
+		color: $orangeSoft;
+		font-family: "Courier New", Courier, monospace;
+	}
 
-.panel .centered em {
-	color: $lightGray1;
+	.panel .centered em {
+		color: $lightGray1;
+	}
 }
