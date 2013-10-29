@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 		  redirect_to root_path 
 		else
 			flash[:error] = 'Oops, looks like you left a field blank. Please try again.'
-		  redirect_to new_contact_path 
+		 	render action: 'new'
 		end		
 	end
 
