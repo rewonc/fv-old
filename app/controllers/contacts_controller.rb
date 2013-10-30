@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+	http_basic_authenticate_with name: "orange1", password: "orangutan", only: [:index]
+
 	def new
 	end
 
@@ -11,6 +13,10 @@ class ContactsController < ApplicationController
 			flash[:error] = 'Oops, looks like you left a field blank. Please try again.'
 		 	render action: 'new'
 		end		
+	end
+
+	def index
+		@contacts = Contact.all
 	end
 
 private 

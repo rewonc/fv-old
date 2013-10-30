@@ -1,0 +1,25 @@
+<h1>List of our contacts</h1>
+ 
+<table>
+  <tr>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>email</th>
+    <th>phone</th>
+    <th>farm name</th>
+    <th>markets you serve</th>
+    <th>what your farm produces</th>
+  </tr>
+ 
+  <% @contacts.each do |c| %>
+    <tr>
+      <td><%= c.firstname %></td>
+      <td><%= c.lastname %></td>
+      <td><%= c.email %></td>
+      <td><%= c.phone %></td>
+      <td><%= c.farmname %></td>
+      <td><%= c.markets %></td>
+      <td><%= c.produce %></td>
+    </tr>
+  <% end %>
+</table>
