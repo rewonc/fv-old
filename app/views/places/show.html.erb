@@ -1,18 +1,55 @@
-<p>
-  <strong>Title:</strong>
-  <%= @place.title %>
-</p>
- 
-<p>
-  <strong>State:</strong>
-  <%= @place.state %>
-</p>
+<div class="row">
+	<div class="large-12 columns">
+		<h1><%= 'Wooster Square Farmers Market' %></h1>
+	</div>
+</div>
 
-<h2>List of products you can buy here</h2>
- <%= render partial: "shared/products_table", locals: {products: @products}  %>
 
-<h2>Farms in this location:</h2>
-<%= render partial: "shared/farms_table", locals: {farms: @farms} %>
+<div class="thisweek">
+	<div class="row">
+		 	<div class="large-12 columns">
+				<h2><%= @week[:day] %>, <%= @week[:date] %></h2>
+			</div>
+	</div>
+	
+	<div class="centered">
+		<div class="row">
+			 	<div class="large-12 columns">
+					<br /><br /><br /><br />
+					<p><em>Listings will be made available on Friday, November 1</em></p>
+					<p><%= link_to "Subscribe", new_user_registration_path %> to be notified when listings are available.
+					<br /><br /><br /><br />
 
-<h2>List of spots where you can pick up stuff up here</h2>
-<%= render partial: "shared/pickups_table", locals: {pickups: @pickups} %>
+				</div>
+		</div>
+	</div>
+
+
+</div>
+
+<div class="row">
+<div class="panel">
+		<div class="lastweek">
+			<form class="custom">
+				<div class="row">
+				 	<div class="large-12 columns">
+						<h2>Last week (<%= @lastweek[:date] %>):</h2>
+					</div>
+				</div>
+				
+				<% @lastweek[:farms].each do |farm| %>
+					<%= render partial: "shared/farms_products_table", locals: {farm: farm, week: @lastweek, market: @place} %> 
+				<% end %>
+
+				<div class="row">
+				 	<div class="large-12 columns">
+						<!-- If enabled, enable this: <input type="submit" class="button" value="Reserve now"></input>  -->
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<% #render partial: "shared/pickups_table", locals: {pickups: @pickups} %>

@@ -15,4 +15,5 @@ class Farm < ActiveRecord::Base
 	validates :description, presence: true
 	validates_length_of :description, maximum: 160
 
+
 end
