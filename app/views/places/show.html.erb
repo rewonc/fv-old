@@ -29,24 +29,41 @@
 
 <div class="row">
 <div class="panel">
+	<h3>Last week: October 26</h3>
 		<div class="lastweek">
-			<form class="custom">
-				<div class="row">
-				 	<div class="large-12 columns">
-						<h2>Last week (<%= @lastweek[:date] %>):</h2>
-					</div>
-				</div>
-				
-				<% @lastweek[:farms].each do |farm| %>
-					<%= render partial: "shared/farms_products_table", locals: {farm: farm, week: @lastweek, market: @place} %> 
-				<% end %>
+			<table class="sortable">
+			    <tr>
+			        <th>Item</th>
+			        <th>Description</th>
+			        <th>Season</th>
+			        <th>Price</th>
+			        <th>Farm</th>
+			        <th>Farmer</th>
+			        <th>Reviews</th>
+			    </tr>
 
-				<div class="row">
-				 	<div class="large-12 columns">
-						<!-- If enabled, enable this: <input type="submit" class="button" value="Reserve now"></input>  -->
-					</div>
-				</div>
-			</form>
+			    <tr>
+			        <td>Kale</td>
+			        <td>Tuscan Lacinato variety. Turns sweet after the first frost. Super nutritious. </td>
+			        <td>Until Dec 15th</td>
+			        <td>$2/bunch</td>
+			        <td>Green Acre Organics</td>
+			        <td>John Wilson</td>
+			        <td><em>Write the first</em></td>
+			    </tr>
+			    <tr>
+			        <td>JJJ</td>
+			        <td>55544444</td>
+			        <td>London</td>
+			        <td>MMM</td>
+			    </tr>
+			    <tr>
+			        <td>AAA</td>
+			        <td>33332222</td>
+			        <td>Paris</td>
+			        <td>RRR</td>
+			    </tr>
+			</table>
 		</div>
 	</div>
 </div>
