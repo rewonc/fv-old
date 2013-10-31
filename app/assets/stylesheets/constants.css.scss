@@ -1,6 +1,8 @@
 $redAccent: rgb(243, 63, 0);
 $orangeAccent: rgb(249, 135, 0);
 
+$orangeSoftComplement: #0F7AFC;
+$blueSoft: lighten($orangeSoftComplement, 30%);
 $orangeSoft: rgb(253, 145, 15);
 $orangeSoft: lighten($orangeSoft, 15%);
 $tealSoft: rgb(162, 204, 187);
