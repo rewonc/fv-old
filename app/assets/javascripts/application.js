@@ -14,6 +14,56 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require sortelements
 //= require_tree .
 
 $(document).foundation();
+
+$(function() {
+	
+	$( ".sortable" ).find('th')
+
+	.wrapInner('<span title="sort this column"/>')
+
+	.each(function(){
+		var th = $(this),
+      	thIndex = th.index(),
+        inverse = false,
+        table = th.closest('table');
+
+		th.click(function(){
+            table.find('td').filter(function(){
+                return $(this).index() === thIndex;
+            }).sortElements(function(a, b){
+                
+                return $.text([a]) > $.text([b]) ?
+                    inverse ? -1 : 1
+                    : inverse ? 1 : -1;
+                
+            }, function(){
+               
+                // parentNode is the element we want to move
+                return this.parentNode; 
+                
+            });
+            
+            inverse = !inverse;
+                
+        });                
+	});
+});
+
+$("#search-lastweek").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+
+    $(".sortable").find("tr").each(function (index) {
+        if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = (id.indexOf(value) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+
