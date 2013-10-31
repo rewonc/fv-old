@@ -23,56 +23,106 @@
 				</div>
 		</div>
 	</div>
-
-
 </div>
 
-
-<div class="panel">
-	<div class="row">
-		<div class="small-8 large-10 columns"><h3>Last week: October 26</h3></div>
-		<div class="small-4 large-2 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
-	</div>
-	
-	<div class="row">
-		<div class="lastweek">
-			<table class="sortable">
-			    <tr>
-			        <th>Item</th>
-			        <th>Description</th>
-			        <th>Season</th>
-			        <th>Price</th>
-			        <th>Farm</th>
-			        <th>Farmer</th>
-			        <th>Reviews</th>
-			    </tr>
-
-			    <tr>
-			        <td>Kale</td>
-			        <td>Tuscan Lacinato variety. Turns sweet after the first frost. Super nutritious. </td>
-			        <td>Until Dec 15th</td>
-			        <td>$2/bunch</td>
-			        <td>Green Acre Organics</td>
-			        <td>John Wilson</td>
-			        <td><em>Write the first</em></td>
-			    </tr>
-			    <tr>
-			        <td>JJJ</td>
-			        <td>55544444</td>
-			        <td>London</td>
-			        <td>MMM</td>
-			    </tr>
-			    <tr>
-			        <td>AAA</td>
-			        <td>33332222</td>
-			        <td>Paris</td>
-			        <td>RRR</td>
-			    </tr>
-			</table>
+<div class="row">
+	<div class="panel">
+		<div class="row">
+			<div class="small-8 large-10 columns"><h3>Last week: October 26</h3></div>
+			<div class="small-4 large-2 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
 		</div>
+		
+		<div class="row">
+			<div class="lastweek">
+				<table class="sortable">
+				    <tr>
+				        <th>Item</th>
+				        <th>Description</th>
+				        <th>Season</th>
+				        <th>Price</th>
+				        <th>Farm</th>
+				        <th>Farmer</th>
+				        <th>Reviews</th>
+				    </tr>
+
+				    <tr>
+				        <td>Kale</td>
+				        <td>Tuscan Lacinato variety. Turns sweet after the first frost. Super nutritious. </td>
+				        <td>Until Dec 15th</td>
+				        <td>$2/bunch</td>
+				        <td>Green Acre Organics</td>
+				        <td>John Wilson</td>
+				        <td><em>Write the first</em></td>
+				    </tr>
+				    <tr>
+				        <td>Kale</td>
+				        <td>Blue curled. Turns sweet after the first frost. Super nutritious. </td>
+				        <td>Until Dec 15th</td>
+				        <td>$2/bunch</td>
+				        <td>Green Acre Organics</td>
+				        <td>John Wilson</td>
+				        <td><em>Write the first</em></td>
+				    </tr>
+				    <tr>
+				        <td>Salad mix</td>
+				        <td>Tatsoi, arugula, mizuna, and other mixed baby greens </td>
+				        <td>Until Nov 7th</td>
+				        <td>$7/lb</td>
+				        <td>Green Acre Organics</td>
+				        <td>John Wilson</td>
+				        <td><em>Write the first</em></td>
+				    </tr>
+				    <tr>
+				    	<td>Salad mix</td>
+				        <td>Buttercrunch and red lettuces + asian greens--crunchy and nutritious</td>
+				        <td>Until Nov 14th</td>
+				        <td>$7/lb</td>
+				        <td>Sunshine Hill</td>
+				        <td>Bill Hammond</td>
+				        <td><em>Write the first</em></td>
+		       		</tr>
+		       		<tr>
+				    	<td>Salad mix</td>
+				        <td>Microgreen mix: baby spinach, baby arugula, baby beet greens--flavorful and intense!</td>
+				        <td>Until Nov 14th</td>
+				        <td>$9/lb</td>
+				        <td>Sunshine Hill</td>
+				        <td>Bill Hammond</td>
+				        <td><em>Write the first</em></td>
+		       		</tr>
+		       		<tr>
+				    	<td>Apples</td>
+				        <td>McIntosh -- great all purpose apple</td>
+				        <td>Year-round</td>
+				        <td>$1.50/lb</td>
+				        <td>Bunker Hill Orchards</td>
+				        <td>Colton's Corner</td>
+				        <td><em>Write the first</em></td>
+		       		</tr>
+		       		<tr>
+				    	<td>Apples</td>
+				        <td>Mutsu Crispin -- crispy texture, tart flavor. Best-seller.</td>
+				        <td>Year-round</td>
+				        <td>$2/lb</td>
+				        <td>Bunker Hill Orchards</td>
+				        <td>Colton's Corner</td>
+				        <td><em>Write the first</em></td>
+		       		</tr>
+
+		       		<tr>
+				    	<td>Apples</td>
+				        <td>Golden Delicious -- softer and less tart than the Crispin, good all-purpose</td>
+				        <td>Year-round</td>
+				        <td>$1.50/lb</td>
+				        <td>Bunker Hill Orchards</td>
+				        <td>Colton's Corner</td>
+				        <td><em>Write the first</em></td>
+		       		</tr>
+				</table>
+			</div>
+		</div>
+
 	</div>
-
 </div>
-
 
 <% #render partial: "shared/pickups_table", locals: {pickups: @pickups} %>
