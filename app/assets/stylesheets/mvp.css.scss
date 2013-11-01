@@ -11,11 +11,16 @@
 
 	.centered{
 		background-color: $greenMute;
-
 	}
 
 	.landing{
 		background-color: white;
+		h3{
+			margin-top:40px;
+		}
+		a{
+			font-size: 120%;
+		}
 	}
 
 	.farmer{
@@ -23,28 +28,23 @@
 	}
 
 	a {color: $orangeAccent; }
-	a:hover{ color: $greenSoft; }
+	a:hover{ color: $black3; }
 
 	p {
 	font-family: "Georgia", "Times", "Times New Roman", serif;
 	}
 
 	.blockgrid{
-		background-color: $greenSoft;
+		background-color: white;
 		img {
 			min-width:600px;
 		}
 	}
 
-	h1 {
-		letter-spacing: 0.5px;
-		color: black;
-	}
-
 	@media (max-width: 500px) {
 	  .blockgrid img {
 	    position:relative;
-	    right:110px;
+	    right:50px;
 	  }
 	}
 
