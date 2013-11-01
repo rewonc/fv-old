@@ -9,6 +9,19 @@
 
 .mvp {
 
+	.centered{
+		background-color: $greenMute;
+
+	}
+
+	.landing{
+		background-color: white;
+	}
+
+	.farmer{
+		padding:40px;
+	}
+
 	a {color: $orangeAccent; }
 	a:hover{ color: $greenSoft; }
 

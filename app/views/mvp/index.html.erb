@@ -1,27 +1,28 @@
 
   <div class="centered">
-     <header>
-       <div class="row">
-          <div class="large 12 columns"></div>
-       </div>
-     </header>
-    <div class="blockgrid">
-      <%= image_tag('lettuce-iphone.jpg') %>
-    </div>
-     <div class="row">
+    
+      <div class="landing"> 
+        <div class="blockgrid">
+          <%= image_tag('lettuce-iphone.jpg') %>
+        </div>
+         
+        <div class="row">
           <div class="large 12 columns"><h1>See today's fresh harvest.</h1></div>
-     </div>
-       <div class="row">
-          <div class="large 12 columns"><p>Listings straight from the farmer.</p><p><em>Now testing: <%= link_to 'Wooster Square, New Haven', place_path(1)  %></em></p></div>
-     </div>
+        </div>
 
-           <hr class="style-eight"/>
+        <div class="row">
+          <div class="large 12 columns"><p>Listings straight from the farmer.</p>       <p><em>Now testing: <%= link_to 'Wooster Square, New Haven', place_path(1)  %></em></p></div>
+        </div>
 
-
-      <div class="row">
-          <div class="large 12 columns"><br><p><strong>For farmers:</strong> <br />List your products using just your phone. <%= link_to 'Learn more', new_contact_path %></p><br /><br /></div>
+     
+        <div class="row"> <!-- <hr class="style-eight"/> --><br /><br /></div>
      </div>
 
+     <div class="farmer">
+        <div class="row">
+              <div class="large 12 columns"><h4>New tools for the modern farmer</h4> <p>List your products using just your phone. <%= link_to 'Learn more', new_contact_path %></p></div>
+         </div>
+     </div>
 
   </div>
 
