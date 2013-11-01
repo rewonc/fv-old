@@ -19,17 +19,24 @@
 
 $(document).foundation();
 
+//sorting functions...
 $(function() {
 	
 	$( ".sortable" ).find('th')
 
-	.wrapInner('<span title="sort this column"/>')
+	.append("<span class='sortarrows'>&uarr;&darr;</div>")
+    .hover(function(){
+        $(this).addClass('highlightSearch');
+    }, function(){
+        $(this).removeClass('highlightSearch');
+    })
 
 	.each(function(){
 		var th = $(this),
       	thIndex = th.index(),
         inverse = false,
         table = th.closest('table');
+
 
 		th.click(function(){
             table.find('td').filter(function(){

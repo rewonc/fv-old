@@ -14,6 +14,8 @@ Farmapp::Application.routes.draw do
   get "welcome/admin"
   get "welcome/index"
 
+  get 'wooster', to: 'places#show', id: 1
+
   post 'sms', to: 'texts#catch'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

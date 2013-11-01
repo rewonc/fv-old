@@ -2,13 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'constants';
+
+.highlightSearch{
+	color:white;
+}
 
 .places{
 	a{
 		color: $orangeAccent;
 	}
 
+	th{
+		background-color: $greenSoft;
+	}
+
 	.thisweek{
 		margin-bottom: 20px;
+	}
+
+	.sortarrows{
+		font-size:11px;
+		margin-left:5px;
 	}
 }
