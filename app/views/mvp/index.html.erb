@@ -2,28 +2,30 @@
   <div class="centered">
     
       <div class="landing"> 
+        
         <div class="blockgrid">
-          <%= image_tag('lettuce-iphone.jpg') %>
+          <%= image_tag('ray_texter.jpg') %>
         </div>
          
         <div class="row">
-          <div class="large 12 columns"><h1>See today's fresh harvest.</h1></div>
+          <div class="large 12 columns"><h3>List your products using just your phone. </h3></div>
         </div>
-
+        
         <div class="row">
-          <div class="large 12 columns"><p>Listings straight from the farmer.</p>       <p><em>Now testing: <%= link_to 'Wooster Square, New Haven', place_path(1)  %></em></p></div>
+            <div class="large 12 columns"><p><em><%= link_to 'Learn more', new_contact_path %></em></p><br /><br /></div>
         </div>
-
      
-        <div class="row"> <!-- <hr class="style-eight"/> --><br /><br /></div>
-     </div>
+      </div>
 
-     <div class="farmer">
+      <div class="farmer">
         <div class="row">
-              <div class="large 12 columns"><h4>New tools for the modern farmer</h4> <p>List your products using just your phone. <%= link_to 'Learn more', new_contact_path %></p></div>
-         </div>
-     </div>
+              <div class="large 12 columns"><h4>Do you shop at farmers markets?</h4> 
+        </div>
+        <div class="row">
+          <div class="large 12 columns"><p>See listings straight from the farmer.</p>       <p><em>Now serving <%= link_to 'Wooster Square, New Haven', place_path(1)  %></em></p></div>
+      </div>
 
+    </div>
   </div>
 
   
