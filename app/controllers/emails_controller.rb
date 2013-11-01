@@ -5,11 +5,11 @@ class EmailsController < ApplicationController
 	def create
 	  @email = Email.new(email_params)
 	  	if @email.save
-		  flash[:notice] = 'Thanks for your input. We will contact you shortly.'
-		  redirect_to root_path 
+		  flash[:notice] = 'Thanks! We will email you when we have results for next week.'
+		  redirect_to :back 
 		else
-			flash[:error] = 'Sorry, your data was invalid. Please try again. '
-		  redirect_to root_path 
+			flash[:error] = 'Sorry, there was an error with your email. Please try again.'
+		  redirect_to :back 
 		end		
 	end
 

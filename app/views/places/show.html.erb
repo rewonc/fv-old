@@ -8,7 +8,7 @@
 <div class="thisweek">
 	<div class="row">
 		 	<div class="large-12 columns">
-				<h2>Saturday, November 2</h2>
+				<h2>Saturday, November 9</h2>
 			</div>
 	</div>
 	
@@ -16,19 +16,38 @@
 		<div class="row">
 			 	<div class="large-12 columns">
 					<br /><br /><br /><br />
-					<p><em>Listings will be made available on Friday, November 1</em></p>
-					<p><%= link_to "Subscribe", new_user_registration_path %> to be notified when listings are available.
-					<br /><br /><br /><br />
-
+					<p><em>Listings will be made available on Friday, November 8</em>
+						
+					</p>
 				</div>
 		</div>
+		<div class="row">
+			<div class="large-4 small-2 columns">&nbsp;</div>	
+			<div class="large-4 small-8 columns centered">
+				 <div class="row collapse">
+					 <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
+				        <div class="small-9 columns">
+				          <%= f.text_field :email, placeholder: "Your email address" %>
+				        </div>
+				        <div class="small-3 columns">
+				           <%= link_to_submit(class: 'button alert prefix') do %>
+				              Submit
+				    		 <% end %>
+				        </div><br />
+				        Want a reminder? (we won't spam you!)
+				     <% end %>
+			     </div>
+			</div>
+			<div class="large-4 small-2 columns">&nbsp;</div>	
+		</div>
 	</div>
+
 </div>
 
 
 	<div class="panel">
 		<div class="row">
-			<div class="small-8 large-10 columns"><h3>Last week: October 26</h3></div>
+			<div class="small-8 large-10 columns"><h3>Last week: November 2</h3></div>
 			<div class="small-4 large-2 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
 		</div>
 		
