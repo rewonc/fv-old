@@ -3,10 +3,22 @@ $orangeAccent: rgb(249, 135, 0);
 
 $orangeSoftComplement: #0F7AFC;
 $blueSoft: lighten($orangeSoftComplement, 30%);
+$blueAccent: $orangeSoftComplement;
 $orangeSoft: rgb(253, 145, 15);
 $orangeSoft: lighten($orangeSoft, 15%);
 $tealSoft: rgb(162, 204, 187);
 $oldOrange: #e59400;
+
+//triadic colors
+$trigreen: #0ffc91;
+$tripurple: #910ffc;
+$greenAccent: darken($trigreen, 10%);
+$greenFade: desaturate($trigreen, 40%);
+$greenSoft: lighten($greenFade, 30%);
+$purpleSoft: lighten($tripurple, 30%);
+
+
+//
 
 $black1: rgb(22, 22, 22);
 $black2: rgb(11, 11, 11);
