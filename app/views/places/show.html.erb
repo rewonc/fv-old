@@ -1,14 +1,95 @@
+<% 
+
+	#-----------------------------------------DATA MODEL-----------------------------------------------#
+	title = "Wooster Square Farmers Market"
+	time = "Saturdays from 9am-1pm"
+	address = "Russo Park, corner of Chapel Street and DePalma Court"
+	city = "New Haven"
+	state = "CT"
+	thisweek = "November 9, 2013"
+	available_on = "Friday, November 8"
+	lastweek = "November 2, 2013"
+
+
+	#a = Array of product results
+	#a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, list until date. 
+	a = Array.new
+	a << ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "Macoun Apples", "Apples","Fruits", "$2.50/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "Northern Spy Apples (for cooking)", "Apples","Fruits", "$2/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "Empire Apples", "Apples","Fruits", "$2/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "Red Delicious Apples", "Apples","Fruits", "$2/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "MacIntosh Apples", "Apples","Fruits", "$2/lb","Thanksgiving"]
+	a << ["Colton's Corner", "Jim", "Second pickings", "Apples","Fruits", "$1.50/lb","Thanksgiving"]
+	##didn't add in Barberry Hill -- need to ask Kelly first
+	a << ["Starlight Gardens", "David", "Arugula", "Greens","Vegetables", "$1/oz",""]
+	a << ["Starlight Gardens", "David", "Salad greens", "Greens","Vegetables", "$1/oz",""]
+	a << ["Starlight Gardens", "David", "Napoli greens", "Greens","Vegetables", "$5/bunch",""]
+	a << ["Starlight Gardens", "David", "Sweet peppers", "Peppers","Vegetables", "$5/lb",""]
+	a << ["Starlight Gardens", "David", "Winterbor 'Big Papi' Kale", "Greens","Vegetables", "$3/bunch",""]
+	a << ["Starlight Gardens", "David", "Daikon", "Root vegetables","Vegetables", "$2/lb",""]
+	a << ["Starlight Gardens", "David", "Hakeuri turnips", "Root vegetables","Vegetables", "$3.50/bunch",""]
+	a << ["Starlight Gardens", "David", "Mustard greens", "Greens","Vegetables", "$1/oz",""]
+	a << ["Starlight Gardens", "David", "Mizuna", "Greens","Vegetables", "$1/oz",""]
+	a << ["Starlight Gardens", "David", "Tyee spinach", "Greens","Vegetables", "$1/oz",""]
+	a << ["Starlight Gardens", "David", "Mesclun Greens", "Greens","Vegetables", "$6/bag",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Maple Syrup - Quart", "Maple Syrup","Products", "$23",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Maple Syrup - Pint", "Maple Syrup","Products", "$13",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Maple Syrup - Half-pint", "Maple Syrup","Products", "$7",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Honey bear", "Honey","Products", "$8",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "5 lb honey bucket", "Honey","Products", "$34",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Peanut Brittle", "Candy","Products", "$7",""]
+	a << ["Sugar Maple Farms", "Jim & Chuck", "Horseradish", "Sauces","Products", "$5",""]
+	a << ["Blue Slope", "Matt", "Veal Bacon", "Veal","Meat", "$17/lb",""]
+	a << ["Blue Slope", "Matt", "Beef Bacon", "Beef","Meat", "$12/lb",""]
+	a << ["Blue Slope", "Matt", "Kielbasa", "Sausage","Meat", "$17/lb",""]
+	a << ["Blue Slope", "Matt", "Ornamental Corn - large bunch", "Corn","Vegetables", "$4/lg, $2.75/small bunch",""]
+	a << ["Blue Slope", "Matt", "Maple Syrup - Quart", "Maple Syrup","Products", "$24",""]
+	a << ["Blue Slope", "Matt", "Maple Syrup - Pint", "Maple Syrup","Products", "$13",""]
+	##To do:  add in the rest of te veal, beef, and goat cuts
+	##To do: add in Beltane farms -- add to Cheese/Yogurt/Milk for Dairy section -- but also ask for permission
+	a << ["Waldingfield Farm", "Patrick", "No Spray Apples", "Apples","Fruits", "$3/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Winter Squash", "Squash","Vegetables", "$2/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Fingerling Potatoes", "Potatoes","Vegetables", "$4.50/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Beets", "Beets","Vegetables", "$3/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Sun Gold Tomato Jam", "Jams","Products", "$6/jar",""]
+	a << ["Waldingfield Farm", "Patrick", "Heirloom Tomato Chutney", "Sauces","Products", "$6/jar",""]
+	a << ["Waldingfield Farm", "Patrick", "The Farmer's Maple Syrup", "Maple Syrup","Products", "$12/bottle",""]
+	a << ["Waldingfield Farm", "Patrick", "Kale bunches", "Greens","Vegetables", "$6/ 3 bunches",""]
+	a << ["Waldingfield Farm", "Patrick", "Swiss Chard", "Greens","Vegetables", "$3/bunch",""]
+	a << ["Waldingfield Farm", "Patrick", "Baby Bok Choy", "Greens","Vegetables", "$3/bunch",""]
+	a << ["Waldingfield Farm", "Patrick", "Broccoli", "Broccoli","Vegetables", "$4/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Mustard Greens", "Greens","Vegetables", "$3.5/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Amazin' Asian Salad Mix", "Greens","Vegetables", "$3.5/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "'Killa' argula", "Greens","Vegetables", "$3.25/lb",""]
+	a << ["Waldingfield Farm", "Patrick", "Crushed Heirloom Tomatoes", "Sauces","Products", "$8/jar",""]
+	a << ["Waldingfield Farm", "Patrick", "The Farmer's Heirloom Tomato and Basil Sauce", "Sauces","Products", "$6/jar",""]
+	a << ["Waldingfield Farm", "Patrick", "The Farmer's Bloody Mary Mix", "Sauces","Products", "$10/jar",""]
+
+	##to do: add stone gardens, truelove, northfordy, 
+
+
+
+	
+
+
+%>
+
+
+
+
 <div class="row">
 	<div class="large-12 columns">
-		<h1><%= 'Wooster Square Farmers Market' %></h1>
+		<h1><%= title %></h1>
 	</div>
 </div>
 
+<!-- ###############################this week #########################################################  -->
 
 <div class="thisweek">
 	<div class="row">
 		 	<div class="large-12 columns">
-				<h2>Saturday, November 9</h2>
+				<h2>This week: <%= thisweek %></h2>
 			</div>
 	</div>
 	
@@ -16,7 +97,7 @@
 		<div class="row">
 			 	<div class="large-12 columns">
 					<br /><br /><br /><br />
-					<p><em>Listings will be made available on Friday, November 8</em>
+					<p><em>Listings will be made available on <%= available_on %></em>
 						
 					</p>
 				</div>
@@ -43,28 +124,62 @@
 	</div>
 
 </div>
+<!-- ####################################last week##################################################  -->
+
+<div class="lastweek">
+	<div class="row"><div class="large-12 columns">
+		<div class="panel">
+			<div class="row">
+				<div class="small-8 large-9 columns"><h3>Last week: <%= lastweek %></h3></div>
+				<div class="small-4 large-3 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
+			</div>
+			<!-- ########################### old sorting method ################################## -->
+			
+			<div class="row">
+				<span class="filters"><div class="small-3 large-2 columns"><p>Filters:</p></div></span>
+				<div class="small-9 large-10 columns"><p>Vegetables - Fruit - Dairy - Meat - Products</p></div>
+			</div>
+
+			<div class="row">
+				<div class="small-12 large-12 columns">
+
+						
+						<table class="sortable">
+						    <tr>
+						        <th>Type</th>
+						        <th>Description</th>
+						        <th>Price</th>
+						        <th>Farmer</th>
+						        <th>Farm</th>
+						    </tr>
+						    
+							<% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, list until date. %>
+
+							<% a.each do |b| %>
+								<tr>
+									<td><%= b[3] %></td>
+									<td><%= b[2] %></td>
+									<td><%= b[5] %></td>
+									<td><%= b[1] %></td>
+									<td><%= b[0] %></td>
+								</tr>
+							<% end %>
 
 
-	<div class="panel">
-		<div class="row">
-			<div class="small-8 large-10 columns"><h3>Last week: November 2</h3></div>
-			<div class="small-4 large-2 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
+
+						</table>
+					
+
+				</div>
+			</div>
 		</div>
-		
-		<div class="row">
-			<div class="lastweek">
-				<table class="sortable">
-				    <tr>
-				        <th>Item</th>
-				        <th>Description</th>
-				        <th>Season</th>
-				        <th>Price</th>
-				        <th>Farm</th>
-				        <th>Farmer</th>
-				        <th>Time since harvest</th>
-				    </tr>
+	</div></div>
 
-				    <tr>
+</div>
+
+<% #render partial: "shared/pickups_table", locals: {pickups: @pickups} %>
+<!-- 
+<tr>
 				        <td>Kale</td>
 				        <td>Tuscan Lacinato variety. Turns sweet after the first frost. Super nutritious. </td>
 				        <td>Until Dec 15th</td>
@@ -93,7 +208,7 @@
 				    </tr>
 				    <tr>
 				    	<td>Salad mix</td>
-				        <td>Buttercrunch and red lettuces + asian greens--crunchy and nutritious</td>
+				        <td>Buttercrunch and red lettuces + asian greens crunchy and nutritious</td>
 				        <td>Until Nov 14th</td>
 				        <td>$7/lb</td>
 				        <td>Sunshine Hill</td>
@@ -102,7 +217,7 @@
 		       		</tr>
 		       		<tr>
 				    	<td>Salad mix</td>
-				        <td>Microgreen mix: baby spinach, baby arugula, baby beet greens--flavorful and intense!</td>
+				        <td>Microgreen mix: baby spinach, baby arugula, baby beet greensflavorful and intense!</td>
 				        <td>Until Nov 14th</td>
 				        <td>$9/lb</td>
 				        <td>Sunshine Hill</td>
@@ -111,7 +226,7 @@
 		       		</tr>
 		       		<tr>
 				    	<td>Apples</td>
-				        <td>McIntosh -- great all purpose apple</td>
+				        <td>McIntosh  great all purpose apple</td>
 				        <td>Year-round</td>
 				        <td>$1.50/lb</td>
 				        <td>Bunker Hill Orchards</td>
@@ -120,7 +235,7 @@
 		       		</tr>
 		       		<tr>
 				    	<td>Apples</td>
-				        <td>Mutsu Crispin -- crispy texture, tart flavor. Best-seller.</td>
+				        <td>Mutsu Crispin  crispy texture, tart flavor. Best-seller.</td>
 				        <td>Year-round</td>
 				        <td>$2/lb</td>
 				        <td>Bunker Hill Orchards</td>
@@ -130,21 +245,13 @@
 
 		       		<tr>
 				    	<td>Apples</td>
-				        <td>Golden Delicious -- softer and less tart than the Crispin, good all-purpose</td>
+				        <td>Golden Delicious  softer and less tart than the Crispin, good all-purpose</td>
 				        <td>Year-round</td>
 				        <td>$1.50/lb</td>
 				        <td>Bunker Hill Orchards</td>
 				        <td>Colton's Corner</td>
 				        <td><span class="fresh"> < 24 hours  </span></td>
 		       		</tr>
-				</table>
-			</div>
-		</div>
-
-	</div>
-	<br /><br /><br />
+-->
 
 
-</div></div>
-
-<% #render partial: "shared/pickups_table", locals: {pickups: @pickups} %>

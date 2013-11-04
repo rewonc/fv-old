@@ -14,10 +14,12 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require mixitup
 //= require sortelements
 //= require_tree .
 
 $(document).foundation();
+
 
 //sorting functions...
 $(function() {
@@ -60,6 +62,7 @@ $(function() {
 	});
 });
 
+
 $("#search-lastweek").keyup(function () {
     var value = this.value.toLowerCase().trim();
 
@@ -73,4 +76,5 @@ $("#search-lastweek").keyup(function () {
         });
     });
 });
+
 

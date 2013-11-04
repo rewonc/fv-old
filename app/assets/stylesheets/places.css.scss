@@ -4,6 +4,8 @@
 
 @import 'constants';
 
+
+
 .highlightSearch{
 	color:white;
 }
@@ -34,5 +36,9 @@
 
 	.fresh{
 		color: $greenAccent;
+	}
+
+	.filters{
+		text-align: right;
 	}
 }
