@@ -7,12 +7,15 @@
 
 
 .highlightSearch{
-	color:white;
+	a{
+		color:white;
+	}
 }
 
 .places{
-	a{
-		color: $orangeAccent;
+
+	p, table {
+	font-family: "Georgia", "Times", "Times New Roman", serif;
 	}
 
 	.form-signup{
@@ -23,6 +26,12 @@
 
 	th{
 		background-color: $greenSoft;
+	}
+
+	.lastweek{
+		a{
+			color: $black3;
+		}
 	}
 
 	.thisweek{

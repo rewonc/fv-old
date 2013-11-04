@@ -136,8 +136,19 @@
 			<!-- ########################### old sorting method ################################## -->
 			
 			<div class="row">
-				<span class="filters"><div class="small-3 large-2 columns"><p>Filters:</p></div></span>
-				<div class="small-9 large-10 columns"><p>Vegetables - Fruit - Dairy - Meat - Products</p></div>
+				<div class="small-12 large-12 columns">
+					<div class="filters">
+						<dl class="sub-nav">
+						  <dt>   Filter:</dt>
+						  <dd class="showall active"><a href="#filter">All</a></dd>
+						  <dd><a href="#filter" data-category="Vegetables">Vegetables</a></dd>
+						  <dd><a href="#filter" data-category="Fruits">Fruits</a></dd>
+						  <dd><a href="#filter" data-category="Meat">Meats</a></dd>
+						  <dd><a href="#filter" data-category="Dairy">Dairy</a></dd>
+						  <dd><a href="#filter" data-category="Products">Misc</a></dd>
+						</dl>
+					</div>
+				</div>
 			</div>
 
 			<div class="row">
@@ -146,18 +157,16 @@
 						
 						<table class="sortable">
 						    <tr>
-						        <th>Type</th>
-						        <th>Description</th>
-						        <th>Price</th>
-						        <th>Farmer</th>
-						        <th>Farm</th>
+						        <th><a href="#sort">Description</a></th>
+						        <th><a href="#sort">Price</a></th>
+						        <th><a href="#sort">Farmer</a></th>
+						        <th><a href="#sort">Farm</a></th>
 						    </tr>
 						    
 							<% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, list until date. %>
 
 							<% a.each do |b| %>
-								<tr>
-									<td><%= b[3] %></td>
+								<tr data-tag="<%= b[3] %>" data-category="<%= b[4] %>">
 									<td><%= b[2] %></td>
 									<td><%= b[5] %></td>
 									<td><%= b[1] %></td>

@@ -15,7 +15,7 @@ $tripurple: #910ffc;
 $greenAccent: darken($trigreen, 10%);
 $greenFade: desaturate($trigreen, 40%);
 $greenSoft: lighten($greenFade, 30%);
-$greenMute: desaturate($greenSoft, 30%);
+$greenMute: desaturate($greenFade, 30%);
 $purpleSoft: lighten($tripurple, 30%);
 
 
