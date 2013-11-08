@@ -12,15 +12,7 @@
 #
 #= require dependencies
 #= require sortelements
-#= require handlebars
-#= require ember
-#= require ember-data
 #= require_self
-#= require farmapp
-
-# for more details see: http://emberjs.com/guides/application/
-window.Farmapp = Ember.Application.create()
-
-#= require_tree .
+#= require farmivore
 
 $(document).foundation()
