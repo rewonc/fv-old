@@ -6,7 +6,7 @@
 	address = "Russo Park, corner of Chapel Street and DePalma Court"
 	city = "New Haven"
 	state = "CT"
-	thisweek = "November 9, 2013"
+	thisweek = "Nov. 9, 2013"
 	available_on = "Friday, November 8"
 	lastweek = "November 2, 2013"
 
@@ -186,7 +186,7 @@
 	a << ["Northfordy", "Peter & Judith", "Dried Habanero Peppers", "Peppers","Products", "$3/bag",""]
 	a << ["Northfordy", "Peter & Judith", "Very Hot Peppers", "Peppers","Vegetables", "$3/box",""]
 	a << ["Northfordy", "Peter & Judith", "Baby Ginger", "Spice","Vegetables", "$14/lb",""]
-	a << ["Northfordy", "Peter & Judith", "Paw Paw", "Paw Paw","Fruit", "$12/lb",""]
+	a << ["Northfordy", "Peter & Judith", "Paw Paw", "Paw Paw","Fruits", "$12/lb",""]
 	a << ["Northfordy", "Peter & Judith", "Maple Syrup - Half-gallon", "Maple Syrup","Products", "$43",""]
 	a << ["Northfordy", "Peter & Judith", "Maple Syrup - Quart", "Maple Syrup","Products", "$23",""]
 	a << ["Northfordy", "Peter & Judith", "Maple Syrup - Pint", "Maple Syrup","Products", "$13",""]
@@ -198,188 +198,77 @@
 
 
 <div class="row">
-	<div class="large-12 columns">
+	<div class="small-3 large-2 columns">
+		<div class="datestamp"><h5><%= "This week: " + thisweek %></h5></div>
+	</div>	
+	<div class="small-9 large-10 columns">
 		<h1><%= title %></h1>
+		<div class="placestamp"><p><%= time + ". " + address %></p></div>
 	</div>
 </div>
 
-<!-- ###############################this week #########################################################  -->
-
-<div class="thisweek">
-	<div class="row">
-		 	<div class="large-12 columns">
-				<h2>This week: <%= thisweek %></h2>
-			</div>
+<div class="row">
+	<div class="shoppinglist">
+		<div class="large-12 columns"><br /><br /><br /><br />Shopping list here.  Email myself. Share with a friend. Send to phone. <br /><br /><br /><br /><br /><br /></div>
 	</div>
-	
-	<div class="centered">
+</div>
+
+<div class="row">
+	<div class="panel">
 		<div class="row">
-			 	<div class="large-12 columns">
-					<br /><br /><br /><br />
-					<p><em>Listings will be made available on <%= available_on %></em>
-						
-					</p>
-				</div>
+			<div class="small-12 large-12 columns">
+				<div class="centered"><p><em>Listings for this week <span class="fresh">updated Thurs, Nov 7</span></em></p></div>
+			</div>
 		</div>
+
 		<div class="row">
-			<div class="large-4 small-2 columns">&nbsp;</div>	
-			<div class="large-4 small-8 columns centered">
-				 <div class="row collapse">
-					 <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
-				        <div class="small-9 columns">
-				          <%= f.text_field :email, placeholder: "Your email address" %>
-				        </div>
-				        <div class="small-3 columns">
-				           <%= link_to_submit(class: 'button alert prefix') do %>
-				              Submit
-				    		 <% end %>
-				        </div><br />
-				        Want a reminder? (we won't spam you!)
-				     <% end %>
-			     </div>
+			<div class="small-8 large-9 columns">
+				<div class="filters">
+					<dl class="sub-nav">
+					  <dt>   Filter:</dt>
+					  <dd class="showall active"><a href="#filter">All</a></dd>
+					  <dd><a href="#filter" data-category="Vegetables">Vegetables</a></dd>
+					  <dd><a href="#filter" data-category="Fruits">Fruits</a></dd>
+					  <dd><a href="#filter" data-category="Meat">Meats</a></dd>
+					  <dd><a href="#filter" data-category="Dairy">Dairy</a></dd>
+					  <dd><a href="#filter" data-category="Products">Misc</a></dd>
+					</dl>
+				</div>
 			</div>
-			<div class="large-4 small-2 columns">&nbsp;</div>	
+
+			<div class="small 4 large-3 columns">
+				<input type="text" id="search-lastweek" placeholder="search"></input>
+			</div>
 		</div>
+
+		<div class="row">
+			<div class="small-12 large-12 columns">
+				<table class="sortable">
+				    <tr>
+				    	<th><a href="#sort">Category</a></th>
+				        <th><a href="#sort">Description</a></th>
+				        <th><a href="#sort">Price (split into integer and unit)</a></th>
+				        <th><a href="#sort">Farmer</a></th>
+				        <th><a href="#sort">Farm</a></th>
+				        <th>Add to your list</th>
+				    </tr>
+				    
+					<% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, list until date. %>
+
+					<% a.each do |b| %>
+						<tr data-tag="<%= b[3] %>" data-category="<%= b[4] %>">
+							<td><%= b[4] %></td>
+							<td><%= b[2] %></td>
+							<td><%= b[5] %></td>
+							<td><%= b[1] %></td>
+							<td><%= b[0] %></td>
+							<td><a href="#add">Plus button</a></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+		
 	</div>
-
 </div>
-<!-- ####################################last week##################################################  -->
-
-<div class="lastweek">
-	<div class="row"><div class="large-12 columns">
-		<div class="panel">
-			<div class="row">
-				<div class="small-8 large-9 columns"><h3>Last week: <%= lastweek %></h3></div>
-				<div class="small-4 large-3 columns"><input type="text" id="search-lastweek" placeholder="search"></input></div>
-			</div>
-			<!-- ########################### old sorting method ################################## -->
-			
-			<div class="row">
-				<div class="small-12 large-12 columns">
-					<div class="filters">
-						<dl class="sub-nav">
-						  <dt>   Filter:</dt>
-						  <dd class="showall active"><a href="#filter">All</a></dd>
-						  <dd><a href="#filter" data-category="Vegetables">Vegetables</a></dd>
-						  <dd><a href="#filter" data-category="Fruits">Fruits</a></dd>
-						  <dd><a href="#filter" data-category="Meat">Meats</a></dd>
-						  <dd><a href="#filter" data-category="Dairy">Dairy</a></dd>
-						  <dd><a href="#filter" data-category="Products">Misc</a></dd>
-						</dl>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="small-12 large-12 columns">
-
-						
-						<table class="sortable">
-						    <tr>
-						        <th><a href="#sort">Description</a></th>
-						        <th><a href="#sort">Price</a></th>
-						        <th><a href="#sort">Farmer</a></th>
-						        <th><a href="#sort">Farm</a></th>
-						    </tr>
-						    
-							<% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, list until date. %>
-
-							<% a.each do |b| %>
-								<tr data-tag="<%= b[3] %>" data-category="<%= b[4] %>">
-									<td><%= b[2] %></td>
-									<td><%= b[5] %></td>
-									<td><%= b[1] %></td>
-									<td><%= b[0] %></td>
-								</tr>
-							<% end %>
-
-
-
-						</table>
-					
-
-				</div>
-			</div>
-		</div>
-	</div></div>
-
-</div>
-
-<% #render partial: "shared/pickups_table", locals: {pickups: @pickups} %>
-<!-- 
-<tr>
-				        <td>Kale</td>
-				        <td>Tuscan Lacinato variety. Turns sweet after the first frost. Super nutritious. </td>
-				        <td>Until Dec 15th</td>
-				        <td>$2/bunch</td>
-				        <td>Green Acre Organics</td>
-				        <td>John Wilson</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-				    </tr>
-				    <tr>
-				        <td>Kale</td>
-				        <td>Blue curled. Turns sweet after the first frost. Super nutritious. </td>
-				        <td>Until Dec 15th</td>
-				        <td>$2/bunch</td>
-				        <td>Green Acre Organics</td>
-				        <td>John Wilson</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-				    </tr>
-				    <tr>
-				        <td>Salad mix</td>
-				        <td>Tatsoi, arugula, mizuna, and other mixed baby greens </td>
-				        <td>Until Nov 7th</td>
-				        <td>$7/lb</td>
-				        <td>Green Acre Organics</td>
-				        <td>John Wilson</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-				    </tr>
-				    <tr>
-				    	<td>Salad mix</td>
-				        <td>Buttercrunch and red lettuces + asian greens crunchy and nutritious</td>
-				        <td>Until Nov 14th</td>
-				        <td>$7/lb</td>
-				        <td>Sunshine Hill</td>
-				        <td>Bill Hammond</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-		       		</tr>
-		       		<tr>
-				    	<td>Salad mix</td>
-				        <td>Microgreen mix: baby spinach, baby arugula, baby beet greensflavorful and intense!</td>
-				        <td>Until Nov 14th</td>
-				        <td>$9/lb</td>
-				        <td>Sunshine Hill</td>
-				        <td>Bill Hammond</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-		       		</tr>
-		       		<tr>
-				    	<td>Apples</td>
-				        <td>McIntosh  great all purpose apple</td>
-				        <td>Year-round</td>
-				        <td>$1.50/lb</td>
-				        <td>Bunker Hill Orchards</td>
-				        <td>Colton's Corner</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-		       		</tr>
-		       		<tr>
-				    	<td>Apples</td>
-				        <td>Mutsu Crispin  crispy texture, tart flavor. Best-seller.</td>
-				        <td>Year-round</td>
-				        <td>$2/lb</td>
-				        <td>Bunker Hill Orchards</td>
-				        <td>Colton's Corner</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-		       		</tr>
-
-		       		<tr>
-				    	<td>Apples</td>
-				        <td>Golden Delicious  softer and less tart than the Crispin, good all-purpose</td>
-				        <td>Year-round</td>
-				        <td>$1.50/lb</td>
-				        <td>Bunker Hill Orchards</td>
-				        <td>Colton's Corner</td>
-				        <td><span class="fresh"> < 24 hours  </span></td>
-		       		</tr>
--->
-
 

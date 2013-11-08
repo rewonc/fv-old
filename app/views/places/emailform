@@ -1,0 +1,41 @@
+<!-- ###############################this week #########################################################  -->
+
+<div class="thisweek">
+	<div class="row">
+		 	<div class="large-12 columns">
+				<h2>This week: <%= thisweek %></h2>
+			</div>
+	</div>
+
+<div class="centered">
+		<div class="row">
+			 	<div class="large-12 columns">
+					<br /><br /><br /><br />
+					<p><em>Listings will be made available on <%= available_on %></em>
+						
+					</p>
+				</div>
+		</div>
+		
+		<div class="row">
+			<div class="large-4 small-2 columns">&nbsp;</div>	
+			<div class="large-4 small-8 columns centered">
+				 <div class="row collapse">
+					 <%= form_for :email, url: emails_path, html: {class: 'form-signup'} do |f| %>
+				        <div class="small-9 columns">
+				          <%= f.text_field :email, placeholder: "Your email address" %>
+				        </div>
+				        <div class="small-3 columns">
+				           <%= link_to_submit(class: 'button alert prefix') do %>
+				              Submit
+				    		 <% end %>
+				        </div><br />
+				        Want a reminder? (we won't spam you!)
+				     <% end %>
+			     </div>
+			</div>
+
+			<div class="large-4 small-2 columns">&nbsp;</div>	
+		</div>
+	</div>
+</div>
