@@ -12,6 +12,7 @@
 #
 #= require dependencies
 #= require sortelements
-#= require_tree .
+#= require_self
+#= require farmivore
 
 $(document).foundation()
