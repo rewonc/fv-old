@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
-    render "show2"
+    render "show"
   end
 
   def destroy
