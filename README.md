@@ -4,20 +4,30 @@
  * ```createuser -s farmivore```
  * ```create db farmapp_development```
  * ```rake db:migrate```
+
+### Setting postgresql user passwords:
+
+    %  sudo -u postgresql psql
+    postgres=# ALTER USER farmapp WITH PASSWORD 'password';
+    postgres=# \q
+
+
+See http://stackoverflow.com/questions/12720967/is-possible-to-check-or-change-postgresql-user-password
+
 ### Ubuntu: error on bundle install
 
 Error when ```bundle install```:
 
-    Installing pg (0.16.0) 
+    Installing pg (0.16.0)
     Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
-    /home/syu/.rbenv/versions/2.0.0-p0/bin/ruby extconf.rb 
-    
+    /home/syu/.rbenv/versions/2.0.0-p0/bin/ruby extconf.rb
+
 Solution:
-    
+
     sudo apt-get install postgresql
     sudo apt-get install libpq-dev
-    
+
 [more](http://stackoverflow.com/questions/19569031/error-failed-to-build-gem-native-extension-on-mavericks)
 
 ### Ubuntu: postgres:FATAL Peer authentication failed
@@ -32,8 +42,8 @@ it defaults to peer authentication (asking OS for log in). So make sure the dev 
     postgres=# create user farmapp with password 'password';
     CREATE ROLE
     postgres=# \q
-    
-And then ```rake db:create```    
+
+And then ```rake db:create```
 
 
 ### Ubuntu: PG::InsufficientPrivilege: ERROR:  permission denied to create database
