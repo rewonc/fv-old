@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Farmapp::Application.config.secret_key_base = 'b1ee8b88c30c71b1f27b6c8adc5f1a0dca8579be6fe27b8ab514641980828ce5ed4840ac6a2d4e48e2ad2f7ebe447951ed1a47a52b651a705317496e3a3eeb9b'
+Farmivore::Application.config.secret_key_base = 'b1ee8b88c30c71b1f27b6c8adc5f1a0dca8579be6fe27b8ab514641980828ce5ed4840ac6a2d4e48e2ad2f7ebe447951ed1a47a52b651a705317496e3a3eeb9b'

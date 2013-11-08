@@ -1,4 +1,4 @@
-Farmapp::Application.routes.draw do
+Farmivore::Application.routes.draw do
 
   devise_for :farmers
   devise_for :users
