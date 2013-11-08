@@ -26,8 +26,28 @@ When trying to connect to the db:
 
     FATAL: Peer authentication failed for user "farmapp"
 
-Explanation: need to make sure that 
+Explanation: need to make sure that a psql role with the user name exist. If password is left off in database.yml, then
+it defaults to peer authentication (asking OS for log in). So make sure the dev db has a password.
 
-  * Upgradde the user to a
+    postgres=# create user farmapp with password 'password';
+    CREATE ROLE
+    postgres=# \q
+    
+And then ```rake db:create```    
 
-[1](http://stackoverflow.com/questions/10757431/postgres-upgrade-a-user-to-be-a-superuser)
+
+### Ubuntu: PG::InsufficientPrivilege: ERROR:  permission denied to create database
+
+Upgarde the user to a super user. [More][1]
+
+     syu@velleity [ ~/projects/farmivore (master⚡) ]% sudo -u postgres psql                                                                                                                                                                                                       [0] 11:23:56
+     psql (9.1.10)
+     Type "help" for help.
+
+     postgres=# ALTER USER farmapp WITH SUPERUSER
+     postgres-# ;
+     ALTER ROLE
+     postgres=# \q
+
+
+[1]: (http://stackoverflow.com/questions/10757431/postgres-upgrade-a-user-to-be-a-superuser)
