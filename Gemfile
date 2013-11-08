@@ -75,3 +75,5 @@ gem 'ember-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+gem  "rename"
