@@ -1,5 +1,5 @@
 # For more information see: http://emberjs.com/guides/routing/
 
-Farmapp.Router.map ()->
+Farmivore.Router.map ()->
   # @resource('posts')
 
