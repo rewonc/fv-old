@@ -38,7 +38,7 @@ And then ```rake db:create```
 
 ### Ubuntu: PG::InsufficientPrivilege: ERROR:  permission denied to create database
 
-Upgarde the user to a super user. [More][1]
+Upgarde the user to a super user. [More][http://stackoverflow.com/questions/10757431/postgres-upgrade-a-user-to-be-a-superuser]
 
      syu@velleity [ ~/projects/farmivore (master⚡) ]% sudo -u postgres psql                                                                                                                                                                                                       [0] 11:23:56
      psql (9.1.10)
@@ -50,4 +50,3 @@ Upgarde the user to a super user. [More][1]
      postgres=# \q
 
 
-[1]: (http://stackoverflow.com/questions/10757431/postgres-upgrade-a-user-to-be-a-superuser)
