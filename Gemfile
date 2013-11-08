@@ -59,8 +59,7 @@ group :development, :test do
 end
 
 # Ember
-gem 'ember-source'
-gem 'ember-data-source'
+gem 'ember-source', '1.1.2'
 gem 'ember-bootstrap-rails'
 gem 'ember-rails'
 
@@ -76,3 +75,5 @@ gem 'ember-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+gem  "rename"
