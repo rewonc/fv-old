@@ -58,6 +58,12 @@ group :development, :test do
   gem 'faker'
 end
 
+# Ember
+gem 'ember-source'
+gem 'ember-data-source'
+gem 'ember-bootstrap-rails'
+gem 'ember-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
