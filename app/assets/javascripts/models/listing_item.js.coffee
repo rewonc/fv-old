@@ -63,19 +63,6 @@ window.src = [
   ["Blue Slope", "Matt", "Goat - Ground", "Goat","Meat", "$11.25/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Liver, Kidney, Heart", "Goat","Meat", "$6/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Bones", "Goat","Meat", "SOLDOUT","Free range"]
-   ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
-   ["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
-   ["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
-   ["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
-   ["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
-   ["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
   ["Waldingfield Farm", "Patrick", "No Spray Apples", "Apples","Fruits", "$3/lb","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Winter Squash", "Squash","Vegetables", "$2/lb","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Fingerling Potatoes", "Potatoes","Vegetables", "$4.50/lb","Certified organic"]
@@ -161,7 +148,32 @@ window.src = [
   ["Northfordy", "Peter & Judith", "Maple Syrup - Half-pint", "Maple Syrup","Products", "$7",""]
   ]
 
-
+###
+["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
+["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
+["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
+["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
+["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
+["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
+###
+Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
+  farm_id =  Farmivore.Farm.FIXTURES.findProperty('name', list[0]).id
+  ret =
+    farm_id: farm_id
+    # name: list[0]
+    # farmerName: list[1]
+    description1: list[2]
+    description2: list[3]
+    category: list[4]
+    priceString: list[5]
+  )
 
 ###
 n't add in Barberry Hill -- need to ask Kelly first

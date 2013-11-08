@@ -42,8 +42,8 @@ farm5 =
 farm6 =
   id: 6
   name: "Stone Gardens Farm"
-  farmerName: "83 Saw Mill City Road in Shelton, Connecticut"
-  address: ""
+  farmerName: ""
+  address: "83 Saw Mill City Road in Shelton, Connecticut"
   description: "Fred and Stacia Monahan founded Stone Gardens Farm in 1998, after expanding from a roadside vegetable stand where they sold vegetables and flowers at Shelton’s Dairy on Birdseye Road in Shelton. The couple steadily grew their business, planting more varieties of vegetables on mostly leased land."
   url: "http://www.stonegardensfarm.com"
 
@@ -55,4 +55,12 @@ farm7 =
   description: "The pork at True Love Farms comes from heritage-hybrid pigs born and raised on the farm. Their Tamworth boars and Berkshire-cross sows produce muscular, hearty hogs who do well outdoors. They also produce lean and flavorful beef fed only on grasses and legumes from their fields.  They apply no pesticides, herbicides, or chemical fertilizers to their pastures, and their cattle are completely hormone and antibiotic free."
   url: "http://www.truelovefarms.org"
 
-Farmivore.Farm.FIXTURES = [farm1, farm2, farm3, farm4, farm5, farm6, farm7]
+farm8 =
+  id: 8
+  name: "Northfordy"
+  farmerName: ""
+  address: "53 Lanes Pond Road. Northford, Connecticut 06472"
+  description:  "For over 35 years, we’ve been growing vegetables, flowers and herbs on our small family farm in Northford using sustainable and pesticide-free methods. We are Certified Naturally Grown, use nutrient dense growing practices and are also members of the CT Chapter of the Northeast Organic Farming Association (NOFA) and sign their Farmers’ Pledge."
+
+
+Farmivore.Farm.FIXTURES = [farm1, farm2, farm3, farm4, farm5, farm6, farm7, farm8]
