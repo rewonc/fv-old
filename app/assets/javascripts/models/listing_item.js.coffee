@@ -1,9 +1,9 @@
-Farmivore.ListingItem = Ember.Object.extend
+Farmivore.ListingItem = DS.Model.extend
   category: ""
   description: ""
   price: ""
   priceUnit: ""
-  farm: DS.belongsTo "farm"
+  farm: DS.belongsTo("farm") #, async: true, inverse: 'listingItems')
 
 window.src = [
   ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb",""]
@@ -163,10 +163,12 @@ window.src = [
 ["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
 ["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
 ###
+count = 0
 Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
   farm_id =  Farmivore.Farm.FIXTURES.findProperty('name', list[0]).id
   ret =
-    farm_id: farm_id
+    id: count++
+    farm: farm_id
     # name: list[0]
     # farmerName: list[1]
     description1: list[2]

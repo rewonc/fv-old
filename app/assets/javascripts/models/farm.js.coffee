@@ -7,24 +7,27 @@ Farmivore.Farm = DS.Model.extend
   address: DS.attr "string"
 
   place: DS.belongsTo 'place'
-  # listings: DS.hasMany "listing_item"
+  listingItems: DS.hasMany("listing_item") #, async: true, inverse: 'farm')
 
 farm1 =
   id: 1
   name: "Colton's Corner"
   farmerName: "Jim"
   description: "Colton's Corner has been a family tradition since 1974. The farm is very old, and as such brings with it a connection to another time. The farm has tried to capture that connection by offering country fresh fruit and produce from its family to yours. They look forward to seeing you."
+  listingItems: []
 farm2 =
   id: 2
   name: "Starlight Gardens"
   farmerName: ""
   description: "Starlight Gardens in Durham, CT organic certified. Starlight Gardens is run by Ty and David Zemelsky."
+  listingItems: []
 farm3 =
   id: 3
   name: "Sugar Maple Farms"
   farmerName: ""
   address: "779 Exeter Road, Lebanon, CT 06249"
   description: "Sugar Maple Farms has been making maple syrup in Connecticut for over 20 years."
+  listingItems: []
 
 farm4 =
   id: 4
@@ -32,6 +35,7 @@ farm4 =
   farmerName: ""
   address: "138 Blue Hill Road, Franklin, CT 06254"
   description: "Four generations of agricultural tradition in rural Connecticut."
+  listingItems: []
 
 farm5 =
   id: 5
@@ -40,6 +44,7 @@ farm5 =
   address: "24 East Street, Washington, CT 06793"
   description: "Waldingfield Farm is a certified organic vegetable farm located in the heart of Litchfield County, CT.  We specialize in heirloom tomatoes and other specialty vegetables. We have a CSA program and attend seasonal farmer's markets in New Haven (Wednesday & Saturday), Weston (Sat), Kent (Sat), and Sandy Hook (Tuesday). All are in CT."
   url: "http://www.waldingfieldfarm.com"
+  listingItems: []
 
 farm6 =
   id: 6
@@ -48,6 +53,7 @@ farm6 =
   address: "83 Saw Mill City Road in Shelton, Connecticut"
   description: "Fred and Stacia Monahan founded Stone Gardens Farm in 1998, after expanding from a roadside vegetable stand where they sold vegetables and flowers at Shelton’s Dairy on Birdseye Road in Shelton. The couple steadily grew their business, planting more varieties of vegetables on mostly leased land."
   url: "http://www.stonegardensfarm.com"
+  listingItems: []
 
 farm7 =
   id: 7
@@ -56,6 +62,7 @@ farm7 =
   address: ""
   description: "The pork at True Love Farms comes from heritage-hybrid pigs born and raised on the farm. Their Tamworth boars and Berkshire-cross sows produce muscular, hearty hogs who do well outdoors. They also produce lean and flavorful beef fed only on grasses and legumes from their fields.  They apply no pesticides, herbicides, or chemical fertilizers to their pastures, and their cattle are completely hormone and antibiotic free."
   url: "http://www.truelovefarms.org"
+  listingItems: []
 
 farm8 =
   id: 8
@@ -63,6 +70,7 @@ farm8 =
   farmerName: ""
   address: "53 Lanes Pond Road. Northford, Connecticut 06472"
   description:  "For over 35 years, we’ve been growing vegetables, flowers and herbs on our small family farm in Northford using sustainable and pesticide-free methods. We are Certified Naturally Grown, use nutrient dense growing practices and are also members of the CT Chapter of the Northeast Organic Farming Association (NOFA) and sign their Farmers’ Pledge."
+  listingItems: []
 
 
 Farmivore.Farm.FIXTURES = [farm1, farm2, farm3, farm4, farm5, farm6, farm7, farm8]
