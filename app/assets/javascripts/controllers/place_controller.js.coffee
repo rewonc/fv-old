@@ -1,4 +1,5 @@
 Fv.PlaceController = Ember.ObjectController.extend
+  needs: "shoppingList"
   _xadslfajf: 5
   allListings: (->
     listings = []
@@ -7,6 +8,17 @@ Fv.PlaceController = Ember.ObjectController.extend
         listings.pushObject li
     listings
   ).property 'content.farms.@each.listingItems', 'content', 'content.farms', 'content.farms.@each'
+
+  actions:
+    addToShoppingList: (listing)->
+      @get('controllers.shoppingList').addListing listing
+
+
+Fv.ShoppingListController = Ember.ArrayController.extend
+  addListing: (listing) ->
+    @get('content').pushObject listing
+  init: ->
+    @set 'content', []
 
 Fv.PlaceListingsController = Ember.ArrayController.extend
   sortProperties: ['sortKey']

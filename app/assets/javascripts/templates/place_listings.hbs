@@ -15,7 +15,7 @@
           <td>{{listing.priceString}}</td>
           <td>{{listing.farm.methodology}}</td>
           <td>{{listing.farm.name}}</td>
-          <td><a href="#add">Plus button</a></td>
+          <td><a {{action addToShoppingList listing}}> + </a></td>
         </tr>
       {{/each}}
     </table>
