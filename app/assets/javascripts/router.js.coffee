@@ -18,7 +18,13 @@ Farmivore.ApplicationRoute = Ember.Route.extend
 Farmivore.PlaceRoute = Ember.Route.extend
   activate: ->
   model: ->
-    warg: 5
+    @store.find('farm').then (farms) =>
+      place = @store.createRecord Fv.Place,
+        title: "Wooster Square"
+      farms.forEach (farm)->
+        place.get('farms').pushObject farm
+      place
+
 
 
 

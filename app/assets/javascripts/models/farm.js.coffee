@@ -5,6 +5,8 @@ Farmivore.Farm = DS.Model.extend
 
   methodology: DS.attr "string"
   address: DS.attr "string"
+
+  place: DS.belongsTo 'place'
   # listings: DS.hasMany "listing_item"
 
 farm1 =

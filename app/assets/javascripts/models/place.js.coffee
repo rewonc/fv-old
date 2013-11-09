@@ -1,4 +1,4 @@
 Farmivore.Place = DS.Model.extend
   title: ""
   state: ""
-  farms: null
+  farms: DS.hasMany 'farm'
