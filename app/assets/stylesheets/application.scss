@@ -7,12 +7,17 @@
 @import "mvp";
 @import "contacts";
 @import "places";
+@import "shopping_list";
 
 body {
   background-color: white;
-  //background-color: $IMP;
 }
 
 .centered {
-	text-align: center;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+
 }
