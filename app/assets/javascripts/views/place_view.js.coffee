@@ -3,3 +3,6 @@ Fv.PlaceView = Ember.View.extend
 
 Fv.PlaceListingsView = Ember.View.extend
   classNames: "place-listings"
+
+Fv.ShoppingListView = Ember.View.extend
+  classNames: "shopping-list"
