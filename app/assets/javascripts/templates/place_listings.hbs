@@ -1,0 +1,21 @@
+    <table class="sortable">
+        <tr>
+          <th><a href="#sort">Category</a></th>
+            <th><a href="#sort">Description</a></th>
+            <th><a href="#sort">Price (split into integer and unit)</a></th>
+            <th><a href="#sort">Method</a></th>
+            <th><a href="#sort">Farm</a></th>
+            <th>Add to your list</th>
+        </tr>
+
+      {{#each listing in arrangedContent}}
+        <!--tr data-tag="Apples" data-category="Fruits"-->
+          <td> {{listing.category}} </td>
+          <td>{{listing.description}}</td>
+          <td>{{listing.priceString}}</td>
+          <td>{{listing.farm.methodology}}</td>
+          <td><a data-reveal-id= href="#modal-Colt">Colton's Corner</a></td>
+          <td><a href="#add">Plus button</a></td>
+        </tr>
+      {{/each}}
+    </table>

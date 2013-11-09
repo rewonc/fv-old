@@ -1,2 +1,5 @@
 Fv.PlaceView = Ember.View.extend
-  className: "place"
+  classNames: "place"
+
+Fv.PlaceListingsView = Ember.View.extend
+  classNames: "place-listings"

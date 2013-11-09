@@ -9,10 +9,8 @@ Farmivore.ApplicationRoute = Ember.Route.extend
     @transitionTo('place')
 
   activate: ->
-    debugger
   wag: 5
   model: ->
-    debugger
     @store.find('farm')
 
 Farmivore.PlaceRoute = Ember.Route.extend
@@ -26,7 +24,9 @@ Farmivore.PlaceRoute = Ember.Route.extend
       @store.find(Fv.ListingItem).then (listingItems) ->
         listingItems.forEach (li) =>
           li.get('farm.listingItems').pushObject li
+          li.get('farm').notifyPropertyChange('listingItems')
       place
+
 
 
 

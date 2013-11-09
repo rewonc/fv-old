@@ -1,9 +1,22 @@
 Farmivore.ListingItem = DS.Model.extend
-  category: ""
-  description: ""
-  price: ""
-  priceUnit: ""
+  category: DS.attr 'string'
+  description: DS.attr 'string'
+  tag: DS.attr 'string'
+  price: DS.attr()
+  priceUnit: DS.attr 'string'
   farm: DS.belongsTo("farm") #, async: true, inverse: 'listingItems')
+  priceString: (->
+    if @get('price')? && @get('priceUnit')
+      "$#{@get('price')}/#{@get('priceUnit')}"
+    else if !isNaN @get('price')
+      "$#{@get('price')}"
+    else
+      @get('price')
+  ).property('price', 'priceUnit')
+
+  sortKey: (->
+    "#{@get('priceUnit')}-#{@get('price')}"
+  ).property('price', 'priceUnit')
 
 window.src = [
   ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb",""]
@@ -166,15 +179,19 @@ window.src = [
 count = 0
 Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
   farm_id =  Farmivore.Farm.FIXTURES.findProperty('name', list[0]).id
+  [price, priceUnit] = list[5].split(/\//)
+  if m = price.match /^\$([\d\.]+)/
+    price = m[1]
   ret =
     id: count++
     farm: farm_id
     # name: list[0]
     # farmerName: list[1]
-    description1: list[2]
-    description2: list[3]
+    price: price
+    priceUnit: priceUnit
+    description: list[2]
+    tag: list[3]
     category: list[4]
-    priceString: list[5]
   )
 
 ###
