@@ -20,6 +20,7 @@ window.msm = (model)-> model.get('stateManager')
 window.mcp = (model)-> msm(model).get('currentPath')
 window.mcs = (model)-> msm(model).get('currentState')
 window.ts = -> moment().format("HH:mm:ss")
+window.str = -> lu('store:main')
 
 window.getCursor = (node) ->
   # first convert node to a HTMLElement, always
@@ -120,3 +121,8 @@ window.utils =
     else
       @tickIntervalId = setInterval((-> console.log(moment().format "HH:mm:s.SS")), milliseconds)
       @ticking = true
+
+window.f0 = -> ctrl('place').get('farms').objectAt(0)
+window.f1 = -> ctrl('place').get('farms').objectAt(1)
+window.f2 = -> ctrl('place').get('farms').objectAt(2)
+window.f3 = -> ctrl('place').get('farms').objectAt(3)

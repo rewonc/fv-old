@@ -23,6 +23,9 @@ Farmivore.PlaceRoute = Ember.Route.extend
         title: "Wooster Square"
       farms.forEach (farm)->
         place.get('farms').pushObject farm
+      @store.find(Fv.ListingItem).then (listingItems) ->
+        listingItems.forEach (li) =>
+          li.get('farm.listingItems').pushObject li
       place
 
 
