@@ -11,5 +11,8 @@ Fv.PlaceController = Ember.ObjectController.extend
 Fv.PlaceListingsController = Ember.ArrayController.extend
   sortProperties: ['sortKey']
   sortAscending: true
+  actions:
+    sortBy: (param) ->
+      @set 'sortProperties', [param]
 
 
