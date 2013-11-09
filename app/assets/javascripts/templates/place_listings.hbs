@@ -1,21 +1,37 @@
-    <table class="sortable">
-        <tr>
-          <th><a {{action sortBy "category"}}>Category</a></th>
-          <th><a {{action sortBy "description"}}>Description</a></th>
-          <th><a {{action sortBy "price"}}>Price</a></th>
-          <th><a {{action sortBy "farm.methodology"}}>Method</a></th>
-          <th><a {{action sortBy "farm.name"}}>Farm</a></th>
-          <th>Add to your list</th>
-        </tr>
 
-      {{#each listing in arrangedContent}}
-        <!--tr data-tag="Apples" data-category="Fruits"-->
-          <td> {{listing.category}} </td>
-          <td>{{listing.description}}</td>
-          <td>{{listing.priceString}}</td>
-          <td>{{listing.farm.methodology}}</td>
-          <td>{{listing.farm.name}}</td>
-          <td><a {{action addToShoppingList listing}}> + </a></td>
-        </tr>
+<div class="row">
+  <div class="small-8 large-9 columns">
+    <div class="filters">
+      <dl class="sub-nav">
+        <dt>   Filter:</dt>
+        <dd class="showall active"><a href="#filter">All</a></dd>
+        <dd {{bindAttr class="filterCategories.vegetables:active"}}><a {{action filterBy "vegetables"}}>Vegetables</a></dd>
+        <dd {{bindAttr class="filterCategories.fruits:active"}}><a {{action filterBy "fruits"}}>Fruits</a></dd>
+        <dd {{bindAttr class="filterCategories.meat:active"}}><a {{action filterBy "meat"}}>Meat</a></dd>
+        <dd {{bindAttr class="filterCategories.dairy:active"}}><a {{action filterBy "dairy"}}>Dairy</a></dd>
+        <dd {{bindAttr class="filterCategories.products:active"}}><a {{action filterBy "products"}}>Products</a></dd>
+        <dd {{bindAttr class="filterCategories.misc:active"}}><a {{action filterBy "misc"}}>Misc</a></dd>
+      </dl>
+        <a {{action clearFilters}}>Clear filters</a>
+    </div>
+  </div>
+
+  <div class="small 4 large-3 columns">
+    <input type="text" id="search-lastweek" placeholder="search"></input>
+  </div>
+</div>
+
+    <table class="sortable">
+      <tr>
+        <th><a {{action sortBy "category"}}>Category</a></th>
+        <th><a {{action sortBy "description"}}>Description</a></th>
+        <th><a {{action sortBy "price"}}>Price</a></th>
+        <th><a {{action sortBy "farm.methodology"}}>Method</a></th>
+        <th><a {{action sortBy "farm.name"}}>Farm</a></th>
+        <th>Add to your list</th>
+      </tr>
+
+      {{#each listing in filtered}}
+        {{render 'listing_item' listing}}
       {{/each}}
     </table>

@@ -1,0 +1,10 @@
+{{#if content}}
+  <ul>
+  {{#each listing in content}}
+  <li>
+    {{listing.description}} @ {{listing.priceString}}
+  </li>
+
+  {{/each}}
+  </ul>
+{{/if}}
