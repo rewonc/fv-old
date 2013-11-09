@@ -1,8 +1,27 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 Farmivore.Router.map ()->
-  # @resource('posts')
-  #
+  @resource "place", path: "/place", ->
+
+
+Farmivore.ApplicationRoute = Ember.Route.extend
+  beforeModel: ->
+    @transitionTo('place')
+
+  activate: ->
+    debugger
+  wag: 5
+  model: ->
+    debugger
+    @store.find('farm')
+
+Farmivore.PlaceRoute = Ember.Route.extend
+  activate: ->
+  model: ->
+    warg: 5
+
+
+
 ###
 window.doit = ->
   window.src2 = src.map( (list) ->
@@ -17,5 +36,5 @@ window.doit = ->
       category: list[4]
       priceString: list[5]
   )
-  ##
+###
 
