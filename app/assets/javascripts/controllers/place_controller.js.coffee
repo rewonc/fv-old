@@ -6,6 +6,10 @@ Fv.PlaceController = Ember.ObjectController.extend
       farm.get('listingItems').forEach (li)->
         listings.pushObject li
     listings
-  ).property()
+  ).property 'content.farms.@each.listingItems', 'content', 'content.farms', 'content.farms.@each'
+
+Fv.PlaceListingsController = Ember.ArrayController.extend
+  sortProperties: ['sortKey']
+  sortAscending: true
 
 
