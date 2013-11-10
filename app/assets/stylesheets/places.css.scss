@@ -38,7 +38,7 @@
   }
 
   .fresh{
-    color: $greenAccent;
+    // color: $greenAccent;
   }
 
   .filters{
@@ -48,7 +48,7 @@
 
 .place {
 
-  }
+}
 .place-listings {
   @extend .panel;
 
@@ -64,5 +64,17 @@
 
   width: 960px;
   margin: 0 auto;
+
+}
+
+.place-listings-header {
+  h3 {
+    text-align: center;
+    font-family: "Georgia", "Times", serif
+  }
+  .fresh {
+    color: $orangeAccent;
+    text-align: center;
+    }
 
 }
