@@ -1,7 +1,8 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 Farmivore.Router.map ()->
-  @resource "place", path: "/place", ->
+  location: 'none'
+  @resource "place"
 
 
 Farmivore.ApplicationRoute = Ember.Route.extend
