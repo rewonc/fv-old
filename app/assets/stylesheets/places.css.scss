@@ -97,4 +97,12 @@
 }
 .listings {
   width: 100%;
- }
+}
+.place-listings .listing td{
+  font-size: 16px;
+  &.sold-out {
+    color: $orangeAccent;
+    text-transform:lowercase;
+    font-style: italic;
+  }
+}
