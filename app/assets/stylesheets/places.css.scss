@@ -51,6 +51,9 @@
 }
 .place-listings {
   @extend .panel;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 
   a.add-button {
     color: $greenMute;
@@ -58,14 +61,6 @@
     width: 100%;
     text-align: center;
   }
-  .listing td{
-    font-size: 16px;
-  }
-
-  width: 960px;
-  margin: 0 auto;
-
-
 }
 
 .place-listings-header {
