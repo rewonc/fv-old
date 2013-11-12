@@ -65,6 +65,7 @@ gem 'ember-bootstrap-rails'
 gem 'ember-data-source', '1.0.0.beta.3'
 gem 'ember-rails'
 
+gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
