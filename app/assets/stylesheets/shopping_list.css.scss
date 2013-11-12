@@ -1,9 +1,54 @@
 @import 'constants';
 .shopping-list {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.shopping-list-header {
+  h3 {
+    text-align: center;
+    font-family: "Georgia", "Times", serif
+  }
+}
+.shopping-list-items{
   border-radius: 5px;
   padding: 15px;
-  border: $darkGray1 1px solid;
+  // border: $darkGray1 1px solid;
   max-width: 800px;
   margin: 0 auto;
+}
+.shopping-list-item {
+  color: $lightGray3;
+  width: 100%;
+  .description {
+      color: $black1;
+    }
+  .price {
+      color: $darkGray1;
+    }
+    .at-sign{
+      color: $lightGray3;
+
+    }
+  .highlight {
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .hover-unhide {
+    display: none;
+  }
+  &:hover .hover-unhide {
+    display: inline-block;
+  }
+  .remove-listing {
+    margin-left: 5px;
+    color: $lightGray3;
+    &:hover {
+    color: $darkGray3;
+    }
+  }
+  .pull-right{
+    float: right;
+    margin-top: 3px;
+  }
 }
 
