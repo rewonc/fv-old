@@ -10,10 +10,13 @@
 #= require_tree ./routes
 #= require ./router
 
-window.Farmivore = Ember.Application.create
-  rootElement: "#ember"
+if $('#ember').length > 0
+  window.Farmivore = Ember.Application.create
+    rootElement: "#ember"
 # Convenience alias.
-@Fv = Farmivore
+  @Fv = Farmivore
+else
+  @Fv = @Farmivore = {}
 
 # When an error occurs in a promise, dump it to console
 # instead of silently failing.

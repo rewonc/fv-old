@@ -17,8 +17,14 @@ Fv.PlaceController = Ember.ObjectController.extend
 Fv.ShoppingListController = Ember.ArrayController.extend
   addListing: (listing) ->
     @get('content').pushObject listing
+
   init: ->
     @set 'content', []
+
+  actions:
+    removeListing: (listing) ->
+      @get('content').removeAt @get('content').indexOf(listing)
+
 
 Fv.PlaceListingsController = Ember.ArrayController.extend
   sortProperties: ['sortKey']
@@ -77,15 +83,4 @@ Fv.ExplicitStringSet = Ember.Set.extend Ember.Observable,
     @_super(param)
     @set(param.toString(), false)
 
-
-
-
-
-
-
-
 Fv.ListingItemController = Ember.ObjectController.extend()
-
-
-
-
