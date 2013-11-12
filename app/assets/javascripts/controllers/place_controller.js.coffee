@@ -42,8 +42,6 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
         true
   ).property('arrangedContent.@each', 'filterCategories.[]')
 
-  handleFilter: (param) ->
-
   actions:
     sortBy: (param) ->
       @set 'sortProperties', [param]
@@ -55,32 +53,34 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
 
   init: ->
     @set 'filterCategories', Fv.ExplicitStringSet.create()
+
 Fv.ExplicitStringSet = Ember.Set.extend Ember.Observable,
 
   clear: ->
-    @forEach (a, b, c) =>
-      console.log "Removing #{a}"
-      if a? && a.constructor == String
-        @set(a.toString(), false)
+    @forEach (stringKey) =>
+      console.log "Removing #{stringKey}"
+      if stringKey? && stringKey.constructor == String
+        @set(stringKey.toString(), false)
     @_super()
+
   all: (->
     @get('length') ==  0
   ).property('[]')
 
-  toggle: (param) ->
-    if @contains(param)
-      @remove param
+  toggle: (stringKey) ->
+    if @contains(stringKey)
+      @remove stringKey
     else
-      @add param
+      @add stringKey
 
-  add: (param) ->
-    Em.assert("Param must be a string", param.constructor == String)
-    @_super(param)
-    @set(param.toString(), true)
+  add: (stringKey) ->
+    Em.assert("Param must be a string", stringKey.constructor == String)
+    @_super(stringKey)
+    @set(stringKey.toString(), true)
 
-  remove: (param) ->
-    Em.assert("Param must be a string", param.constructor == String)
-    @_super(param)
-    @set(param.toString(), false)
+  remove: (stringKey) ->
+    Em.assert("Param must be a string", stringKey.constructor == String)
+    @_super(stringKey)
+    @set(stringKey.toString(), false)
 
 Fv.ListingItemController = Ember.ObjectController.extend()
