@@ -47,8 +47,6 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
     clearFilters: ->
       @get('filterCategories').clear()
 
-
-
   init: ->
     @set 'filterCategories', Fv.ExplicitStringSet.create()
 Fv.ExplicitStringSet = Ember.Set.extend Ember.Observable,
@@ -59,6 +57,9 @@ Fv.ExplicitStringSet = Ember.Set.extend Ember.Observable,
       if a? && a.constructor == String
         @set(a.toString(), false)
     @_super()
+  all: (->
+    @get('length') ==  0
+  ).property('[]')
 
   toggle: (param) ->
     if @contains(param)
