@@ -190,8 +190,6 @@ Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
   ret =
     id: count++
     farm: farm_id
-    # name: list[0]
-    # farmerName: list[1]
     price: price
     priceUnit: priceUnit
     description: list[2]
@@ -200,7 +198,7 @@ Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
   )
 
 ###
-n't add in Barberry Hill -- need to ask Kelly first
+Don't add in Barberry Hill -- need to ask Kelly first
 ["Starlight Gardens", "David", "Arugula", "Greens","Vegetables", "$1/oz","Certified organic"]
 ["Starlight Gardens", "David", "Salad greens", "Greens","Vegetables", "$1/oz","Certified organic"]
 ["Starlight Gardens", "David", "Napoli greens", "Greens","Vegetables", "$5/bunch","Certified organic"]
