@@ -62,29 +62,6 @@ lastweek = "November 2, 2013"
 
     <div class="row">
       <div class="small-12 large-12 columns">
-        <table class="sortable">
-          <tr>
-            <th><a href="#sort">Category</a></th>
-            <th><a href="#sort">Description</a></th>
-            <th><a href="#sort">Price (split into integer and unit)</a></th>
-            <th><a href="#sort">Method</a></th>
-            <th><a href="#sort">Farm</a></th>
-            <th>Add to your list</th>
-          </tr>
-
-          <% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, label. %>
-
-          <% a.each do |b| %>
-            <tr data-tag="<%= b[3] %>" data-category="<%= b[4] %>">
-              <td><%= b[4] %></td>
-              <td><%= b[2] %></td>
-              <td><%= b[5] %></td>
-              <td><%= b[6] %></td>
-              <td><a data-reveal-id="modal-<%= b[0][0..3]%>" href="#modal"><%= b[0] %></a></td>
-              <td><a href="#add">Plus button</a></td>
-            </tr>
-          <% end %>
-				</table>
 			</div>
 		</div>
 
