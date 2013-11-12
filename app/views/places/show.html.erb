@@ -86,19 +86,19 @@
 	a << ["Blue Slope", "Matt", "Goat - Liver, Kidney, Heart", "Goat","Meat", "$6/lb","Free range"]
 	a << ["Blue Slope", "Matt", "Goat - Bones", "Goat","Meat", "SOLDOUT","Free range"]
 
-	#a << ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
-	#a << ["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
-	#a << ["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
-	#a << ["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
-	#a << ["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
-	#a << ["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
+	a << ["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
+	a << ["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
+	a << ["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
+	a << ["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
+	a << ["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
 
 
 	a << ["Waldingfield Farm", "Patrick", "No Spray Apples", "Apples","Fruits", "$3/lb","Certified organic"]
@@ -112,9 +112,9 @@
 	a << ["Waldingfield Farm", "Patrick", "Swiss Chard", "Greens","Vegetables", "$3/bunch","Certified organic"]
 	a << ["Waldingfield Farm", "Patrick", "Baby Bok Choy", "Greens","Vegetables", "$3/bunch","Certified organic"]
 	a << ["Waldingfield Farm", "Patrick", "Broccoli", "Broccoli","Vegetables", "$4/lb","Certified organic"]
-	a << ["Waldingfield Farm", "Patrick", "Mustard Greens", "Greens","Vegetables", "$3.5/lb","Certified organic"]
-	a << ["Waldingfield Farm", "Patrick", "Amazin' Asian Salad Mix", "Greens","Vegetables", "$3 per 1/4 lb","Certified organic"]
-	a << ["Waldingfield Farm", "Patrick", "'Killa' Arugula", "Greens","Vegetables", "$3.25/lb","Certified organic"]
+	a << ["Waldingfield Farm", "Patrick", "Mustard Greens", "Greens","Vegetables", "$3/quarter lb","Certified organic"]
+	a << ["Waldingfield Farm", "Patrick", "Amazin' Asian Salad Mix", "Greens","Vegetables", "$5 per half lb","Certified organic"]
+	a << ["Waldingfield Farm", "Patrick", "'Killa' Arugula", "Greens","Vegetables", "$3/quarter lb","Certified organic"]
 	a << ["Waldingfield Farm", "Patrick", "Crushed Heirloom Tomatoes", "Sauces","Products", "$8/jar",""]
 	a << ["Waldingfield Farm", "Patrick", "The Farmer's Heirloom Tomato and Basil Sauce", "Sauces","Products", "$6/jar",""]
 	a << ["Waldingfield Farm", "Patrick", "The Farmer's Bloody Mary Mix", "Sauces","Products", "$10/jar",""]
@@ -242,11 +242,12 @@
 				<table class="sortable">
 				    <tr>
 				    	<th><a href="#sort">Category</a></th>
-				        <th><a href="#sort">Description</a></th>
-				        <th><a href="#sort">Price (split into integer and unit)</a></th>
-				        <th><a href="#sort">Method</a></th>
-				        <th><a href="#sort">Farm</a></th>
-				        <th>Add to your list</th>
+				    	<th><a href="#sort">Field</a></th>
+			        <th><a href="#sort">Description</a></th>
+			        <th><a href="#sort">Price (split into integer and unit)</a></th>
+			        <th><a href="#sort">Method</a></th>
+			        <th><a href="#sort">Farm</a></th>
+			        <th>Add to your list</th>
 				    </tr>
 				    
 					<% #a0, farm name. a1, farmer name. A2, description. A3, tag. A4, category. A5, price A6, label. %>
@@ -254,6 +255,7 @@
 					<% a.each do |b| %>
 						<tr data-tag="<%= b[3] %>" data-category="<%= b[4] %>">
 							<td><%= b[4] %></td>
+							<td><%= b[3] %></td>
 							<td><%= b[2] %></td>
 							<td><%= b[5] %></td>
 							<td><%= b[6] %></td>
