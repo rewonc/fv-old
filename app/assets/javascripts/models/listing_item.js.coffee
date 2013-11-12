@@ -18,6 +18,11 @@ Farmivore.ListingItem = DS.Model.extend
     "#{@get('priceUnit')}-#{@get('price')}"
   ).property('price', 'priceUnit')
 
+  soldOut: (->
+    @get('priceString') == "SOLDOUT"
+  ).property 'priceString'
+
+
 window.src = [
   ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb",""]
   ["Colton's Corner", "Jim", "Macoun Apples", "Apples","Fruits", "$2.50/lb",""]
