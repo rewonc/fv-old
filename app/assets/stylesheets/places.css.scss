@@ -65,6 +65,7 @@
   width: 960px;
   margin: 0 auto;
 
+
 }
 
 .place-listings-header {
@@ -77,5 +78,28 @@
     text-align: center;
     display: inline-block;
     width: 100%;
-    }
+  }
 }
+.place-listings-filter {
+  margin-top: 10px;
+  text-align: center;
+
+  .filter-categories {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  dd a {
+    position: relative;
+  }
+  .filter-option.active a {
+    cursor: pointer;
+  }
+  .filter-option.active a:after{
+    content: "×";
+    position: relative;
+    left: 2px;
+  }
+}
+.listings {
+  width: 100%;
+ }
