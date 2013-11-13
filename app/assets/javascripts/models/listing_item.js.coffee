@@ -8,7 +8,7 @@ Farmivore.ListingItem = DS.Model.extend
 
   priceString: (->
     if @get('price')? && @get('priceUnit')
-      "$#{@get('price')}/#{@get('priceUnit')}"
+      "$#{@get('price')} per #{@get('priceUnit')}"
     else if !isNaN @get('price')
       "$#{@get('price')}"
     else

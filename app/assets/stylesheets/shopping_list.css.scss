@@ -20,40 +20,85 @@ $shoppingListWidth: 800px;
   margin: 0 auto;
 }
 .shopping-list-item {
+  position: relative;
+  list-style-type: none;
   color: $lightGray3;
   width: 100%;
+  .line {
+    clear: both;
+  }
+}
+.shopping-list-item .highlight {
+  font-size: 120%;
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+
   .description {
     color: $black1;
   }
   .price {
-    color: $darkGray1;
+    color: $lightGray3
   }
   .at-sign{
-    color: $lightGray3;
-
-  }
-  .highlight {
-    font-size: 120%;
-    font-weight: bold;
-  }
-  .hover-unhide {
-    display: none;
-  }
-  &:hover .hover-unhide {
-    display: inline-block;
-  }
-  .remove-listing {
-    margin-left: 5px;
-    color: $lightGray3;
-    &:hover {
-      color: $darkGray3;
-    }
-  }
-  .pull-right{
-    float: right;
-    margin-top: 3px;
+    color: $lightGray1;
   }
 }
+
+.shopping-list-item .dotted-lines {
+  border-bottom: 1px dotted $lightGray3;
+  overflow: hidden;
+  position: relative;
+  bottom: 8px;
+
+  .dotted-lines-content {
+    width: 100%;
+  }
+}
+.shopping-list-item .quantity-details {
+  float:right;
+  width: 100px;
+  margin-left: 15px;
+
+  .quantity {
+    font-size: 125%;
+    font-weight: bold;
+    color: $black1;
+  }
+}
+
+.shopping-list-item .details {
+  margin-left: 15px;
+}
+
+.shopping-list-item .details {
+  margin-left: 15px;
+}
+
+
+.shopping-list-item .options {
+  position: absolute;
+  right: 5px;
+}
+
+
+.shopping-list-item {
+  .hover-unhide {
+    visibility: hidden;
+  }
+  &:hover .hover-unhide {
+    visibility: visible;
+  }
+}
+//==================
+
+.remove-listing {
+  color: $lightGray3;
+  &:hover {
+    color: $darkGray3;
+  }
+}
+
 .shopping-list-summary {
   max-width: $shoppingListWidth;
   float: right;
