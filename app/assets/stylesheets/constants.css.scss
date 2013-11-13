@@ -1,4 +1,5 @@
 $redAccent: rgb(243, 63, 0);
+$redSoft: desaturate(lighten($redAccent, 20%), 10%);
 $orangeAccent: rgb(249, 135, 0);
 
 $orangeSoftComplement: #0F7AFC;

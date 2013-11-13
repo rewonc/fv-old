@@ -4,52 +4,105 @@
 
 @import 'constants';
 
-
-
 .highlightSearch{
-	a{
-		color:white;
-	}
+  a{
+    color:white;
+  }
 }
 
 .places{
 
-	.datestamp {
-		background-color: $orangeAccent;
-		padding-top:10px;
-		padding-bottom: 10px;
-		padding-left: 15px;
-		padding-right: 10px;
-		margin-top: 15px;
-	}
-	.placestamp{
-		margin-top: -25px;
-	}
+  .datestamp {
+    background-color: $orangeAccent;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-top: 15px;
+  }
+  .placestamp{
+    margin-top: -25px;
+  }
 
-	p, table {
-	font-family: "Georgia", "Times", "Times New Roman", serif;
-	}
+  p, table {
+    font-family: "Georgia", "Times", "Times New Roman", serif;
+  }
 
-	th{
-		background-color: $greenSoft;
-	}
+  th{
+    background-color: $greenSoft;
+  }
 
-	.panel{
-		a{
-			color: $greenMute;
-		}
-	}
+  .sortarrows{
+    font-size:11px;
+    margin-left:5px;
+  }
 
-	.sortarrows{
-		font-size:11px;
-		margin-left:5px;
-	}
+  .fresh{
+    // color: $greenAccent;
+  }
 
-	.fresh{
-		color: $greenAccent;
-	}
+  .filters{
+    text-align: right;
+  }
+}
 
-	.filters{
-		text-align: right;
-	}
+.place {
+
+}
+.place-listings {
+  @extend .panel;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  a.add-button {
+    color: $greenMute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.place-listings-header {
+  h3 {
+    text-align: center;
+    font-family: "Georgia", "Times", serif
+  }
+  .update-timestamp {
+    color: $orangeAccent;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+  }
+}
+.place-listings-filter {
+  margin-top: 10px;
+  text-align: center;
+
+  .filter-categories {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  dd a {
+    position: relative;
+  }
+  .filter-option.active a {
+    cursor: pointer;
+  }
+  .filter-option.active a:after{
+    content: "×";
+    position: relative;
+    left: 2px;
+  }
+}
+.listings {
+  width: 100%;
+}
+.place-listings .listing td{
+  font-size: 16px;
+  &.sold-out {
+    color: $orangeAccent;
+    text-transform:lowercase;
+    font-style: italic;
+  }
 }

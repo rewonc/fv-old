@@ -1,0 +1,134 @@
+<%
+title = "Wooster Square Farmers Market"
+time = "Saturdays from 9am-1pm"
+address = "Russo Park, corner of Chapel Street and DePalma Court"
+city = "New Haven"
+state = "CT"
+thisweek = "Nov. 9, 2013"
+available_on = "Friday, November 8"
+lastweek = "November 2, 2013"
+%>
+
+<div class="row">
+  <div class="small-3 large-2 columns">
+    <div class="datestamp"><h5><%= "This week: " + thisweek %></h5></div>
+  </div>
+  <div class="small-9 large-10 columns">
+    <h1><%= title %></h1>
+    <div class="placestamp"><p><%= time + ". " + address %></p></div>
+  </div>
+</div>
+
+<div id="ember"></div>
+
+
+<div id="modal-Colt" class="reveal-modal">
+  <h2>Colton's Corner Farm</h2>
+  <p class="lead">636 Reservoir Rd, Cheshire, CT 06410</p>
+  <p>Colton's Corner has been a family tradition since 1974. The farm is very old, and as such brings with it a connection to another time. The farm has tried to capture that connection by offering country fresh fruit and produce from its family to yours. They look forward to seeing you.</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-2">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/coltons-1.png" %></li>
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/coltons-2.png" %></li>
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Star" class="reveal-modal">
+  <h2>Starlight Gardens</h2>
+  <p class="lead">54 Fowler Avenue, Durham, CT 06422</p>
+  <p>Starlight Gardens in Durham, CT organic certified. Starlight Gardens is run by Ty and David Zemelsky.</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-1">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/starlight-logo.png" %></li>
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Suga" class="reveal-modal">
+  <h2>Sugar Maple Farms</h2>
+  <p class="lead">779 Exeter Road, Lebanon, CT 06249</p>
+  <p>Sugar Maple Farms has been making maple syrup in Connecticut for over 20 years. </p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-1">
+
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Blue" class="reveal-modal">
+  <h2>Blue Slope</h2>
+  <p class="lead">138 Blue Hill Road, Franklin, CT 06254</p>
+  <p>"Four generations of agricultural tradition in rural Connecticut."</p>
+  <p>Blue Slope has over 200 very happy cows, heifers, and calves -- all Holsteins. They also have "mother raised" veal and goat meat. See <a href="http://www.blueslope.com">blueslope.com</a> for more information</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-1">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/blue-slope-logo.png" %></li>
+			<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/blue-slope-1.png" %></li>
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Wald" class="reveal-modal">
+  <h2>Waldingfield Farm</h2>
+  <p class="lead">24 East Street, Washington, CT 06793</p>
+  <p>Waldingfield Farm is a certified organic vegetable farm located in the heart of Litchfield County, CT.
+We specialize in heirloom tomatoes and other specialty vegetables. </p>
+	<p>We have a CSA program and attend seasonal farmer's markets in New Haven (Wednesday & Saturday), Weston (Sat), Kent (Sat), and Sandy Hook (Tuesday). All are in CT.  See <a href="http://www.waldingfieldfarm.com">waldingfieldfarm.com</a> for more information</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-2">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/waldingfield-logo.png" %></li>
+			<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/waldingfield-1.png" %></li>
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Ston" class="reveal-modal">
+  <h2>Stone Gardens Farm</h2>
+  <p class="lead">83 Saw Mill City Road in Shelton, Connecticut</p>
+  <p> Stone Gardens Farm is a family operated farm where you can purchase Connecticut home grown vegetables, meat and poultry.</p>
+	<p>Fred and Stacia Monahan founded Stone Gardens Farm in 1998, after expanding from a roadside vegetable stand where they sold vegetables and flowers at Shelton’s Dairy on Birdseye Road in Shelton. The couple steadily grew their business, planting more varieties of vegetables on mostly leased land. See <a href="http://www.stonegardensfarm.com">stonegardensfarm.com</a> for more information</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-2">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/stone-gardens-logo.png" %></li>
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-True" class="reveal-modal">
+  <h2>True Love Farms</h2>
+  <p class="lead">122 Thomaston Rd, Morris, CT 06763</p>
+  <p>The pork at True Love Farms comes from heritage-hybrid pigs born and raised on the farm. Their Tamworth boars and Berkshire-cross sows produce muscular, hearty hogs who do well outdoors. They also produce lean and flavorful beef fed only on grasses and legumes from their fields.  They apply no pesticides, herbicides, or chemical fertilizers to their pastures, and their cattle are completely hormone and antibiotic free. </p>
+
+  <p> See <a href="http://www.truelovefarms.org">truelovefarms.org</a> for more information</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="row">
+  	<ul class="small-block-grid-2">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/truelove-1.png" %></li>
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/truelove-2.png" %></li>
+
+  	</ul>
+  </div>
+</div>
+
+<div id="modal-Nort" class="reveal-modal">
+  <h2>Northfordy Farm</h2>
+  <p class="lead">53 Lanes Pond Road. Northford, Connecticut 06472</p>
+  <p>For over 35 years, we’ve been growing vegetables, flowers and herbs on our small family farm in Northford using sustainable and pesticide-free methods.</p>
+  <p>We are Certified Naturally Grown, use nutrient dense growing practices and are also members of the CT Chapter of the Northeast Organic Farming Association (NOFA) and sign their Farmers’ Pledge. </p>
+  <a class="close-reveal-modal">&#215;</a>
+    <div class="row">
+  	<ul class="small-block-grid-2">
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/northfordy-1.png" %></li>
+  		<li><%= image_tag "https://s3.amazonaws.com/farmivore/farm-photos/northfordy-2.png" %></li>
+
+  	</ul>
+  </div>
+</div>
+

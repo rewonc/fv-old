@@ -1,0 +1,12 @@
+{{#if content}}
+  <div class="shopping-list-header">
+    <h3>Your shopping list</h3>
+  </div>
+  <ul class="shopping-list-items">
+  {{#each listing in content}}
+    <li class="shopping-list-item">
+      {{render "shopping_list_item" listing}}
+    </li>
+  {{/each}}
+  </ul>
+{{/if}}
