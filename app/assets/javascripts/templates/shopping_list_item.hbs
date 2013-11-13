@@ -1,11 +1,31 @@
-<span class="highlight">
-<span class="description"> {{listing.description}} </span>
-<span class="at-sign"> @ </span>
-<span class="price">{{listing.priceString}}</span>
-</span>
-{{listing.farm.name}}.
-Quantity: {{listing.quantity}}
+<div class="line">
 
-<span class="hover-unhide pull-right">
-<a {{action removeListing listing}} class="remove-listing"><i class="fa fa-times"></i>Remove</a>
+  <span class="highlight">
+    <span class="description"> {{listing.description}} </span>
+    <span class="at-sign"> @ </span>
+    <span class="price">{{listing.priceString}}</span>
+  </span>
+
+  <span class="quantity-details">
+    &times;
+    <span class="quantity">{{listing.quantity}}</span>
+    <a {{action incrementQuantity listing}} class="hover-unhide"><i class="fa fa-plus"></i></a>
+    <a {{action decrementQuantity listing}} class="hover-unhide"><i class="fa fa-minus"></i></a>
+    </span>
+  </span>
+
+  <div class="dotted-lines">
+    <div class="dotted-lines-content" > &nbsp;</div>
+  </div>
+</div>
+<div class="line">
+  <span class="details">
+    {{listing.farm.name}}
+  </span>
+  <span class="hover-unhide options">
+    <span class="totalCost">
+      Subtotal: ${{totalCost}}
+    <span>
+    <a {{action removeListing listing}} class="remove-listing"><i class="fa fa-times"></i>Remove all</a>
 </span>
+</div>
