@@ -4,10 +4,11 @@ Farmivore.ListingItem = DS.Model.extend
   tag: DS.attr 'string'
   price: DS.attr()
   priceUnit: DS.attr 'string'
-  farm: DS.belongsTo("farm") #, async: true, inverse: 'listingItems')
+  farm: DS.belongsTo("farm")
+
   priceString: (->
     if @get('price')? && @get('priceUnit')
-      "$#{@get('price')}/#{@get('priceUnit')}"
+      "$#{@get('price')} per #{@get('priceUnit')}"
     else if !isNaN @get('price')
       "$#{@get('price')}"
     else
@@ -23,7 +24,7 @@ Farmivore.ListingItem = DS.Model.extend
   ).property 'priceString'
 
 
-window.src = [
+listingsSource = [
   ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb",""]
   ["Colton's Corner", "Jim", "Macoun Apples", "Apples","Fruits", "$2.50/lb",""]
   ["Colton's Corner", "Jim", "Northern Spy Apples (for cooking)", "Apples","Fruits", "$2/lb",""]
@@ -235,7 +236,7 @@ For farms with no info, link to webpage / about section
 
 ###
 count = 0
-Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
+Farmivore.ListingItem.FIXTURES = listingsSource.map( (list) ->
   farm_id =  Farmivore.Farm.FIXTURES.findProperty('name', list[0]).id
   [price, priceUnit] = list[5].split(/\//)
   if m = price.match /^\$([\d\.]+)/
