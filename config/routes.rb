@@ -15,6 +15,7 @@ Farmivore::Application.routes.draw do
   get "welcome/index"
 
   get 'wooster', to: 'places#show', id: 1
+  get 'wooster/boxes', to: 'mvp#boxes'
 
   post 'sms', to: 'texts#catch'
   # The priority is based upon order of creation: first created -> highest priority.
