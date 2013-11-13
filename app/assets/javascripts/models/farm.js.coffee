@@ -73,4 +73,4 @@ farm8 =
   listingItems: []
 
 
-Farmivore.Farm.FIXTURES = [farm1, farm2, farm3, farm4, farm5, farm6, farm7, farm8, farm9]
+Farmivore.Farm.FIXTURES = [farm1, farm2, farm3, farm4, farm5, farm6, farm7, farm8]
