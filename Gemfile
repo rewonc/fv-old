@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-script-source', '1.5.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -59,11 +60,12 @@ group :development, :test do
 end
 
 # Ember
-gem 'ember-source'
-gem 'ember-data-source'
+gem 'ember-source', '1.1.2'
 gem 'ember-bootstrap-rails'
+gem 'ember-data-source', '1.0.0.beta.3'
 gem 'ember-rails'
 
+gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -76,3 +78,5 @@ gem 'ember-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+gem  "rename"

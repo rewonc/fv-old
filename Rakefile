@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Farmapp::Application.load_tasks
+Farmivore::Application.load_tasks
