@@ -1,7 +1,10 @@
 @import 'constants';
+$shoppingListWidth: 800px;
 .shopping-list {
+  margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  max-width: $shoppingListWidth;
 }
 .shopping-list-header {
   h3 {
@@ -13,22 +16,22 @@
   border-radius: 5px;
   padding: 15px;
   // border: $darkGray1 1px solid;
-  max-width: 800px;
+  max-width: $shoppingListWidth;
   margin: 0 auto;
 }
 .shopping-list-item {
   color: $lightGray3;
   width: 100%;
   .description {
-      color: $black1;
-    }
+    color: $black1;
+  }
   .price {
-      color: $darkGray1;
-    }
-    .at-sign{
-      color: $lightGray3;
+    color: $darkGray1;
+  }
+  .at-sign{
+    color: $lightGray3;
 
-    }
+  }
   .highlight {
     font-size: 120%;
     font-weight: bold;
@@ -43,12 +46,16 @@
     margin-left: 5px;
     color: $lightGray3;
     &:hover {
-    color: $darkGray3;
+      color: $darkGray3;
     }
   }
   .pull-right{
     float: right;
     margin-top: 3px;
   }
+}
+.shopping-list-summary {
+  max-width: $shoppingListWidth;
+  float: right;
 }
 

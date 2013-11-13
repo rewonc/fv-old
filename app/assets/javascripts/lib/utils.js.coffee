@@ -121,8 +121,3 @@ window.utils =
     else
       @tickIntervalId = setInterval((-> console.log(moment().format "HH:mm:s.SS")), milliseconds)
       @ticking = true
-
-window.f0 = -> ctrl('place').get('farms').objectAt(0)
-window.f1 = -> ctrl('place').get('farms').objectAt(1)
-window.f2 = -> ctrl('place').get('farms').objectAt(2)
-window.f3 = -> ctrl('place').get('farms').objectAt(3)
