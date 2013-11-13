@@ -36,11 +36,11 @@ window.src = [
   ["Sugar Maple Farms", "Jim & Chuck", "Maple Syrup - Half-pint", "Maple Syrup","Products", "$7",""]
   ["Sugar Maple Farms", "Jim & Chuck", "Honey bear", "Honey","Products", "$8",""]
   ["Sugar Maple Farms", "Jim & Chuck", "5 lb honey bucket", "Honey","Products", "$34",""]
-  ["Sugar Maple Farms", "Jim & Chuck", "Peanut Brittle", "Candy","Products", "$7",""]
+  ["Sugar Maple Farms", "Jim & Chuck", "Peanut Brittle", "Candy","Baked", "$7",""]
   ["Sugar Maple Farms", "Jim & Chuck", "Horseradish", "Sauces","Products", "$5",""]
   ["Blue Slope", "Matt", "Veal Bacon", "Veal","Meat", "$17/lb","Free range"]
   ["Blue Slope", "Matt", "Beef Bacon", "Beef","Meat", "$12/lb","Free range"]
-  ["Blue Slope", "Matt", "Kielbasa", "Sausage","Meat", "$17/lb","Free range"]
+  ["Blue Slope", "Matt", "Kielbasa", "Sausage","Meat", "$6.5-9.5/lb","Free range"]
   ["Blue Slope", "Matt", "Ornamental Corn - large bunch", "Corn","Vegetables", "$4/lg, $2.75/small bunch",""]
   ["Blue Slope", "Matt", "Maple Syrup - Quart", "Maple Syrup","Products", "$24",""]
   ["Blue Slope", "Matt", "Maple Syrup - Pint", "Maple Syrup","Products", "$13",""]
@@ -65,13 +65,13 @@ window.src = [
   ["Blue Slope", "Matt", "Beef - Chuck Roast", "Beef","Meat", "$6.50/lb","Free range"]
   ["Blue Slope", "Matt", "Beef - Stew Meat", "Beef","Meat", "$6.50/lb","Free range"]
   ["Blue Slope", "Matt", "Beef - Tenderloin", "Beef","Meat", "$18/lb","Free range"]
-  ["Blue Slope", "Matt", "Beef - Sirloin", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - Eye of Round Roast", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - London Broil Roast", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - Flank Steak", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - Short Ribs", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - Knuckle Steak", "Beef","Meat", "SOLDOUT","Free range"]
-  ["Blue Slope", "Matt", "Beef - Strip Steak", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Sirloin", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Eye of Round Roast", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - London Broil Roast", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Flank Steak", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Short Ribs", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Knuckle Steak", "Beef","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Beef - Strip Steak", "Beef","Meat", "SOLDOUT","Free range"]
   ["Blue Slope", "Matt", "Goat - Loin Chop", "Goat","Meat", "$15/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Rib Chop", "Goat","Meat", "$14/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Shoulder Chop", "Goat","Meat", "$13/lb","Free range"]
@@ -80,7 +80,7 @@ window.src = [
   ["Blue Slope", "Matt", "Goat - Sausage", "Goat","Meat", "$11.25/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Ground", "Goat","Meat", "$11.25/lb","Free range"]
   ["Blue Slope", "Matt", "Goat - Liver, Kidney, Heart", "Goat","Meat", "$6/lb","Free range"]
-  ["Blue Slope", "Matt", "Goat - Bones", "Goat","Meat", "SOLDOUT","Free range"]
+  #["Blue Slope", "Matt", "Goat - Bones", "Goat","Meat", "SOLDOUT","Free range"]
   ["Waldingfield Farm", "Patrick", "No Spray Apples", "Apples","Fruits", "$3/lb","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Winter Squash", "Squash","Vegetables", "$2/lb","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Fingerling Potatoes", "Potatoes","Vegetables", "$4.50/lb","Certified organic"]
@@ -92,9 +92,9 @@ window.src = [
   ["Waldingfield Farm", "Patrick", "Swiss Chard", "Greens","Vegetables", "$3/bunch","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Baby Bok Choy", "Greens","Vegetables", "$3/bunch","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Broccoli", "Broccoli","Vegetables", "$4/lb","Certified organic"]
-  ["Waldingfield Farm", "Patrick", "Mustard Greens", "Greens","Vegetables", "$3.5/lb","Certified organic"]
-  ["Waldingfield Farm", "Patrick", "Amazin' Asian Salad Mix", "Greens","Vegetables", "$3 per 1/4 lb","Certified organic"]
-  ["Waldingfield Farm", "Patrick", "'Killa' Arugula", "Greens","Vegetables", "$3.25/lb","Certified organic"]
+  ["Waldingfield Farm", "Patrick", "Mustard Greens", "Greens","Vegetables", "$3/ qt.lb","Certified organic"]
+  ["Waldingfield Farm", "Patrick", "Amazin' Asian Salad Mix", "Greens","Vegetables", "$5 per half lb","Certified organic"]
+  ["Waldingfield Farm", "Patrick", "'Killa' Arugula", "Greens","Vegetables", "$3/ qt. lb","Certified organic"]
   ["Waldingfield Farm", "Patrick", "Crushed Heirloom Tomatoes", "Sauces","Products", "$8/jar",""]
   ["Waldingfield Farm", "Patrick", "The Farmer's Heirloom Tomato and Basil Sauce", "Sauces","Products", "$6/jar",""]
   ["Waldingfield Farm", "Patrick", "The Farmer's Bloody Mary Mix", "Sauces","Products", "$10/jar",""]
@@ -121,12 +121,12 @@ window.src = [
   ["Stone Gardens Farm", "Stacia", "Leeks", "Leeks","Vegetables", "$4/lb","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Turnips", "Root vegetables","Vegetables", "$2/lb","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Dandelion Greens", "Greens","Vegetables", "$1.50/lb","Integrated pest management"]
-  ["Stone Gardens Farm", "Stacia", "Swiss Chard", "Greens","Vegetables", "$1.50/lb","Integrated pest management"]
+  ["Stone Gardens Farm", "Stacia", "Swiss Chard", "Greens","Vegetables", "$1.50/bunch","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Radishes", "Root vegetables","Vegetables", "$1.50/bunch","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Carrots", "Root vegetables","Vegetables", "$1.50/bunch","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Fennel", "Herbs","Vegetables", "$3/lb","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Kale - Tuscan", "Greens","Vegetables", "$1.50/bunch","Integrated pest management"]
-  ["Stone Gardens Farm", "Stacia", "Kale - Curly Winterbor", "Greens","Vegetables", "$1.50/lb","Integrated pest management"]
+  ["Stone Gardens Farm", "Stacia", "Kale - Curly Winterbor", "Greens","Vegetables", "$1.50/bunch","Integrated pest management"]
   ["Stone Gardens Farm", "Stacia", "Collard Greens", "Greens","Vegetables", "$1.50/bunch","Integrated pest management"]
   ["True Love Farms", "Tom", "Pork - Loin Chops (Good for grilling!)", "Pork","Meat", "$10.50/lb","Pasture raised"]
   ["True Love Farms", "Tom", "Pork - Blade Steaks", "Pork","Meat", "$9.50/lb","Pasture raised"]
@@ -159,27 +159,80 @@ window.src = [
   ["Northfordy", "Peter & Judith", "Dried Habanero Peppers", "Peppers","Products", "$3/bag","Certified naturally grown"]
   ["Northfordy", "Peter & Judith", "Very Hot Peppers", "Peppers","Vegetables", "$3/box","Certified naturally grown"]
   ["Northfordy", "Peter & Judith", "Baby Ginger", "Spice", "Vegetables", "$14/lb","Certified naturally grown"]
-  ["Northfordy", "Peter & Judith", "Paw Paw", "Paw Paw","Fruits", "$12/lb","Certified naturally grown"]
   ["Northfordy", "Peter & Judith", "Maple Syrup - Half-gallon", "Maple Syrup","Products", "$43",""]
   ["Northfordy", "Peter & Judith", "Maple Syrup - Quart", "Maple Syrup","Products", "$23",""]
   ["Northfordy", "Peter & Judith", "Maple Syrup - Pint", "Maple Syrup","Products", "$13",""]
   ["Northfordy", "Peter & Judith", "Maple Syrup - Half-pint", "Maple Syrup","Products", "$7",""]
-  ]
+  ["Starlight Gardens", "David", "Arugula", "Greens","Vegetables", "$1/oz","Certified organic"]
+  ["Starlight Gardens", "David", "Salad greens", "Greens","Vegetables", "$1/oz","Certified organic"]
+  ["Starlight Gardens", "David", "Napoli greens", "Greens","Vegetables", "$5/bunch","Certified organic"]
+  ["Starlight Gardens", "David", "Sweet peppers", "Peppers","Vegetables", "$5/lb","Certified organic"]
+  ["Starlight Gardens", "David", "Kale - Winterbor 'Big Papi' ", "Greens","Vegetables", "$3/bunch","Certified organic"]
+  ["Starlight Gardens", "David", "Daikon", "Root vegetables","Vegetables", "$2/lb","Certified organic"]
+  ["Starlight Gardens", "David", "Hakeuri turnips", "Root vegetables","Vegetables", "$3.50/bunch","Certified organic"]
+  ["Starlight Gardens", "David", "Mustard greens", "Greens","Vegetables", "$1/oz","Certified organic"]
+  ["Starlight Gardens", "David", "Mizuna", "Greens","Vegetables", "$1/oz","Certified organic"]
+  ["Starlight Gardens", "David", "Tyee spinach", "Greens","Vegetables", "$1/oz","Certified organic"]
+  ["Starlight Gardens", "David", "Mesclun Greens", "Greens","Vegetables", "$6/bag","Certified organic"]
+
+
+]
 
 ###
-["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
-["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
-["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
-["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
-["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
-["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
+  ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Herbs", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Wasabi Chive", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Harvest Special", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Chevre - Pumpkin Special", "Chevre","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Yogurt", "Yogurt","Dairy", "$3",""]
+  ["Beltane Farms", "Paul", "Milk - Raw Quart", "Milk","Dairy", "$5",""]
+  ["Beltane Farms", "Paul", "Milk - Raw Half-gallon", "Milk","Dairy", "$10",""]
+  ["Beltane Farms", "Paul", "Ripened Cheese - Vespers", "Cheese","Dairy", "$10",""]
+  ["Beltane Farms", "Paul", "Ripened Cheese - Feta", "Cheese","Dairy", "$8",""]
+  ["Beltane Farms", "Paul", "Ripened Cheese - Sundance", "Cheese","Dairy", "$10",""]
+  ["Chaplin Farms", "", "No Spray pears", "Pears", "Fruit", "$4/qt", ""]
+  ["Hall's Farm","", "Beets (red, white, gold)", "Beets", "Vegetables", "$4/bunch","Certified organic"]
+  ["Hall's Farm","", "Turnips, Hakurei", "Turnips", "Vegetables", "$2/bunch","Certified organic"]
+  ["Barberry Hill","", "Potatoes (red, purple, white)", "Potatoes", "Vegetables", "$2/lb",""]
+  ["Sun One Organics","", "Sweet Potatoes", "Sweet Potatoes", "Vegetables", "$5/bag","Certified organic"]
+  ["Four Mile River Farm","", "Smoked Ham Steaks", "Pork", "Meat", "$3-5/bag","All-natural"]
+  ["Dolan Brothers","", "Littleneck Clams", "Seafood", "Meat", "$8/dozen","Locally harvested"]
+  ["Dolan Brothers","", "Scallops (wonderfully meaty)", "Seafood", "Meat", "$16/lb","Locally harvested"]
+  ["Mystic Cheese","", "Melville Cheese", "Cheese", "Dairy", "$8/block",""]
+  ["Sankow's Beaver Brook","", "Sheep Yogurt", "Yogurt", "Dairy", "$3/small",""]
+  ["Sankow's Beaver Brook","", "Raw milk (Jersey cow)", "Milk", "Dairy", "$6/half gallon",""]
+  ["Smyth's Trinity","", "Glass bottled milk", "Milk", "Dairy", "$3/quart",""]
+  ["Smyth's Trinity","", "Glass bottled milk", "Milk", "Dairy", "$3/quart",""]
+  ["SoNo Baking Company","", "Breakfast pastries", "Pastries", "Baked", "$2-3.50/ea",""]
+  ["SoNo Baking Company","", "Sourdough breads", "Bread", "Baked", "$6/ea",""]
+  ["Whole German Bread","", "Struesels", "Pastries", "Baked", "$3/ea",""]
+  ["Sticky Nuts","", "Fall Festival Trail Mix", "Granola", "Baked", "$7/bag",""]
+  ["Whole German Bread","", "Struesels", "Pastries", "Baked", "$3/ea",""]
+  ["The Soup Girl","", "Pumpkin apple bacon soup", "Soup", "Products", "$6/pint",""]
+  ["Best Buddy Biscuits","", "Dog treats -- beef and chicken jerky, cookie treats", "Dog treats", "Products", "$4/5oz bag","All natural"]
+  ["Garden Fresh Baby","", "Fresh baby food and toddler meals", "Baby food", "Products", "$6/item average", "Organic"]
+
+
+
+TODO:
+
+Label changes on filter:
+Change label for "products" category to "Other good stuff"
+change label for "meat" category to "Meat and Seafood"
+Add "Baked goods, sweets" label for a new section: "Baked"
+
+Change from "Listings..." to "Samplings from the market this week"  (we're not a complete listing)
+Last Updated can change to Nov 10
+Add an asterik at the bottom: * Prices and selection may change at the market
+
+Changes to Method:
+Shorten Certified Organic, etc to an abbreviation (CO) with a key on top. Maybe a color for highlight.
+Truelove -- add link to practices instead of label Pastured Raised?
+For farms with no info, link to webpage / about section
+
+
 ###
 count = 0
 Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
@@ -199,15 +252,5 @@ Farmivore.ListingItem.FIXTURES =  src.map( (list) ->
 
 ###
 Don't add in Barberry Hill -- need to ask Kelly first
-["Starlight Gardens", "David", "Arugula", "Greens","Vegetables", "$1/oz","Certified organic"]
-["Starlight Gardens", "David", "Salad greens", "Greens","Vegetables", "$1/oz","Certified organic"]
-["Starlight Gardens", "David", "Napoli greens", "Greens","Vegetables", "$5/bunch","Certified organic"]
-["Starlight Gardens", "David", "Sweet peppers", "Peppers","Vegetables", "$5/lb","Certified organic"]
-["Starlight Gardens", "David", "Kale - Winterbor 'Big Papi' ", "Greens","Vegetables", "$3/bunch","Certified organic"]
-["Starlight Gardens", "David", "Daikon", "Root vegetables","Vegetables", "$2/lb","Certified organic"]
-["Starlight Gardens", "David", "Hakeuri turnips", "Root vegetables","Vegetables", "$3.50/bunch","Certified organic"]
-["Starlight Gardens", "David", "Mustard greens", "Greens","Vegetables", "$1/oz","Certified organic"]
-["Starlight Gardens", "David", "Mizuna", "Greens","Vegetables", "$1/oz","Certified organic"]
-["Starlight Gardens", "David", "Tyee spinach", "Greens","Vegetables", "$1/oz","Certified organic"]
-["Starlight Gardens", "David", "Mesclun Greens", "Greens","Vegetables", "$6/bag","Certified organic"]
+
 ###
