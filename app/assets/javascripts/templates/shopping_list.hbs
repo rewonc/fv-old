@@ -7,9 +7,10 @@
     {{render "shopping_list_item" listing}}
   {{/each}}
   </ol>
-  <div class="shoppint-list-summary">
-    Number of items: {{totalNumItems}}
-    <br>
-    Total cost: ${{totalCost}}
+  <div class="shopping-list-summary">
+    <ul>
+      <li>Number of items: {{totalNumItems}}</li>
+      <li>Total cost: ${{totalCost}}</li>
+    </ul>
   </div>
 {{/if}}

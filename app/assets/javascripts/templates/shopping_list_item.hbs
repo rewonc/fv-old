@@ -9,8 +9,8 @@
   <span class="quantity-details">
     &times;
     <span class="quantity">{{listing.quantity}}</span>
-    <a {{action incrementQuantity listing}} class="hover-unhide"><i class="fa fa-plus"></i></a>
-    <a {{action decrementQuantity listing}} class="hover-unhide"><i class="fa fa-minus"></i></a>
+    <a {{action incrementQuantity listing}} class="hover-unhide action-minor"><i class="fa fa-plus"></i></a>
+    <a {{action decrementQuantity listing}} class="hover-unhide action-minor"><i class="fa fa-minus"></i></a>
     </span>
   </span>
 
@@ -26,6 +26,6 @@
     <span class="totalCost">
       Subtotal: ${{totalCost}}
     <span>
-    <a {{action removeListing listing}} class="remove-listing"><i class="fa fa-times"></i>Remove all</a>
+    <a {{action removeAll listing}} class="remove-all action-minor"><i class="fa fa-times"></i>Remove all</a>
 </span>
 </div>
