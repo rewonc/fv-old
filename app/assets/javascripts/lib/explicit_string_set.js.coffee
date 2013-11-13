@@ -1,5 +1,4 @@
 Fv.ExplicitStringSet = Ember.Set.extend Ember.Observable,
-
   clear: ->
     @forEach (stringKey) =>
       console.log "Removing #{stringKey}"
