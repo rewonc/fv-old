@@ -20,5 +20,12 @@ body {
 
 a {
   cursor: pointer;
+}
 
+
+a.action-minor {
+  color: $lightGray1;
+}
+a.action-minor:hover {
+  color: $darkGray1;
 }

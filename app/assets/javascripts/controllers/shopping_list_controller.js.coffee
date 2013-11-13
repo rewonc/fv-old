@@ -7,6 +7,7 @@ Fv.ShoppingListController = Ember.ArrayController.extend
     @content.mapProperty('quantity').reduce((sum, qty) -> sum + qty)
   ).property 'content.@each.quantity', 'content.[]'
 
+
   # @param listItem [Fv.ListingItem] -- the ListingItem to add
   # Wraps `listItem` in a `ShoppingListItem` and adds to content.
   addListing: (listItem) ->
@@ -16,19 +17,34 @@ Fv.ShoppingListController = Ember.ArrayController.extend
       @get('content').pushObject shoppingListItem
     shoppingListItem.incrementProperty('quantity')
 
+  incrementQuantity: (listItem) ->
+    listItem.incrementProperty('quantity')
+
+  decrementQuantity: (listItem) ->
+    shoppingListItem = @get('content').findProperty("id", listItem.get('id'))
+    qty = shoppingListItem.get('quantity')
+    if qty > 1
+      shoppingListItem.decrementProperty 'quantity'
+    else
+      @content.removeObject shoppingListItem
+
+  removeAll: (listItem) ->
+    @content.removeObject listItem
+
   init: ->
     @set 'content', []
 
   actions:
-    removeListing: (listItem) ->
-      shoppingListItem = @get('content').findProperty("id", listItem.get('id'))
-      qty = shoppingListItem.get('quantity')
-      Em.assert("Quantity is > 0", qty > 0)
-      if qty > 1
-        shoppingListItem.decrementProperty 'quantity'
-      else
-        @content.removeObject shoppingListItem
-      # @get('content').removeAt @get('content').indexOf(listing)
+    incrementQuantity: (listItem) ->
+      @incrementQuantity(listItem)
+
+    decrementQuantity: (listItem) ->
+      @decrementQuantity(listItem)
+
+    removeAll: (listItem) ->
+      @removeAll listItem
+
+
 
 Fv.ShoppingListItem = Ember.ObjectProxy.extend
   content: null
