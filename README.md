@@ -58,5 +58,3 @@ Upgarde the user to a super user. [More][http://stackoverflow.com/questions/1075
      postgres-# ;
      ALTER ROLE
      postgres=# \q
-
-
