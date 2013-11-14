@@ -1,4 +1,10 @@
 class BoxesController < ApplicationController
+  http_basic_authenticate_with name: "orange1", password: "orangutan", only: [:index]
+
+  def index
+    @boxes = Box.all
+  end
+
   def new
     @box = Box.new
   end
