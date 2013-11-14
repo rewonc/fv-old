@@ -10,6 +10,7 @@ Fv.PlaceController = Ember.ObjectController.extend
 
   actions:
     addToShoppingList: (listing)->
+      utils.track('places:add-listing-to-shopping-cart', listing.mixPanelProps())
       @get('controllers.shoppingList').addListing listing
 
 Fv.PlaceListingsController = Ember.ArrayController.extend
@@ -23,8 +24,6 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
       if @get('filterCategories.length')
         @get('filterCategories').any (category) ->
           item.get('category').toLowerCase() == category.toLowerCase()
-
-      # If filterCategories is empty, then show everything
       else
         true
 
@@ -32,13 +31,18 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
 
   actions:
     sortBy: (param) ->
+      utils.track('places:sort-by', field: param)
       @set 'sortProperties', [param]
+
     filterBy: (param) ->
+      utils.track('places:filter-by', category: param)
       categories = @get('filterCategories')
       unless categories.get(param)
         @send 'clearFilters'
       categories.toggle(param)
+
     clearFilters: ->
+      utils.track('places:clear-filters')
       @get('filterCategories').clear()
 
   init: ->

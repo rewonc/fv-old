@@ -36,12 +36,15 @@ Fv.ShoppingListController = Ember.ArrayController.extend
 
   actions:
     incrementQuantity: (listItem) ->
+      utils.track('shopping-list:increment-quantity', listItem.get('content').mixPanelProps())
       @incrementQuantity(listItem)
 
     decrementQuantity: (listItem) ->
+      utils.track('shopping-list:decrement-quantity', listItem.get('content').mixPanelProps())
       @decrementQuantity(listItem)
 
     removeAll: (listItem) ->
+      utils.track('shopping-list:remove-all', listItem.get('content').mixPanelProps())
       @removeAll listItem
 
 

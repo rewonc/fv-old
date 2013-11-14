@@ -3,6 +3,6 @@
   <td>{{listing.description}}</td>
   <td {{bindAttr class="soldOut"}}>{{listing.priceString}}</td>
   <td>{{listing.farm.methodology}}</td>
-  <td><a {{action showModal listing.farm}} class="action-minor">{{listing.farm.name}}</a></td>
+  <td><a {{action showModal listing.farm listing}} class="action-minor">{{listing.farm.name}}</a></td>
   <td><a {{action addToShoppingList listing}} class="add-button"><i class="fa fa-plus-circle"></i></a></td>
 </tr>
