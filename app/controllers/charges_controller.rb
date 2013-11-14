@@ -6,12 +6,11 @@ class ChargesController < ApplicationController
 	def create
 	  # Amount in cents
 	  # https://stripe.com/docs/tutorials/charges  <-- on how to store the token and charge it later
-	  # check that charge already exists before going through this, to prevent doubles
 	  @box = Box.find(session[:box_id])
 		 amount = @box.get_price
 	  @customer = Stripe::Customer.create(
 	    :email => @box.email,
-	    :description => 'Box number ' + @box.box_num + 'for delivery'
+	    :description => 'Box number ' + @box.box_num.to_s + ' for delivery',
 	    :card  => params[:stripeToken]
 	  )
 
