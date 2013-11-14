@@ -17,8 +17,8 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
   sortAscending: true
   sortingBy: null
   filterCategories: null
-  filtered: (->
 
+  filtered: (->
     @get('arrangedContent').filter (item, idx) =>
       if @get('filterCategories.length')
         @get('filterCategories').any (category) ->
@@ -27,6 +27,7 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
       # If filterCategories is empty, then show everything
       else
         true
+
   ).property('arrangedContent.@each', 'filterCategories.[]')
 
   actions:
@@ -34,6 +35,8 @@ Fv.PlaceListingsController = Ember.ArrayController.extend
       @set 'sortProperties', [param]
     filterBy: (param) ->
       categories = @get('filterCategories')
+      unless categories.get(param)
+        @send 'clearFilters'
       categories.toggle(param)
     clearFilters: ->
       @get('filterCategories').clear()
