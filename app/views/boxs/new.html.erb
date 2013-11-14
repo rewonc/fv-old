@@ -1,0 +1,61 @@
+<h1>Order a box</h1>
+<p>this should have the user select the right box and input all his information besides CC#</p>
+<p>it should indicate delivery will occur starting next week, & all the detailed info they need to know before purchasing </p>
+<p>We'll create a new Box object, which for convenience we'll include user data in as well.</p>
+<p>Next page will confirm the transaction and ask them to enter CC info. </p>
+<div class="row">
+
+<%= form_for :box, url: boxs_path do |f| %>
+  <fieldset>
+    <legend>Choose your box</legend>
+    <div class="row">
+      <div class="large-12 columns">
+        <ul class="inline-list">
+          <li><%= radio_button_tag(:box_num, 1) %>
+            <%= label_tag(:box_1, "Box 1") %></li>
+          <li><%= radio_button_tag(:box_num, 2) %>
+            <%= label_tag(:box_2, "Box 2") %></li>
+          <li><%= radio_button_tag(:box_num, 3) %>
+            <%= label_tag(:box_3, "Box 3") %></li>
+          <li><%= radio_button_tag(:box_num, 4) %>
+            <%= label_tag(:box_4, "Box 4") %></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="row">
+
+      <div class="large-4 columns">
+            <%= f.text_field :firstname, :placeholder => "Your first name" %> 
+      </div>
+      <div class="large-4 columns">
+            <%= f.text_field :lastname, :placeholder => "Last name"%>  
+      </div>   
+      <div class="large-4 columns"></div>  
+    </div>
+
+    <div class="row">
+
+      <div class="large-5 columns">
+            <%= f.text_field :email, :placeholder => "Your email address" %> 
+      </div>
+      <div class="large-3 columns"><%= f.text_field :phone, :placeholder => "Your phone number" %> </div>  
+      <div class="large-4 columns"></div>  
+    </div>
+    
+    <div class="row">
+      <div class="large-4 columns"></div>
+      <div class="large-4 columns"></div>  
+      <div class="large-4 columns"></div>  
+    </div>
+      
+    <div class="row">
+      <div class="large-4 columns"></div>
+      <div class="large-4 columns"></div>  
+      <div class="large-4 columns"></div>  
+    </div>
+
+    
+          <%= f.submit 'Submit', :class => "button" %>
+  </fieldset>     
+<% end %>
