@@ -184,11 +184,6 @@ listingsSource = [
   ["Starlight Gardens", "David", "Mizuna", "Greens","Vegetables", "$1/oz","Certified organic"]
   ["Starlight Gardens", "David", "Tyee spinach", "Greens","Vegetables", "$1/oz","Certified organic"]
   ["Starlight Gardens", "David", "Mesclun Greens", "Greens","Vegetables", "$6/bag","Certified organic"]
-
-
-]
-
-###
   ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
   ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
   ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
@@ -223,6 +218,11 @@ listingsSource = [
   ["The Soup Girl","", "Pumpkin apple bacon soup", "Soup", "Products", "$6/pint",""]
   ["Best Buddy Biscuits","", "Dog treats -- beef and chicken jerky, cookie treats", "Dog treats", "Products", "$4/5oz bag","All natural"]
   ["Garden Fresh Baby","", "Fresh baby food and toddler meals", "Baby food", "Products", "$6/item average", "Organic"]
+]
+
+
+###
+ 
 
 
 
