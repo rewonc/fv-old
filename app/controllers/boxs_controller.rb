@@ -5,7 +5,7 @@ class BoxsController < ApplicationController
   def create
     @box = Box.new(box_params)
     #TO DO: validations, and return errors
-    
+
     if @box.box_num == 1 
       @amount = 2100;
     elsif @box.box_num == 2
@@ -16,6 +16,8 @@ class BoxsController < ApplicationController
       @amount = 3100;
     end
 
+    session[:box] = @box
+    session[:amount] = @amount
     render 'charges/new'
   end
 
