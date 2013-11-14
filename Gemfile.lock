@@ -105,6 +105,9 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     fssm (0.2.10)
@@ -218,6 +221,7 @@ DEPENDENCIES
   ember-source (= 1.1.2)
   factory_girl_rails
   faker
+  figaro
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
