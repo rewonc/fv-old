@@ -7,6 +7,7 @@
 
 
 <%= form_tag charges_path do %>
+
   <article>
     <label class="amount">
       <p>Security -- we don't store your card info, don't worry.</p>
@@ -17,6 +18,6 @@
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Your order"
+          data-description="For delivery Saturday, Nov 23"
           data-amount=<%= @amount%> ></script>
 <% end %>
