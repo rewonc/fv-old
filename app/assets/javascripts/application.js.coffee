@@ -16,3 +16,4 @@
 #= require farmivore
 
 $(document).foundation()
+mixpanel.track('page-load', href: document.location.href, hash: document.location.hash)
