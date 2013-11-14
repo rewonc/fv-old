@@ -1,5 +1,6 @@
 class BoxesController < ApplicationController
   def new
+    @box = Box.new
   end
 
   def create
@@ -10,7 +11,7 @@ class BoxesController < ApplicationController
        session[:box_id] = @box.id
        render 'charges/new'
     else
-      flash[:error] = 'Oops, looks like you left a field blank. Please try again.'
+      
       render action: 'new'
     end   
    

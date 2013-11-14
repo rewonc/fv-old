@@ -5,7 +5,8 @@
 <p>Next page will confirm the transaction and ask them to enter CC info. </p>
 <div class="row">
 
-<%= form_for :box, url: boxes_path do |f| %>
+<%= form_for @box, url: boxes_path do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
   <fieldset>
     <legend>Choose your box</legend>
     <div class="row">
@@ -67,17 +68,20 @@
     <div class="row">
       <div class="large-6 columns">
         <em>Choose delivery or pickup</em>
-       <p> <%= f.select(:delivery_preference, options_for_select([["Delivery to my home in New Haven (Saturday morning, 9am-1pm) ($4)",1],["Delivery to my home in New Haven (Saturday morning, 1pm-5pm) ($4)",1],["Pickup from the Wooster Square Farmer's Market (Saturday, 10am-12pm) (Free)",1]])) %>
+       <p> <%= f.select(:delivery_preference, options_for_select([["Delivery to my home in New Haven (Saturday morning, 9am-1pm) ($4)",1],["Delivery to my home in New Haven (Saturday morning, 1pm-5pm) ($4)",2],["Pickup from the Wooster Square Farmer's Market (Saturday, 10am-12pm) (Free)",3]])) %>
        </p>
       </div>
       <div class="large-2 columns"></div>  
       <div class="large-4 columns"></div>  
     </div>
 
-     <div class="row">
-      <!-- Hide when delivery isn't necessary -->
+    <div class="row">
+      <div class="large-12 columns">
+        <em>Your delivery address (no need to enter if pickup is selected)</em>
+      </div>
+    </div>
+    <div class="row">
       <div class="large-5 columns">
-          <em>Your delivery address</em>
            <%= f.text_field :street, :placeholder => "Street address line 1" %>
             <%= f.text_field :street2, :placeholder => "Street address line 2" %>
       </div>
