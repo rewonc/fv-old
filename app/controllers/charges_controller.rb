@@ -9,17 +9,19 @@ class ChargesController < ApplicationController
 	  # check that charge already exists before going through this, to prevent doubles
 	  @box = Box.find(session[:box_id])
 		 amount = @box.get_price
-	  customer = Stripe::Customer.create(
+	  @customer = Stripe::Customer.create(
 	    :email => @box.email,
+	    :description => 'Box number ' + @box.box_num + 'for delivery'
 	    :card  => params[:stripeToken]
 	  )
 
-	  charge = Stripe::Charge.create(
-	    :customer    => customer.id,
+	  @charge = Stripe::Charge.create(
+	    :customer    => @customer.id,
 	    :amount      => amount,
 	    :description => @box.email.to_s,
 	    :currency    => 'usd'
 	  )
+
 
 	  
 

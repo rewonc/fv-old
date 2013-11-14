@@ -1,4 +1,4 @@
-class BoxsController < ApplicationController
+class BoxesController < ApplicationController
   def new
   end
 
@@ -6,7 +6,6 @@ class BoxsController < ApplicationController
     @box = Box.new(box_params)
     #TO DO: validations. return errors or save
     if @box.save
-      flash[:notice] = 'Great! One last step and you are there!'
        @amount = @box.get_price
        session[:box_id] = @box.id
        render 'charges/new'
