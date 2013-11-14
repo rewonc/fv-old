@@ -1,8 +1,17 @@
+<h3>Let's confirm the details here.</h3>
+      <p>You'll be charged immediately for this first box. We'll remind you about your delivery on Wednesday, and you have have until Thurs 5pm to cancel your box (or your subscription, by calling us or emailing us). Saturday we'll deliver the box (or hold it.. whatever you said on the form).</p>
+      <p>The week after, you'll get the reminder email on Wednesday, and get charged every Friday. You have until Thurs 5pm to call off the box. </p>
+      <p>box object has the info from the form:</p>
+      <p><%= @box.inspect %></p>
+      <p>Box price is set in boxs_controller.rb</p>
+
+
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-    	<h3>Alright, just enter your credit card info in this shady little box here...</h3>
-      <span>Amount: $<%= @amount/100 %>0</span>
+      <p>Security -- we're not going to store your card yada yada</p>
+
+      <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
     </label>
   </article>
 
