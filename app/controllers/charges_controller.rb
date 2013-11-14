@@ -4,12 +4,12 @@ class ChargesController < ApplicationController
 	end
 	
 	def new
-		@amount = @cart.total * 100
+		@amount = 1000;
 	end
 
 	def create
 	  # Amount in cents
-
+	  # https://stripe.com/docs/tutorials/charges  <-- integrating the charge
 	  @amount = @cart.total * 100
 
 	  customer = Stripe::Customer.create(

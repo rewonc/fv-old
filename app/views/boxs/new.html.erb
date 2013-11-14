@@ -11,14 +11,14 @@
     <div class="row">
       <div class="large-12 columns">
         <ul class="inline-list">
-          <li><%= radio_button_tag(:box_num, 1) %>
-            <%= label_tag(:box_1, "Box 1") %></li>
-          <li><%= radio_button_tag(:box_num, 2) %>
-            <%= label_tag(:box_2, "Box 2") %></li>
-          <li><%= radio_button_tag(:box_num, 3) %>
-            <%= label_tag(:box_3, "Box 3") %></li>
-          <li><%= radio_button_tag(:box_num, 4) %>
-            <%= label_tag(:box_4, "Box 4") %></li>
+          <li><%= f.radio_button(:box_num, 1) %>
+            <%= f.label(:box_1, "Box 1") %></li>
+          <li><%= f.radio_button(:box_num, 2) %>
+            <%= f.label(:box_2, "Box 2") %></li>
+          <li><%= f.radio_button(:box_num, 3) %>
+            <%= f.label(:box_3, "Box 3") %></li>
+          <li><%= f.radio_button(:box_num, 4) %>
+            <%= f.label(:box_4, "Box 4") %></li>
         </ul>
       </div>
     </div>
@@ -44,18 +44,53 @@
     </div>
     
     <div class="row">
-      <div class="large-4 columns"></div>
-      <div class="large-4 columns"></div>  
-      <div class="large-4 columns"></div>  
+      <div class="large-12 columns">
+         <ul class="inline-list">
+          <li><%= f.radio_button(:frequency, 1) %>
+            <%= f.label(:weekly, "Weekly box") %></li>
+          <li><%= f.radio_button(:frequency, 2) %>
+            <%= f.label(:biweekly, "Biweekly box") %></li>
+        </ul>
+      </div> 
     </div>
       
     <div class="row">
-      <div class="large-4 columns"></div>
-      <div class="large-4 columns"></div>  
+      <div class="large-6 columns">
+        <em>currently only offering delivery to residents of New Haven City</em>
+       <p> <%= f.select(:delivery_preference, options_for_select([["Delivery to my home (Saturday morning, 9am-1pm) ($4)",1],["Delivery to my home (Saturday morning, 1pm-5pm) ($4)",1],["Pickup from the Wooster Square Farmer's Market (Saturday, 10am-12pm) (Free)",1]])) %>
+       </p>
+      </div>
+      <div class="large-2 columns"></div>  
       <div class="large-4 columns"></div>  
     </div>
 
-    
-          <%= f.submit 'Submit', :class => "button" %>
+     <div class="row">
+
+      <div class="large-5 columns">
+            <%= f.text_field :street, :placeholder => "Street address line 1" %>
+            <%= f.text_field :street2, :placeholder => "Street address line 2" %>
+      </div>
+      <div class="large-3 columns">need billing address - if separate</div>  
+      <div class="large-4 columns"></div>  
+    </div>
+
+    <div class="row">
+      <div class="large-2 columns">
+            <%= f.text_field :city, :placeholder => "City" %>
+      </div>
+      <div class="large-1 columns"><%= f.text_field :state, :placeholder => "State" %></div>  
+      <div class="large-2 columns"><%= f.text_field :zip, :placeholder => "Zip" %></div>  
+      <div class="large-7 columns"></div>
+    </div>
+
+    <div class="row">
+      <div class="large-3 columns">
+            <%= f.text_area :instructions, :placeholder => "Instructions for our delivery person" %>
+      </div>
+      <div class="large-10 columns"></div>
+    </div>
+
+
+          <%= f.submit 'Checkout', :class => "button" %>
   </fieldset>     
 <% end %>
