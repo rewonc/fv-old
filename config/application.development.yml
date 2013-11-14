@@ -10,6 +10,8 @@
 development:
   FIGARO_ENV: "development"
   MIXPANEL_TOKEN: "c00f4ec18442a740d4534e0d41b313c0"
+  STRIPE_PUBLISHABLE_KEY: "pk_test_rkV7OQLYHK6ZboW3PtGE0Rd4"
+  STRIPE_SECRET_KEY: "sk_test_hTgRQ6U2DyxTrwMb906ne8RI"
 staging:
   FIGARO_ENV: "staging"
 production:
