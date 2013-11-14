@@ -4,23 +4,18 @@ class BoxsController < ApplicationController
 
   def create
     @box = Box.new(box_params)
-    #TO DO: validations, and return errors
-
-    if @box.box_num == 1 
-      @amount = 2100;
-    elsif @box.box_num == 2
-      @amount = 2400;
-    elsif @box.box_num == 3
-      @amount = 2900;
+    #TO DO: validations. return errors or save
+    if @box.save
+      flash[:notice] = 'Great! One last step and you are there!'
+       @amount = @box.get_price
+       session[:box_id] = @box.id
+       render 'charges/new'
     else
-      @amount = 3100;
-    end
-
-    session[:box] = @box
-    session[:amount] = @amount
-    render 'charges/new'
+      flash[:error] = 'Oops, looks like you left a field blank. Please try again.'
+      render action: 'new'
+    end   
+   
   end
-
 
   private
     def box_params
