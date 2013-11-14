@@ -5,7 +5,7 @@
 <p>Next page will confirm the transaction and ask them to enter CC info. </p>
 <div class="row">
 
-<%= form_for :box, url: boxs_path do |f| %>
+<%= form_for :box, url: boxes_path do |f| %>
   <fieldset>
     <legend>Choose your box</legend>
     <div class="row">
@@ -56,8 +56,8 @@
       
     <div class="row">
       <div class="large-6 columns">
-        <em>Starting on...</em>
-       <p> <%= f.select(:start_date, options_for_select([["Saturday, Nov 23","Sat Nov 23"],["Saturday, Nov 30", "Sat Nov 30",["Saturday, December 7"]]])) %>
+        <em>Starting on the following date:</em>
+       <p> <%= f.select(:start_date, options_for_select([["Saturday, Nov 23","Sat Nov 23"],["Saturday, Nov 30", "Sat Nov 30"],["Saturday, December 7", "Sat Dec 7"]])) %>
        </p>
       </div>
       <div class="large-2 columns"></div>  
@@ -66,7 +66,7 @@
 
     <div class="row">
       <div class="large-6 columns">
-        <em>Currently only offering delivery to residents of New Haven City</em>
+        <em>Choose delivery or pickup</em>
        <p> <%= f.select(:delivery_preference, options_for_select([["Delivery to my home in New Haven (Saturday morning, 9am-1pm) ($4)",1],["Delivery to my home in New Haven (Saturday morning, 1pm-5pm) ($4)",1],["Pickup from the Wooster Square Farmer's Market (Saturday, 10am-12pm) (Free)",1]])) %>
        </p>
       </div>
