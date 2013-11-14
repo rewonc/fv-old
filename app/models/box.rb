@@ -1,6 +1,7 @@
 class Box < ActiveRecord::Base
 
 def get_price
+  #add 400 for delivery
   if box_num == 1 
       return 2100;
     elsif box_num == 2
