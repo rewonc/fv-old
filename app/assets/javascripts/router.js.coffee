@@ -28,6 +28,7 @@ Farmivore.PlaceRoute = Ember.Route.extend
           li.get('farm').notifyPropertyChange('listingItems')
       place
   actions:
-    showModal: (farm)->
+    showModal: (farm, listing)->
+      utils.track('places:show-modal', $.extend(farm.mixPanelProps(), listingId: listing.get('id') ))
       modalId = "#modal-#{farm.get('name').substring(0,4)}"
       $(modalId).foundation('reveal', 'open')

@@ -8,6 +8,11 @@ Farmivore.Farm = DS.Model.extend
 
   place: DS.belongsTo 'place'
   listingItems: DS.hasMany("listing_item") #, async: true, inverse: 'farm')
+  mixPanelProps: ->
+    name: @get('name')
+    id: @get('id')
+    methodology: @get('methodology')
+
 
 farm1 =
   id: 1
