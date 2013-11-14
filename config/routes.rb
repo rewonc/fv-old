@@ -1,5 +1,6 @@
 Farmivore::Application.routes.draw do
 
+  get "boxs/new"
   devise_for :farmers
   devise_for :users
   resources :line_items
@@ -32,7 +33,7 @@ Farmivore::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :contacts
+  resources :contacts, :boxs
   resources :places, :charges
 
   resources :farms do 
