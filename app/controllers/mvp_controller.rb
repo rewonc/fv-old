@@ -1,6 +1,8 @@
 class MvpController < ApplicationController
-	def index
-	end
+  layout 'mvp'
+
+  def index
+  end
 
   def boxes
   end
