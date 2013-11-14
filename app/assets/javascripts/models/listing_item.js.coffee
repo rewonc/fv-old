@@ -23,6 +23,15 @@ Farmivore.ListingItem = DS.Model.extend
     @get('priceString') == "SOLDOUT"
   ).property 'priceString'
 
+  mixPanelProps: ->
+    id: @get('id')
+    category: @get('category')
+    description: @get('description')
+    tag: @get('tag')
+    price: @get('price')
+    priceUnit: @get('priceUnit')
+    farmId: @get('farm.id')
+
 
 listingsSource = [
   ["Colton's Corner", "Jim", "Gala Apples", "Apples","Fruits", "$2/lb",""]

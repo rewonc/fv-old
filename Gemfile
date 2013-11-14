@@ -59,6 +59,9 @@ group :development, :test do
   gem 'faker'
 end
 
+# Figaro for environment management
+gem 'figaro'
+
 # Ember
 gem 'ember-source', '1.1.2'
 gem 'ember-bootstrap-rails'
