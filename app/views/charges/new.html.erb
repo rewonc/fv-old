@@ -9,7 +9,7 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <p>Security -- we're not going to store your card yada yada</p>
+      <p>Security -- we don't store your card info, don't worry.</p>
 
       <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
     </label>

@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  # https://stripe.com/docs/tutorials/charges  <-- integrating the charge
+	  # https://stripe.com/docs/tutorials/charges  <-- on how to store the token and charge it later
 	  @amount = @cart.total * 100
 
 	  customer = Stripe::Customer.create(
