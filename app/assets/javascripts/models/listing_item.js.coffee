@@ -227,16 +227,6 @@ listingsSource = [
 
 
 TODO:
-
-Label changes on filter:
-Change label for "products" category to "Other good stuff"
-change label for "meat" category to "Meat and Seafood"
-Add "Baked goods, sweets" label for a new section: "Baked"
-
-Change from "Listings..." to "Samplings from the market this week"  (we're not a complete listing)
-Last Updated can change to Nov 10
-Add an asterik at the bottom: * Prices and selection may change at the market
-
 Changes to Method:
 Shorten Certified Organic, etc to an abbreviation (CO) with a key on top. Maybe a color for highlight.
 Truelove -- add link to practices instead of label Pastured Raised?
@@ -256,7 +246,7 @@ Farmivore.ListingItem.FIXTURES = listingsSource.map( (list) ->
     price: price
     priceUnit: priceUnit
     description: list[2]
-    tag: list[3]
+    tag: list[6]
     category: list[4]
   )
 
