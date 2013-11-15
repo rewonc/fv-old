@@ -3,13 +3,14 @@
       <p>The week after, you'll get the reminder email on Wednesday, and get charged every Friday. You have until Thurs 5pm to call off the box. </p>
       <p>box object has the info from the form:</p>
       <p><%= @box.inspect %></p>
-      <p>Box price is set in boxs_controller.rb</p>
+      <p>Box price is set in models/box.rb. test cards at https://stripe.com/docs/testing</p>
 
 
 <%= form_tag charges_path do %>
+
   <article>
     <label class="amount">
-      <p>Security -- we're not going to store your card yada yada</p>
+      <p>Testing: use card 4242 4242 4242 4242, any future expiry date, any name/num. See results on stripe dashboard.</p>
 
       <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
     </label>
@@ -17,6 +18,6 @@
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Your order"
+          data-description="For delivery Saturday, Nov 23"
           data-amount=<%= @amount%> ></script>
 <% end %>
