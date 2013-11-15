@@ -1,9 +1,147 @@
-<div class="centered">
-<p>Stuff to think about -- differentiate between certified organic and not?</p>
-
-<p>Link below leads to product select page</p>
-<p><%= link_to "Get started", new_box_path %></p>
+<div class="landing-page">
 
 
 
-</div>
+  <section class="introduction segment">
+    <div class="large-12 columns">
+      <h1 class="landing-page-tag">
+        A box of the freshest produce <br>
+        from local farms, <br>
+        delivered to your door.
+      </h1>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= image_tag 'cabbage_600.png', id: "cabbage-image" %>
+      </div>
+      <div class="large-6 columns centered">
+        <%= image_tag 'parenthetical_starting_at_250.png', class: "parenthetical" %>
+        <%= link_to 'GET STARTED', new_box_path, class: "fv-button" %>
+      </div>
+    </div>
+
+
+    <div class="row landing-page-transition">
+      <%# Why do we need off-set 7 to align this with the large-6-columns up top?? %>
+      <div class="large-6 large-offset-6 centered columns">
+          <h5 class="inscribed">HOW IT WORKS</h5>
+          <div class="positioner">
+            <div class="triangle-container"> <div class="triangle-outer"> </div> <div class="triangle-inner"> </div> </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <%# End segment introduction %>
+
+<hr>
+</div> <%# end landing-page %>
+
+
+
+
+
+  <%#============= START MIDDLE ================ %>
+  <div class="middle_div">
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>How it works</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-3 columns">
+        <h1>1</h1>
+      </div>
+      <div class="large-9 columns">
+        <div class="row">
+          <div class="large-12 columns">
+            <h3>Choose a box</h3>
+          </div>
+        </div>
+        <div class="row">
+          <ul class="large-block-grid-3">
+            <li><div class="title">Raw Box</div><div class="description">Fruits, greens, and veggies, ready to eat. </div></li>
+            <li><div class="title">Cooking Box</div><div class="description">All raw box items plus cooking vegetables (potatoes, squash, eggplant, etc).</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-3 columns">
+        <h1>2</h1>
+      </div>
+      <div class="large-9 columns">
+        <div class="row">
+          <div class="large-12 columns">
+            <h3>Choose a plan</h3>
+          </div>
+        </div>
+        <div class="row">
+          <ul class="large-block-grid-2">
+            <li><div class="title">Week by week</div></li>
+            <li><div class="title">Seasonal subscription</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-3 columns">
+        <h1>3</h1>
+      </div>
+      <div class="large-9 columns">
+        <div class="row">
+          <div class="large-12 columns">
+            <h3>Feast</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-8 columns"><p>Boxes are packed with seasonal produce at the peak of freshness, then delivered to you.</p></div>
+          <div class="large-4 columns"><%= link_to 'Get started!', new_box_path, :class => "button" %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h5>Why do it</h5>
+      </div>
+    </div>
+
+  </div>
+  <%#============= START THIRD================ %>
+
+  <div class="third_div">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h5>Really fresh produce.</h5>
+        <p>Your box comes straight to you from local farms. Taste the difference.</p>
+        <h5>Seasonal ingredients</h5>
+        <p>Food tastes best in season. We figure out what's growing when, so you don't have to.</p>
+        <h5>Eat nutritiously without breaking the bank</h5>
+        <p>Taking out the middleman makes our boxes affordable for anyone</p>
+        <h5>Support local economies</h5>
+        <p>Buy from local farmers and watch your community thrive</p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h5>Get started now</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="forth_div">
+    <div class="row">
+      <div class="large-8 columns"><h3>It's never been easier to eat fresh, healthy, and nutritious food.</h3></div>
+      <div class="large-4 columns"><%= link_to 'Get started!', new_box_path, :class => "button" %></div>
+    </div>
+  </div>

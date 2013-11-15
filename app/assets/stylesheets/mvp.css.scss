@@ -1,60 +1,157 @@
 @import "constants";
 
-//@media (max-width: 800px) {
- // .blockgrid {
-  //  display: none;
-  //}
-//}
-
-
-.mvp.boxes{
-	
+/*
+ * Landing Page (mvp/boxes.html.erb)
+ */
+.landing-page {
 }
 
-.mvp.index {
-
-	.centered{
-		background-color: $greenMute;
-	}
-
-	.landing{
-		background-color: white;
-		h3{
-			margin-top:40px;
-		}
-		a{
-			font-size: 120%;
-		}
-	}
-
-	.farmer{
-		padding:40px;
-	}
-
-	a {color: $orangeAccent; }
-	a:hover{ color: $black3; }
-
-	p {
-	font-family: "Georgia", "Times", "Times New Roman", serif;
-	}
-
-	.blockgrid{
-		background-color: white;
-		img {
-			min-width:600px;
-		}
-	}
-
-	@media (max-width: 500px) {
-	  .blockgrid img {
-	    position:relative;
-	    right:50px;
-	  }
-	}
+/*
+ * Corresponds to a swath of background that extens all the way across the scren
+ */
+section.segment {
+  padding: 3em;
 
 }
 
+.landing-page section.introduction {
+  background:  $greenPrimary;
 
-// Place all the styles related to the mvp controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+  .landing-page-tag {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    font-size: 4em;
+    line-height: 1.0em;
+    color: white;
+    text-shadow: 4px 4px 0px $greenDarkAccent;
+    // TODO(syu): Add font;
+    // TODO(syu): add different color highlghting for key words in this tag
+  }
+
+  #cabbage-image {
+    display: block;
+    position: absolute;
+    width: 560px;
+    top: -8em;
+    left: -3em;
+    z-index: 1;
+    max-width: 120%; // TODO(syu) fix
+  }
+
+  .parenthetical {
+    margin: 3em 0;
+  }
+
+  .fv-button {
+    @include button-base;
+    @include button-size;
+    @include button-style($orangeAccent);
+    font-size: 2em;
+    font-color: white;
+    text-shadow: 2px 2px 0px $orangeShadow;
+    box-shadow: 3px 3px 5px $greenDarkAccent;
+  }
+
+  .landing-page-transition {
+    height: 0px;
+    position: relative;
+    text-align: center;
+    .inscribed {
+      position: relative;
+      bottom: -15px;
+      height: 0px;
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.2em;
+      color: $greenDarkAccent;
+    }
+    .positioner {
+      position: relative;
+      bottom: -35px;
+      }
+
+    .triangle-container {
+      margin: 0 auto;
+      $triangleWidth: 50px;
+      $borderWidth: 10px;
+      $innerTriangleWidth: $triangleWidth - $borderWidth;
+
+      $outerTriangleColor: $greenPrimary;
+      $innerTriangleColor: white;
+      position: relative;
+      width: $triangleWidth * 2;
+      .triangle-outer {
+        left: $triangleWidth/2;
+        z-index: 2;
+        width: 0;
+        height: 0;
+        border-left: $triangleWidth solid transparent;
+        border-right: $triangleWidth solid transparent;
+        border-top: $triangleWidth solid $outerTriangleColor;
+      }
+      .triangle-inner {
+        position: absolute;
+        left: $borderWidth;
+        top: 0px;
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-left: $innerTriangleWidth solid transparent;
+        border-right: $innerTriangleWidth solid transparent;
+        border-top: $innerTriangleWidth solid $innerTriangleColor;
+      }
+    }
+  }
+
+
+
+
+}
+
+/*
+ .mvp.index {
+
+ .centered{
+ background-color: $greenMute;
+  }
+
+  .landing{
+  background-color: white;
+  h3{
+  margin-top:40px;
+}
+a{
+font-size: 120%;
+    }
+  }
+
+  .farmer{
+  padding:40px;
+}
+
+a {color: $orangeAccent; }
+a:hover{ color: $black3; }
+
+p {
+font-family: "Georgia", "Times", "Times New Roman", serif;
+  }
+
+  .blockgrid{
+  background-color: white;
+  img {
+  min-width:600px;
+}
+  }
+
+  @media (max-width: 500px) {
+  .blockgrid img {
+  position:relative;
+  right:50px;
+}
+  }
+}
+*/
+

@@ -1,3 +1,98 @@
-<h2>Thanks, you paid <strong>$ an amont of money<%=  %>0</strong>!</h2>
-<p><%= @customer.inspect%></p>
-<p><%= @charge.inspect%></p>
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Uncomment to make IE8 render like IE7 -->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="LaYLwm2d995UlqRCnPcHJe4zHW76LqYYbw5NPY3hRfM" />
+<title><%= content_for?(:title) ? yield(:title) : "Farmivore" %></title>
+<%= favicon_link_tag 'favicon.ico' %>
+<%= stylesheet_link_tag    "application" %>
+<%= javascript_include_tag "vendor/custom.modernizr" %>
+<%= csrf_meta_tags %>
+<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("<%= Figaro.env.MIXPANEL_TOKEN %>");</script><!-- end Mixpanel -->
+  </head>
+
+  <body class="<%= controller.controller_name + ' ' + controller.action_name %>">
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/messages' %>
+
+
+  
+
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Thanks! We received your order.</h3>
+    <h5>When one of our representatives reviews your order to make sure everything is right, we'll send you a confirmation email.</h5>
+          <fieldset>
+            <legend>For your records</legend>
+            <div class="row">
+              <div class="large-12 columns">
+
+                 <p>You selected the <strong>
+                  <% if @box.box_num == 1 %>
+                      Raw Box
+                    <% elsif @box.box_num == 2 %>
+                      Cooking Box
+                    <% else %>
+                      Jumbo Box
+                    <% end %>
+                   Plan</strong> ($<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>).</p>
+
+                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>, in between <strong><%= @box.delivery_preference_time_string %></strong></p>
+
+                   <p>Every <strong><%= @box.frequency.to_s %> week/s</strong> after that, a box will be shipped to you on <strong><%= @box.delivery_preference_string %></strong></p>
+                 </div>
+            </div>
+            <div class="row">
+              <div class="large-6 columns">
+                <p><strong>Delivery address:</strong><br/>
+                  <%= @box.firstname + ' ' + @box.lastname%><br />
+                  <%= @box.street%><br />
+                  <% if @box.street2.present? %>
+                  <%= @box.street2 %><br />
+                  <% end %>
+                  <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
+                </p>
+              </div>
+              <div class="large-6 columns">
+                <p><strong>Contact information:</strong><br/>
+                  <%= @box.email %><br />
+                  <%= @box.phone %><br />
+                </p>
+              </div>
+            </div>
+
+           </div>
+          </fieldset>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <p>If you have any questions, please reach us by email at <%= mail_to "support@farmivore.com", "support@farmivore.com" %>, and we'll get back to you as fast as humanly possible.  Thanks for your order! </p>
+  </div>
+</div>
+
+
+
+
+
+
+    <%= render 'layouts/footer' %>
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

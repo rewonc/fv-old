@@ -15,6 +15,8 @@ if $('#ember').length > 0
 else
   @Fv = @Farmivore = {}
 
+
+
 # When an error occurs in a promise, dump it to console
 # instead of silently failing.
 # See: http://emberjs.com/guides/understanding-ember/debugging/
