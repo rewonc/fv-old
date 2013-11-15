@@ -42,13 +42,13 @@ class Box < ActiveRecord::Base
   def get_price
     #add 400 for delivery
     if box_num == 1 
-        return 50;
+        return 2500;
       elsif box_num == 2
-        return 50;
+        return 2500;
       elsif box_num == 3
-        return 50;
+        return 2500;
       else
-        return 50;
+        return 2500;
       end
   end
 
