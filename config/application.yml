@@ -1,0 +1,18 @@
+# This file is checked into version control.
+# It contains a (hopefully) up-to-date copy of the development config variables.
+# Production and staging config is NOT checked into version control.
+# Instead, we use Figaro to deploy keys to the server environment vars via a rake task.
+# If this is the first time cloning the repo, you should rename this to application.yml.
+# If you are pushing to staging or production, you should recreate the `staging` and `production` hashes below
+# and look up the corresponding values for each of the config vars from the services we use.
+#
+# See the wiki for more information.
+development:
+  FIGARO_ENV: "development"
+  MIXPANEL_TOKEN: "c00f4ec18442a740d4534e0d41b313c0"
+  STRIPE_PUBLISHABLE_KEY: "pk_test_rkV7OQLYHK6ZboW3PtGE0Rd4"
+  STRIPE_SECRET_KEY: "sk_test_hTgRQ6U2DyxTrwMb906ne8RI"
+staging:
+  FIGARO_ENV: "staging"
+production:
+  FIGARO_ENV: "production"
