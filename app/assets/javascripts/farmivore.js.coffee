@@ -13,7 +13,7 @@ if $('#ember').length > 0
 # Convenience alias.
   @Fv = Farmivore
 else
-  @Fv = @Farmivore = Farmivore = {}
+  @Fv = @Farmivore = {}
 
 
 
