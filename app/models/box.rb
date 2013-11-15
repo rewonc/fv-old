@@ -18,7 +18,7 @@ class Box < ActiveRecord::Base
     if delivery_preference == 1
       return "Saturday morning between 9am-1pm"
     else
-      return "Saturday morning between 1pm-5pm"
+      return "Saturday afternoon between 1pm-5pm"
     end
   end
 
