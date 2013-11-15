@@ -13,7 +13,9 @@ if $('#ember').length > 0
 # Convenience alias.
   @Fv = Farmivore
 else
-  @Fv = @Farmivore = {}
+  @Fv = @Farmivore = Farmivore = {}
+
+
 
 # When an error occurs in a promise, dump it to console
 # instead of silently failing.
