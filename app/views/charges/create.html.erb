@@ -82,7 +82,7 @@ mixpanel.init("<%= Figaro.env.MIXPANEL_TOKEN %>");</script><!-- end Mixpanel -->
 </div>
 <div class="row">
   <div class="large-12 columns">
-    <p>If you have any questions, please reach us by email at support@farmivore.com, and we'll get back to you as fast as humanely possible.  Thanks for your order! </p>
+    <p>If you have any questions, please reach us by email at <%= mail_to "support@farmivore.com", "support@farmivore.com" %>, and we'll get back to you as fast as humanly possible.  Thanks for your order! </p>
   </div>
 </div>
 
