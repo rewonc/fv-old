@@ -13,6 +13,23 @@ class Box < ActiveRecord::Base
   validates :city, presence: true, if: "self.is_delivery?"
 
 
+  def delivery_preference_string
+    #also update form boxes/new.html.erb
+    if delivery_preference == 1
+      return "Saturday morning between 9am-1pm"
+    else
+      return "Saturday morning between 1pm-5pm"
+    end
+  end
+
+  def delivery_preference_time_string
+    #also update form boxes/new.html.erb
+    if delivery_preference == 1
+      return "9am-1pm"
+    else
+      return "1pm-5pm"
+    end
+  end
 
   def is_delivery?
     if delivery_preference == 2 || delivery_preference == 1
@@ -25,13 +42,13 @@ class Box < ActiveRecord::Base
   def get_price
     #add 400 for delivery
     if box_num == 1 
-        return 2100;
+        return 2500;
       elsif box_num == 2
-        return 2400;
+        return 2500;
       elsif box_num == 3
-        return 2900;
+        return 2500;
       else
-        return 3100;
+        return 2500;
       end
   end
 

@@ -6,7 +6,13 @@ class BoxesController < ApplicationController
   end
 
   def new
+    if session[:box_id].present?
+      @box = Box.find(session[:box_id])
+      @path = box_path(@box.id)
+    else
     @box = Box.new
+    @path = boxes_path
+    end
   end
 
   def create
@@ -23,8 +29,21 @@ class BoxesController < ApplicationController
    
   end
 
+  def update
+    @box = Box.find(params[:id])
+    if @box.update(box_params)
+        @amount = @box.get_price
+       session[:box_id] = @box.id
+       render 'charges/new'
+    else
+       render action: 'new'
+    end
+  end
+
+
+
   private
     def box_params
-      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions)
+      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate)
     end
 end
