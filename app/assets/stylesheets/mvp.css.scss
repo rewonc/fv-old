@@ -1,60 +1,74 @@
 @import "constants";
 
-//@media (max-width: 800px) {
- // .blockgrid {
-  //  display: none;
-  //}
-//}
-
-
-.mvp.boxes{
-	
+/*
+ * Landing Page (mvp/boxes.html.erb)
+ */
+.landing-page {
 }
 
-.mvp.index {
+/*
+ * Corresponds to a swath of background that extens all the way across the scren
+ */
+div.segment {
+  padding: 5em;
 
-	.centered{
-		background-color: $greenMute;
-	}
+}
+.landing-page .introduction {
+  background:  $greenPrimary;
 
-	.landing{
-		background-color: white;
-		h3{
-			margin-top:40px;
-		}
-		a{
-			font-size: 120%;
-		}
-	}
-
-	.farmer{
-		padding:40px;
-	}
-
-	a {color: $orangeAccent; }
-	a:hover{ color: $black3; }
-
-	p {
-	font-family: "Georgia", "Times", "Times New Roman", serif;
-	}
-
-	.blockgrid{
-		background-color: white;
-		img {
-			min-width:600px;
-		}
-	}
-
-	@media (max-width: 500px) {
-	  .blockgrid img {
-	    position:relative;
-	    right:50px;
-	  }
-	}
+  .landing-page-tag {
+    text-align: center;
+    font-size: 4em;
+    line-height: 1.0em;
+    color: white;
+    text-shadow: 4px 4px 0px $greenDarkAccent;
+    // TODO(syu): Add font;
+    // TODO(syu): add different color highlghting for key words in this tag
+  }
 
 }
 
+/*
+ .mvp.index {
 
-// Place all the styles related to the mvp controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ .centered{
+ background-color: $greenMute;
+  }
+
+  .landing{
+  background-color: white;
+  h3{
+  margin-top:40px;
+}
+a{
+font-size: 120%;
+    }
+  }
+
+  .farmer{
+  padding:40px;
+}
+
+a {color: $orangeAccent; }
+a:hover{ color: $black3; }
+
+p {
+font-family: "Georgia", "Times", "Times New Roman", serif;
+  }
+
+  .blockgrid{
+  background-color: white;
+  img {
+  min-width:600px;
+}
+  }
+
+  @media (max-width: 500px) {
+  .blockgrid img {
+  position:relative;
+  right:50px;
+}
+  }
+}
+*/
+

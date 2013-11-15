@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131114173540) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "boxes", force: true do |t|
     t.integer  "box_num"
     t.string   "firstname"
