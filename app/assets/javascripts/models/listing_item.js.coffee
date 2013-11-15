@@ -184,11 +184,6 @@ listingsSource = [
   ["Starlight Gardens", "David", "Mizuna", "Greens","Vegetables", "$1/oz","Certified organic"]
   ["Starlight Gardens", "David", "Tyee spinach", "Greens","Vegetables", "$1/oz","Certified organic"]
   ["Starlight Gardens", "David", "Mesclun Greens", "Greens","Vegetables", "$6/bag","Certified organic"]
-
-
-]
-
-###
   ["Beltane Farms", "Paul", "Chevre - Plain", "Chevre","Dairy", "$8",""]
   ["Beltane Farms", "Paul", "Chevre - Dill", "Chevre","Dairy", "$8",""]
   ["Beltane Farms", "Paul", "Chevre - Chive", "Chevre","Dairy", "$8",""]
@@ -223,20 +218,15 @@ listingsSource = [
   ["The Soup Girl","", "Pumpkin apple bacon soup", "Soup", "Products", "$6/pint",""]
   ["Best Buddy Biscuits","", "Dog treats -- beef and chicken jerky, cookie treats", "Dog treats", "Products", "$4/5oz bag","All natural"]
   ["Garden Fresh Baby","", "Fresh baby food and toddler meals", "Baby food", "Products", "$6/item average", "Organic"]
+]
+
+
+###
+ 
 
 
 
 TODO:
-
-Label changes on filter:
-Change label for "products" category to "Other good stuff"
-change label for "meat" category to "Meat and Seafood"
-Add "Baked goods, sweets" label for a new section: "Baked"
-
-Change from "Listings..." to "Samplings from the market this week"  (we're not a complete listing)
-Last Updated can change to Nov 10
-Add an asterik at the bottom: * Prices and selection may change at the market
-
 Changes to Method:
 Shorten Certified Organic, etc to an abbreviation (CO) with a key on top. Maybe a color for highlight.
 Truelove -- add link to practices instead of label Pastured Raised?
@@ -256,7 +246,7 @@ Farmivore.ListingItem.FIXTURES = listingsSource.map( (list) ->
     price: price
     priceUnit: priceUnit
     description: list[2]
-    tag: list[3]
+    tag: list[6]
     category: list[4]
   )
 

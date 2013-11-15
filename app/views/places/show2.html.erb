@@ -4,23 +4,30 @@ time = "Saturdays from 9am-1pm"
 address = "Russo Park, corner of Chapel Street and DePalma Court"
 city = "New Haven"
 state = "CT"
-thisweek = "Nov. 9, 2013"
+thisweek = "Sat Nov 16"
 available_on = "Friday, November 8"
 lastweek = "November 2, 2013"
 %>
-
-<div class="row">
-  <div class="small-3 large-2 columns">
-    <div class="datestamp"><h5><%= "This week: " + thisweek %></h5></div>
-  </div>
-  <div class="small-9 large-10 columns">
-    <h1><%= title %></h1>
-    <div class="placestamp"><p><%= time + ". " + address %></p></div>
+<div class="topbar">
+  <div class="row">
+    <div class="small-9 large-7 columns">
+      <h1>Brr! It's getting cold!</h1>
+      <h4>See what's at the market before you go.<br/>Create a list to remember all the good stuff!</h4>
+    </div>
+    <div class="small-3 large-4 columns">
+      <div class="datestamp">
+        <h5><%= title %></h5>
+        <p><strong>Open:</strong>  <%= time %></p>
+        <p><strong>Location:</strong> <%= address %></p>
+        <p><strong>Next market: </strong><%= thisweek  %></p>
+      </div>
+    </div>
   </div>
 </div>
 
 <div id="ember"></div>
-
+<div class="centered"><p><em>*Products and prices are subject to change at market.</em>
+<br /><em>*Not all products or vendors are listed here</em></p></div>
 
 <div id="modal-Colt" class="reveal-modal">
   <h2>Colton's Corner Farm</h2>
