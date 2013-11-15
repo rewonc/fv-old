@@ -10,8 +10,7 @@
       <%= image_tag('veggieboxes-glamglow-2.jpg') %>
     </div>
     <div class="large-6 columns">
-      <p>[Left is filler image 4 lettuce] Your first delivery is on us!</p>
-      <div class="button"><%= link_to 'Get started!', new_box_path %></div>
+      <%= link_to 'Get started!', new_box_path, :class => "button" %>
     </div>
   </div>
 
@@ -43,7 +42,6 @@
         <ul class="large-block-grid-3">
           <li><div class="title">Raw Box</div><div class="description">Fruits, greens, and veggies, ready to eat. </div></li>
           <li><div class="title">Cooking Box</div><div class="description">All raw box items plus cooking vegetables (potatoes, squash, eggplant, etc).</div></li>
-          <li><div class="title">Jumbo Box</div><div class="description">Highest value. A large box with a wide variety of raw and cooking vegetables</div></li>
         </ul>
       </div>
     </div>
@@ -80,7 +78,7 @@
       </div>
       <div class="row">
         <div class="large-8 columns"><p>Boxes are packed with seasonal produce at the peak of freshness, then delivered to you.</p></div>
-        <div class="large-4 columns"><div class="button"><%= link_to 'Get started!', new_box_path %></div></div>
+        <div class="large-4 columns"><%= link_to 'Get started!', new_box_path, :class => "button" %></div>
       </div>
     </div>
   </div>
@@ -122,6 +120,6 @@
 <div class="forth_div">
   <div class="row">
     <div class="large-8 columns"><h3>It's never been easier to eat fresh, healthy, and nutritious food.</h3></div>
-    <div class="large-4 columns"><div class="button"><%= link_to 'Get started!', new_box_path %></div></div>
+    <div class="large-4 columns"><%= link_to 'Get started!', new_box_path, :class => "button" %></div></div>
   </div>
 </div>
