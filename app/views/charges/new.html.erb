@@ -1,23 +1,81 @@
-<h3>Let's confirm the details here.</h3>
-      <p>You'll be charged immediately for this first box. We'll remind you about your delivery on Wednesday, and you have have until Thurs 5pm to cancel your box (or your subscription, by calling us or emailing us). Saturday we'll deliver the box (or hold it.. whatever you said on the form).</p>
-      <p>The week after, you'll get the reminder email on Wednesday, and get charged every Friday. You have until Thurs 5pm to call off the box. </p>
-      <p>box object has the info from the form:</p>
-      <p><%= @box.inspect %></p>
-      <p>Box price is set in models/box.rb. test cards at https://stripe.com/docs/testing</p>
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Let's confirm the details here.</h3>
+          <fieldset>
+            <legend>Your order</legend>
+            <div class="row">
+              <div class="large-12 columns">
 
+                 <p>You selected the <strong>
+                  <% if @box.box_num == 1 %>
+                      Raw Box
+                    <% elsif @box.box_num == 2 %>
+                      Cooking Box
+                    <% else %>
+                      Jumbo Box
+                    <% end %>
+                   Plan</strong> ($<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %>).</p>
 
-<%= form_tag charges_path do %>
+                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>, in between <strong><%= @box.delivery_preference_time_string %></strong></p>
 
-  <article>
-    <label class="amount">
-      <p>Testing: use card 4242 4242 4242 4242, any future expiry date, any name/num. See results on stripe dashboard.</p>
+                   <p>Every <strong><%= @box.frequency.to_s %> week/s</strong> after that, a box will be shipped to you on <strong><%= @box.delivery_preference_string %></strong>.   (You'll be notfied beforehand, and can cancel whenever you want).</p>
+                 </div>
+            </div>
+            <div class="row">
+              <div class="large-6 columns">
+                <p><strong>Delivery address:</strong><br/>
+                  <%= @box.firstname + ' ' + @box.lastname%><br />
+                  <%= @box.street%><br />
+                  <% if @box.street2.present? %>
+                  <%= @box.street2 %><br />
+                  <% end %>
+                  <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
+                </p>
+              </div>
+              <div class="large-6 columns">
+                <p><strong>Contact information:</strong><br/>
+                  <%= @box.email %><br />
+                  <%= @box.phone %><br />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns"><%= link_to "Go back and modify your order", :back %></div>
+            </div>
+           </div>
+          </fieldset>
+  </div>
+</div>
 
-      <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
-    </label>
-  </article>
+<div class="row">
+      <h3>Our policy</h3>
+      <ul class="square">
+        <li><p>You will be charged immediately for your first box</p></li>
+        <li><p>We'll send a preview of your box 3 days before it is scheduled to arrive</p></li>
+        <li><p>For boxes in the future, we'll always remind you 3 days in advance.</p></li>
+        <li><p>You can skip a week or cancel your subscription at anytime by emailing us at <%= mail_to 'hello@farmivore.com', "hello@farmivore.com" %></p></li>
+        <li><p>We cannot refund you if you cancel within two days of your delivery, as we will already have ordered the produce for you.</p></li>
+      </ul>
+</div>
 
-  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="For delivery Saturday, Nov 23"
-          data-amount=<%= @amount%> ></script>
-<% end %>
+<div class="row">
+  <div class="large-4 columns">&nbsp;</div>
+  <div class="large-4 columns panel" id="payment_box">
+    <div class="centered">
+    <%= form_tag charges_path do %>
+      <article>
+        <label class="amount">
+          <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
+        </label>
+      </article>
+
+      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="For delivery <%= @box.startdate%>"
+              data-amount=<%= @amount%> ></script>
+    <% end %>
+    </div>
+  </div>
+  <div class="large-4 columns panel" id="confirm_box"><div class="centered"><a href="#agree" class="button" id="confirm_button">Yes, I agree</a></div></div>
+  <div class="large-4 columns"></div>
+</div>
