@@ -1,6 +1,6 @@
 @import "constants";
 
-.mvp footer {
+.mvp.boxes footer {
   // border-top: 1px solid $yellow;
   background-color: #555555;
   padding-top:15px;
@@ -15,13 +15,16 @@
       li:nth-of-type(2n) {
         border-right: 1px dotted $lightGray3;
         border-left: 1px dotted $lightGray3;
-
-        }
+      }
 
     }
-
-    a{color: $orangeAccent; }
-    a:hover{ color: $tealSoft; }
   }
 
+  .action-minor {
+    font-weight: bold;
+  }
+  .action-minor:hover {
+    color: $lightGray3;
+
+  }
 }
