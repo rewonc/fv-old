@@ -12,13 +12,26 @@
 section.segment {
   padding: 10px;
   .segment-header {
+    margin-top: 40px;
     font-size: 40px;
     font-weight: normal;
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
   }
+}
 
+section.segment .transition {
+  position: relative;
+  top: 60px;
+  .inscribed {
+    position: relative;
+    bottom: 16px;
+    height: 0px;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 3px;
+  }
 }
 
 /*
@@ -61,49 +74,18 @@ section.segment {
     box-shadow: 4px 4px 5px $greenDarkAccent;
   }
 
-  .landing-page-transition {
-    height: 0px;
-    position: relative;
-    text-align: center;
+  .transition {
+    left: 250px; // exactly half the width of 6 columns. Centers it.
     .inscribed {
-      position: relative;
-      bottom: 16px;
-      height: 0px;
-      text-align: center;
-      font-weight: normal;
-      letter-spacing: 3px;
       color: $greenDarkAccent;
     }
-    .positioner {
-      position: relative;
-      bottom: 2px;
-    }
-
-    .triangle-container {
-      margin: 0 auto;
-      $triangleWidth: 50px;
-      $borderWidth: 10px;
-      $innerTriangleWidth: $triangleWidth - $borderWidth;
-
-      $outerTriangleColor: $greenPrimary;
-      $innerTriangleColor: white;
-      position: relative;
-      width: $triangleWidth * 2;
-      .triangle-outer {
-        left: $triangleWidth/2;
-        z-index: 2;
-        @include triangle-down($outerTriangleColor, $triangleWidth);
-      }
-      .triangle-inner {
-        position: absolute;
-        left: $borderWidth;
-        top: 0px;
-        z-index: 3;
-        @include triangle-down($innerTriangleColor, $innerTriangleWidth);
-      }
+    .triangle {
+      @include tri(50px, 10px,white, $greenPrimary);
     }
   }
+
 } // -- end section.introduction
+
 
 /*
  * How It Works segment
@@ -166,10 +148,23 @@ section.segment {
     font-size: 22px;
     margin: 0px;
   }
-  .triangle {
-    @include tri(50px, 10px, blue, red);
+
+  .transition {
+    right: 250px;
+    .inscribed {
+      color: $grayDark;
+    }
+    .triangle {
+      @include tri(50px, 10px, $yellow, white);
+    }
   }
 
 
 }
 
+.landing-page section.why-join.segment {
+  background: $yellow;
+  .segment-header {
+    color: $grayDark;
+  }
+}
