@@ -55,9 +55,15 @@
     }
   }
   .order-now {
-    @include fv-button;
-    font-size: 22px;
-    margin: 0px;
+    display: inline-block;
+    text-align: center;
+
+    width: 300px; // TODO(syu): don't hard code this!
+    .order-now-button {
+      @include fv-button;
+      font-size: 22px;
+      margin: 0;
+    }
   }
 
   .transition .embellishment {
