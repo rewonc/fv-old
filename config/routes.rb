@@ -1,6 +1,5 @@
 Farmivore::Application.routes.draw do
 
-  get "boxes/new"
   devise_for :farmers
   devise_for :users
   resources :line_items
@@ -23,7 +22,7 @@ Farmivore::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   
   # You can have the root of your site routed with "root"
-  root 'mvp#index'
+  root 'mvp#boxes'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
