@@ -21,146 +21,27 @@ section.segment {
   }
 }
 
-section.segment .transition {
+section.segment > .row.transition {
   position: relative;
-  top: 60px;
-  .inscribed {
-    position: relative;
-    bottom: 16px;
-    height: 0px;
+  & .embellishment {
     text-align: center;
-    font-weight: normal;
-    letter-spacing: 3px;
-  }
-}
-
-/*
- * Introduction segment
- */
-.landing-page section.introduction.segment {
-  background:  $greenPrimary;
-
-  .landing-page-tag {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    font-size: 64px;
-    line-height: 56px;
-    color: white;
-    text-shadow: 4px 4px 0px $greenDarkAccent;
-    // TODO(syu): Add font;
-    // TODO(syu): add different color highlghting for key words in this tag
-  }
-
-  #cabbage-image {
-    display: block;
     position: absolute;
-    width: 560px;
-    top: -128px;
-    left: -24px;
-    z-index: 1;
-    max-width: 120%; // TODO(syu) fix
-  }
-
-  .parenthetical {
-    margin: 30px 0;
-  }
-
-  .fv-button {
-    @include fv-button;
-    font-size: 40px;
-    font-color: white;
-    text-shadow: 3px 3px 0px $orangeShadow;
-    box-shadow: 4px 4px 5px $greenDarkAccent;
-  }
-
-  .transition {
-    left: 250px; // exactly half the width of 6 columns. Centers it.
+    top: -2px;
     .inscribed {
-      color: $greenDarkAccent;
-    }
-    .triangle {
-      @include tri(50px, 10px,white, $greenPrimary);
-    }
-  }
-
-} // -- end section.introduction
-
-
-/*
- * How It Works segment
- */
-.landing-page section.how-it-works.segment {
-  background: white;
-  .segment-header {
-    color: $grayDark;
-  }
-
-  .steps {
-  }
-  .step {
-    padding: 10px;
-    background: $grayLight;
-    margin-bottom: 15px;
-    font-size: 48px;
-    line-height:22px;
-    font-weight: bold;
-  }
-  .step-header {
-    //TODO font-family: That blocky font
-    font-size: 35px;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 10px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    position: relative;
-  }
-  .step-caption {
-    text-transform: uppercase;
-    color: $grayDark;
-    font-size: 22px;
-
-  }
-  .step-options{
-    @include block-grid(3, 10px, true);
-    padding: 0px 10px;
-    margin-top: 0;
-  }
-  .step-option {
-    background: $greenLightAccent;
-    padding: 10px;
-    font-size: 22px;
-    .title {
-      font-size: 22px;
-      // text-transform: uppercase;
-      color: white;
-      margin: 0;
-    }
-    .caption {
-      font-size: 16px;
+      position: relative;
+      bottom: 16px;
+      height: 0px;
+      text-align: center;
       font-weight: normal;
-      color: #555555;
+      letter-spacing: 3px;
     }
   }
-  .order-now {
-    @include fv-button;
-    font-size: 22px;
-    margin: 0px;
-  }
-
-  .transition {
-    right: 250px;
-    .inscribed {
-      color: $grayDark;
-    }
-    .triangle {
-      @include tri(50px, 10px, $yellow, white);
-    }
-  }
-
-
 }
+
+@import "mvp/introduction";
+@import "mvp/how_it_works";
+
+
 
 .landing-page section.why-join.segment {
   background: $yellow;
