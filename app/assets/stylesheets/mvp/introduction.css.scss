@@ -1,0 +1,54 @@
+@import "constants";
+/*
+ * Introduction segment
+ */
+.landing-page section.introduction.segment {
+  background:  $greenPrimary;
+
+  .landing-page-tag {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 64px;
+    line-height: 56px;
+    color: white;
+    text-shadow: 4px 4px 0px $greenDarkAccent;
+    // TODO(syu): Add font;
+    // TODO(syu): add different color highlghting for key words in this tag
+  }
+
+  #cabbage-image {
+    display: block;
+    position: absolute;
+    width: 560px;
+    top: -128px;
+    left: -24px;
+    z-index: 1;
+    max-width: 120%; // TODO(syu) fix
+  }
+
+  .parenthetical {
+    margin: 30px 0;
+  }
+
+  .fv-button {
+    @include fv-button;
+    font-size: 40px;
+    font-color: white;
+    text-shadow: 3px 3px 0px $orangeShadow;
+    box-shadow: 4px 4px 5px $greenDarkAccent;
+  }
+
+  .transition .embellishment{
+    // left: 250px; // exactly half the width of 6 columns. Centers it.
+    width: 50%;
+    left: 50%;
+    .inscribed {
+      color: $greenDarkAccent;
+    }
+    .triangle {
+      @include tri(50px, 10px,white, $greenPrimary);
+    }
+  }
+
+} // -- end section.introduction
