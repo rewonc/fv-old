@@ -1,47 +1,19 @@
 @import "constants";
 
 footer {
-	font-size:11px;
-	padding: 0px;
-	.threesplit{
-		padding:30px;
-		background-color: $white3;
-		ul{
-		color: $white1;
-		margin-bottom: 0px;
-		}
+  font-size:11px;
+  padding: 0px;
+  .threesplit{
+    padding:30px;
+    background-color: $white3;
+    ul{
+      color: $white1;
+      margin-bottom: 0px;
+    }
 
-	a{color: $orangeAccent; }
-	a:hover{ color: $tealSoft; }
+    a{color: $orangeAccent; }
+    a:hover{ color: $tealSoft; }
 
-	}
+  }
 
 }
-
-/*footer {
-	font-size:11px;
-	padding: 0px;
-	.threesplit{
-		padding-top:20px;
-		background-color: $natural1;
-		ul{
-		color: $white1;
-		margin-bottom: 0px;
-		}
-	}
-	a{
-		color: $orangeSoft;
-	}
-}*/
-
-/*.footer {
-  background: $black3;
-  color: $lightGray1;
-  font-size: 12px;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  text-align: center;
-  height: 40px;
-  padding-bottom: 10px;
-}*/

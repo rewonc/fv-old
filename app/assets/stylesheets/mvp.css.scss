@@ -41,22 +41,5 @@ section.segment > .row.transition {
 
 @import "mvp/introduction";
 @import "mvp/how_it_works";
-
-.landing-page section.why-join.segment {
-  background: $yellow;
-  .segment-header {
-    color: $darkGray3;
-  }
-  .get-started{
-    text-align: center;
-    a.get-started-button{
-      @include fv-button;
-      font-size: 40px;
-      font-color: white;
-      text-shadow: 3px 3px 0px $orangeShadow;
-      box-shadow: 4px 4px 5px darken($yellow, 30%);
-      margin: 0 auto;
-      text-align: center;
-    }
-  }
-}
+@import "mvp/why_join";
+@import "mvp/footer";

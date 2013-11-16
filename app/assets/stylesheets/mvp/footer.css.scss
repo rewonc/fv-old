@@ -1,0 +1,27 @@
+@import "constants";
+
+.mvp footer {
+  // border-top: 1px solid $yellow;
+  background-color: #555555;
+  padding-top:15px;
+  font-size:15px;
+  .threesplit{
+    padding:30px;
+    background: #555555;
+    ul{
+      color: $grayLight;
+      margin-bottom: 0px;
+
+      li:nth-of-type(2n) {
+        border-right: 1px dotted $lightGray3;
+        border-left: 1px dotted $lightGray3;
+
+        }
+
+    }
+
+    a{color: $orangeAccent; }
+    a:hover{ color: $tealSoft; }
+  }
+
+}
