@@ -22,6 +22,17 @@ section.segment {
   }
 }
 
+/*
+ * Those sexy sexy nested downward triangles!
+ * To reproduce the effect in CSS3, we include a relatively positioned row (`.row.transition`)
+ * that includes an `.embellishment`, which is used to position the text + triangle div.
+ * See the `tri` mixin for details on the creation of the nested triangle.
+ *
+ * `.inscribed` is the caption for the triangle. In the DOM, it occurs AFTER the triangle
+ * This is so positioning by controlling `.row.position` directly aligns with the top edge of
+ * the triangle.
+ *
+ */
 section.segment > .row.transition {
   position: relative;
   & .embellishment {
