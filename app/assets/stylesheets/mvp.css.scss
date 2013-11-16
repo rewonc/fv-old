@@ -11,18 +11,26 @@
  */
 section.segment {
   padding: 3em;
+  .segment-header {
+    font-size: 3em;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
 }
 
-.landing-page section.introduction {
+/*
+ * Introduction segment
+ */
+.landing-page section.introduction.segment {
   background:  $greenPrimary;
 
   .landing-page-tag {
     position: relative;
     z-index: 2;
-
     text-align: center;
-
     font-size: 4em;
     line-height: 1.0em;
     color: white;
@@ -49,10 +57,10 @@ section.segment {
     @include button-base;
     @include button-size;
     @include button-style($orangeAccent);
-    font-size: 2em;
+    font-size: 2.5em;
     font-color: white;
-    text-shadow: 2px 2px 0px $orangeShadow;
-    box-shadow: 3px 3px 5px $greenDarkAccent;
+    text-shadow: 3px 3px 0px $orangeShadow;
+    box-shadow: 4px 4px 5px $greenDarkAccent;
   }
 
   .landing-page-transition {
@@ -105,53 +113,21 @@ section.segment {
       }
     }
   }
-
-
-
-
-}
+} // -- end section.introduction
 
 /*
- .mvp.index {
-
- .centered{
- background-color: $greenMute;
+ * How It Works segment
+ */
+.landing-page section.how-it-works.segment {
+  background: white;
+  .segment-header {
+    color: $grayDark;
   }
 
-  .landing{
-  background-color: white;
-  h3{
-  margin-top:40px;
-}
-a{
-font-size: 120%;
-    }
+  .steps {
+
   }
 
-  .farmer{
-  padding:40px;
-}
 
-a {color: $orangeAccent; }
-a:hover{ color: $black3; }
-
-p {
-font-family: "Georgia", "Times", "Times New Roman", serif;
-  }
-
-  .blockgrid{
-  background-color: white;
-  img {
-  min-width:600px;
 }
-  }
-
-  @media (max-width: 500px) {
-  .blockgrid img {
-  position:relative;
-  right:50px;
-}
-  }
-}
-*/
 
