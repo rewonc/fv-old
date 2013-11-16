@@ -32,7 +32,6 @@
     text-transform: uppercase;
     color: $grayDark;
     font-size: 22px;
-
   }
   .step-options{
     @include block-grid(3, 10px, true);

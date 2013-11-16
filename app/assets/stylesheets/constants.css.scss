@@ -65,6 +65,7 @@ $yellow: #ffe200;
   @include button-base;
   @include button-size;
   @include button-style($orangeAccent);
+  border: 0;
 }
 
 @mixin triangle-down($color, $size) {
@@ -75,9 +76,13 @@ $yellow: #ffe200;
   border-top: $size solid $color;
 }
 
+/*
+ * A triangle mixin for classy triangles!
+ * To use, create a concrete class and have it `@include tri(...)`
+ * In the actual html, make sure your class has a .outer and a .inner
+ */
 @mixin tri($width, $borderWidth, $innerColor, $outerColor) {
   $innerWidth: $width - $borderWidth;
-
   position:relative;
   margin: 0 auto;
   width: $width * 2;
