@@ -1,16 +1,21 @@
+<div class="shopping-list-header">
+  <h3>Your shopping list</h3>
+</div>
 {{#if content}}
-  <div class="shopping-list-header">
-    <h3>Your shopping list</h3>
-  </div>
-  <ol class="shopping-list-items">
+<ol class="shopping-list-items">
   {{#each listing in content}}
-    {{render "shopping_list_item" listing}}
+  {{render "shopping_list_item" listing}}
   {{/each}}
-  </ol>
-  <div class="shopping-list-summary">
-    <ul>
-      <li>Number of items: {{totalNumItems}}</li>
-      <li>Total cost: ${{totalCost}}</li>
-    </ul>
-  </div>
+</ol>
+<div class="shopping-list-summary">
+  <ul>
+    <li>Number of items: {{totalNumItems}}</li>
+    <li>Total cost: ${{totalCost}}</li>
+  </ul>
+</div>
+{{else}}
+<div class="empty">
+  Your shopping list is empty. <br>
+  Browse the listings below and add the things you like!
+</div>
 {{/if}}
