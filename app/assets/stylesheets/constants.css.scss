@@ -60,3 +60,36 @@ $orange: #fb7f23;
 $orangeShadow: #ff4400;
 
 $yellow: #ffe200;
+
+@mixin fv-button {
+  @include button-base;
+  @include button-size;
+  @include button-style($orangeAccent);
+}
+
+@mixin triangle-down($color, $size) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin tri($width, $borderWidth, $innerColor, $outerColor) {
+  $innerWidth: $width - $borderWidth;
+
+  position:relative;
+  margin: 0 auto;
+  width: $width * 2;
+  .outer {
+    @include triangle-down($outerColor, $width);
+  }
+  .inner {
+    position: absolute;
+    @include triangle-down($innerColor, $innerWidth);
+    z-index: 3;
+    top: 0;
+    left: $borderWidth;
+  }
+}
+
