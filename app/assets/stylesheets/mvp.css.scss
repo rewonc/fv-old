@@ -10,11 +10,11 @@
  * Corresponds to a swath of background that extens all the way across the scren
  */
 section.segment {
-  padding: 3em;
+  padding: 10px;
   .segment-header {
-    font-size: 3em;
+    font-size: 40px;
     font-weight: normal;
-    letter-spacing: 0.2em;
+    letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -31,8 +31,8 @@ section.segment {
     position: relative;
     z-index: 2;
     text-align: center;
-    font-size: 4em;
-    line-height: 1.0em;
+    font-size: 64px;
+    line-height: 56px;
     color: white;
     text-shadow: 4px 4px 0px $greenDarkAccent;
     // TODO(syu): Add font;
@@ -43,21 +43,19 @@ section.segment {
     display: block;
     position: absolute;
     width: 560px;
-    top: -8em;
-    left: -3em;
+    top: -128px;
+    left: -24px;
     z-index: 1;
     max-width: 120%; // TODO(syu) fix
   }
 
   .parenthetical {
-    margin: 3em 0;
+    margin: 30px 0;
   }
 
   .fv-button {
-    @include button-base;
-    @include button-size;
-    @include button-style($orangeAccent);
-    font-size: 2.5em;
+    @include fv-button;
+    font-size: 40px;
     font-color: white;
     text-shadow: 3px 3px 0px $orangeShadow;
     box-shadow: 4px 4px 5px $greenDarkAccent;
@@ -69,17 +67,17 @@ section.segment {
     text-align: center;
     .inscribed {
       position: relative;
-      bottom: -15px;
+      bottom: 16px;
       height: 0px;
       text-align: center;
       font-weight: normal;
-      letter-spacing: 0.2em;
+      letter-spacing: 3px;
       color: $greenDarkAccent;
     }
     .positioner {
       position: relative;
-      bottom: -35px;
-      }
+      bottom: 2px;
+    }
 
     .triangle-container {
       margin: 0 auto;
@@ -94,22 +92,14 @@ section.segment {
       .triangle-outer {
         left: $triangleWidth/2;
         z-index: 2;
-        width: 0;
-        height: 0;
-        border-left: $triangleWidth solid transparent;
-        border-right: $triangleWidth solid transparent;
-        border-top: $triangleWidth solid $outerTriangleColor;
+        @include triangle-down($outerTriangleColor, $triangleWidth);
       }
       .triangle-inner {
         position: absolute;
         left: $borderWidth;
         top: 0px;
         z-index: 3;
-        width: 0;
-        height: 0;
-        border-left: $innerTriangleWidth solid transparent;
-        border-right: $innerTriangleWidth solid transparent;
-        border-top: $innerTriangleWidth solid $innerTriangleColor;
+        @include triangle-down($innerTriangleColor, $innerTriangleWidth);
       }
     }
   }
@@ -125,7 +115,59 @@ section.segment {
   }
 
   .steps {
+  }
+  .step {
+    padding: 10px;
+    background: $grayLight;
+    margin-bottom: 15px;
+    font-size: 48px;
+    line-height:22px;
+    font-weight: bold;
+  }
+  .step-header {
+    //TODO font-family: That blocky font
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    position: relative;
+  }
+  .step-caption {
+    text-transform: uppercase;
+    color: $grayDark;
+    font-size: 22px;
 
+  }
+  .step-options{
+    @include block-grid(3, 10px, true);
+    padding: 0px 10px;
+    margin-top: 0;
+  }
+  .step-option {
+    background: $greenLightAccent;
+    padding: 10px;
+    font-size: 22px;
+    .title {
+      font-size: 22px;
+      // text-transform: uppercase;
+      color: white;
+      margin: 0;
+    }
+    .caption {
+      font-size: 16px;
+      font-weight: normal;
+      color: #555555;
+    }
+  }
+  .order-now {
+    @include fv-button;
+    font-size: 22px;
+    margin: 0px;
+  }
+  .triangle {
+    @include tri(50px, 10px, blue, red);
   }
 
 
