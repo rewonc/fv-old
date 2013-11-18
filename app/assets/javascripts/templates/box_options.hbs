@@ -2,16 +2,19 @@
 <div class="row">
   <div class="large-8 columns large-centered">
     <h3>Choose your options</h3>
-  {{#each module in content}}
-    {{render "box_module" module}}
-  {{/each}}
-  </div>
-  <!--
-  <div class="large-4 columns">
-    <h3>In Your box</h3>
     {{#each module in content}}
-      {{module.name}}: {{module.quantity}}
+    {{render "box_module" module}}
     {{/each}}
   </div>
-  -->
+  <!--
+    <div class="large-4 columns">
+      <h3>In Your box</h3>
+        {{#each module in content}}
+        {{module.name}}: {{module.quantity}}
+        {{/each}}
+      </div>
+      -->
+  <div class="subtotal">
+    Total: ${{totalCost}}
+  </div>
 </div>

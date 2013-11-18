@@ -5,6 +5,7 @@ Fv.BoxController = Ember.ObjectController.extend
     @get('controllers.shoppingList').addListing listing
 
 Fv.BoxOptionsController = Ember.ArrayController.extend
+  selectedPlan: 0
   needs: 'box'
   totalCost: (->
     @content.mapProperty('totalCost').reduce((sum, cost) -> sum + cost)
@@ -41,7 +42,7 @@ Fv.BoxOptionsController = Ember.ArrayController.extend
       # @incrementQuantity(listItem)
 
     decrementQuantity: (listItem) ->
-      listItem.decrementProperty('quantity')
+      listItem.decrementProperty('quantity') if listItem.get('quantity') > 0
       # utils.track('shopping-list:decrement-quantity', listItem.get('content').mixPanelProps())
       # @decrementQuantity(listItem)
 

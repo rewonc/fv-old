@@ -1,19 +1,31 @@
 @import "constants";
 
-.box-options {
+.box-header {
   .header{
     text-transform: uppercase;
     font-size: 72px;
     letter-spacing: 5px;
     font-weight: 300;
     line-height: 60px;
-     margin-bottom: 0px;
+    margin-bottom: 0px;
   }
   .subheader{
     font-size: 22px;
-     margin-top: 0px;
-    }
+    margin-top: 0px;
+  }
+}
+.box-options {
+  .subtotal {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+  }
 
+}
+.box-steps {
+  h2 {
+    margin-left: 90px;
+  }
 }
 
 .box-module {
@@ -32,7 +44,7 @@
   color: black;
 }
 
-.box-module.raw-veggies:hover {
+.box-module.veggies:hover {
   background: $yellowSoft;
   color: black;
 }
@@ -47,14 +59,14 @@
   .box-module-contents {
     font-style: italic;
     margin-bottom: 10px;
-    }
+  }
   .box-module-good-for {
     font-style: normal;
-    }
+  }
   .box-module-units {
     font-size: 150%;
     margin-bottom: 0px;
-    }
+  }
 }
 .box-module .box-module-aside {
   // @include grid-column(2, false, true);
@@ -72,10 +84,10 @@
     font-size: 24px;
     .increment {
       float: left;
-      }
+    }
     .decrement {
       float: right;
-      }
+    }
   }
   .quantity {
     font-size: 30px;
@@ -85,4 +97,18 @@
 
   }
 }
+
+.plan-options {
+  @include block-grid(3, 10px, true);
+
+}
+.plan-option {
+  padding: 15px;
+  &:hover {
+    background: $orangeSoft;
+  }
+}
+
+
+
 
