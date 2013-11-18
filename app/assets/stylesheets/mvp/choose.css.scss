@@ -1,0 +1,36 @@
+.box-module {
+}
+
+.box-module .box-module-content {
+  font-size: 16px;
+
+
+  h3.box-module-name {
+  }
+
+  .box-module-contents {
+    font-style: italic;
+    margin-bottom: 10px;
+    }
+  .box-module-good-for {
+    font-style: normal;
+    }
+  .box-module-units {
+    font-size: 150%;
+    }
+}
+.box-module .box-module-aside {
+  // @include grid-column(2, false, true);
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  background: $grayLight;
+  .price {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  .quantity-controls {
+    font-size: 24px;
+  }
+}
+
