@@ -1,5 +1,4 @@
 # For more information see: http://emberjs.com/guides/routing/
-
 if $('#ember').length > 0
 
   Farmivore.Router.map ()->
