@@ -36,12 +36,14 @@ Fv.BoxOptionsController = Ember.ArrayController.extend
       module.incrementProperty('quantity')
 
     incrementQuantity: (listItem) ->
-      utils.track('shopping-list:increment-quantity', listItem.get('content').mixPanelProps())
-      @incrementQuantity(listItem)
+      listItem.incrementProperty('quantity')
+      # utils.track('shopping-list:increment-quantity', listItem.get('content').mixPanelProps())
+      # @incrementQuantity(listItem)
 
     decrementQuantity: (listItem) ->
-      utils.track('shopping-list:decrement-quantity', listItem.get('content').mixPanelProps())
-      @decrementQuantity(listItem)
+      listItem.decrementProperty('quantity')
+      # utils.track('shopping-list:decrement-quantity', listItem.get('content').mixPanelProps())
+      # @decrementQuantity(listItem)
 
     removeAll: (listItem) ->
       utils.track('shopping-list:remove-all', listItem.get('content').mixPanelProps())
