@@ -20,6 +20,7 @@
   }
   .step-header {
     //TODO font-family: That blocky font
+    font-family: "Bevan";
     font-size: 35px;
     font-weight: bold;
     text-align: left;
@@ -32,6 +33,7 @@
     text-transform: uppercase;
     color: $grayDark;
     font-size: 22px;
+    font-family: "Source Sans Pro";
   }
   .step-options{
     @include block-grid(3, 10px, true);
