@@ -1,6 +1,14 @@
-<div class="shopping-list-header">
-  <h3>Box Quantities</h3>
+<div class="box-options-header row">
+  <div class="large-8 columns large-centered centered">
+    <h1 class="header"> Build a Box </h3>
+    <h2 class="subheader">You pick, we pack</h4>
+  </div>
 </div>
-{{#each module in content}}
-  {{render "box_module" module}}
-{{/each}}
+
+<div class="row">
+  <div class="large-8 columns large-centered">
+  {{#each module in content}}
+    {{render "box_module" module}}
+  {{/each}}
+  </div>
+</div>

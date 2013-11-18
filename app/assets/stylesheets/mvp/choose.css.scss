@@ -1,4 +1,22 @@
+@import "constants";
+.box-options {
+  .header{
+    text-transform: uppercase;
+    font-size: 72px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    line-height: 60px;
+     margin-bottom: 0px;
+  }
+  .subheader{
+    font-size: 22px;
+     margin-top: 0px;
+    }
+
+}
 .box-module {
+  border-bottom: $grayLight 1px solid;
+  padding: 15px;
 }
 
 .box-module .box-module-content {
@@ -17,6 +35,7 @@
     }
   .box-module-units {
     font-size: 150%;
+    margin-bottom: 0px;
     }
 }
 .box-module .box-module-aside {
@@ -31,6 +50,15 @@
   }
   .quantity-controls {
     font-size: 24px;
+    .increment {
+      float: left;
+      }
+    .decrement {
+      float: right;
+      }
+  }
+  .quantity {
+    font-size: 30px;
   }
 }
 
