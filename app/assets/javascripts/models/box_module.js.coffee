@@ -1,0 +1,8 @@
+Farmivore.BoxModule = Ember.Object.extend
+  name: ""
+  quantity: 0
+  description1: ""
+  description2: ""
+  cost: 17
+
+

@@ -1,0 +1,16 @@
+<div class="shopping-list-header">
+  <h3>Box Quantities</h3>
+</div>
+{{#each module in content}}
+  <div>
+    <ol>
+      <li>qty: {{module.quantity}}</li>
+      <li>name: {{module.name}}</li>
+      <li>unit: {{module.unit}}</li>
+      <li>desc1: {{module.description1}}</li>
+      <li>desc2: {{module.description2}}</li>
+      <li>price: {{module.price}}</li>
+    </ol>
+    <a {{action addModule module}}> add </a>
+  </div>
+{{/each}}
