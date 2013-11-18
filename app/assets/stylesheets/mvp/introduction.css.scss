@@ -10,11 +10,27 @@
     z-index: 2;
     text-align: center;
     font-size: 64px;
-    line-height: 56px;
-    color: white;
+    line-height: 60px;
+    color: whitesmoke;
     text-shadow: 4px 4px 0px $greenDarkAccent;
+    font-weight: 500;
     // TODO(syu): Add font;
     // TODO(syu): add different color highlghting for key words in this tag
+    .freshest-produce {
+      color: $yellow;
+      text-shadow: none;
+      font-weight: 700;
+      }
+    .xlocal-farms {
+      color: $yellow;
+      text-shadow: none;
+      font-weight: 700;
+      }
+    .to-your-door {
+      color: $yellow;
+      text-shadow: none;
+      font-weight: 700;
+      }
   }
 
   #cabbage-image {
