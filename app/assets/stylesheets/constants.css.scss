@@ -59,8 +59,12 @@ $grayDark: #808284;
 $orange: #fb7f23;
 $orangeShadow: #ff4400;
 
-$yellow: #ffe200;
+$yellow: rgb(255, 226, 0);
+$yellowSoft: desaturate(lighten($yellow, 8%), 10%);
 
+$blueSoft: rgb(160, 211, 255);
+
+$greenSoft: $greenLightAccent;
 @mixin fv-button {
   @include button-base;
   @include button-size;

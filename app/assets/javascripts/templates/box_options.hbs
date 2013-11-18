@@ -1,14 +1,17 @@
-<div class="box-options-header row">
-  <div class="large-8 columns large-centered centered">
-    <h1 class="header"> Build a Box </h3>
-    <h2 class="subheader">You pick, we pack</h4>
-  </div>
-</div>
 
 <div class="row">
   <div class="large-8 columns large-centered">
+    <h3>Choose your options</h3>
   {{#each module in content}}
     {{render "box_module" module}}
   {{/each}}
   </div>
+  <!--
+  <div class="large-4 columns">
+    <h3>In Your box</h3>
+    {{#each module in content}}
+      {{module.name}}: {{module.quantity}}
+    {{/each}}
+  </div>
+  -->
 </div>
