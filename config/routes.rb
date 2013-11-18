@@ -16,11 +16,12 @@ Farmivore::Application.routes.draw do
 
   get 'wooster', to: 'places#show', id: 1
   get 'wooster/boxes', to: 'mvp#boxes'
+  get 'wooster/choose', to: 'mvp#choose'
 
   post 'sms', to: 'texts#catch'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  
+
   # You can have the root of your site routed with "root"
   root 'mvp#boxes'
 
@@ -35,7 +36,7 @@ Farmivore::Application.routes.draw do
   resources :contacts, :boxes
   resources :places, :charges
 
-  resources :farms do 
+  resources :farms do
     resources :pickups, :products
   end
 
@@ -64,7 +65,7 @@ Farmivore::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

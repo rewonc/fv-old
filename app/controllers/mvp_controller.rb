@@ -7,4 +7,7 @@ class MvpController < ApplicationController
   def boxes
   end
 
+  def choose
+  end
+
 end
