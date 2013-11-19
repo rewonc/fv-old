@@ -27,6 +27,9 @@
     margin-left: 90px;
   }
 }
+  .check-out-button {
+    @include fv-button;
+  }
 
 .box-module {
   border-bottom: $grayLight 1px solid;

@@ -4,8 +4,25 @@ Fv.BoxController = Ember.ObjectController.extend
     # utils.track('places:add-listing-to-shopping-cart', listing.mixPanelProps())
     @get('controllers.shoppingList').addListing listing
 
+Fv.PlanOptionsController = Ember.ArrayController.extend
+  init: ->
+    p1 =
+      name: "3 month subscription"
+      active: false
+    p2 =
+      name: "1 month subscription"
+      active: false
+    p3 =
+      name: "weekly"
+      active: false
+    @set('plans', [p1, p2, p3].map( (p)->Ember.Object.create(p) ))
+Fv.PlanOptionView = Ember.View.extend
+  click: ->
+    @get('controller').set('active')
+
 Fv.BoxOptionsController = Ember.ArrayController.extend
-  selectedPlan: 0
+
+
   needs: 'box'
   totalCost: (->
     @content.mapProperty('totalCost').reduce((sum, cost) -> sum + cost)

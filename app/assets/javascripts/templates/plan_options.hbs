@@ -1,21 +1,11 @@
 <div class="row">
   <div class="large-8 columns large-centered">
   <ul class="plan-options">
+    {{#each plan in plans}}
     <li>
-      <div class="plan-option">
-        <h3> 3 month subscription </h3>
-      </div>
+      {{render "plan_option" plan}}
     </li>
-    <li>
-      <div class="plan-option">
-        <h3> 1 month subscription </h3>
-      </div>
-    </li>
-    <li>
-      <div class="plan-option">
-        <h3> weekly subscription</h3>
-      </div>
-    </li>
+    {{/each}}
   </ul>
   </div>
 </div>
