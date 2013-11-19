@@ -27,9 +27,9 @@
     margin-left: 90px;
   }
 }
-  .check-out-button {
-    @include fv-button;
-  }
+.check-out-button {
+  @include fv-button;
+}
 
 .box-module {
   border-bottom: $grayLight 1px solid;
@@ -108,6 +108,9 @@
 .plan-option {
   padding: 15px;
   &:hover {
+    background: $orangeSoft;
+  }
+  &.active {
     background: $orangeSoft;
   }
 }

@@ -15,10 +15,17 @@ Fv.PlanOptionsController = Ember.ArrayController.extend
     p3 =
       name: "weekly"
       active: false
-    @set('plans', [p1, p2, p3].map( (p)->Ember.Object.create(p) ))
+    @set 'plans', [p1, p2, p3].map( (p)->Ember.Object.create(p) )
+  actions:
+    selectPlan: (plan) ->
+      @get('plans').setEach('active', false)
+      plan.set('active', true)
+
+
+Fv.PlanOptionsView = Ember.View.extend()
 Fv.PlanOptionView = Ember.View.extend
   click: ->
-    @get('controller').set('active')
+    @get('controller').send 'selectPlan', @get('controller.content')
 
 Fv.BoxOptionsController = Ember.ArrayController.extend
 
