@@ -13,7 +13,7 @@ Fv.PlanOptionsController = Ember.ArrayController.extend
       name: "1 month subscription"
       active: false
     p3 =
-      name: "weekly"
+      name: "weekly subscription"
       active: false
     @set 'plans', [p1, p2, p3].map( (p)->Ember.Object.create(p) )
   actions:

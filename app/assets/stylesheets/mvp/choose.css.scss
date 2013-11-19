@@ -29,6 +29,9 @@
 }
 .check-out-button {
   @include fv-button;
+  border-radius: 4px;
+  font-size: 26px;
+  margin-top: 15px;
 }
 
 .box-module {
@@ -38,16 +41,19 @@
 }
 
 .box-module.greens:hover {
+  transition: all 0.5s ease;
   background: $greenSoft;
   color: black;
 }
 
 .box-module.fruit:hover {
+  transition: all 0.5s ease;
   background: $blueSoft;
   color: black;
 }
 
 .box-module.veggies:hover {
+  transition: all 0.5s ease;
   background: $yellowSoft;
   color: black;
 }
@@ -107,11 +113,18 @@
 }
 .plan-option {
   padding: 15px;
-  &:hover {
-    background: $orangeSoft;
+  .plan-option-title {
+    text-transform: uppercase;
+    font-weight: 300;
   }
-  &.active {
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid $orangeSoft;
+    transition: all 0.2s ease;
+  }
+  &:hover.active, &.active {
     background: $orangeSoft;
+    transition: all 0.2s ease;
   }
 }
 
