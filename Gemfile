@@ -46,7 +46,7 @@ end
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # use foundation for styling
-gem "compass-rails", "~> 2.0.alpha.0"
+gem "compass-rails", "~> 1.1.2"
 gem 'zurb-foundation', '~> 4.0.0'
 
 # use Devise for User model
