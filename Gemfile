@@ -39,8 +39,8 @@ group :doc do
 end
 
 #  Allow for paperclip to go to AWS
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'aws-sdk'
+#gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+#gem 'aws-sdk'
 
 # Use Stripe for payment processing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -63,18 +63,19 @@ end
 gem 'figaro'
 
 # Ember
-gem 'ember-source', '1.1.2'
-gem 'ember-bootstrap-rails'
-gem 'ember-data-source', '1.0.0.beta.3'
-gem 'ember-rails'
+#gem 'ember-source', '1.1.2'
+#gem 'ember-bootstrap-rails'
+#gem 'ember-data-source', '1.0.0.beta.3'
+#gem 'ember-rails'
 
+# Font awesome for scalable vector graphics
 gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -82,4 +83,4 @@ gem 'font-awesome-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 #
-gem  "rename"
+#gem  "rename"
