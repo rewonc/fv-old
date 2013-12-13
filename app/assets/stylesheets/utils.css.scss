@@ -23,3 +23,13 @@ hr.style-eight:after {
   font-size: 50%;
   vertical-align: super;
   }
+
+.centered {
+  text-align: center;
+}
+
+.field_with_errors{
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+

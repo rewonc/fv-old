@@ -1,31 +1,12 @@
-@import "font-awesome";
 @import "foundation_and_overrides";
-@import "constants";
+@import "font-awesome";
 @import "utils";
+@import "globals";
+
 @import "messages";
 @import "nav";
 @import "footer";
+
 @import "welcome";
 @import "boxes";
 @import "charges";
-
-body {
-  background-color: white;
-}
-
-.centered {
-  text-align: center;
-}
-
-a {
-  cursor: pointer;
-}
-
-
-a.action-minor {
-  color: $lightGray1;
-}
-a.action-minor:hover {
-  color: $darkGray1;
-}
-
