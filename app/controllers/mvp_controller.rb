@@ -7,4 +7,10 @@ class MvpController < ApplicationController
   def boxes
   end
 
+  def features
+  end
+
+  def farms
+  end
+
 end

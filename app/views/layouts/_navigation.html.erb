@@ -1,6 +1,26 @@
-<nav class="top-bar">
-  <%= link_to image_tag('logo-OG.png', id: 'logo'), root_path %>
-  <ul class="nav-menu">
-  	 <li><%= link_to 'FARMER LOGIN', new_farmer_session_path %></li>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name"><%= link_to image_tag('logo-OG.png', id: 'logo'), root_path %>
+    </li>
   </ul>
+
+  <section class="top-bar-section">
+    <ul class="left">
+    	<li><%= link_to 'The experience', mvp_features_path %></li>
+      <li><%= link_to 'Our boxes', new_box_path %></li>
+      <li><%= link_to 'Our farms', mvp_farms_path %></li>
+      <li class="has-dropdown">
+        <a href="#">More</a>
+        <ul class="dropdown">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="right">
+        <li><%= link_to 'Log in', new_farmer_session_path %></li>
+    </ul>
+  </section>
 </nav>

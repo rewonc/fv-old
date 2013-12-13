@@ -14,6 +14,9 @@ Farmivore::Application.routes.draw do
   get "welcome/admin"
   get "welcome/index"
 
+  get "mvp/farms"
+  get "mvp/features"
+
   get 'wooster', to: 'places#show', id: 1
   get 'wooster/boxes', to: 'mvp#boxes'
 
