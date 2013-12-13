@@ -1,18 +1,26 @@
 /*
  * How It Works segment
  */
+
+
 .landing-page section.how-it-works.segment {
-  background: white;
+  
+  background: $white3;
+
   .segment-header {
     color: $grayDark;
+    font-size: 14px;
   }
+ 
 
   .steps {
     margin-bottom: 40px;
+    margin-left:0px;
+    margin-right:0px;
+    list-style-type: none;
   }
   .step {
-    padding: 10px;
-    background: $grayLight;
+    padding: 0px;
     margin-bottom: 15px;
     font-size: 48px;
     line-height:22px;
@@ -39,19 +47,22 @@
     margin-top: 0;
   }
   .step-option {
-    background: $greenLightAccent;
+    background: $white3;
     padding: 10px;
     font-size: 22px;
     .title {
       font-size: 22px;
       // text-transform: uppercase;
-      color: white;
+      color: $greenLightAccent;
       margin: 0;
     }
     .caption {
       font-size: 16px;
       font-weight: normal;
       color: #555555;
+      padding:0px;
+      margin:0px;
+   
     }
   }
   .order-now {

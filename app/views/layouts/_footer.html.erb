@@ -1,19 +1,21 @@
 <footer>
   <div class="threesplit">
     <div class="row">
-      <ul class="small-block-grid-3 large-block-grid-3 centered">
-
-        <li><p>&copy; Farmivore 2013. All rights reserved.</p></li>
-
-        <li><p>Our mailing address:<br />
-          Farmivore<br />
-          55 Whitney Ave., 2nd floor <br />
-          New Haven, CT 06510, USA</p>
-      </li>
-
-      <li><p>Need any help using the site? <br />Reach us at <%= mail_to "support@farmivore.com", "support@farmivore.com", class: "action-minor" %><br /></p></li>
-    </ul>
+      <div class="large-12 columns">
+        <ul class="small-block-grid-3 large-block-grid-3 centered">
+          <hr>
+          <li>
+            <ul class="inline-list">
+              <li><%= link_to "About us", mvp_farms_path %></li>
+              <li><%= link_to "Blog", mvp_farms_path %></li>
+              <li><%= link_to "Contact", mvp_farms_path %></li>
+              <li><%= link_to "Terms", mvp_farms_path %></li>
+            </ul>
+          </li>
+          <li><p>&nbsp;</p></li>
+          <li class="pull-right"><p>&copy; Farmivore 2013. All rights reserved.</p></li>
+        </ul>
+      <div>
+    </div>
   </div>
-</div>
-</div>
 </footer>

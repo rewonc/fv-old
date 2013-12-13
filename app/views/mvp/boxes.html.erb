@@ -13,7 +13,7 @@
       </div>
       <div class="large-7 columns centered">
         <% #image_tag 'parenthetical_starting_at_250.png', class: "parenthetical" %>
-        <div class="landing-page-tag"><h4>Convenient, quality box subscriptions</h4></div>
+        <div class="landing-page-tag"><h4>Simple, fresh box subscriptions</h4></div>
         <div class="row">
           <div class="large-2 columns">&nbsp;</div>
           <div class="large-4 columns"> 
@@ -33,7 +33,7 @@
     <div class="row transition">
       <div class="embellishment">
         <div class="triangle"> <div class="outer"> </div> <div class="inner"> </div> </div>
-        <h5 class="inscribed">WHY IT'S GREAT</h5>
+        <h5 class="inscribed"></h5>
       </div>
     </div>
   </section>
@@ -43,87 +43,59 @@
 
 
   <%# Start segment How It Works %>
-  <section class="how-it-works segment">
-    <div class="row">
+
+    <div class="row now-serving">
       <div class="large-12 columns">
-        <h2 class="segment-header">How it works</h2>
+        <div class="large-5 columns large-offset-4">
+          <p><strong>Now available!</strong> Serving New Haven, CT. <%= link_to 'Order now',new_box_path %></p>
+        </div>
       </div>
     </div>
-
-    <div class="row">
+  <section class="how-it-works segment">
+    <div class="row three-points">
       <div class="large-12 columns centered">
-        <ol class="steps">
-          <%# STEP ONE======================= %>
+        <ul class="steps">
           <li class="step">
-                <h3 class="step-header">Choose a box</h3>
                 <ul class="step-options">
                   <li>
                     <div class="step-option">
-                      <h5 class="title">Raw box </h5>
-                      <span class="caption">Fruit, salad greens, carrots, celery, etc</span>
+                      <h5 class="title">Wholesome produce</h5>
+                      <span class="caption">Harvested within hours of delivery. Recipes included. <br/>
+                        <%= link_to "Learn more", mvp_features_path %></span>
                     </div>
                   </li>
                   <li>
                     <div class="step-option">
-                      <h5 class="title">Cooking box </h5>
-                      <span class="caption">Fruit, greens, root vegetables, etc</span>
-                    </div>
-                  </li>
-                  <!--<li>
-                    <div class="step-option">
-                      <h5 class="title">Raw box </h5>
-                      <span class="caption"> Fruits, greens, &amp; veggies</span>
-                    </div>
-                  </li>-->
-                </ul>
-          </li>
-          <%# STEP TWO======================= %>
-          <li class="step">
-                <h3 class="step-header">Choose a plan</h3>
-                <ul class="step-options">
-                  <li>
-                    <div class="step-option">
-                      <h5 class="title">Weekly subscription</h5>
+                      <h5 class="title">Effortless subscription</h5>
+                      <span class="caption">Cancel or delay whenever you want. Starting at $18/box. <br/>
+                        <%= link_to "See box options", new_box_path %></span>
                     </div>
                   </li>
                   <li>
                     <div class="step-option">
-                      <h5 class="title">1-Month Plan</h5>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="step-option">
-                      <h5 class="title">3-Month Plan</h5>
+                      <h5 class="title">Real farms</h5>
+                      <span class="caption">Selected for best growing practices. Local, organic focus.<br/>
+                        <%= link_to "See our farms", mvp_farms_path %></span>
                     </div>
                   </li>
                 </ul>
           </li>
-          <%# STEP THREE======================= %>
-          <li class="step">
-            <h3 class="step-header">Feast!
-                <span class="step-caption"> Your box is always fresh and seasonal. </span>
-                <span class="order-now">
-                  <%= link_to 'ORDER NOW', new_box_path, class: "order-now-button" %>
-                </span>
-            </h3>
-          </li>
-
-        </ol>
+        </ul>
         <%# End STEPS========================================= %>
       </div>
     </div>
-
+<!--
     <div class="row transition">
       <div class="embellishment">
         <div class="triangle"> <div class="outer"> </div> <div class="inner"> </div> </div>
-        <h5 class="inscribed">WHY JOIN?</h5>
+        <h5 class="inscribed"></h5>
       </div>
-    </div>
+    </div>-->
 
   </section>
   <%# End segment How It Works %>
 
-
+<!--
   <section class="why-join segment">
 
     <div class="row">
@@ -148,4 +120,4 @@
       </div>
     </div>
   </section>
-</div> <%# end landing-page %>
+</div> <%# end landing-page %> -->
