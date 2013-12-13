@@ -1,31 +1,27 @@
 Farmivore::Application.routes.draw do
 
-  devise_for :farmers
-  devise_for :users
-  resources :line_items
 
-  resources :carts
-  resources :emails
-  resources :texts
+  resources :boxes, :charges
 
   get "welcome/farmers"
   get "welcome/about"
   get "welcome/contact"
   get "welcome/admin"
   get "welcome/index"
-
+  
+  root 'mvp#boxes'
   get "mvp/farms"
   get "mvp/features"
 
-  get 'wooster', to: 'places#show', id: 1
-  get 'wooster/boxes', to: 'mvp#boxes'
-
   post 'sms', to: 'texts#catch'
+  resources :texts
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
   # You can have the root of your site routed with "root"
-  root 'mvp#boxes'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -35,12 +31,6 @@ Farmivore::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :contacts, :boxes
-  resources :places, :charges
-
-  resources :farms do 
-    resources :pickups, :products
-  end
 
   # Example resource route with options:
   #   resources :products do
