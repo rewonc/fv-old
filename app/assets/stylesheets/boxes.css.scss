@@ -1,18 +1,9 @@
 //New Boxes Page styling
 .boxes.new{
 
+
   //full page styles
-  .subheader{
-    margin-top: 20px;
-  }
-
-  .header-indent{
-    margin-top:0px;
-    padding-top:0px;
-    font-size:11px;
-    text-align: center;
-  }
-
+  
   .panel{
     font-size: 13px;
     text-align: center;
@@ -33,9 +24,22 @@
       border: 3px $orangeAccent solid;
       }
   }
-  //segment styles
+  //intro section styles
+  section.intro{
+    .subheader{
+      margin-top: 20px;
+    }
 
-  
+    .header-indent{
+      font-size:13px;
+    }
+
+  }
+  section.select{
+
+
+  }
+
 
 }
 

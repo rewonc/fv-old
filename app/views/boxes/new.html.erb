@@ -1,23 +1,41 @@
-<%= form_for @box, url: @path do |f| %>
-<div class="row">
-  <div class="large-12 large-centered columns">
-    <h1 class="header-main">Fit good food into your lifestyle</h1>
-    <p class="header-indent">Delivering to New Haven, CT. <a href="#">More locations </a></p>
+<section class="intro">
+  <div class="row">
+    <div class="large-12 centered columns">
+      <h1 class="header-main">Fit good food into your lifestyle</h1>
+      <p class="header-indent">Now delivering to New Haven, CT! [make cursive note] <a href="#">More locations </a></p>
+    </div>
   </div>
-</div>
-<%= render 'shared/error_messages', object: f.object %>
+</section>
 
-<div class="row">
-  <div class="large-8 large-centered columns">
-    <h3 class="subheader">1. Choose a box</h3>
-  </div>
-</div>
+<div class="form">
+  <%= form_for @box, url: @path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
 
-<div class="row">
-  <div class="large-8 large-centered columns">
+  <section class="select">
+    <!-- start tabs -->
+    <div class="row"> 
+      <div class="large-12 columns">
+        <dl class="tabs" data-tab>
+          <dd class="active"><a href="#panel2-1">Tab 1</a></dd>
+          <dd><a href="#panel2-2">Tab 2</a></dd>
+          <dd><a href="#panel2-3">Tab 3</a></dd>
+        </dl>
+        <div class="tabs-content">
+          <div class="content active" id="panel2-1">
+            <p>First panel content goes here...</p>
+          </div>
+          <div class="content" id="panel2-2">
+            <p>Second panel content goes here...</p>
+          </div>
+          <div class="content" id="panel2-3">
+            <p>Third panel content goes here...</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- end tabs -->
 
-      <%# BOX OPTIONS ===================================%>
       <section class="box-options">
         <div class="row">
           <div class="large-12 large-centered columns">
@@ -54,6 +72,19 @@
           </div>
         </div>
       </section>
+
+  </section>
+
+
+
+
+
+
+<div class="row">
+  <div class="large-8 large-centered columns">
+
+
+      <%# BOX OPTIONS ===================================%>
 
       <div class="row">
         <div class="large-12 large-centered columns">

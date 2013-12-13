@@ -1,6 +1,6 @@
-@import "foundation/foundation-global";
 @import "foundation";
 @import "constants";
+
 
 // Settings file to override Foundation variables
 
@@ -1010,3 +1010,5 @@
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 
+
+@import 'foundation';
