@@ -11,9 +11,7 @@
 # about supported directives.
 #
 #= require dependencies
-#= require sortelements
 #= require_self
-#= require farmivore
 #= require boxes
 
 $(document).foundation()

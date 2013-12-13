@@ -1,8 +1,0 @@
-<tr data-tag="Apples" data-category="Fruits" class="listing">
-  <td> {{listing.category}} </td>
-  <td>{{listing.description}}</td>
-  <td {{bindAttr class="soldOut"}}>{{listing.priceString}}</td>
-  <td>{{listing.tag}}</td>
-  <td><a {{action showModal listing.farm listing}} class="action-minor">{{listing.farm.name}}</a></td>
-  <td><a {{action addToShoppingList listing}} class="add-button"><i class="fa fa-plus-circle"></i></a></td>
-</tr>
