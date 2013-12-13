@@ -3,15 +3,13 @@ Farmivore::Application.routes.draw do
 
   resources :boxes, :charges
 
-  get "welcome/farmers"
+  root 'welcome#index'
+  get "welcome/farms"
+  get "welcome/features"
   get "welcome/about"
   get "welcome/contact"
+  get "welcome/terms"
   get "welcome/admin"
-  get "welcome/index"
-  
-  root 'mvp#boxes'
-  get "mvp/farms"
-  get "mvp/features"
 
   post 'sms', to: 'texts#catch'
   resources :texts

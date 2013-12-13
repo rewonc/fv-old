@@ -1,21 +1,21 @@
 class WelcomeController < ApplicationController
 
   def index
-    render layout: "welcome"
   end
 
-  def farmers
+  def farms
   end
 
   def about
+  end
+
+  def features
   end
 
   def contact
   end
 
   def admin
-    @farms = Farm.all
-    @places = Place.all
   end
 
 end

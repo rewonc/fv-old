@@ -1,7 +1,0 @@
-
-    <tr>
-      <td><%= product.farm_id %></td>
-      <td><%= product.title %></td>
-       <td><%= product.description %></td>
-      <td><%= link_to "Add to cart", line_items_path(line_item: {product_id: product.id}), method: :post %></td>
-    </tr>

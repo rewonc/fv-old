@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/thoughtbot/paperclip.git
-  revision: 6459f2c00f16051ec397fe911bc21078291ce3b8
-  specs:
-    paperclip (3.5.2)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: f369ca16f956979d7e2a68242399417197f43168
   specs:
@@ -46,17 +36,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
-    aws-sdk (1.29.1)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
-      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
     chunky_png (1.2.9)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.3)
-      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -106,11 +88,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.2)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -186,7 +165,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
     zurb-foundation (4.0.9)
@@ -196,7 +174,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.5.0)
@@ -208,7 +185,6 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
-  paperclip!
   pg
   rails (= 4.0.0)
   rails_12factor

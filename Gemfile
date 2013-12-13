@@ -39,8 +39,8 @@ group :doc do
 end
 
 #  Allow for paperclip to go to AWS
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'aws-sdk'
+#gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+#gem 'aws-sdk'
 
 # Use Stripe for payment processing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
