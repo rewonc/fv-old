@@ -2,29 +2,20 @@ footer {
   // border-top: 1px solid $yellow;
   background-color: $white3;
   padding-top:15px;
-  font-size:15px;
   .threesplit{
     ul{
       color: $white1;
       margin-bottom: 0px;
       font-size:12px;
-
      // li:nth-of-type(2n) {
      //   border-right: 1px dotted $lightGray3;
      //   border-left: 1px dotted $lightGray3;
      // }
-     .pull-right{
-      text-align:right;
-     }
     }
-  }
-
-  .action-minor {
-    font-weight: bold;
-  }
-  .action-minor:hover {
-    color: $lightGray3;
-
+    .copy{
+      font-size:12px;
+      text-align:right;
+    }
   }
 
 }

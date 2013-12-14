@@ -1,88 +1,82 @@
-<div class="landing-page">
-  
-  <section class="introduction segment">
-    <div class="row">
-      <div class="large-12 columns landing-page-tag">
-        <h1>
-          Local produce delivered to your door.
-        </h1>
-      </div>
+
+
+<section class="introduction segment">
+  <div class="row">
+    <div class="small-12 large-5 columns">
+      <%= image_tag 'cabbage_600.png', id: "cabbage-image" %>
     </div>
 
-    <div class="row">
-      <div class="large-5 columns">
-        <%= image_tag 'cabbage_600.png', id: "cabbage-image" %>
-        &nbsp;
-      </div>
+    <div class="small-12 columns landing-page-tag">
+      <h1>
+        Local produce delivered to your door.
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    
+    <div class="small-12 large-7 large-offset-5 columns">
       
-      <div class="large-7 columns">
-        
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="landing-page-tag">
-              <h4>Simple, fresh box subscriptions</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="row right">
-          <div class="large-4 columns"> 
-            <%= link_to 'Learn more', welcome_features_path, class: "learn-more-button" %>
-            <%= link_to 'Sign up', new_box_path, class: "get-started-button" %>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="landing-page-tag">
+            <h4>Simple, fresh box subscriptions</h4>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row transition">
-      <div class="embellishment">
-        <div class="triangle"> <div class="outer"> </div> <div class="inner"> </div> </div>
-        <h5 class="inscribed"></h5>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="row now-serving">
-    <div class="large-12 columns">
-      <div class="large-5 columns large-offset-4">
-        <p><strong>Now available!</strong> Serving New Haven, CT. <%= link_to 'Order now',new_box_path %></p>
+      <div class="row button-group">
+        <div class="large-12 columns"> 
+          <%= link_to 'Learn more', welcome_features_path, class: "learn-more-button" %>
+          <%= link_to 'Sign up', new_box_path, class: "get-started-button" %>
+        </div>
       </div>
     </div>
   </div>
 
-  <section class="how-it-works segment">
-    <div class="row three-points">
-      <div class="large-12 columns centered">
-        <ul class="steps">
-          <li class="step">
-                <ul class="step-options">
-                  <li>
-                    <div class="step-option">
-                      <h5 class="title">Wholesome produce</h5>
-                      <span class="caption">Harvested within hours of delivery. Recipes included. <br/>
-                        <%= link_to "Learn more", welcome_features_path %></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="step-option">
-                      <h5 class="title">Effortless subscription</h5>
-                      <span class="caption">Cancel or delay whenever you want. Starting at $18/box. <br/>
-                        <%= link_to "See box options", new_box_path %></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="step-option">
-                      <h5 class="title">Real farms</h5>
-                      <span class="caption">Selected for best growing practices. Local, organic focus.<br/>
-                        <%= link_to "See our farms", welcome_farms_path %></span>
-                    </div>
-                  </li>
-                </ul>
-          </li>
-        </ul>
-      </div>
+  <div class="row transition">
+    <div class="embellishment">
+      <div class="triangle"> <div class="outer"> </div> <div class="inner"> </div> </div>
+      <h5 class="inscribed"></h5>
     </div>
-  </section>
+  </div>
+</section>
 
+
+<div class="row now-serving">
+  <div class="small-12 columns centered">
+    <p><strong>Now available!</strong> Serving New Haven, CT. <%= link_to 'Order now',new_box_path %></p>
+  </div>
 </div>
+
+<section class="how-it-works segment">
+  <div class="row three-points">
+    <div class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+      
+                <li>
+                  <div class="step-option">
+                    <h5 class="title">Wholesome produce</h5>
+                    <span class="caption">Harvested within hours of delivery. Recipes included. <br/>
+                      <%= link_to "Learn more", welcome_features_path %></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="step-option">
+                    <h5 class="title">Effortless subscription</h5>
+                    <span class="caption">Cancel or delay whenever you want. Starting at $18/box. <br/>
+                      <%= link_to "See box options", new_box_path %></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="step-option">
+                    <h5 class="title">Real farms</h5>
+                    <span class="caption">Selected for best growing practices. Local, organic focus.<br/>
+                      <%= link_to "See our farms", welcome_farms_path %></span>
+                  </div>
+                </li>
+             
+    </div>
+  </div>
+</section>
+
+
