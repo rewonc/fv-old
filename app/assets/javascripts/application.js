@@ -1,8 +1,7 @@
-
 //= require dependencies
-//= require boxes
 //= require foundation
 //= require_self
+//= require boxes
 
 $(function(){ 
   $(document).foundation(); 
