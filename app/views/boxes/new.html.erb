@@ -1,8 +1,9 @@
 <section class="intro">
   <div class="row">
-    <div class="large-12 centered columns">
-      <h1 class="header-main">Fit good food into your lifestyle</h1>
-      <p class="header-indent">Now delivering to New Haven, CT! [make cursive note] <a href="#">More locations </a></p>
+    <div class="small-12 centered columns">
+      <h1 class="header-main">Pick the box that's right for you.</h1>
+      <p class="header-indent">Now delivering to New Haven, CT.  <a href="#">More locations </a></p>
+      <p class="ribbon">Free delivery for orders over $40!</p>
     </div>
   </div>
 </section>
@@ -11,30 +12,83 @@
   <%= form_for @box, url: @path do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <section class="select">
-    <!-- start tabs -->
+  <section class="select"> <!-- start tabs -->
     <div class="row"> 
-      <div class="large-12 columns">
-        <dl class="tabs" data-tab>
-          <dd class="active"><a href="#panel2-1">Tab 1</a></dd>
-          <dd><a href="#panel2-2">Tab 2</a></dd>
-          <dd><a href="#panel2-3">Tab 3</a></dd>
+      <div class="small-12 columns">
+        <dl class="tabs three-up mobile" data-tab>
+          <dd>
+            <a href="#panel2-1">
+              <div class="profiles">
+                <h2>some text</h2>
+                <p>some text</p>
+                <p>there's also an image in the back</p>
+              </div>
+            </a>
+          </dd>
+          <dd class="active">
+            <a href="#panel2-2">
+              <div class="profiles">
+                <h2>some text</h2>
+                <p>some text</p>
+                <p>there's also an image in the back</p>
+              </div>
+            </a>
+          </dd>
+          <dd>
+            <a href="#panel2-3">
+              <div class="profiles">
+                <h2>some text</h2>
+                <p>some text</p>
+                <p>there's also an image in the back</p>
+              </div>
+            </a>
+          </dd>
         </dl>
-        <div class="tabs-content">
-          <div class="content active" id="panel2-1">
-            <p>First panel content goes here...</p>
-          </div>
-          <div class="content" id="panel2-2">
-            <p>Second panel content goes here...</p>
-          </div>
-          <div class="content" id="panel2-3">
-            <p>Third panel content goes here...</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="tab-connected">
+          <div class="tabs-content-custom">
+            <div class="content" id="panel2-1">
+              <div class="row">
+                <div class="small-9 large-6 columns large-centered small-centered centered">
+                  <p>First panel content goes here...</p>
+                </div>
+              </div>
+            </div>
+            <div class="content active" id="panel2-2">
+              <div class="row">
+                <div class="small-9 large-6 columns large-centered small-centered centered">
+                  <p>Second panel content goes here...</p>
+                </div>
+              </div>
+            </div>
+            <div class="content" id="panel2-3">
+              <div class="row">
+                <div class="small-9 large-6 columns large-centered small-centered centered">
+                  <p>Third panel content goes here...</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- end tabs -->
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="tab-connected tab-bottom">
+          <p>Test</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section><!-- end tabs -->
+
 
       <section class="box-options">
         <div class="row">
@@ -73,7 +127,7 @@
         </div>
       </section>
 
-  </section>
+
 
 
 

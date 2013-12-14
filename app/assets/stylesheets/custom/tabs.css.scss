@@ -1,0 +1,38 @@
+ /* tabs.css ---------------------- */
+    .tabs { list-style: none; border-bottom: solid 1px #e6e6e6; display: block; height: 200px; padding: 0; margin-bottom: 20px; }
+    .tabs.contained { margin-bottom: 0; margin-left: 0; }
+    .tabs dt, .tabs li.section-title { color: #b3b3b3; cursor: default; display: block; float: left; font-size: 12px; height: 200px; line-height: 200px; padding: 0; padding-right: 9px; padding-left: 20px; font-weight: normal; width: auto; text-transform: uppercase; }
+    .tabs dt:first-child, .tabs li.section-title:first-child { padding: 0; padding-right: 9px; }
+    .tabs dd, .tabs li { display: block; float: left; padding: 0; margin: 0; }
+    .tabs dd a, .tabs li a { color: #6f6f6f; display: block; font-size: 14px; height: 200px; line-height: 200px; padding: 0px 23.8px; }
+    .tabs dd a:focus, .tabs li a:focus { font-weight: bold; color: #2ba6cb; }
+    .tabs dd.active, .tabs li.active { border-top: 3px solid #2ba6cb; margin-top: -3px; }
+    .tabs dd.active a, .tabs li.active a { cursor: default; color: #3c3c3c; background: #fff; border-left: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; font-weight: bold; }
+    .tabs dd:first-child, .tabs li:first-child { margin-left: 0; }
+
+    .tabs-content-custom { display: block; margin: 0 0 0px; padding: 0;}
+    .tabs-content-custom .content { display: none; }
+    .tabs-content-custom .content.active { display: block;}
+  
+    .no-js .tabs-content .content { display: block; }
+//make three-up only applicable for big screens
+@media only screen and (min-width: 641px) {
+ 
+    .tabs.two-up dt a, .tabs.two-up dd a, .tabs.two-up li a, .tabs.three-up dt a, .tabs.three-up dd a, .tabs.three-up li a, .tabs.four-up dt a, .tabs.four-up dd a, .tabs.four-up li a, .tabs.five-up dt a, .tabs.five-up dd a, .tabs.five-up li a { padding: 0 17px; text-align: center; overflow: hidden; }
+    .tabs.two-up dt, .tabs.two-up dd, .tabs.two-up li { width: 50%; }
+    .tabs.three-up dt, .tabs.three-up dd, .tabs.three-up li { width: 33.33%; }
+    .tabs.four-up dt, .tabs.four-up dd, .tabs.four-up li { width: 25%; }
+    .tabs.five-up dt, .tabs.five-up dd, .tabs.five-up li { width: 20%; }
+}
+//switches tabs to vertical on mobile devices
+@media only screen and (max-width: 640px) { /* --- */
+  /* Mobile Tabs --- */
+  /*          */
+  .tabs.mobile { width: auto; margin: 20px -20px 40px; border-bottom: solid 1px #ccc; height: auto; margin: 20px -15px 0px -15px; }
+  .tabs.mobile dt, .tabs.mobile li, .tabs.mobile dd { float: none; height: auto; }
+  .tabs.mobile dd a, .tabs.mobile li a { font-size: 15px; display: block; width: auto; height: auto; padding: 18px 20px; margin: 0; color: #555; line-height: 1; border: none; border-left: none; border-right: none; border-top: 1px solid #ccc; background: #fff; }
+  .tabs.mobile dd a.active, .tabs.mobile li a.active { border: none; background: #2ba6cb; color: #fff; margin: 0; position: static; top: 0; height: auto; }
+  .tabs.mobile dd:first-child a.active, .tabs.mobile li:first-child a.active { margin: 0; }
+  .tabs.mobile + .tabs-content.contained { margin-left: -15px; margin-right: -15px; }
+  .tabs.mobile .section-title { padding-left: 20px !important; }
+ }

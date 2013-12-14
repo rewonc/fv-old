@@ -1,6 +1,37 @@
 //New Boxes Page styling
 .boxes.new{
 
+  //intro section styles
+  section.intro{
+    .subheader{
+      margin-top: 20px;
+    }
+
+    .header-indent{
+      font-size:13px;
+    }
+
+  }
+
+  //tab select styles
+  section.select{
+    @import "custom/tabs";
+    .tab-connected{
+      width: 100%;
+      padding-top: 20px;
+      height: auto;
+      border-left: 1px solid #e6e6e6;
+      border-right: 1px solid #e6e6e6;
+    }
+
+    .tab-bottom{
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
 
   //full page styles
   
@@ -24,22 +55,6 @@
       border: 3px $orangeAccent solid;
       }
   }
-  //intro section styles
-  section.intro{
-    .subheader{
-      margin-top: 20px;
-    }
-
-    .header-indent{
-      font-size:13px;
-    }
-
-  }
-  section.select{
-
-
-  }
-
 
 }
 
