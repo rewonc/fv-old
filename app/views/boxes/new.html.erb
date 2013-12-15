@@ -16,30 +16,32 @@
     <div class="row"> 
       <div class="small-12 columns">
         <dl class="tabs three-up mobile" data-tab>
-          <dd>
+          <dd data-selection="1">
             <a href="#panel2-1">
               <div class="profiles">
                 <h2>some text</h2>
-                <p>some text</p>
-                <p>there's also an image in the back</p>
+                <p>some text, graphic</p>
+                <p> <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw & Ready") %></p>
               </div>
             </a>
           </dd>
-          <dd class="active">
+          <dd class="active" data-selection="2">
             <a href="#panel2-2">
               <div class="profiles">
                 <h2>some text</h2>
-                <p>some text</p>
-                <p>there's also an image in the back</p>
+                <p>some text, graphic</p>
+                <p><%= f.radio_button(:box_num, 2, checked: true) %><%= f.label(:box_2, "Culinary") %>
+      </p>
               </div>
             </a>
           </dd>
-          <dd>
+          <dd data-selection="3">
             <a href="#panel2-3">
               <div class="profiles">
                 <h2>some text</h2>
                 <p>some text</p>
-                <p>there's also an image in the back</p>
+                <p><%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Custom") %>
+</p>
               </div>
             </a>
           </dd>
@@ -91,8 +93,8 @@
                   <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
                   <li class="bullet-item" id="raw_ind">blah
                   </li>
-                  <li class="cta-button">
-                    <%= f.select :raw_num, options_for_select([0,1,2,3]) %>
+                  <li class="cta-button" data-module="1">
+                    <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
                    </li>
                   
                 </ul>
@@ -109,7 +111,7 @@
                   <li class="bullet-item" id="cook_ind">
                     default
                   </li>
-                  <li class="cta-button"><%= f.select :cook_num, options_for_select([1,2,3]) %></li>
+                  <li class="cta-button" data-module="2"><%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %></li>
                 </ul>
               </li>
 
@@ -124,22 +126,26 @@
                   <li class="bullet-item" id="fruit_ind">
                     fruit defualt
                   </li>
-                  <li class="cta-button"><%= f.select :fruit_num, options_for_select([1,2,3]) %></li>
+                  <li class="cta-button" data-module="3"><%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %></li>
                 </ul>
               </li>
-
-
           </ul>
+
+          <div class="row">
+            <div class="small-2 columns small-offset-10">
+              <p id="price">Price here</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+
   </section><!-- end tabs -->
 
 
-      <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Select me!") %>
-      <%= f.radio_button(:box_num, 2) %><%= f.label(:box_2, "Select me!") %>
-      <%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Select me!") %>
-
+     
+      
 
 
 <div class="row">
