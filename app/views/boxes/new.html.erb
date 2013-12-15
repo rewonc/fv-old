@@ -88,11 +88,12 @@
                   <li class="price">[photo?]</li>
                   <li class="description">Greens, yadayada</li>
                   <li class="bullet-item">Fruit, salad greens, carrots, celery, etc</li>
-                  <li class="bullet-item">Good for 1-2 people</li>
-                  <li class="bullet-item">yada yada</li>
-                  <li class="bullet-item">
-                    <div class="slider"></div>
+                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
+                  <li class="bullet-item" id="raw_ind">blah
                   </li>
+                  <li class="cta-button">
+                    <%= f.select :raw_num, options_for_select([0,1,2,3]) %>
+                   </li>
                   
                 </ul>
               </li>
@@ -104,11 +105,11 @@
                   <li class="price">[photo?]</li>
                   <li class="description">Rutabagas, etc</li>
                   <li class="bullet-item">Fruit, greens, root vegetables, and more</li>
-                  <li class="bullet-item">Good for 1-2 people</li>
-                  <li class="bullet-item">
-                    <div class="slider"></div>
+                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
+                  <li class="bullet-item" id="cook_ind">
+                    default
                   </li>
-                  <li class="cta-button"><%= f.radio_button(:box_num, 2) %><%= f.label(:box_2, "Select me!") %></li>
+                  <li class="cta-button"><%= f.select :cook_num, options_for_select([1,2,3]) %></li>
                 </ul>
               </li>
 
@@ -119,11 +120,11 @@
                   <li class="price">[photo?]</li>
                   <li class="description">Apples oranges pears grape.</li>
                   <li class="bullet-item">Fruit, greens, root vegetables, and more</li>
-                  <li class="bullet-item">A good bushelful</li>
-                  <li class="bullet-item">
-                    <div class="slider"></div>
+                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
+                  <li class="bullet-item" id="fruit_ind">
+                    fruit defualt
                   </li>
-                  <li class="cta-button"><%= f.radio_button(:box_num, 2) %><%= f.label(:box_2, "Select me!") %></li>
+                  <li class="cta-button"><%= f.select :fruit_num, options_for_select([1,2,3]) %></li>
                 </ul>
               </li>
 
@@ -135,9 +136,9 @@
   </section><!-- end tabs -->
 
 
-     
-      
-
+      <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Select me!") %>
+      <%= f.radio_button(:box_num, 2) %><%= f.label(:box_2, "Select me!") %>
+      <%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Select me!") %>
 
 
 
