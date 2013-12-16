@@ -9,7 +9,7 @@
 </section>
 
 <div class="form">
-  <%= form_for @box, url: boxes_path, :html => {"data-abide" => ''} do |f| %>
+  <%= form_for @box, url: box_path(@box.id), :html => {"data-abide" => ''} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <section class="select"> <!-- start tabs -->

@@ -1,5 +1,5 @@
 class Box < ActiveRecord::Base
-  validates :street, presence: true, if: "self.is_delivery?"
+  validates :street, presence: true
   validates :box_num, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
@@ -8,9 +8,12 @@ class Box < ActiveRecord::Base
   validates :lastname, :length => { :maximum => 30 }
   validates :phone, presence: true
   validates :delivery_preference, presence: true
-  validates :street, presence: true, if: "self.is_delivery?"
-  validates :zip, presence: true, if: "self.is_delivery?"
-  validates :city, presence: true, if: "self.is_delivery?"
+  validates :street, presence: true
+  validates :zip, presence: true
+  validates :city, presence: true
+  validates :instructions, presence: true
+  
+
 
 
   def delivery_preference_string
@@ -28,14 +31,6 @@ class Box < ActiveRecord::Base
       return "9am-1pm"
     else
       return "1pm-5pm"
-    end
-  end
-
-  def is_delivery?
-    if delivery_preference == 2 || delivery_preference == 1
-      return true
-    else
-      return false
     end
   end
 

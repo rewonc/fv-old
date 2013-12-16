@@ -6,13 +6,7 @@ class BoxesController < ApplicationController
   end
 
   def new
-    if session[:box_id].present?
-      @box = Box.find(session[:box_id])
-      @path = box_path(@box.id)
-    else
     @box = Box.new
-    @path = boxes_path
-    end
   end
 
   def create
@@ -23,10 +17,18 @@ class BoxesController < ApplicationController
        session[:box_id] = @box.id
        render 'charges/new'
     else
-      
       render action: 'new'
     end   
    
+  end
+
+  def edit
+    if (session[:box_id].to_s == params[:id])
+      @box = Box.find(session[:box_id])
+    else
+      flash[:error] = "You don't have permission to edit this. " + params[:id]
+      redirect_to root_path
+    end
   end
 
   def update
@@ -44,6 +46,7 @@ class BoxesController < ApplicationController
 
   private
     def box_params
-      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate)
+      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate, :call_me, :text_me, :raw_num, :cook_num, :fruit_num)
     end
+
 end
