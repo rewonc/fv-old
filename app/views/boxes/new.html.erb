@@ -9,7 +9,7 @@
 </section>
 
 <div class="form">
-  <%= form_for @box, url: @path do |f| %>
+  <%= form_for @box, url: boxes_path do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <section class="select"> <!-- start tabs -->
@@ -146,139 +146,110 @@
 
      
       
-
-
 <div class="row">
-  <div class="large-8 large-centered columns">
+  <div class="small-12 small-centered columns">
+    <fieldset>
+        <%# BOX OPTIONS ===================================%>
 
+        <div class="row">
+          <div class="large-12 large-centered columns">
+            <h3 class="subheader">2. Select your preferences</h3>
+          </div>
+        </div>
 
-      <%# BOX OPTIONS ===================================%>
+        <!--
+        <div class="row">
+          <div class="large-12 columns panel">
+            <p><strong>Subscription packages</strong><br />
+              Contact us for discounted rates on 1 month, 3 month upfront subscriptions at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>
+            </p>
+          </div>
+        </div>-->
+        <div class="row">
+          <div class="large-12 columns">
+            <p>We currently deliver to locations within the city of New Haven.</p>
+            <p>We deliver all our orders on Saturday in order to ensure all our customers receive high quality produce that has never been stored in our warehouses.</p>
+            <p>We are currently beta testing Wednesday delivery. If you'd like to sign up for a Wednesday delivery, email us at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>.
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="large-6 columns">
+            <%= f.text_field :firstname, :placeholder => "Your first name" %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.text_field :lastname, :placeholder => "Last name"%>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="large-5 columns">
+            <%= f.text_field :email, :placeholder => "Your email address" %>
+          </div>
+          <div class="large-3 columns"><%= f.text_field :phone, :placeholder => "Your phone number" %> </div>
+          <div class="large-4 columns">&nbsp;</div>
+        </div>
+
 
       <div class="row">
-        <div class="large-12 large-centered columns">
-          <h3 class="subheader">2. Select your preferences</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 columns panel">
-          <p><strong>Subscription packages</strong><br />
-            Contact us for discounted rates on 1 month, 3 month upfront subscriptions at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-12 columns">
-          <ul class="inline-list">
-            <li><%= f.radio_button(:frequency, 1) %>
-            <%= f.label(:weekly, "Weekly box") %></li>
-            <li><%= f.radio_button(:frequency, 2) %>
-            <%= f.label(:biweekly, "Biweekly box") %></li>
-          </ul>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="large-12 columns">
-          <p><em>Starting on the following date:</em><br/>
-            <%= f.select(:startdate, options_for_select([["Saturday, Nov 23","Sat Nov 23"],["Saturday, Nov 30", "Sat Nov 30"],["Saturday, December 7", "Sat Dec 7"]])) %>
-          </p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 columns">
-          <p><em>Choose delivery window (you don't have to be there)</em><br />
-            <%= f.select(:delivery_preference, options_for_select([["Saturday morning, 9am-1pm",1],["Saturday afternoon, 1pm-5pm",2]])) %>
-          </p>
-        </div>
-      </div>
-
-
-
-      <div class="row">
-
-        <div class="large-6 columns">
-          <%= f.text_field :firstname, :placeholder => "Your first name" %>
-        </div>
-        <div class="large-6 columns">
-          <%= f.text_field :lastname, :placeholder => "Last name"%>
-        </div>
-      </div>
-
-      <div class="row">
-
-        <div class="large-5 columns">
-          <%= f.text_field :email, :placeholder => "Your email address" %>
-        </div>
-        <div class="large-3 columns"><%= f.text_field :phone, :placeholder => "Your phone number" %> </div>
-        <div class="large-4 columns">&nbsp;</div>
-      </div>
-
-
-    <div class="row">
-      <div class="large-8 columns">
-        <p><em>Your delivery address</em><br />
-          <div class="row">
-            <div class="large-12 columns">
-             <%= f.text_field :street, :placeholder => "Street address line 1" %>
-             <%= f.text_field :street2, :placeholder => "Street address line 2" %>
+        <div class="large-8 columns">
+          <p><em>Your delivery address</em><br />
+            <div class="row">
+              <div class="large-12 columns">
+               <%= f.text_field :street, :placeholder => "Street address line 1" %>
+               <%= f.text_field :street2, :placeholder => "Street address line 2" %>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns"><%= f.text_field :city, :placeholder => "City" %></div>
-            <div class="large-4 columns"><%= f.text_field :state, :placeholder => "State" %></div>
-            <div class="large-4 columns"><%= f.text_field :zip, :placeholder => "Zip" %></div>
-          </div>
-        </p>
+            <div class="row">
+              <div class="large-4 columns"><%= f.text_field :city, :placeholder => "City" %></div>
+              <div class="large-4 columns"><%= f.text_field :state, :placeholder => "State" %></div>
+              <div class="large-4 columns"><%= f.text_field :zip, :placeholder => "Zip" %></div>
+            </div>
+          </p>
+        </div>
       </div>
-    </div>
 
+      <div class="row">
+          <div class="large-12 columns">
+            <!--
+            <ul class="inline-list">
+              <li><%= f.radio_button(:frequency, 1) %>
+              <%= f.label(:weekly, "Once per week") %></li>
+              <li><%= f.radio_button(:frequency, 2) %>
+              <%= f.label(:biweekly, "Once per two weeks") %></li>
+            </ul>-->
+            <p>I want my first delivery on the following date:<br/>
+              <%= f.select(:startdate, options_for_select([["Saturday, Dec 21","Sat Dec 21"],["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
+              <%= f.check_box(:text_me) %>
+              <%= f.label(:text_me, "Notify me by text the status of my delivery on Saturday morning") %>
+            </p>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="large-12 columns">
+            <p>We deliver your box as early as possible on Saturday. If you have a preferred time of delivery, however, please note it below and we will try and accomodate you.<br />
+              <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",2],["Saturday afternoon, 12pm-2pm",3],["Saturday evening, 3pm-5pm",4]])) %>
+            </p>
+          </div>
+        </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <%= f.text_area :instructions, :placeholder => "Instructions for our delivery person (if you have a foyer, a back porch, or any other place we should put the package, let us know)" %>
+      <div class="row">
+        <div class="large-12 columns">
+              <%= f.check_box(:call_me) %>
+              <%= f.label(:call_me, "Call me when you arrive") %>
+          <p>Please leave detailed instructions for the deliveryperson if you are not available. We cannot store your box overnight and must donate it if you are unavailable.</p>
+          <%= f.text_area :instructions, :placeholder => "Examples: Buzz apartment #202, leave in foyer. --OR-- Leave with doorman.  --OR-- leave on back porch." %>
+        </div>
       </div>
-    </div>
 
 
-    <%= f.submit 'Checkout', class: "button" %>
+      <%= f.submit 'Checkout', class: "button" %>
+  <% end %>
+    </fieldset>
   </div>
 </div>
-<% end %>
 
-
-<section id="sampleBoxes" class="reveal-modal">
-  <div class="row">
-    <div class="large-12 columns">
-      <h3>Some sample boxes from last week, Nov 9th</h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <h5><em>Raw Box</em></h5>
-      <ul class="square">
-        <li>Swiss Chard, 1 bunch</li>
-        <li>Tuscan "Dino" Kale, 1 bunch</li>
-        <li>1/4 lb. Asian Salad Mix</li>
-        <li>Beets (red, white, and gold), 1 bunch</li>
-        <li>Cherriette Radishes, 1 bunch</li>
-        <li>1lb Macoun apples</li>
-      </ul>
-    </div>
-    <div class="large-6 columns">
-      <h5><em>Cooking box</em></h5>
-      <ul class="square">
-        <li>Tuscan "Dino" Kale, 1 bunch</li>
-        <li>1/4 lb. Asian Salad Mix</li>
-        <li>Cherriette Radishes, 1 bunch</li>
-        <li>1lb Macoun apples</li>
-        <li>Winter squash </li>
-        <li>Sweet potatoes</li>
-      </ul>
-    </div>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
-</section>
