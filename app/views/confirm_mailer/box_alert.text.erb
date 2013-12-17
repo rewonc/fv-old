@@ -1,0 +1,30 @@
+Thank you for your order, <%= @box.firstname %>!
+===============================================
+
+
+You selected a <%= @box.get_box_name %> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.
+
+Your total price will be $<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>, shipping included, per week.
+
+Your first delivery will be on <%= @box.startdate %>. Your preferred time of delivery is: <%= @box.delivery_preference_string %>
+
+
+Delivery address:
+<%= @box.firstname + ' ' + @box.lastname%>
+<%= @box.street%>
+<% if @box.street2.present? %>
+<%= @box.street2 %>
+<% end %>
+<%= @box.city %>, <%= @box.state %> <%= @box.zip %>
+
+Contact information:
+<%= @box.email %>
+<%= @box.phone %>
+
+
+If you have any questions or changes to make to your subscription, please contact us at hello@farmivore.com.
+
+Thanks for your order!  See you on Saturday.
+
+Best
+Rewon and Ray

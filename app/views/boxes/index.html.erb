@@ -1,5 +1,8 @@
 <table >
 <tr data-magellan-expedition="fixed">
+  <th>Box num</th>
+  <th>first name</th>
+  <th>lastname</th>
   <th>email</th>
   <th>phone</th>
   <th>frequency(dep)</th>
@@ -20,6 +23,9 @@
 </tr>
 <% @boxes.each do |b| %>
 <tr>
+  <td><%= b.box_num %></td>
+  <td><%= b.firstname %></td>
+  <td><%= b.lastname %></td>
   <td><%= b.email %></td>
   <td><%= b.phone %></td>
   <td><%= b.frequency %></td>
