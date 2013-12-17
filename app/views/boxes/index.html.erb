@@ -1,1 +1,43 @@
-<%= @boxes.inspect %>
+<table >
+<tr data-magellan-expedition="fixed">
+  <th>email</th>
+  <th>phone</th>
+  <th>frequency(dep)</th>
+  <th>delivery pref</th>
+  <th>street</th>
+  <th>street2</th>
+  <th>city </th>
+  <th>state</th>
+  <th>zip</th>
+  <th>instructions</th>
+  <th>startdate</th>
+  <th>raw num</th>
+  <th>cook num</th>
+  <th>fruit num</th>
+  <th>text me</th>
+  <th>call me</th>
+  <th>neighborhood</th>
+</tr>
+<% @boxes.each do |b| %>
+<tr>
+  <td><%= b.email %></td>
+  <td><%= b.phone %></td>
+  <td><%= b.frequency %></td>
+  <td><%= b.delivery_preference %></td>
+  <td><%= b.street %></td>
+  <td><%= b.street2 %></td>
+  <td><%= b.city %></td>
+  <td><%= b.state %></td>
+  <td><%= b.zip %></td>
+  <td><%= b.instructions %></td>
+  <td><%= b.startdate %></td>
+  <td><%= b.raw_num %></td>
+  <td><%= b.cook_num %></td>
+  <td><%= b.fruit_num %></td>
+  <td><%= b.text_me %></td>
+  <td><%= b.call_me %></td>
+  <td><%= b.neighborhood %></td>
+</tr>
+
+<% end %>
+</table>

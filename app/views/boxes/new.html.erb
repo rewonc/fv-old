@@ -2,7 +2,7 @@
   <div class="row">
     <div class="small-12 centered columns">
       <h1 class="header-main">Pick the box that's right for you.</h1>
-      <p class="header-indent">Now delivering to New Haven, CT.  <a href="#">More information </a></p>
+      <p class="header-indent">Now delivering to New Haven, CT!</p>
       <p class="ribbon">Free delivery for orders over $40!</p>
     </div>
   </div>
@@ -133,7 +133,8 @@
 
           <div class="row">
             <div class="small-2 columns small-offset-10">
-              <p id="price">Price here</p>
+              <p>$<span id="price_sum">24</span>.00</p>
+              <p id="price_delivery">Plus $4 for delivery (over $40 delivery is free)</p>
             </div>
           </div>
         </div>
@@ -168,7 +169,7 @@
         <div class="row">
           <div class="large-12 columns">
             <p>We currently deliver to locations within the <strong>city of New Haven.</strong> Choose your neighborhood:</p>
-            <%= f.select(:startdate, options_for_select([["Saturday, Dec 21","Sat Dec 21"],["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
+            <%= f.select(:neighborhood, options_for_select([["East Rock","East Rock"],["Lighthouse Point", "Lighthouse Point"],["Other", "Other"]])) %>
 
             <p>We deliver <strong>all our orders on Saturday</strong> in order to ensure all our customers receive high quality produce that has never been stored in our warehouses.</p>
             <p>We are currently beta testing Wednesday delivery. If you'd like to sign up for a Wednesday delivery, email us at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>.
@@ -242,7 +243,7 @@
         <div class="row">
           <div class="large-12 columns">
             <p>We deliver your box as <strong>early as possible on Saturday.</strong> If you have a preferred time of delivery, however, please note it below and we will try and accomodate you.<br />
-              <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",2],["Saturday afternoon, 12pm-2pm",3],["Saturday evening, 3pm-5pm",4]])) %>
+              <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
               
 
             </p>

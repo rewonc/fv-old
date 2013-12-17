@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def index
+    
   end
 
   def create
@@ -9,7 +10,7 @@ class ChargesController < ApplicationController
     amount = @box.get_price
     @customer = Stripe::Customer.create(
       email: @box.email,
-      description: 'Box Num: ' + @box.box_num.to_s + '. Deliver: ' + @box.startdate.to_s + '. Every: ' + @box.frequency.to_s + 'weeks',
+      description: 'Modules:' + @box.raw_num.to_s + '-' + @box.cook_num.to_s + @box.fruit_num.to_s + '. Deliver: ' + @box.startdate.to_s + '. Every: ' + @box.frequency.to_s + 'weeks',
       card: params[:stripeToken]
     )
 
@@ -23,7 +24,7 @@ class ChargesController < ApplicationController
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to edit_box_path(session[:box_id])
   end
 
 end

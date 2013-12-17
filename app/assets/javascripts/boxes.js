@@ -54,7 +54,15 @@ jQuery.fn.selectToSlider = function(){
 };
 
 function upgrade_price(){
-  $("#price").append(' <-');
+  var subtotal = (parseInt($('#box_raw_num').val()) + parseInt($('#box_cook_num').val()) + parseInt($('#box_fruit_num').val()))*8
+  $("#price_sum").text(subtotal.toString());
+  if (subtotal<=8) {
+    $('#price_delivery').text("Minimum order of $10 - please increase order")
+  } else if (subtotal < 40) {
+    $('#price_delivery').text("Plus $4 for delivery (over $40 delivery is free)")
+  } else {
+    $('#price_delivery').text("Free delivery!")
+  }
 }
 function upgrade_text(select, value){
   module = $(select).closest('li').data('module');

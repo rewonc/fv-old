@@ -7,19 +7,11 @@
             <div class="row">
               <div class="large-12 columns">
 
-                 <p>You selected the <strong>
-                  <% if @box.box_num == 1 %>
-                      Raw Box
-                    <% elsif @box.box_num == 2 %>
-                      Cooking Box
-                    <% else %>
-                      Jumbo Box
-                    <% end %>
-                   Plan</strong> ($<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>).</p>
+                 <p>You selected a <strong><%= @box.get_box_name %></strong> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.</p>
 
-                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>, in between <strong><%= @box.delivery_preference_time_string %></strong></p>
+                 <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
 
-                   <p>Every <strong><%= @box.frequency.to_s %> week/s</strong> after that, a box will be shipped to you on <strong><%= @box.delivery_preference_string %></strong></p>
+                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
                  </div>
             </div>
             <div class="row">
@@ -40,8 +32,6 @@
                 </p>
               </div>
             </div>
-
-           </div>
           </fieldset>
   </div>
 </div>
