@@ -1,4 +1,4 @@
-  <section class="intro">
+<section class="intro">
   <div class="row">
     <div class="small-12 centered columns">
       <h1 class="header-main">Pick the box that's right for you.</h1>
@@ -10,7 +10,7 @@
 
 <div class="form">
   
-  <%= form_for @box, url: box_path(@box.id), :html => {"data-abide" => ''} %>
+  <%= form_for @box, url: box_path(@box.id), :html => {"data-abide" => ''} do |f| %>
 
   <%= render 'shared/error_messages', object: f.object %>
 
@@ -160,14 +160,6 @@
           </div>
         </div>
 
-        <!--
-        <div class="row">
-          <div class="large-12 columns panel">
-            <p><strong>Subscription packages</strong><br />
-              Contact us for discounted rates on 1 month, 3 month upfront subscriptions at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>
-            </p>
-          </div>
-        </div>-->
         <div class="row">
           <div class="large-12 columns">
             <p>We currently deliver to locations within the <strong>city of New Haven.</strong> Choose your neighborhood:</p>
@@ -227,13 +219,6 @@
 
       <div class="row">
           <div class="large-12 columns">
-            <!--
-            <ul class="inline-list">
-              <li><%= f.radio_button(:frequency, 1) %>
-              <%= f.label(:weekly, "Once per week") %></li>
-              <li><%= f.radio_button(:frequency, 2) %>
-              <%= f.label(:biweekly, "Once per two weeks") %></li>
-            </ul>-->
             <p>I want my <strong>first delivery</strong>   on the following date:<br/>
               <%= f.select(:startdate, options_for_select([["Saturday, Dec 21","Sat Dec 21"],["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
               <%= f.check_box(:text_me) %>
@@ -269,8 +254,6 @@
 
 
       <%= f.submit 'Checkout', class: "button" %>
-  <% end %>
-    </fieldset>
-  </div>
+   <% end %>
+  </fieldset>
 </div>
-
