@@ -68,6 +68,13 @@ $yellow: #ffe200;
   border: 0;
 }
 
+@mixin fv-button {
+  @include button-base;
+  @include button-size;
+  @include button-style($orangeAccent);
+  border: 0;
+}
+
 @mixin triangle-down($color, $size) {
   width: 0;
   height: 0;
