@@ -3,6 +3,4 @@
 //= require_self
 //= require boxes
 
-$(function(){ 
-  $(document).foundation(); 
-});
+$(function(){ $(document).foundation(); });
