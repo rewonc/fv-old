@@ -254,17 +254,34 @@
     color:$gold;
   }
 
-  .featurette-text{
-    margin-top:60px;
-    margin-bottom:60px;
-  }
+  .feature{
+    h2{
+      margin-bottom:60px;
+    }
+    .caption{
+        position:relative;
+        small{
+          position:absolute;
+          width:260px;
+          left:70px;
+          top:20px;
+          line-height:12px;
+        }
+    }
+    .featurette-text{
+      padding-left:20px;
+      padding-right:20px;
+    }
 
-  .caption{
-    position:relative;
-    top:80px;
-    padding-left:20px;
-    padding-right:20px;
   }
+  #ft-diverse{
+    img{
+      max-width:120%;
+    }
+    small{
+    }
+  }
+  
 }
 
 
