@@ -10,10 +10,11 @@ $white4: #F8F8F8;
 $darkGray: #333;
 $midGray: #999;
 $lightGray3: rgb(133, 133, 133);
+$greenMute: desaturate($greenPrimary, 30%);
+$orangeLight: saturate(lighten($orange, 10%), 20%);
 
 
-
-
+/// relics
 
 $redAccent: rgb(243, 63, 0);
 $redSoft: desaturate(lighten($redAccent, 20%), 10%);
@@ -33,7 +34,7 @@ $tripurple: #910ffc;
 $greenAccent: darken($trigreen, 10%);
 $greenFade: desaturate($trigreen, 40%);
 $greenSoft: lighten($greenFade, 30%);
-$greenMute: desaturate($greenFade, 30%);
+
 $purpleSoft: lighten($tripurple, 30%);
 
 

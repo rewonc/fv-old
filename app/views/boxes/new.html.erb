@@ -83,7 +83,7 @@
             <div class="content" id="panel2-3">
               <div class="row">
                 <div class="small-9 large-6 columns large-centered small-centered centered">
-                  <p>The <strong>Custom Box</strong> allows you to choose the amount and type of vegetables you receive.</p><p> Orders over $40  get free shipping!</p>
+                  <p>The <strong>Custom Box</strong> allows you to choose the amount of raw vegetables, cooking vegetables, or fruit you get each week.</p><p> Orders over $40  get free shipping!</p>
                 </div>
               </div>
             </div>
@@ -162,8 +162,36 @@
             </div>
 
             <div class="price-box small-12 medium-4 columns">
-              <p>$<span id="price_sum">24</span>.00</p>
-              <p id="price_delivery">Plus $4 for delivery (over $40 delivery is free)</p>
+              <div class="outer-box radius rounded">
+                <div class="row">
+                  <div class="small-6 columns small-centered centered">
+                    <span class="carrot"><%= image_tag('carrot-bandw.png') %></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 columns centered">
+                    <h5><strong><em>Want to add or remove shares?</em></strong></h5>
+                    <div class="customize-button">Customize</div>
+                  </div>
+                </div>
+
+                <div class="row delivery-row">
+                    <div class="delivery-ribbon centered"><h6 class="delivery-ribbon-content">Free delivery for orders over $40!</h6></div>
+                </div>
+
+                <div class="row">
+                  <div class="small-12 columns totals">
+                    <h5><strong>Subtotal:</strong>  $<span id="price_sum">24</span>.00</h5>
+                    <h5>Delivery:  $<span id="price_delivery">4</span>.00</h5>
+                    <h5><strong>Total: $<span id="price_total">28</span>.00</h5>
+                  </div>
+                  <div class="small-12 columns checkout centered">
+                    <div class="checkout-button">Select this box</div>
+                  </div>
+                </div>
+               
+                
+              </div>
             </div>
           </div>
         </div>
