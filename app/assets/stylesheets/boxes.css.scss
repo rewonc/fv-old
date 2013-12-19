@@ -77,9 +77,9 @@
     }
 
     dd.active {
-      -moz-box-shadow:    2px -2px 3px 0px $white2;
-      -webkit-box-shadow: 2px -2px 3px 0px $white2;
-      box-shadow:         2px -2px 3px 0px $white2;
+      -moz-box-shadow:    0px -2px 3px 0px $white2;
+      -webkit-box-shadow: 0px -2px 3px 0px $white2;
+      box-shadow:         0px -2px 3px 0px $white2;
       z-index:4;
       .profiles .icon{
         background-color:$darkGray;
@@ -98,6 +98,9 @@
     }
 
     .tab-connected{
+      -moz-box-shadow:    0px 1px 3px 0px $white2;
+      -webkit-box-shadow: 0px 1px 3px 0px $white2;
+      box-shadow:         0px 1px 3px 0px $white2;
       background-color:white;
       padding-top: 20px;
       padding-left:40px;
@@ -164,7 +167,7 @@
       padding-bottom:5px;
       margin-left:-10px;
       margin-right:-10px;
-      border: 2px dotted $orange;
+      border: 1px dashed $orange;
       h6{
         color:white;
         font-weight:bolder;
@@ -180,7 +183,7 @@
       left: -11px;
       content: "";
       border-bottom: 10px solid transparent;
-      border-right: 10px solid rgb(0, 80, 116);
+      border-right: 10px solid $orangeDark;
     }
      
     div.delivery-ribbon::after{
@@ -192,7 +195,7 @@
       right: -10px;
       content: "";
       border-bottom: 10px solid transparent;
-      border-left: 10px solid rgb(0, 80, 116);
+      border-left: 10px solid $orangeDark;
     }
 
     .totals{
@@ -221,6 +224,9 @@
   //fieldset style
   fieldset{
     background-color:white;
+    -moz-box-shadow:    0px 0px 3px 0px $white2;
+    -webkit-box-shadow: 0px 0px 3px 0px $white2;
+    box-shadow:         0px 0px 3px 0px $white2;
   }
 
 

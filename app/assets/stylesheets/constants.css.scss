@@ -11,7 +11,8 @@ $darkGray: #333;
 $midGray: #999;
 $lightGray3: rgb(133, 133, 133);
 $greenMute: desaturate($greenPrimary, 30%);
-$orangeLight: saturate(lighten($orange, 10%), 20%);
+$orangeLight: saturate(lighten($orange, 20%), 100%);
+$orangeDark: darken($orange, 20%);
 
 
 /// relics
