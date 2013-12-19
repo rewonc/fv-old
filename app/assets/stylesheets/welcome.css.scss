@@ -204,7 +204,7 @@
     border-left:0px;
   }
   .fa-star{
-    color:gold;
+    color:$gold;
   }
 }
 
@@ -226,11 +226,44 @@
       font-size:12px;
       color:$darkGray;
     }
+    a:hover{
+       .fa-pagelines{
+          color: darken($greenMute,6%);
+        }
+        .fa-eye{
+          color: darken($redAccent,6%);
+        }
+        .fa-cutlery{
+          color: darken($midGray, 6%);
+        }
+        .fa-thumbs-up{
+          color:darken($gold,6%);
+        }
+    }
+  }
+  .fa-pagelines{
+    color: $greenMute;
+  }
+  .fa-eye{
+    color: $redAccent;
+  }
+  .fa-cutlery{
+    color: $midGray;
+  }
+  .fa-thumbs-up{
+    color:$gold;
   }
 
   .featurette-text{
     margin-top:60px;
     margin-bottom:60px;
+  }
+
+  .caption{
+    position:relative;
+    top:80px;
+    padding-left:20px;
+    padding-right:20px;
   }
 }
 

@@ -13,12 +13,15 @@ $lightGray3: rgb(133, 133, 133);
 $greenMute: desaturate($greenPrimary, 30%);
 $orangeLight: saturate(lighten($orange, 20%), 100%);
 $orangeDark: darken($orange, 20%);
+$gold: darken(gold, 2%);
+
+$redAccent: rgb(243, 63, 0);
+$redSoft: desaturate(lighten($redAccent, 10%), 5%);
 
 
 /// relics
 
-$redAccent: rgb(243, 63, 0);
-$redSoft: desaturate(lighten($redAccent, 20%), 10%);
+
 $orangeAccent: rgb(249, 135, 0);
 
 $orangeSoftComplement: #0F7AFC;
