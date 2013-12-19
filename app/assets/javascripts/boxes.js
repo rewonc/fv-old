@@ -1,4 +1,5 @@
 $(".no-js-desc").hide();
+$(".box-select").fadeOut();
 sliders("#box_raw_num");
 sliders("#box_cook_num");
 sliders("#box_fruit_num");

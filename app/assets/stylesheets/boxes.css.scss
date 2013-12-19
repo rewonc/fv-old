@@ -22,10 +22,83 @@
     @import "custom/tabs";
     .tab-connected{
       width: 100%;
+      background-color:white;
       padding-top: 20px;
       height: auto;
       border-left: 1px solid #e6e6e6;
       border-right: 1px solid #e6e6e6;
+    }
+
+    .tabs{
+      dd{}
+      .profiles{
+        padding-top:20px;
+        text-align:center;
+        .icon{
+          width:190px;
+          height:180px;
+          margin-bottom:10px;
+          margin-left:auto;
+          margin-right:auto;
+          background-color:$white2;
+          position:relative;
+          top:-10px;
+          .price{
+            position:absolute;
+            font-size:30px;
+            font-weight:bolder;
+            color:white;
+            left:20px;
+            top:10px;
+            background-color:$midGray;
+            border-radius:50%;
+            padding:10px;
+            small{
+              color:white;
+              position:relative;
+              top:-10px;
+            }
+          }
+          .title{
+            position:absolute;
+            font-size:20px;
+            font-weight:bolder;
+            top:160px;
+            width:100%;
+            z-index:5;
+
+            em{
+              background-color: $midGray;
+              color:white;
+              padding-top:3px;
+              padding-left:10px;
+              padding-right:10px;
+            }
+          }
+        }
+
+      }
+    }
+
+    dd.active {
+      -moz-box-shadow:    2px -2px 3px 0px $white2;
+      -webkit-box-shadow: 2px -2px 3px 0px $white2;
+      box-shadow:         2px -2px 3px 0px $white2;
+      z-index:4;
+      .profiles .icon{
+        background-color:$darkGray;
+        .title em{
+
+          background-color: $greenPrimary;
+          padding-top:3px;
+          padding-left:10px;
+          padding-right:10px;
+
+        }
+        .price{
+          background-color: $greenPrimary;
+        }
+      }
     }
 
     .tab-bottom{
@@ -39,6 +112,10 @@
   }
 
 
+  //fieldset style
+  fieldset{
+    background-color:white;
+  }
 
 
   //full page styles

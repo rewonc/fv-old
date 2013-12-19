@@ -50,14 +50,14 @@
 
   section.introduction.segment {
     //background gradient  http://www.colorzilla.com/gradient-editor/
-    background: #00be76; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, $greenDesaturated 0%, $greenPrimary 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenDesaturated), color-stop(100%,$greenPrimary)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, $greenDesaturated 0%,$greenPrimary 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, $greenDesaturated 0%,$greenPrimary 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, $greenDesaturated 0%,$greenPrimary 100%); /* IE10+ */
-    background: linear-gradient(135deg, $greenDesaturated 0%,$greenPrimary 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenDesaturated', endColorstr='$greenPrimary',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: $greenPrimary; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenDesaturated 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenPrimary), color-stop(100%,$greenDesaturated)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* IE10+ */
+    background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 
     //background:  $greenPrimary;
@@ -102,7 +102,7 @@
 
     .get-started-button {
       @include fv-button;
-      @include button-style($greenPrimary);
+      @include button-style($greenDesaturated);
       font-size: 18px;
       font-color: white;
       text-shadow: 3px 3px 0px $greenDarkAccent;
@@ -191,6 +191,9 @@
 
   blockquote{
     border-left:0px;
+  }
+  .fa-star{
+    color:gold;
   }
 }
 

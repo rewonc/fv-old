@@ -6,15 +6,9 @@
   </div>
   <div class="row">
     <div class="small-12 centered columns">
-      <div class="row">
-        <div class="small-4 small-offset-4 columns">
-          <div class="progress small-8 secondary success radius round">
-            <span class="meter" style="width: 33%"></span>
-          </div>
-        </div>
-      </div>
+    
 
-      <h1 class="header-main">Pick the box that's right for you.</h1>
+      <h1 class="header-main">Choose a box that's right for you.</h1>
       
     </div>
   </div>
@@ -31,29 +25,36 @@
           <dd data-selection="1">
             <a href="#panel2-1">
               <div class="profiles">
-                <h2>some text</h2>
-                <p>some text, graphic</p>
-                <p> <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw & Ready") %></p>
+                <div class="icon">
+                  <h2 class="title"><em>Raw Box</em></h2>
+                  <h2 class="price"><em><small>$</small>24</em></h2>
+                   <p class="box-select"> <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw & Ready") %></p>
+                </div>
+               
               </div>
             </a>
           </dd>
           <dd class="active" data-selection="2">
             <a href="#panel2-2">
               <div class="profiles">
-                <h2>some text</h2>
-                <p>some text, graphic</p>
-                <p><%= f.radio_button(:box_num, 2, checked: true) %><%= f.label(:box_2, "Culinary") %>
-      </p>
+               <div class="icon">
+                  <h2 class="title"><em>Variety Box</em></h2>
+                  <h2 class="price"><em><small>$</small>24</em></h2>
+                  <p class="box-select"><%= f.radio_button(:box_num, 2, checked: true) %><%= f.label(:box_2, "Culinary") %> </p>
+                </div>
+                
               </div>
             </a>
           </dd>
           <dd data-selection="3">
             <a href="#panel2-3">
               <div class="profiles">
-                <h2>some text</h2>
-                <p>some text</p>
-                <p><%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Custom") %>
-</p>
+                <div class="icon">
+                  <h2 class="title"><em>Custom Box</em></h2>
+                  <h2 class="price range"><em><small>$</small>16-<small>$</small>72</em></h2>
+                  <p class="box-select"><%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Custom") %></p>
+                </div>
+                
               </div>
             </a>
           </dd>
@@ -68,21 +69,21 @@
             <div class="content" id="panel2-1">
               <div class="row">
                 <div class="small-9 large-6 columns large-centered small-centered centered">
-                  <p>First panel content goes here...</p>
+                  <p>The <strong>Raw Box</strong> is full of nutritious, fresh vegetables that require little to no preparation to enjoy.</p><p> It includes leafy greens, vegetables you can eat raw, and fruit. One box is perfect for 5-6 hearty salads or juices, with fruit to snack on in between.
                 </div>
               </div>
             </div>
             <div class="content active" id="panel2-2">
               <div class="row">
                 <div class="small-9 large-6 columns large-centered small-centered centered">
-                  <p>Second panel content goes here...</p>
+                  <p>The <strong>Variety Box</strong> is designed for people who enjoy exposure to a wide range of vegetables and are comfortable with spending time cooking.</p><p> It includes a selection of all seasonal produce from salad greens to eggplant to rutabagas. It's perfect for cooking with our included recipes for 5-6 meals over the week.</p>
                 </div>
               </div>
             </div>
             <div class="content" id="panel2-3">
               <div class="row">
                 <div class="small-9 large-6 columns large-centered small-centered centered">
-                  <p>Third panel content goes here...</p>
+                  <p>The <strong>Custom Box</strong> allows you to choose the amount and type of vegetables you receive.</p><p> Orders over $40  get free shipping!</p>
                 </div>
               </div>
             </div>
