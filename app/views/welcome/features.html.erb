@@ -69,38 +69,68 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row feature" id="ft-convenient">
   <div class="small-12 columns panel-box">
     <div class="centered"><i class="fa fa-3x fa-credit-card"></i>
-    <h2>Fresh and nutritious</h2></div>
+    <h2>Simple subscription plan</h2></div>
     <div class="row">
-      <div class="small-6 small-offset-1 columns featurette-text"><p>We’re obsessed with reducing the time between harvest and getting produce in your hands. Often, the items in your box are delivered within <strong>24 hours</strong> of harvest.</p><p>Less time in storage means vegetables keep more of their essential nutrients and stay fresh longer in your refrigerator. 
-      </p></div>
-      <div class="small-5 columns"><p>Image</p></div>
+      <div class="small-6 small-offset-1 columns featurette-text">
+        <p>
+          Choose the box that fits your lifestyle. Select whether you'd like vegetables for raw consumption or for cooking, and choose the amount of fruit you'd like to get. 
+        </p>
+        <p>Then sit back. We fill your box each week with fresh ingredients from the farms around you and deliver it to your door. </p>
+      </div>
+      <div class="small-5 columns">
+        <div class="row">
+          <div class="small-12 columns centered">
+            <br />
+            <p>Starting from $16 per week. <br />Cancel anytime.</p>
+            <%= link_to 'Get started!', new_box_path, html_options = {class: "get-started-button"} %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row feature" id="ft-cook">
   <div class="small-12 columns panel-box">
     <div class="centered"><i class="fa fa-3x fa-cutlery"></i>
-    <h2>Fresh and nutritious</h2></div>
+    <h2>Easy to prepare</h2></div>
     <div class="row">
-      <div class="small-6 small-offset-1 columns featurette-text"><p>We’re obsessed with reducing the time between harvest and getting produce in your hands. We source directly from farmers and usually can deliver to your door within <strong>24 hours</strong> of harvest.</p><p>Less time in storage means vegetables keep more of their essential nutrients and stay fresh longer in your refrigerator. 
+      <div class="small-8 small-offset-2 columns featurette-text"><p>When you’re working with quality ingredients, creating flavorful meals becomes a lot easier. With each box we include simple preparation tips and recipes designed to bring out the best in our produce whether you cook or eat it raw.
       </p></div>
-      <div class="small-5 columns"></div>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row feature" id="ft-honest">
   <div class="small-12 columns panel-box">
     <div class="centered"><i class="fa fa-3x fa-thumbs-up"></i>
-    <h2>Fresh and nutritious</h2></div>
+    <h2>Honestly sourced</h2></div>
     <div class="row">
-      <div class="small-6 small-offset-1 columns featurette-text"><p>We’re obsessed with reducing the time between harvest and getting produce in your hands. Often, the items in your box are delivered within <strong>24 hours</strong> of harvest.</p><p>Less time in storage means vegetables keep more of their essential nutrients and stay fresh longer in your refrigerator. 
-      </p></div>
-      <div class="small-5 columns"><p>Image</p></div>
+      <div class="small-6 small-offset-1 columns featurette-text">
+        <p>We make an effort to tour the farms we source from and see their growing practices firsthand so we can share that information with you. Beyond the quality of the produce itself, we also look for farms that:</p>
+        <ul>
+          <li>are family-owned and operated</li>
+          <li>refrain from using genetically modified seed varieties</li>
+          <li>care about maintaining and improving the health of the soil and the environment</li>
+          <li>use no or low spray growing practices</li>
+          <li>minimize external inputs (like synthetic fertilizers) and waste outputs</li>
+        </ul>
+
+        <p>Every delivery comes with information about where each vegetable comes from and the growing practices on the farms.  
+        </p>
+      </div>
+      <div class="small-5 columns">
+        <div class="row">
+          <div class="small-12 columns centered">
+            <br /><br /><br />
+            <p>Learn more about our sourcing practices</p>
+            <%= link_to 'Our farms', welcome_farms_path, html_options = {class: "get-started-button"} %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
