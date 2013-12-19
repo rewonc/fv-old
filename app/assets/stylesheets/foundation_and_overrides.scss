@@ -110,9 +110,9 @@
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: #efefef  ;
+ $accordion-navigation-bg-color: $white2 ;
 // $accordion-navigation-hover-bg-color: darken($accordion-navigation-bg-color, 5%);
-// $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 3%);
+ $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 10%);
 // $accordion-navigation-font-color: #222;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;

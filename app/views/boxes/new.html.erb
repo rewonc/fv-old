@@ -95,57 +95,73 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="tab-connected tab-bottom">
-          <ul class="box-options medium-block-grid-3">
-            <%# BOX OPTION%>
-              <li>
-                <ul class="box-option">
-                  <li class="title">Las crudas </li>
-                  <li class="price">[photo?]</li>
-                  <li class="description">Greens, yadayada</li>
-                  <li class="bullet-item">Fruit, salad greens, carrots, celery, etc</li>
-                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
-                  <li class="bullet-item" id="raw_ind">blah
-                  </li>
-                  <li class="cta-button" data-module="1">
-                    <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
-                   </li>
-                  
-                </ul>
-              </li>
-
-              <%# BOX OPTION%>
-              <li>
-                <ul class="box-option">
-                  <li class="title">les culinaires</li>
-                  <li class="price">[photo?]</li>
-                  <li class="description">Rutabagas, etc</li>
-                  <li class="bullet-item">Fruit, greens, root vegetables, and more</li>
-                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
-                  <li class="bullet-item" id="cook_ind">
-                    default
-                  </li>
-                  <li class="cta-button" data-module="2"><%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %></li>
-                </ul>
-              </li>
-
-              <%# BOX OPTION%>
-              <li>
-                <ul class="box-option">
-                  <li class="title">Les Fruits</li>
-                  <li class="price">[photo?]</li>
-                  <li class="description">Apples oranges pears grape.</li>
-                  <li class="bullet-item">Fruit, greens, root vegetables, and more</li>
-                  <li class="bullet-item no-js-desc">Select amount below. 0=none, 1=size of sample, 2=more variety and quantity, 3=max variety and quantity</li>
-                  <li class="bullet-item" id="fruit_ind">
-                    fruit defualt
-                  </li>
-                  <li class="cta-button" data-module="3"><%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %></li>
-                </ul>
-              </li>
-          </ul>
-
           <div class="row">
-            <div class="small-2 columns small-offset-10">
+            <div class="small-12 medium-8 columns">
+              <div class="outer-box radius rounded">
+                <h5 class="centered">A sample box</h5>
+                <dl class="accordion" data-accordion>
+                  <dd>
+                    <a href="#raw_panel">
+                      <div class="row">
+                        <div class="small-2 columns">
+                        <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
+                        </div>
+                        <div class="small-6 columns">
+                          Raw pack
+                        </div>
+                        <div class="small-4 columns">
+                          <small>One pack can make 2-3 large salads</small>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="raw_panel" class="content active">
+                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       
+                    </div>
+                  </dd>
+                  <dd>
+                    <a href="#cook_panel">
+                      <div class="row">
+                        <div class="small-2 columns">
+                        <%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %>
+                        </div>
+                        <div class="small-6 columns">
+                          Cooking pack
+                        </div>
+                        <div class="small-4 columns">
+                          <small>One pack can make 2-3 meals</small>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="cook_panel" class="content">
+                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       
+                    </div>
+                  </dd>
+                  <dd>
+                    <a href="#fruit_panel">
+                      <div class="row">
+                        <div class="small-2 columns">
+                        <%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %>
+                        </div>
+                        <div class="small-6 columns">
+                          Fruit pack
+                        </div>
+                        <div class="small-4 columns">
+                          <small>One pack contains 5-8 pieces of fruit</small>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="fruit_panel" class="content">
+                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="price-box small-12 medium-4 columns">
               <p>$<span id="price_sum">24</span>.00</p>
               <p id="price_delivery">Plus $4 for delivery (over $40 delivery is free)</p>
             </div>
