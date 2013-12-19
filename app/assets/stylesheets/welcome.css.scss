@@ -1,3 +1,13 @@
+.welcome{
+  .panel-box{
+    margin-top:20px;
+    background-color:white;
+    -moz-box-shadow:    0px 0px 2px 0px $white2;
+    -webkit-box-shadow: 0px 0px 2px 0px $white2;
+    box-shadow:         0px 0px 2px 0px $white2;
+  }
+}
+
 .welcome.index{
   
   //index page global styles
