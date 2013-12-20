@@ -110,9 +110,10 @@
                       <div class="row">
                         <div class="small-2 columns">
                         <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
+                        <small>Quantity</small>
                         </div>
                         <div class="small-6 columns">
-                          Raw pack
+                          <h4>Raw pack</h4>
                         </div>
                         <div class="small-4 columns">
                           <small>One pack can make 2-3 large salads</small>
@@ -120,8 +121,22 @@
                       </div>
                     </a>
                     <div id="raw_panel" class="content active">
-                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                       
+                      <ul class="raw_panel_subs" id="raw_sub_1">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three</li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="raw_sub_2">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three ... </li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="raw_sub_3">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three ... </li>
+                      </ul>
+                     
                     </div>
                   </dd>
                   <dd>
@@ -129,9 +144,10 @@
                       <div class="row">
                         <div class="small-2 columns">
                         <%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %>
+                        <small>Quantity</small>
                         </div>
                         <div class="small-6 columns">
-                          Cooking pack
+                          <h4>Cooking pack</h4>
                         </div>
                         <div class="small-4 columns">
                           <small>One pack can make 2-3 meals</small>
@@ -139,8 +155,22 @@
                       </div>
                     </a>
                     <div id="cook_panel" class="content">
-                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                       
+                       <ul class="cook_panel_subs" id="cook_sub_1">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three</li>
+                      </ul>
+                      <ul class="cook_panel_subs" id="cook_sub_2">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three ... </li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="cook_sub_3">
+                        <li>One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three ... </li>
+                      </ul>
+                     
                     </div>
                   </dd>
                   <dd>
@@ -148,9 +178,10 @@
                       <div class="row">
                         <div class="small-2 columns">
                         <%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %>
+                        <small>Quantity</small>
                         </div>
                         <div class="small-6 columns">
-                          Fruit pack
+                          <h4>Fruit pack</h4>
                         </div>
                         <div class="small-4 columns">
                           <small>One pack contains 5-8 pieces of fruit</small>

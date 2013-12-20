@@ -1,9 +1,10 @@
+//hide form elements replace w/ js
 $(".box-select").fadeOut();
 selectForStaticInit();
 tabsSelect();
 selectToPrice();
 
-//make the sliders change for custom box
+//make the select items change for custom box
 $('#custom-tab').click(function(){
   staticForSelect();
 });
@@ -17,7 +18,17 @@ $('.customize-button').click(function(){
   $('#custom-tab').delay(100).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80);
 });
 
+//do accordion functions. on change it should also make active so it expands the tab.
 
+
+
+function updateModuleDescriptions(){
+  //hide everything
+  //get values
+  //fadein according to values
+  //call this fxn on change, # make active
+  //also on module move
+}
 
 function staticForSelect(){
   $(".static-select").hide();
