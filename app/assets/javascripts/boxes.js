@@ -13,12 +13,15 @@ $('#cook-tab').click(function(){
 $('#raw-tab').click(function(){
   selectForStatic();
 });
+$('.customize-button').click(function(){
+  $('#custom-tab').delay(100).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80);
+});
 
 
 
 function staticForSelect(){
   $(".static-select").hide();
-  $("#customize-toggle").fadeOut();
+  $("#customize-toggle").hide();
   $('#box_raw_num').show();
   $('#box_cook_num').show();
   $('#box_fruit_num').show();
