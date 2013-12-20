@@ -66,6 +66,8 @@ GEM
       rails (>= 3, < 5)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
+    font_assets (0.1.10)
+      rack
     foundation-rails (5.0.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -174,7 +176,8 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
-  font-awesome-rails
+  font-awesome-rails (~> 4.0.3.0)
+  font_assets
   foundation-rails (~> 5.0.0)
   jbuilder (~> 1.2)
   jquery-rails

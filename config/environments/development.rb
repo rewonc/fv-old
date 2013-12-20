@@ -39,4 +39,7 @@ Farmivore::Application.configure do
   ##default url options for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   
+  ##set font asset origin for fontawesome
+  config.font_assets.origin = 'http://farmivore-staging.herokuapp.com'
+
 end

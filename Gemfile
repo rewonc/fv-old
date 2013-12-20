@@ -1,4 +1,4 @@
- source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 ruby '2.0.0'
 
@@ -69,7 +69,9 @@ gem 'figaro'
 #gem 'ember-rails'
 
 # Font awesome for scalable vector graphics
-gem 'font-awesome-rails'
+#font_assets Sets Access-Control-Allow-Origin response headers for font assets, which Firefox requires for cross domain fonts.
+gem 'font-awesome-rails', "~> 4.0.3.0"
+gem 'font_assets'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
