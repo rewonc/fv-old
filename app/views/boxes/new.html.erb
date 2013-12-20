@@ -21,14 +21,16 @@
   <section class="select"> <!-- start tabs -->
     <div class="row"> 
       <div class="small-12 columns">
-        <dl class="tabs three-up mobile" data-tab>
+        <dl id="dino-tabs" class="tabs three-up mobile" data-tab>
           <dd data-selection="1">
             <a href="#panel2-1">
               <div class="profiles">
                 <div class="icon">
                   <h2 class="title"><em>Raw Box</em></h2>
                   <h2 class="price"><em><small>$</small>24</em></h2>
-                   <p class="box-select"> <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw & Ready") %></p>
+                   <%= image_tag('raw-icon.png') %>
+                   <p class="box-select"> <%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw Box") %></p>
+                   
                 </div>
                
               </div>
@@ -40,7 +42,9 @@
                <div class="icon">
                   <h2 class="title"><em>Variety Box</em></h2>
                   <h2 class="price"><em><small>$</small>24</em></h2>
+                  <%= image_tag('cook-icon.png') %>
                   <p class="box-select"><%= f.radio_button(:box_num, 2, checked: true) %><%= f.label(:box_2, "Culinary") %> </p>
+
                 </div>
                 
               </div>
@@ -52,6 +56,7 @@
                 <div class="icon">
                   <h2 class="title"><em>Custom Box</em></h2>
                   <h2 class="price range"><em><small>$</small>16-<small>$</small>72</em></h2>
+                  <%= image_tag('custom-icon.png') %>
                   <p class="box-select"><%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Custom") %></p>
                 </div>
                 
@@ -98,7 +103,7 @@
           <div class="row">
             <div class="small-12 medium-8 columns">
               <div class="outer-box radius rounded">
-                <h5 class="centered">A sample box</h5>
+                <h5 class="centered" id="sample-box-title">A sample box</h5>
                 <dl class="accordion" data-accordion>
                   <dd>
                     <a href="#raw_panel">
