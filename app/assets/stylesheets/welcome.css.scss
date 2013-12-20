@@ -17,6 +17,7 @@
     padding: $segmentPadding;
     .segment-header {
       margin-top: 40px;
+      color:$darkGray;
       font-size: 40px;
       font-weight: normal;
       letter-spacing: 2px;
@@ -214,6 +215,7 @@
 .welcome.features{
   .title{
     margin-top:30px;
+    color:$darkGray;
   }
   .subhead{
     color:$midGray;
@@ -230,7 +232,7 @@
        .fa-pagelines{
           color: darken($greenMute,6%);
         }
-        .fa-eye{
+        .fa-star-o{
           color: darken($redAccent,6%);
         }
         .fa-cutlery{
@@ -244,7 +246,7 @@
   .fa-pagelines{
     color: $greenMute;
   }
-  .fa-eye{
+  .fa-star-o{
     color: $redAccent;
   }
   .fa-cutlery{
@@ -293,8 +295,9 @@
 
 .welcome.farms{
   h1{
-    margin-top:20px;
-    margin-bottom:50px;
+    margin-top:50px;
+    margin-bottom:30px;
+      color:$darkGray;
   }
   .description{
   }
