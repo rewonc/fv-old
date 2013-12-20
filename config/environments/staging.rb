@@ -99,4 +99,5 @@ config.paperclip_defaults = {
    # config.assets.precompile += [
    #   'mvp.css','contacts.css','places.css'
    # ]
+
 end

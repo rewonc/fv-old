@@ -101,7 +101,4 @@ config.paperclip_defaults = {
    #   'mvp.css','contacts.css','places.css'
    # ]
 
-  ##set font asset origin for fontawesome
-  config.font_assets.origin = 'http://farmivore-prod.herokuapp.com'
-
 end
