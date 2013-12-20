@@ -69,8 +69,9 @@ gem 'figaro'
 #gem 'ember-rails'
 
 # Font awesome for scalable vector graphics
-#font_assets Sets Access-Control-Allow-Origin response headers for font assets, which Firefox requires for cross domain fonts.
+#rack-cors Sets Access-Control-Allow-Origin response headers for font assets, which Firefox requires for cross domain fonts.
 gem 'font-awesome-sass'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
