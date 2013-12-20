@@ -85,7 +85,7 @@ function tabsSelect(){
         $('#sample-box-title').text('A sample Variety Box');
         break;
       case 3:
-        $('#sample-box-title').text('Build your own box!');
+        $('#sample-box-title').text('A sample Custom Box');
         break;
     }
   });
@@ -111,12 +111,11 @@ function upgrade_price(){
     $('#sample-box-title').text("Minimum order of $10 - please increase order");
     $('#price_total').text((subtotal+shipping).toString());
   } else if (subtotal < 40) {
-    $('#sample-box-title').text("A sample box");
+    $('#sample-box-title').text("A sample Custom Box");
     shipping = 4
     $('#price_delivery').text("4");
     $('#price_total').text((subtotal+shipping).toString());
   } else {
-    $('#sample-box-title').text("A sample box");
     $('#price_delivery').text("0");
     shipping = 0
     $('#price_total').text((subtotal+shipping).toString());
