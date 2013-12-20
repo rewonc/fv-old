@@ -16,7 +16,7 @@ $('#raw-tab').click(function(){
   selectForStatic();
 });
 $('.customize-button').click(function(){
-  $('#custom-tab').delay(100).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80);
+  $('#custom-tab').find(".fa").fadeIn(500).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).delay(300).fadeOut();
 });
 
 //accordion functions. on change it should also make active so it expands the tab.

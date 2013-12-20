@@ -38,6 +38,14 @@
           img{
             width:80%;
           }
+          .fa{
+            position:absolute;
+            z-index:10;
+            top:220px;
+            left:120px;
+            color:$orange;
+            display:none;
+          }
           .price{
             position:absolute;
             font-size:30px;
