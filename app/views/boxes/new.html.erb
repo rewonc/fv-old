@@ -6,7 +6,6 @@
   </div>
   <div class="row">
     <div class="small-12 centered columns">
-    
 
       <h1 class="header-main">Choose a box that's right for you.</h1>
       
@@ -104,20 +103,29 @@
           <div class="row">
             <div class="small-12 medium-8 columns">
               <div class="outer-box radius rounded">
-                <h5 class="centered" id="sample-box-title">A sample Variety Box</h5>
+                <h5 class="centered" id="sample-box-title">What's inside a Variety Box</h5>
                 <dl class="accordion" data-accordion>
                   <dd>
-                    <a href="#raw_panel">
+                    <a href="#raw_panel" class="panel-head">
                       <div class="row">
-                        <div class="small-3 columns">
-                        <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Number of packs</small>
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :raw_num, options_for_select([['No - $0',0],['Small - $8',1],['Medium - $16',2],['Large - $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_raw_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of raw vegetables</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_raw_num_qty">enough for 2-3 large salads</em></small>
+                            </div>
+                          </div>
                         </div>
-                        <div class="small-6 columns">
-                          <h4>Raw vegetables</h4>
-                        </div>
-                        <div class="small-3 columns">
-                          <small><em>quantity/pack:</em><br />~ 2-3 large salads</small>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-tasks fa-3x"></i></span>
                         </div>
                       </div>
                     </a>
@@ -248,17 +256,26 @@
                     </div>
                   </dd>
                   <dd>
-                    <a href="#cook_panel">
+                    <a href="#cook_panel" class="panel-head">
                       <div class="row">
-                        <div class="small-3 columns">
-                        <%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Number of packs</small>
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :cook_num, options_for_select([['No - $0',0],['Small - $8',1],['Medium - $16',2],['Large - $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_cook_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of cooking vegetables</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_cook_num_qty">enough for 2-3 dishes</em></small>
+                            </div>
+                          </div>
                         </div>
-                        <div class="small-6 columns">
-                          <h4>Cooking vegetables</h4>
-                        </div>
-                        <div class="small-3 columns">
-                          <small><em>quantity/pack:</em><br />~ 2-3 entrees</small>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-tasks fa-3x"></i></span>
                         </div>
                       </div>
                     </a>
@@ -389,17 +406,26 @@
                     </div>
                   </dd>
                   <dd>
-                    <a href="#fruit_panel">
+                    <a href="#fruit_panel" class="panel-head">
                       <div class="row">
-                        <div class="small-3 columns">
-                        <%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Number of packs</small>
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :fruit_num, options_for_select([['No - $0',0],['Small - $8',1],['Medium - $16',2],['Large - $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_fruit_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of fruit</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_fruit_num_qty">4-6 pieces</em></small>
+                            </div>
+                          </div>
                         </div>
-                        <div class="small-6 columns">
-                          <h4>Fruits</h4>
-                        </div>
-                        <div class="small-3 columns">
-                          <small><em>quantity/pack:</em><br />~ 5-6 pieces</small>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-tasks fa-3x"></i></span>
                         </div>
                       </div>
                     </a>
@@ -503,7 +529,7 @@
                 </div>
                 <div class="row">
                   <div class="small-12 columns centered" id="customize-toggle">
-                    <h5><strong><em>Want to add or remove shares?</em></strong></h5>
+                    <h5><strong><em>Want to add or remove bundles?</em></strong></h5>
                     <a href="#dino-tabs" class="customize-button">Choose a custom box</a>
                   </div>
                 </div>

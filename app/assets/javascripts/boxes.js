@@ -1,7 +1,7 @@
 //hide form elements replace w/ js
 $(".box-select").hide();
 $("fieldset").hide();
-selectForStaticInit();
+selectForStatic();
 tabsSelect();
 selectToPrice();
 
@@ -32,14 +32,70 @@ function updateModuleDescriptions(){
   var raw = parseInt($('#box_raw_num').val());
   var cook = parseInt($('#box_cook_num').val());
   var fruit = parseInt($('#box_fruit_num').val());
+
+  //change the headers to be appropriate
+  switch(raw){
+    case 0:
+      $('#box_raw_num_text').text('No');
+      $('#box_raw_num_qty').text('None of this type included');
+      break;
+    case 1:
+      $('#box_raw_num_text').text('Small');
+      $('#box_raw_num_qty').text('Enough for 2+ large salads');
+      break;
+    case 2:
+      $('#box_raw_num_text').text('Medium');
+      $('#box_raw_num_qty').text('Enough for 4+ large salads');
+      break;
+    case 3:
+      $('#box_raw_num_text').text('Large');
+      $('#box_raw_num_qty').text('Enough for 6+ large salads');
+      break;
+  }
+  switch(cook){
+    case 0:
+      $('#box_cook_num_text').text('No');
+      $('#box_cook_num_qty').text('None of this type included');
+      break;
+    case 1:
+      $('#box_cook_num_text').text('Small');
+      $('#box_cook_num_qty').text('Enough for 2+ dishes');
+      break;
+    case 2:
+      $('#box_cook_num_text').text('Medium');
+      $('#box_cook_num_qty').text('Enough for 4+ dishes');
+      break;
+    case 3:
+      $('#box_cook_num_text').text('Large');
+      $('#box_cook_num_qty').text('Enough for 6+ dishes');
+      break;
+  }
+  switch(fruit){
+    case 0:
+      $('#box_fruit_num_text').text('No');
+      $('#box_fruit_num_qty').text('None of this type included');
+      break;
+    case 1:
+      $('#box_fruit_num_text').text('Small');
+      $('#box_fruit_num_qty').text('4-6 pieces');
+      break;
+    case 2:
+      $('#box_fruit_num_text').text('Medium');
+      $('#box_fruit_num_qty').text('8-12 pieces');
+      break;
+    case 3:
+      $('#box_fruit_num_text').text('Large');
+      $('#box_fruit_num_qty').text('12-18 pieces');
+      break;
+  }
+
+  //fade in the right item set
   $('.raw_panel_subs').hide();
   $('.cook_panel_subs').hide();
   $('.fruit_panel_subs').hide();
   $('#raw_sub_' + raw).fadeIn();
   $('#cook_sub_' + cook).fadeIn();
   $('#fruit_sub_' + fruit).fadeIn();
-  //call this fxn on change, # make active
-  //also on module move
 }
 
 function staticForSelect(){
@@ -48,12 +104,6 @@ function staticForSelect(){
   $('#box_raw_num').show();
   $('#box_cook_num').show();
   $('#box_fruit_num').show();
-}
-
-function selectForStaticInit(){
-  $('#box_raw_num').after('<div class="static-select" id="box_raw_num_text">1</div>').hide();
-  $('#box_cook_num').after('<div class="static-select" id="box_cook_num_text">1</div>').hide();
-  $('#box_fruit_num').after('<div class="static-select" id="box_fruit_num_text">1</div>').hide();
 }
 
 function selectForStatic(){
@@ -84,14 +134,14 @@ function tabsSelect(){
     {
       case 1:
         setModules(2,0,1);
-        $('#sample-box-title').text('A sample Raw Box');
+        $('#sample-box-title').text("What's inside a Raw Box");
         break;
       case 2:
         setModules(1,1,1);
-        $('#sample-box-title').text('A sample Variety Box');
+        $('#sample-box-title').text("What's inside a Variety Box");
         break;
       case 3:
-        $('#sample-box-title').text('A sample Custom Box');
+        $('#sample-box-title').text("What's inside a Custom Box");
         break;
     }
   });
@@ -106,25 +156,25 @@ function setModules(raw,cook,fruit){
 
 function upgrade_price(){
   updateModuleDescriptions();
-  $('#box_raw_num_text').text(parseInt($('#box_raw_num').val()));
-  $('#box_cook_num_text').text(parseInt($('#box_cook_num').val()));
-  $('#box_fruit_num_text').text(parseInt($('#box_fruit_num').val()));
+  var raw_int = parseInt($('#box_raw_num').val());
+  var cook_int = parseInt($('#box_cook_num').val());
+  var fruit_int = parseInt($('#box_fruit_num').val());
 
-  var subtotal = (parseInt($('#box_raw_num').val()) + parseInt($('#box_cook_num').val()) + parseInt($('#box_fruit_num').val()))*8;
+  var subtotal = (raw_int + cook_int + fruit_int)*8;
   var shipping;
-  $("#price_sum").text(subtotal.toString());
+
   if (subtotal<=8) {
     $('#sample-box-title').text("Minimum order of $10 - please increase order");
-    $('#price_total').text((subtotal+shipping).toString());
+    shipping = 4;
   } else if (subtotal < 40) {
-    $('#sample-box-title').text("A sample Custom Box");
-    shipping = 4
-    $('#price_delivery').text("4");
-    $('#price_total').text((subtotal+shipping).toString());
+    $('#sample-box-title').text("What's inside a Custom Box");
+    shipping = 4;
   } else {
-    $('#price_delivery').text("0");
-    shipping = 0
-    $('#price_total').text((subtotal+shipping).toString());
+    shipping = 0;
   }
+  $("#price_sum").text(subtotal.toString());
+  $('#price_delivery').text((shipping).toString());
+  $('#price_total').text((subtotal+shipping).toString());
+
 }
 
