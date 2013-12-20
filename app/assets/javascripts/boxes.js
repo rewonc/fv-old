@@ -1,5 +1,6 @@
 //hide form elements replace w/ js
-$(".box-select").fadeOut();
+$(".box-select").hide();
+$("fieldset").hide();
 selectForStaticInit();
 tabsSelect();
 selectToPrice();
@@ -18,8 +19,13 @@ $('.customize-button').click(function(){
   $('#custom-tab').delay(100).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80).animate({ paddingLeft: '25px' }, 80).animate({ paddingLeft: '0px' }, 80);
 });
 
-//do accordion functions. on change it should also make active so it expands the tab.
+//accordion functions. on change it should also make active so it expands the tab.
 
+//checkout-button will hide select and unhide the delivery fieldset
+$(".checkout-button").click(function(){
+  $('.select').hide();
+  $('fieldset').fadeIn();
+});
 
 
 function updateModuleDescriptions(){
