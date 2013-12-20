@@ -23,9 +23,15 @@ $('.customize-button').click(function(){
 
 
 function updateModuleDescriptions(){
-  //hide everything
-  //get values
-  //fadein according to values
+  var raw = parseInt($('#box_raw_num').val());
+  var cook = parseInt($('#box_cook_num').val());
+  var fruit = parseInt($('#box_fruit_num').val());
+  $('.raw_panel_subs').hide();
+  $('.cook_panel_subs').hide();
+  $('.fruit_panel_subs').hide();
+  $('#raw_sub_' + raw).fadeIn();
+  $('#cook_sub_' + cook).fadeIn();
+  $('#fruit_sub_' + fruit).fadeIn();
   //call this fxn on change, # make active
   //also on module move
 }
@@ -72,11 +78,14 @@ function tabsSelect(){
     {
       case 1:
         setModules(2,0,1);
+        $('#sample-box-title').text('A sample Raw Box');
         break;
       case 2:
         setModules(1,1,1);
+        $('#sample-box-title').text('A sample Variety Box');
         break;
       case 3:
+        $('#sample-box-title').text('Build your own box!');
         break;
     }
   });
@@ -90,6 +99,7 @@ function setModules(raw,cook,fruit){
 }
 
 function upgrade_price(){
+  updateModuleDescriptions();
   $('#box_raw_num_text').text(parseInt($('#box_raw_num').val()));
   $('#box_cook_num_text').text(parseInt($('#box_cook_num').val()));
   $('#box_fruit_num_text').text(parseInt($('#box_fruit_num').val()));

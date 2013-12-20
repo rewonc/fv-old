@@ -103,36 +103,41 @@
           <div class="row">
             <div class="small-12 medium-8 columns">
               <div class="outer-box radius rounded">
-                <h5 class="centered" id="sample-box-title">A sample box</h5>
+                <h5 class="centered" id="sample-box-title">A sample Variety Box</h5>
                 <dl class="accordion" data-accordion>
                   <dd>
                     <a href="#raw_panel">
                       <div class="row">
-                        <div class="small-2 columns">
+                        <div class="small-3 columns">
                         <%= f.select :raw_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Quantity</small>
+                        <small>Number of packs</small>
                         </div>
                         <div class="small-6 columns">
-                          <h4>Raw pack</h4>
+                          <h4>Raw vegetables</h4>
                         </div>
-                        <div class="small-4 columns">
-                          <small>One pack can make 2-3 large salads</small>
+                        <div class="small-3 columns">
+                          <small><em>quantity/pack:</em><br />~ 2-3 large salads</small>
                         </div>
                       </div>
                     </a>
                     <div id="raw_panel" class="content active">
+                      <ul class="raw_panel_subs" id="raw_sub_0">
+                        <li>0One inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three</li>
+                      </ul>
                       <ul class="raw_panel_subs" id="raw_sub_1">
-                        <li>One inline list here</li>
+                        <li>1One inline list here</li>
                         <li>Two ... </li>
                         <li>Three</li>
                       </ul>
                       <ul class="raw_panel_subs" id="raw_sub_2">
-                        <li>One inline list here</li>
+                        <li>2One inline list here</li>
                         <li>Two ... </li>
                         <li>Three ... </li>
                       </ul>
                       <ul class="raw_panel_subs" id="raw_sub_3">
-                        <li>One inline list here</li>
+                        <li>3One inline list here</li>
                         <li>Two ... </li>
                         <li>Three ... </li>
                       </ul>
@@ -142,31 +147,36 @@
                   <dd>
                     <a href="#cook_panel">
                       <div class="row">
-                        <div class="small-2 columns">
+                        <div class="small-3 columns">
                         <%= f.select :cook_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Quantity</small>
+                        <small>Number of packs</small>
                         </div>
                         <div class="small-6 columns">
-                          <h4>Cooking pack</h4>
+                          <h4>Cooking vegetables</h4>
                         </div>
-                        <div class="small-4 columns">
-                          <small>One pack can make 2-3 meals</small>
+                        <div class="small-3 columns">
+                          <small><em>quantity/pack:</em><br />~ 2-3 entrees</small>
                         </div>
                       </div>
                     </a>
                     <div id="cook_panel" class="content">
+                      <ul class="cook_panel_subs" id="cook_sub_0">
+                        <li>O0ne inline list here</li>
+                        <li>Two ... </li>
+                        <li>Three</li>
+                      </ul>
                        <ul class="cook_panel_subs" id="cook_sub_1">
-                        <li>One inline list here</li>
+                        <li>1One inline list here</li>
                         <li>Two ... </li>
                         <li>Three</li>
                       </ul>
                       <ul class="cook_panel_subs" id="cook_sub_2">
-                        <li>One inline list here</li>
+                        <li>2One inline list here</li>
                         <li>Two ... </li>
                         <li>Three ... </li>
                       </ul>
-                      <ul class="raw_panel_subs" id="cook_sub_3">
-                        <li>One inline list here</li>
+                      <ul class="cook_panel_subs" id="cook_sub_3">
+                        <li>3One inline list here</li>
                         <li>Two ... </li>
                         <li>Three ... </li>
                       </ul>
@@ -176,15 +186,15 @@
                   <dd>
                     <a href="#fruit_panel">
                       <div class="row">
-                        <div class="small-2 columns">
+                        <div class="small-3 columns">
                         <%= f.select :fruit_num, options_for_select([0,1,2,3], selected: 1) %>
-                        <small>Quantity</small>
+                        <small>Number of packs</small>
                         </div>
                         <div class="small-6 columns">
-                          <h4>Fruit pack</h4>
+                          <h4>Fruits</h4>
                         </div>
-                        <div class="small-4 columns">
-                          <small>One pack contains 5-8 pieces of fruit</small>
+                        <div class="small-3 columns">
+                          <small><em>quantity/pack:</em><br />~ 5-6 pieces</small>
                         </div>
                       </div>
                     </a>
