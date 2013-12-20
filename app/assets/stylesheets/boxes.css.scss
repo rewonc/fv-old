@@ -150,10 +150,12 @@
 
     .customize-button{
       @include button-base;
-      @include button-size;
-      @include button-style($greenMute);
-      @include radius;
-      border: 0;
+          @include button-size(0, -1);
+          @include button-style($orange);
+          @include radius;
+          margin-bottom:10px;
+          text-transform:uppercase;
+          padding:4px;
     }
 
     h5{
@@ -210,12 +212,11 @@
     .checkout{
         .checkout-button{
           @include button-base;
-          @include button-size(0, -1);
-          @include button-style($orange);
-          @include radius;
-          margin-bottom:0px;
-          text-transform:uppercase;
-          padding:4px;
+      @include button-size;
+      @include button-style($greenMute);
+      @include radius;
+      border: 0;
+          
         }
         
     }

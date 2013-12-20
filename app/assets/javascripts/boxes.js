@@ -1,9 +1,43 @@
 $(".box-select").fadeOut();
-//sliders("#box_raw_num");
-//sliders("#box_cook_num");
-//sliders("#box_fruit_num");
+selectForStaticInit();
 tabsSelect();
 selectToPrice();
+
+//make the sliders change for custom box
+$('#custom-tab').click(function(){
+  staticForSelect();
+});
+$('#cook-tab').click(function(){
+  selectForStatic();
+});
+$('#raw-tab').click(function(){
+  selectForStatic();
+});
+
+
+
+function staticForSelect(){
+  $(".static-select").hide();
+  $("#customize-toggle").fadeOut();
+  $('#box_raw_num').show();
+  $('#box_cook_num').show();
+  $('#box_fruit_num').show();
+}
+
+function selectForStaticInit(){
+  $('#box_raw_num').after('<div class="static-select" id="box_raw_num_text">1</div>').hide();
+  $('#box_cook_num').after('<div class="static-select" id="box_cook_num_text">1</div>').hide();
+  $('#box_fruit_num').after('<div class="static-select" id="box_fruit_num_text">1</div>').hide();
+}
+
+function selectForStatic(){
+  $('#box_raw_num').hide();
+  $('#box_cook_num').hide();
+  $('#box_fruit_num').hide();
+  $("#customize-toggle").fadeIn();
+  $(".static-select").show();
+}
+
 
 function selectToPrice(){
   $('#box_raw_num').change(function(){
@@ -41,31 +75,11 @@ function setModules(raw,cook,fruit){
   upgrade_price();
 }
 
-function sliders(selector) {
-    var select = $( selector )//.hide();
-    var slider = $( "<div class='slider'></div>" ).insertAfter( select ).slider({
-      min: 0,
-      max: 3,
-      value: select[ 0 ].selectedIndex,
-      slide: function( event, ui ) {
-        select[ 0 ].selectedIndex = ui.value;
-        upgrade_text(select, ui.value);
-        upgrade_price();
-      }
-    });
-
-    $( select ).change(function() {
-      $(this).selectToSlider(); 
-      upgrade_price();
-    });
-}
-
-jQuery.fn.selectToSlider = function(){
-  $(this).next(".slider").slider("value", this[0].selectedIndex);
-  upgrade_text(this, this[0].selectedIndex);
-};
-
 function upgrade_price(){
+  $('#box_raw_num_text').text(parseInt($('#box_raw_num').val()));
+  $('#box_cook_num_text').text(parseInt($('#box_cook_num').val()));
+  $('#box_fruit_num_text').text(parseInt($('#box_fruit_num').val()));
+
   var subtotal = (parseInt($('#box_raw_num').val()) + parseInt($('#box_cook_num').val()) + parseInt($('#box_fruit_num').val()))*8;
   var shipping;
   $("#price_sum").text(subtotal.toString());

@@ -23,7 +23,7 @@
       <div class="small-12 columns">
         <dl id="dino-tabs" class="tabs three-up mobile" data-tab>
           <dd data-selection="1">
-            <a href="#panel2-1">
+            <a href="#panel2-1" id="raw-tab">
               <div class="profiles">
                 <div class="icon">
                   <h2 class="title"><em>Raw Box</em></h2>
@@ -36,7 +36,7 @@
               </div>
             </a>
           </dd>
-          <dd class="active" data-selection="2">
+          <dd class="active" data-selection="2" id="cook-tab">
             <a href="#panel2-2">
               <div class="profiles">
                <div class="icon">
@@ -50,7 +50,7 @@
               </div>
             </a>
           </dd>
-          <dd data-selection="3">
+          <dd data-selection="3" id="custom-tab">
             <a href="#panel2-3">
               <div class="profiles">
                 <div class="icon">
@@ -174,9 +174,9 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="small-12 columns centered">
+                  <div class="small-12 columns centered" id="customize-toggle">
                     <h5><strong><em>Want to add or remove shares?</em></strong></h5>
-                    <div class="customize-button">Customize</div>
+                    <a href="#dino-tabs" class="customize-button">Choose a custom box</a>
                   </div>
                 </div>
 
