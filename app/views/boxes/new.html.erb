@@ -649,10 +649,10 @@
           <div class="row">
             <div class="small-12 columns">
 
-              <%= f.check_box(:text_me) %>
+              <%= f.check_box(:text_me, html_options = {checked: true}) %>
               <%= f.label(:text_me, "Notify me by text the status of my delivery") %>
               <br />
-              <%= f.check_box(:call_me) %>
+              <%= f.check_box(:call_me, html_options = {checked: true}) %>
               <%= f.label(:call_me, "Call me when you arrive") %>
             </div>
           </div>
