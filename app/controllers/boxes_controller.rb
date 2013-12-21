@@ -35,7 +35,6 @@ class BoxesController < ApplicationController
   def update
     @box = Box.find(params[:id])
     if @box.update(box_params)
-        @amount = @box.get_price
        session[:box_id] = @box.id
        render 'charges/new'
     else
