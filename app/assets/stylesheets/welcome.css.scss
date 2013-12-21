@@ -305,6 +305,9 @@
     margin-top:20px;
     margin-bottom:20px;
   }
+  .get-started-button{
+    @include fv-button();
+  }
 }
 
 
