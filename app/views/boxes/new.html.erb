@@ -580,7 +580,21 @@
                <%= f.label :neighborhood, "Select your neighborhood", html_options = {class: "right inline", for: "box_neighborhood"} %>
             </div>
             <div class="small-6 columns">
-               <%= f.select(:neighborhood, options_for_select([["East Rock","East Rock"],["Lighthouse Point", "Lighthouse Point"],["Other", "Other"]])) %>
+               <%= f.select(:neighborhood, options_for_select([
+
+["East Rock","East Rock"],
+["Prospect Hill","Prospect Hill"],
+["Dwight","Dwight"],
+["Dixwell","Dixwell"],
+["Union Station Area","Union Station Area"],
+["Long Wharf","Long Wharf"],
+["Mill River","Mill River"],
+["Westville / West Rock","Westville / West Rock"],
+["Fair Haven","Fair Haven"],
+["East Haven / Lighthouse Point", "East Haven / Lighthouse Point"],
+["Other", "Other"]
+
+])) %>
             </div>
           </div>
         </div>
