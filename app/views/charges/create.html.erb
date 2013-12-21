@@ -1,42 +1,39 @@
 <div class="row">
-  <div class="large-12 columns">
-    <h3>Thanks! We received your order.</h3>
-    <h5>When one of our representatives reviews your order to make sure everything is right, we'll send you a confirmation email.</h5>
-          <fieldset>
-            <legend>For your records</legend>
-            <div class="row">
-              <div class="large-12 columns">
+  <div class="small-12 columns">
+    <div class="centered">
+    <h2 class="header">Thanks! We received your order.</h2>
+    <h6>As soon as we review everything to make sure its all right, we'll send you a confirmation email with all the information below.</h6></div>
 
-                 <p>You selected a <strong><%= @box.get_box_name %></strong> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.</p>
-
-                 <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
-
-                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
-                 </div>
-            </div>
-            <div class="row">
-              <div class="large-6 columns">
-                <p><strong>Delivery address:</strong><br/>
-                  <%= @box.firstname + ' ' + @box.lastname%><br />
-                  <%= @box.street%><br />
-                  <% if @box.street2.present? %>
-                  <%= @box.street2 %><br />
-                  <% end %>
-                  <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
-                </p>
-              </div>
-              <div class="large-6 columns">
-                <p><strong>Contact information:</strong><br/>
-                  <%= @box.email %><br />
-                  <%= @box.phone %><br />
-                </p>
-              </div>
-            </div>
-          </fieldset>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <p>If you have any questions, please reach us by email at <%= mail_to "support@farmivore.com", "support@farmivore.com" %>, and we'll get back to you as fast as humanly possible.  Thanks for your order! </p>
+    <div class="row panel-box">
+      <div class="small-7 small-centered columns">
+        <div class="row">
+          <div class="small-12 columns">
+            <h4 class="subheader">For your records:</h4>
+            <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
+            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
+               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-6 columns">
+              <p><strong>Delivery address:</strong><br/>
+                <%= @box.firstname + ' ' + @box.lastname%><br />
+                <%= @box.street%><br />
+                <% if @box.street2.present? %>
+                <%= @box.street2 %><br />
+                <% end %>
+                <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
+              </p>
+          </div>
+          <div class="small-6 columns">
+              <p><strong>Contact information:</strong><br/>
+                <%= @box.email %><br />
+                <%= @box.phone %><br />
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="centered header">Thanks for choosing Farmivore!</h3>
   </div>
 </div>
