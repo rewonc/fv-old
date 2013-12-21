@@ -1,39 +1,22 @@
-<div class="row">
+<div class="row centered">
   <div class="small-12 columns">
-    <div class="centered">
-    <h2 class="header">Thanks! We received your order.</h2>
-    <h6>As soon as we review everything to make sure its all right, we'll send you a confirmation email with all the information below.</h6></div>
+    <h2 class="header">You're all set! <br />Thanks for subscribing.</h2>
+   
 
-    <div class="row panel-box">
+    <div class="row">
       <div class="small-7 small-centered columns">
-        <div class="row">
-          <div class="small-12 columns">
-            <h4 class="subheader">For your records:</h4>
-            <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
-            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
-               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-6 columns">
-              <p><strong>Delivery address:</strong><br/>
-                <%= @box.firstname + ' ' + @box.lastname%><br />
-                <%= @box.street%><br />
-                <% if @box.street2.present? %>
-                <%= @box.street2 %><br />
-                <% end %>
-                <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
-              </p>
-          </div>
-          <div class="small-6 columns">
-              <p><strong>Contact information:</strong><br/>
-                <%= @box.email %><br />
-                <%= @box.phone %><br />
-              </p>
-          </div>
-        </div>
+         <h6>Payment was successful, and you should receive a confirmation email within the next 24 hours.</h6>
+         <br /><hr /><br />
+         <p>In the meantime, check us out on social media and follow for the latest updates and specials.</p>
+         <br />
+         <ul class="small-block-grid-3">
+          <li><a href="https://www.facebook.com/farmivore"><i class="fa fa-3x fa-facebook-square"></i></a></li>
+          <li><a href="https://twitter.com/eatfromfarms"><i class="fa fa-3x fa-twitter-square"></i></a></li>
+          <li><a href="http://farmivore.tumblr.com/"><i class="fa fa-3x fa-tumblr-square"></i></a></li>
+         </ul>
+
       </div>
     </div>
-    <h3 class="centered header">Thanks for choosing Farmivore!</h3>
+    
   </div>
 </div>
