@@ -1,6 +1,50 @@
 <div class="row">
-  <div class="small-12 columns panel-box">
-    <h1>Hello world</h1>
-    <p>Lorem ipsum</p>
+  <div class="small-12 columns">
+
+    <h1 class="centered header">About us</h1>
+
+
+    <div class="row">
+      <div class="small-12 columns panel-box">
+        <div class="row bios">
+          <div class="small-11 large-11 small-centered large-centered columns">
+            <div class="row">
+              <div class="small-12 medium-6 centered columns">
+                 <%= image_tag('rewon-300h.jpg')%>
+                 <h3>Rewon</h3>
+                 <h5>Co-founder / CEO</h5>
+              </div>
+              <div class="small-12 medium-6 centered columns">
+                <%= image_tag('ray-300h.jpg')%>
+                <h3>Ray</h3>
+                <h5>Co-founder</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns panel-box">
+        <h2 class="centered">How it all began</h2>
+        <div class="row">
+          <div class="small-11 large-11 small-centered large-centered columns">
+            <p>After college, we found ourselves eating out and eating junk food more often than we liked to admit. Stocking up on staples like peanut butter and pasta was easy, but getting fresh produce required weekly shopping trips that always slipped to the bottom of our to-do lists. When we actually made it to the store, we stood in long lines to buy limp vegetables. And while we loved the quality of farmer’s market produce, market hours were too limited for our busy schedules.</p>
+            <p>We started Farmivore because we envisioned a simpler way to start eating well:</p>
+            <p>A box of <%= link_to 'high-quality produce', welcome_features_path %> packed with care and delivered to your door. A subscription that remembers to stock your kitchen with healthy choices, even when you forget. And <%= link_to 'custom options', new_box_path %> that ensure the right mix of fruits and vegetables for your needs.</p>
+            <p>Since we added the box to our own lives, we’ve been cooking more and eating healthier. We’ve spent less time reading labels and splitting bills, and more time bonding with friends over homemade meals. The Farmivore box grew from our desire to eat better, but has inspired us to live better as well. We hope it does the same for you.</p>
+            <div class="row">
+              <div class="small-7 small-offset-5 medium-4 medium-offset-8 columns">
+                <p>Thanks for stopping by,<br />
+                  image<br />
+                  Rewon + Ray
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
