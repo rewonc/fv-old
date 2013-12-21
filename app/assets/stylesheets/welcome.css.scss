@@ -17,22 +17,6 @@
 }
 
 .welcome.index{
-  
-  .now-serving{
-    margin-top:0px;
-    padding-top:20px;
-
-    p{
-      color:$lightGray1;
-      strong{
-        color:$black3;
-      }
-    }
-  }
-
-  /*
-   * Introduction segment
-   */
 
   section.introduction.segment {
     padding-top: 10px;;
@@ -46,6 +30,7 @@
     //background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
     //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
  
+
   h1{
       padding-top: 40px;
       line-height: 56px;
@@ -76,31 +61,13 @@
       min-width:300px;
     }
 
-    .parenthetical {
-      margin: 30px 0;
-    }
-
-    .get-started-button {
-      @include fv-button;
-      @include button-style($greenDesaturated);
-      font-size: 18px;
-      font-color: white;
-      text-shadow: 3px 3px 0px $greenDarkAccent;
-      box-shadow: 0px 0px 0px 1px $orange;
-      z-index: 2;
-      margin-left:10px;
-      margin-right:10px;
-    }
-
     .learn-more-button {
-      @include fv-button;
-      font-size: 18px;
-      font-color: white;
-      text-shadow: 3px 3px 0px $orangeShadow;
-      box-shadow: 4px 4px 5px $greenDarkAccent;
-      z-index: 2;
-      margin-left:10px;
-      margin-right:10px;
+      @include button(1rem,$orangeAccent,10px,false,false,false);
+      margin-left:25px;
+    }
+    .get-started-button {
+      @include button(1rem,$white3,10px,false,false,false);
+      margin-left:25px;
     }
 
     .button-group{
@@ -108,40 +75,21 @@
       margin-bottom:25px;
     }
 
-    .transition .embellishment{
-      // left: 250px; // exactly half the width of 6 columns. Centers it.
-      width: 50%;
-      left: 25%;
-      .inscribed {
-        color: $greenDarkAccent;
-      }
-      .triangle {
-        @include tri(15px, 8px,white, $greenPrimary);
-      }
-    }
-
-    
-    /*
-     * Those sexy sexy nested downward triangles!
-     * To reproduce the effect in CSS3, we include a relatively positioned row (`.row.transition`)
-     * that includes an `.embellishment`, which is used to position the text + triangle div.
-     * See the `tri` mixin for details on the creation of the nested triangle.
-     *
-     * `.inscribed` is the caption for the triangle. In the DOM, it occurs AFTER the triangle
-     * This is so positioning by controlling `.row.position` directly aligns with the top edge of
-     * the triangle.
-     *
-     */
-
-
   } // -- end section.introduction
 
 
 
+  .now-serving{
+    margin-top:0px;
+    padding-top:20px;
 
-  /*
-   * Bottom section
-   */
+    p{
+      color:$lightGray1;
+      strong{
+        color:$black3;
+      }
+    }
+  }
 
   section.how-it-works.segment {
     border-top: solid 1px $white2;

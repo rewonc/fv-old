@@ -19,11 +19,12 @@ $gold: darken(gold, 2%);
 $redAccent: rgb(243, 63, 0);
 $redSoft: desaturate(lighten($redAccent, 10%), 5%);
 
+$orangeAccent: rgb(249, 135, 0);
 
 /// relics
 
 
-$orangeAccent: rgb(249, 135, 0);
+
 
 $orangeSoftComplement: #0F7AFC;
 $blueSoft: lighten($orangeSoftComplement, 30%);
