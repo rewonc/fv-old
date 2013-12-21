@@ -1,6 +1,6 @@
 //hide form elements replace w/ js
 $(".box-select").hide();
-$("fieldset").hide();
+$("#delivery_preferences").hide();
 selectForStatic();
 tabsSelect();
 selectToPrice();
@@ -16,6 +16,9 @@ $('#raw-tab').click(function(){
   selectForStatic();
 });
 $('.customize-button').click(function(){
+  $('html, body').animate({
+        scrollTop: $("#dino-tabs").offset().top
+    }, 1000);
   $('#custom-tab').find(".fa").fadeIn(500).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).animate({ paddingTop: '10px' }, 100).animate({ paddingTop: '0px' }, 100).delay(300).fadeOut();
 });
 
@@ -24,9 +27,9 @@ $('.customize-button').click(function(){
 //checkout-button will hide select and unhide the delivery fieldset
 $(".checkout-button").click(function(){
   //$('.select').hide();
-  $('fieldset').fadeIn();
+  $('#delivery_preferences').fadeIn();
   $('html, body').animate({
-        scrollTop: $("fieldset").offset().top
+        scrollTop: $("#delivery_preferences").offset().top
     }, 1000);
 });
 
