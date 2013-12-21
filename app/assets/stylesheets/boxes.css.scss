@@ -361,7 +361,21 @@
     text-align:center;
   }
   .back-link{
-    margin-bottom:10px;
+    margin-bottom:20px;
+  }
+  .terms{
+    p{
+      font-size:12px; }
+  }
+  #terms_button{
+    padding:7px;
+    padding-left:10px;
+    padding-right:10px;
+    font-size:14px;
+    font-weight:bold;
+    display:none;
+  }
+  #terms_reveal{
   }
 
 }

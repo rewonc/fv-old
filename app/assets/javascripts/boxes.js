@@ -1,3 +1,12 @@
+//checkout page
+$('#terms_reveal').hide();
+$('#terms_button').show();
+$('#agree').click(function(){
+  $('#terms_button').hide();
+  $('#terms_reveal').fadeIn(50);
+});
+
+
 //hide form elements replace w/ js
 $(".box-select").hide();
 $("#delivery_preferences").hide();

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-12 columns">
     
-    <h2 class="header">Last step! Confirm and pay</h2>
+    <h2 class="header">Confirm and pay</h2>
 
     
     
@@ -13,40 +13,38 @@
             <h4 class="subheader">Your order details</h4>
 
             <div class="row back-link">
-              <div class="small-12 columns centered"><small><%= link_to "Go back and modify your order", edit_box_path(session[:box_id]) %></small>
+              <div class="small-12 columns centered"><%= link_to "Go back and modify your order", edit_box_path(session[:box_id]) %>
               </div>
             </div>
 
             <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
-            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
-               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
+            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %></strong> per week (delivery included).</p>
+               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>.</p>
+               <p>Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
       
           </div>
         </div>
+        <br /><hr /><br />
+      </div>
+    
         <div class="row">
-          <div class="small-6 columns">
-              <p><strong>Delivery address:</strong><br/>
-                <%= @box.firstname + ' ' + @box.lastname%><br />
-                <%= @box.street%><br />
-                <% if @box.street2.present? %>
-                <%= @box.street2 %><br />
-                <% end %>
-                <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
-              </p>
-          </div>
-          <div class="small-6 columns">
-              <p><strong>Contact information:</strong><br/>
-                <%= @box.email %><br />
-                <%= @box.phone %><br />
-              </p>
+          <div class="small-10 small-offset-1 columns centered">
+            <h5>Please note</h5><div class="terms">
+            <p>This is an automatically recurring order. Each week, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
+            <p>To skip a week, modify your box, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
+            <%= check_box_tag(:agree) %>
+            <%= label_tag(:agree, "I have read and agree to the above terms") %>
           </div>
         </div>
-
+        
+      
         <div class="row">
           <div class="small-4 columns small-centered centered" id="payment_box">
             
+            <button id="terms_button"><strong>Pay with card</strong></button>
+            <div id="terms_reveal">
             <%= form_tag charges_path do %>
-             
+              
               <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                       data-name="Farmivore"
@@ -58,27 +56,17 @@
               </script>
 
             <% end %>
+            </div>
             
           </div>
         </div>
 
-
-
-
-      </div>
     </div>
 
-    <div class="row">
-      <div class="small-8 columns small-centered">
-        <br /><br />
-        <h3 class="centered">Our policy</h3>
-        <ul class="square">
-          <li><p>You will be charged immediately for your first box</p></li>
-          <li><p>You can skip a week or cancel your subscription at anytime by emailing us at <%= mail_to 'hello@farmivore.com', "hello@farmivore.com" %>, at least 4 days in advance of your order.</p></li>
-          <li><p>Satisfaction guaranteed. If you don't like it, you don't pay.</p></li>
-        </ul>
-      </div>
-    </div>
+
+      
+
+    
 
   </div>
 </div>
