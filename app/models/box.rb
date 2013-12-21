@@ -4,8 +4,6 @@ class Box < ActiveRecord::Base
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
-  validates :firstname, :length => { :maximum => 30 }
-  validates :lastname, :length => { :maximum => 30 }
   validates :phone, presence: true
   validates :delivery_preference, presence: true
   validates :raw_num, presence: true
