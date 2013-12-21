@@ -3,7 +3,7 @@ class Box < ActiveRecord::Base
   validates :box_num, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
+  validates :email, presence: true
   validates :phone, presence: true
   validates :delivery_preference, presence: true
   validates :raw_num, presence: true

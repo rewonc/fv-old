@@ -600,14 +600,14 @@
               <small class="error">You must enter your first name.</small>
             </div>
             <div class="small-6 columns">
-              <%= f.text_field :lastname, :placeholder => "Last name", required: "" %>
+              <%= f.text_field :lastname, :placeholder => "Last name", :required => "" %>
               <small class="error">You must enter your last name.</small>
             </div>
           </div>
 
           <div class="row">
             <div class="small-6 columns">
-              <%= f.text_field :email, :placeholder => "Your email address", :type => 'email', :required => '', :pattern => "/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i" %>
+              <%= f.text_field :email, :placeholder => "Your email address", :type => 'email', :required => '', :pattern => "\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i" %>
               <small class="error">Email must be of a valid format.</small>
             </div>
             <div class="small-4 columns"><%= f.text_field :phone, :placeholder => "Your phone number", :required => '' %> </div>
