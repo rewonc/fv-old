@@ -18,37 +18,6 @@
 
 .welcome.index{
   
-  //index page global styles
-  $segmentPadding: 20px;
-  section.segment {
-    padding: $segmentPadding;
-    .segment-header {
-      margin-top: 40px;
-      color:$darkGray;
-      font-size: 40px;
-      font-weight: normal;
-      letter-spacing: 2px;
-      text-align: center;
-      text-transform: uppercase;
-     }
-  }
-  section.segment > .row.transition {
-    position: relative;
-    & .embellishment {
-      top: $segmentPadding;
-      text-align: center;
-      position: absolute;
-      .inscribed {
-        position: relative;
-        top: -80px;
-        height: 15px;
-        text-align: center;
-        font-weight: normal;
-        letter-spacing: 3px;
-      }
-    }
-  }
-
   .now-serving{
     margin-top:0px;
     padding-top:20px;
@@ -60,14 +29,13 @@
       }
     }
   }
-  //end global styles
-
 
   /*
    * Introduction segment
    */
 
   section.introduction.segment {
+    padding-top: 10px;;
     //background gradient  http://www.colorzilla.com/gradient-editor/
     background: $greenPrimary; /* Old browsers */
     //background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenDesaturated 100%); /* FF3.6+ */
@@ -77,42 +45,35 @@
     //background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* IE10+ */
     //background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
     //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+ 
+  h1{
+      padding-top: 40px;
+      line-height: 56px;
+      color: white;
+      font-weight:bold;
+      font-size:48px;
+      margin-bottom:50px;
+  }
 
-
-    //background:  $greenPrimary;
-    padding-top: 50px;
+  h5{
+      line-height: 25px;
+      font-size: 22px;  
+      color:$white3;
+      margin-bottom:30px;
+      }
 
     .landing-page-tag {
       margin-top: 20px;
       z-index: 2;
-      h1{
-      line-height: 56px;
-      color: white;
-      font-size:56px;
-      margin-bottom:50px;
-      text-shadow: 3px 3px 0px $greenDarkAccent;
-      }
-      h5{
-      line-height: 25px;
-      font-size: 22px;  
-      color:$white3;
-      text-shadow: 1px 1px 0px $greenDarkAccent;
-      margin-bottom:40px;
-      }
-      
-
-      // TODO(syu): Add font;
-      // TODO(syu): add different color highlghting for key words in this tag
     }
 
     #cabbage-image {
-      display: block;
-      position: absolute;
-      width: 570px;
-      top: -50px;
-      left: -24px;
+      position: relative;
+      left:-70px;
+      top:-10px;
       z-index: 0;
-      max-width: 115%; // TODO(syu) fix
+      max-width: 155%;
+      min-width:300px;
     }
 
     .parenthetical {
@@ -143,8 +104,8 @@
     }
 
     .button-group{
-      margin-top:30px;
-      margin-bottom:40px;
+      margin-top:25px;
+      margin-bottom:25px;
     }
 
     .transition .embellishment{
