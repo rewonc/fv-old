@@ -19,16 +19,17 @@
 .welcome.index{
 
   section.introduction.segment {
-    padding-top: 10px;;
+    padding-top: 10px;
+    background-color:$greenPrimary;
     //background gradient  http://www.colorzilla.com/gradient-editor/
-    background: $greenPrimary; /* Old browsers */
-    //background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenDesaturated 100%); /* FF3.6+ */
-    //background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenPrimary), color-stop(100%,$greenDesaturated)); /* Chrome,Safari4+ */
-    //background: -webkit-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Chrome10+,Safari5.1+ */
-    //background: -o-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Opera 11.10+ */
-    //background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* IE10+ */
-    //background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
-    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    //background: $greenPrimary; /* Old browsers */
+    //background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenPrimaryLight 100%); /* FF3.6+ */
+    //background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenPrimary), color-stop(100%,$greenPrimaryLight)); /* Chrome,Safari4+ */
+    //background: -webkit-linear-gradient(-45deg, $greenPrimary 0%,$greenPrimaryLight 100%); /* Chrome10+,Safari5.1+ */
+    //background: -o-linear-gradient(-45deg, $greenPrimary 0%,$greenPrimaryLight 100%); /* Opera 11.10+ */
+    //background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenPrimaryLight 100%); /* IE10+ */
+    //background: linear-gradient(135deg, $greenPrimary 0%,$greenPrimaryLight 100%); /* W3C */
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenPrimaryLight',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
  
 
   h1{
@@ -57,7 +58,7 @@
       left:-70px;
       top:-10px;
       z-index: 0;
-      max-width: 155%;
+      max-width: 135%;
       min-width:300px;
     }
 
@@ -96,7 +97,10 @@
     border-bottom: solid 1px $white2;
 
     background: white;
-  
+    .three-points{
+      padding-top:30px;
+      padding-bottom:20px;
+    }
     .step-option {
       padding: 10px;
       font-size: 22px;
