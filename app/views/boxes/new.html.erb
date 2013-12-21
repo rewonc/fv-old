@@ -545,7 +545,7 @@
                     <h5><strong>Total: $<span id="price_total">28</span>.00</h5>
                   </div>
                   <div class="small-12 columns checkout centered">
-                    <a href="#delivery_preferences" class="checkout-button">Select this box</a>
+                    <a class="checkout-button">Select this box</a>
                   </div>
                 </div>
                
@@ -649,7 +649,7 @@
               <%= f.label(:biweekly, "Once per two weeks") %></li>
             </ul>-->
             <p>I want my <strong>first delivery</strong>   on the following date:<br/>
-              <%= f.select(:startdate, options_for_select([["Saturday, Dec 21","Sat Dec 21"],["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
+              <%= f.select(:startdate, options_for_select([["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
               <%= f.check_box(:text_me) %>
               <%= f.label(:text_me, "Notify me by text the status of my delivery on Saturday morning") %>
             </p>

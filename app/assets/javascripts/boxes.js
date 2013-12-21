@@ -23,8 +23,11 @@ $('.customize-button').click(function(){
 
 //checkout-button will hide select and unhide the delivery fieldset
 $(".checkout-button").click(function(){
-  $('.select').hide();
+  //$('.select').hide();
   $('fieldset').fadeIn();
+  $('html, body').animate({
+        scrollTop: $("fieldset").offset().top
+    }, 1000);
 });
 
 
