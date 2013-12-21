@@ -18,11 +18,11 @@ class Box < ActiveRecord::Base
   def get_box_name
     case box_num
       when 1
-        box_name = "Raw and Ready"
+        box_name = "Raw Box"
       when 2
-        box_name = "Culinary Box"
+        box_name = "Variety Box"
       when 3
-        box_name = "Custom box"
+        box_name = "Custom Box"
     end
     return box_name #+ ', with ' + raw_num.to_s + ' raw pack/s, ' cook_num.to_s + ' culinary packs, and ' + fruit_num.to_s ' fruit packs.'
   end

@@ -1,43 +1,67 @@
 <div class="row">
-  <div class="large-12 columns">
-    <h3>Let's confirm the details here.</h3>
-          <fieldset>
-            <legend>Your order</legend>
-            <div class="row">
-              <div class="large-12 columns">
+  <div class="small-12 columns">
+    
+    <h2 class="header">Last step! Confirm and pay</h2>
 
-                 <p>You selected a <strong><%= @box.get_box_name %></strong> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.</p>
+    
+    
+    <div class="row panel-box">
+      <div class="small-7 small-centered columns">
 
-                 <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
+        <div class="row">
+          <div class="small-12 columns">
+            <h4 class="subheader">Your order details</h4>
+            <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
+            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
+               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
+      
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-6 columns">
+              <p><strong>Delivery address:</strong><br/>
+                <%= @box.firstname + ' ' + @box.lastname%><br />
+                <%= @box.street%><br />
+                <% if @box.street2.present? %>
+                <%= @box.street2 %><br />
+                <% end %>
+                <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
+              </p>
+          </div>
+          <div class="small-6 columns">
+              <p><strong>Contact information:</strong><br/>
+                <%= @box.email %><br />
+                <%= @box.phone %><br />
+              </p>
+          </div>
+        </div>
 
-                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
-                 </div>
-            </div>
-            <div class="row">
-              <div class="large-6 columns">
-                <p><strong>Delivery address:</strong><br/>
-                  <%= @box.firstname + ' ' + @box.lastname%><br />
-                  <%= @box.street%><br />
-                  <% if @box.street2.present? %>
-                  <%= @box.street2 %><br />
-                  <% end %>
-                  <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
-                </p>
-              </div>
-              <div class="large-6 columns">
-                <p><strong>Contact information:</strong><br/>
-                  <%= @box.email %><br />
-                  <%= @box.phone %><br />
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns"><%= link_to "Go back and modify your order", edit_box_path(session[:box_id]) %></div>
-            </div>
-           </div>
-          </fieldset>
+        <div class="row">
+          <div class="small-4 columns small-centered centered" id="payment_box">
+            
+            <%= form_tag charges_path do %>
+             
+              <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="For delivery <%= @box.startdate%>"
+                      data-amount=<%= @box.get_price %> ></script>
+            <% end %>
+            
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="small-12 columns centered"><%= link_to "Modify your order", edit_box_path(session[:box_id]) %></div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </div>
+
+
 
 <div class="row">
       <h3>Our policy</h3>
@@ -48,21 +72,3 @@
       </ul>
 </div>
 
-<div class="row">
-  <div class="small-4 columns panel small-offset-4" id="payment_box">
-    <div class="centered">
-    <%= form_tag charges_path do %>
-      <article>
-        <label class="amount">
-          <span>Amount: $<%= @amount.to_s.chop.chop + '.' + @amount.to_s.last(2) %></span>
-        </label>
-      </article>
-
-      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="For delivery <%= @box.startdate%>"
-              data-amount=<%= @amount%> ></script>
-    <% end %>
-    </div>
-  </div>
-</div>
