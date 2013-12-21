@@ -70,13 +70,13 @@
   section.introduction.segment {
     //background gradient  http://www.colorzilla.com/gradient-editor/
     background: $greenPrimary; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenDesaturated 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenPrimary), color-stop(100%,$greenDesaturated)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* IE10+ */
-    background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    //background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenDesaturated 100%); /* FF3.6+ */
+    //background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$greenPrimary), color-stop(100%,$greenDesaturated)); /* Chrome,Safari4+ */
+    //background: -webkit-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Chrome10+,Safari5.1+ */
+    //background: -o-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* Opera 11.10+ */
+    //background: -ms-linear-gradient(-45deg, $greenPrimary 0%,$greenDesaturated 100%); /* IE10+ */
+    //background: linear-gradient(135deg, $greenPrimary 0%,$greenDesaturated 100%); /* W3C */
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$greenPrimary', endColorstr='$greenDesaturated',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 
     //background:  $greenPrimary;
@@ -112,7 +112,7 @@
       top: -50px;
       left: -24px;
       z-index: 0;
-      max-width: 125%; // TODO(syu) fix
+      max-width: 115%; // TODO(syu) fix
     }
 
     .parenthetical {
