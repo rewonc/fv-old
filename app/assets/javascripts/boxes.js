@@ -77,15 +77,15 @@ function updateModuleDescriptions(){
       break;
     case 1:
       $('#box_fruit_num_text').text('Small');
-      $('#box_fruit_num_qty').text('4-6 pieces');
+      $('#box_fruit_num_qty').text('4-8 pieces');
       break;
     case 2:
       $('#box_fruit_num_text').text('Medium');
-      $('#box_fruit_num_qty').text('8-12 pieces');
+      $('#box_fruit_num_qty').text('8-16 pieces');
       break;
     case 3:
       $('#box_fruit_num_text').text('Large');
-      $('#box_fruit_num_qty').text('12-18 pieces');
+      $('#box_fruit_num_qty').text('12-24 pieces');
       break;
   }
 
