@@ -357,13 +357,11 @@
     color:$darkGray;
   }
   .subheader{
-    margin-bottom:10px;
+    margin-bottom:0px;
     text-align:center;
   }
-  .modify-button{
-    @include button-base;
-    @include button-size;
-    @include button-style($darkGray);
+  .back-link{
+    margin-bottom:10px;
   }
 
 }

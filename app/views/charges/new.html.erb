@@ -11,6 +11,12 @@
         <div class="row">
           <div class="small-12 columns">
             <h4 class="subheader">Your order details</h4>
+
+            <div class="row back-link">
+              <div class="small-12 columns centered"><small><%= link_to "Go back and modify your order", edit_box_path(session[:box_id]) %></small>
+              </div>
+            </div>
+
             <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
             <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
                <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
@@ -51,10 +57,19 @@
         </div>
 
 
-        <div class="row">
-          <div class="small-12 columns centered"><%= link_to "Modify your order", edit_box_path(session[:box_id]) %></div>
-        </div>
 
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-8 columns small-centered">
+        <h3 class="centered">Our policy</h3>
+        <ul class="square">
+          <li><p>You will be charged immediately for your first box</p></li>
+          <li><p>You can skip a week or cancel your subscription at anytime by emailing us at <%= mail_to 'hello@farmivore.com', "hello@farmivore.com" %>, at least 4 days in advance of your order.</p></li>
+          <li><p>Satisfaction guaranteed. If you don't like it, you don't pay.</p></li>
+        </ul>
       </div>
     </div>
 
@@ -63,12 +78,5 @@
 
 
 
-<div class="row">
-      <h3>Our policy</h3>
-      <ul class="square">
-        <li><p>You will be charged immediately for your first box</p></li>
-        <li><p>You can skip a week or cancel your subscription at anytime by emailing us at <%= mail_to 'hello@farmivore.com', "hello@farmivore.com" %>, at least 4 days in advance of your order.</p></li>
-        <li><p>Satisfaction guaranteed. If you don't like it, you don't pay.</p></li>
-      </ul>
-</div>
+
 
