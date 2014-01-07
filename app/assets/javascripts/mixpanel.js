@@ -29,19 +29,19 @@ $('body.welcome.index').ready(function(){
 
 //Visited How it Works page
 $('#nav-howitworks').click(function(){
-  mixpanel.track("Visited landing page", {"From": "Navbar"});
+  mixpanel.track("Viewed How it Works", {"From": "Navbar"});
 });
 
 $('#header-howitworks').click(function(){
-  mixpanel.track("Visited landing page", {"From": "Header"});
+  mixpanel.track("Viewed How it Works", {"From": "Header"});
 });
 
 $('#tribar-howitworks').click(function(){
-  mixpanel.track("Visited landing page", {"From": "Tribar"});
+  mixpanel.track("Viewed How it Works", {"From": "Tribar"});
 });
 
 $('#about-howitworks').click(function(){
-  mixpanel.track("Visited landing page", {"From": "About Us page"});
+  mixpanel.track("Viewed How it Works", {"From": "About Us page"});
 });
 
 //Visited Box Page
