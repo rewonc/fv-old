@@ -26,3 +26,22 @@ Do we have viewcount for tumblr, etc?
 $('body.welcome.index').ready(function(){
   mixpanel.track("Visited landing page");
 });
+
+//Visited How it Works page
+$('#nav-howitworks').click(function(){
+  mixpanel.track("Visited landing page", {"From": "Navbar"});
+});
+
+$('#header-howitworks').click(function(){
+  mixpanel.track("Visited landing page", {"From": "Header"});
+});
+
+$('#tribar-howitworks').click(function(){
+  mixpanel.track("Visited landing page", {"From": "Tribar"});
+});
+
+$('#about-howitworks').click(function(){
+  mixpanel.track("Visited landing page", {"From": "About Us page"});
+});
+
+//Visited Box Page
