@@ -140,6 +140,9 @@
     a.panel-head{
       padding:10px;
       border:solid 1px $white3;
+      select{
+        z-index: 50;
+      }
       .static-select{
         font-weight:bolder;
         text-align:right;
