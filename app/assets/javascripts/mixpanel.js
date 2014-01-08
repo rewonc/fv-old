@@ -70,5 +70,49 @@ $('#features-ourboxes').click(function(){
 });
 
 //Customize box
+$('#raw-tab').click(function(){
+  mixpanel.track("Customized box", {"Type": "Switched Tab to Raw"});
+});
+
+$('#cook-tab').find('img').click(function(){
+  mixpanel.track("Customized box", {"Type": "Switched tab to Variety"});
+});
+
+$('#custom-tab').click(function(){
+  mixpanel.track("Customized box", {"Type": "Switched tab to Custom"});
+});
+
+$('#raw_panel_accordion').click(function(){
+  mixpanel.track("Customized box", {"Type": "Accordion raw"});
+});
+
+$('#cook_panel_accordion').click(function(){
+  mixpanel.track("Customized box", {"Type": "Accordion cooking"});
+});
+
+$('#fruit_panel_accordion').click(function(){
+  mixpanel.track("Customized box", {"Type": "Accordion fruit"});
+});
+
+$('#box_raw_num').change(function(){
+  mixpanel.track("Customized box", {"Type": "Raw select change"});
+});
+$('#box_cook_num').change(function(){
+  mixpanel.track("Customized box", {"Type": "Cooking select change"});
+});
+$('#box_fruit_num').change(function(){
+  mixpanel.track("Customized box", {"Type": "Fruit select change"});
+});
+
+//expand to delivery
+
+$('.checkout-button').click(function(){
+  mixpanel.track("Chose a box / expanded delivery preferences");
+});
+
+
+
+
+
 
 
