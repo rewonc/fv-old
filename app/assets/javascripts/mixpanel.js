@@ -23,9 +23,9 @@ Do we have viewcount for tumblr, etc?
 
 
 //Visited Homepage
-$('body.welcome.index').ready(function(){
-  mixpanel.track("Visited landing page");
-});
+if ($('body.welcome.index').length != 0) {
+   mixpanel.track("Visited landing page");
+}
 
 //Visited How it Works page
 $('#nav-howitworks').click(function(){
@@ -68,3 +68,7 @@ $('#farms-ourboxes').click(function(){
 $('#features-ourboxes').click(function(){
   mixpanel.track("Viewed Box Selection", {"From": "Features Page"});
 });
+
+//Customize box
+
+
