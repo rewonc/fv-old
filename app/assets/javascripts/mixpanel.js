@@ -44,4 +44,27 @@ $('#about-howitworks').click(function(){
   mixpanel.track("Viewed How it Works", {"From": "About Us page"});
 });
 
-//Visited Box Page
+//See about our product
+$('#nav-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "Navbar"});
+});
+
+$('#header-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "Header"});
+});
+
+$('#tribar-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "Tribar"});
+});
+
+$('#about-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "About Us Page"});
+});
+
+$('#farms-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "Farms Page"});
+});
+
+$('#features-ourboxes').click(function(){
+  mixpanel.track("Viewed Box Selection", {"From": "Features Page"});
+});

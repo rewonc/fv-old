@@ -17,7 +17,7 @@
       <div class="row button-group">
         <div class="large-12 columns"> 
           <%= link_to 'Learn more', welcome_features_path, class: "learn-more-button", id: "header-howitworks" %>
-          <%= link_to 'Sign up', new_box_path, class: "get-started-button" %>
+          <%= link_to 'Sign up', new_box_path, class: "get-started-button", id: "header-ourboxes" %>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
                   <div class="step-option">
                     <h5 class="title">Effortless subscription</h5>
                     <span class="caption">Cancel or delay whenever you want. Starting at $16/box. <br/>
-                      <%= link_to "See box options", new_box_path %></span>
+                      <%= link_to "See box options", new_box_path, id: "tribar-ourboxes" %></span>
                   </div>
                 </li>
                 <li>
