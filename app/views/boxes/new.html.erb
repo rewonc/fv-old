@@ -527,16 +527,34 @@
                     <span class="carrot"><%= image_tag('carrot-bandw.png') %></span>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="small-12 columns centered" id="customize-toggle">
-                    <h5><strong><em>Want to add or remove bundles?</em></strong></h5>
-                    <a href="#" class="customize-button">Choose a custom box</a>
-                  </div>
-                </div>
 
                 <div class="row delivery-row">
                     <div class="delivery-ribbon centered"><h6 class="delivery-ribbon-content">Free delivery for orders over $40!</h6></div>
                 </div>
+
+                <div class="row">
+                  <div class="small-12 columns centered" id="customize-toggle">
+                    <a href="#" class="customize-button">Build a bigger box</a>
+                    <hr />
+                  </div>
+                </div>
+
+                <div class="row select-frequency">
+                  <div class="small-6 columns">
+                    <%= f.label :frequency, "Delivery frequency", html_options = {class: "right inline", for: "select-frequency"} %>
+                  </div>
+                  <div class="small-6 columns">
+                    <%= f.select(:frequency, options_for_select([
+                      ["Weekly",1],
+                      ["Every 2 weeks",2],
+                      ["Every month",4]
+                    ])) %>
+                  </div>
+                </div>
+
+                
+
+                
 
                 <div class="row">
                   <div class="small-12 columns totals">

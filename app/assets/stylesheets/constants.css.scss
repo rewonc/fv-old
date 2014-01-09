@@ -14,7 +14,7 @@ $darkGray: #404041;
 $midGray: #999;
 $lightGray3: rgb(133, 133, 133);
 $greenMute: desaturate($greenPrimary, 30%);
-$orangeLight: saturate(lighten($orange, 20%), 100%);
+$orangeLight: lighten($orange, 20%);
 $orangeDark: darken($orange, 20%);
 $gold: darken(gold, 2%);
 

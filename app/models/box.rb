@@ -3,6 +3,7 @@ class Box < ActiveRecord::Base
   validates :box_num, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
+  validates :frequency, presence: true
   validates :email, presence: true
   validates :phone, presence: true
   validates :delivery_preference, presence: true

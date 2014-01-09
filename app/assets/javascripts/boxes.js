@@ -15,6 +15,9 @@ selectForStatic();
 tabsSelect();
 selectToPrice();
 
+//accordionSelect FFox fix
+
+
 //make the select items change for custom box
 $('#custom-tab').click(function(){
   staticForSelect();
@@ -132,6 +135,8 @@ function selectForStatic(){
 
 
 function selectToPrice(){
+  accordionSelect();
+
   $('#box_raw_num').change(function(){
     upgrade_price();
   });
@@ -141,6 +146,8 @@ function selectToPrice(){
   $('#box_fruit_num').change(function(){
     upgrade_price();
   });
+
+
 }
 function tabsSelect(){
   $('.tabs').find('dd').click(function(){
@@ -192,5 +199,21 @@ function upgrade_price(){
   $('#price_delivery').text((shipping).toString());
   $('#price_total').text((subtotal+shipping).toString());
 
+}
+
+//function to disable accordion clicks and make selects, options focus on themselves
+function accordionSelect(){
+  $('.accordion').find('select').click(function(event){
+    event.stopPropagation(); // this is
+    event.preventDefault(); // the magic
+    $(this).focus();
+  });
+
+  $('.accordion').find('select').children().focusout(function(event){
+    event.stopPropagation(); // this is
+    event.preventDefault(); // the magic
+        $(this).focus();
+
+  });
 }
 
