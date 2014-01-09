@@ -4,6 +4,7 @@ $('#terms_button').show();
 $('#agree').click(function(){
   $('#terms_button').hide();
   $('#terms_reveal').fadeIn(50);
+  $('#agree').attr("disabled", true);
 });
 
 

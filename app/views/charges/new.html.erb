@@ -29,11 +29,17 @@
     
         <div class="row">
           <div class="small-10 small-offset-1 columns centered">
-            <h5>Please note</h5><div class="terms">
-            <p>This is an automatically recurring order. Each week, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
-            <p>To skip a week, modify your box, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
-            <%= check_box_tag(:agree) %>
-            <%= label_tag(:agree, "I have read and agree to the above terms") %>
+            <h5>Please note</h5>
+            <div class="terms">
+              <div class="row">
+                <div class="small-10 columns small-centered small-offset-1">
+                <p>This is an automatically recurring order. Each week, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
+                <p>To skip a week, modify your box, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
+                <%= check_box_tag(:agree) %>
+                <%= label_tag(:agree, "I have read and agree to the above terms") %>
+              </div>
+            </div>
+
           </div>
         </div>
         
