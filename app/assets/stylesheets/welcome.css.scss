@@ -233,6 +233,16 @@
   .get-started-button{
     @include fv-button();
   }
+  .no-bullet{
+    font-size:13px;
+    font-family:Garamond, Georgia, serif;
+    text-transform:uppercase;
+    font-weight:bold;
+    line-height:20px;
+    li{
+      margin-top:2px;
+    }
+  }
 }
 
 .welcome.about{
