@@ -182,6 +182,10 @@
     }
     .caption{
         position:relative;
+        img{
+          position:relative;
+          top:20px;
+        }
         small{
           position:absolute;
           width:260px;
@@ -199,8 +203,12 @@
   #ft-diverse{
     img{
       max-width:120%;
+      margin-bottom:15px;
+
     }
-    small{
+    .small{
+     padding-left:30px;
+     font-size:10px;
     }
   }
 
