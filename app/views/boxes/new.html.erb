@@ -1,7 +1,7 @@
 <section class="intro">
   <div class="row">
-    <div class="small-4 columns left location">
-      <p>Now serving: <em>New York, NY</em></p>
+    <div class="small-12 columns left location">
+      <p>Now serving New York City. <br />(<a href="#">Live elsewhere?</a>)</p>
     </div>
   </div>
   <div class="row">
@@ -541,7 +541,7 @@
 
                 <div class="row select-frequency">
                   <div class="small-6 columns">
-                    <%= f.label :frequency, "Delivery frequency", html_options = {class: "right inline", for: "select-frequency"} %>
+                    <%= f.label :frequency, "Frequency", html_options = {class: "right inline", for: "select-frequency"} %>
                   </div>
                   <div class="small-6 columns">
                     <%= f.select(:frequency, options_for_select([
@@ -549,6 +549,7 @@
                       ["Every 2 weeks",2],
                       ["Every month",4]
                     ])) %>
+                    <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
                   </div>
                 </div>
 
@@ -560,7 +561,7 @@
                   <div class="small-12 columns totals">
                     <h5>Subtotal:  $<span id="price_sum">24</span>.00</h5>
                     <h5>Delivery:  $<span id="price_delivery">4</span>.00</h5>
-                    <h5><strong>Total: $<span id="price_total">28</span>.00</h5>
+                    <h5>Total per <span id="total_period">week</span>: <strong>$<span id="price_total">28</span>.00</h5></strong>
                   </div>
                   <div class="small-12 columns checkout centered">
                     <a class="checkout-button">Select this box</a>
@@ -665,9 +666,12 @@
 
           <h6 class="form-header">Delivery options</h6>
           <div class="row">
-            <div class="small-12 columns">
+            <div class="small-12 medium-6 columns">
               <%= f.label :startdate, "I want my first delivery on the following date:" %>
               <%= f.select(:startdate, options_for_select([["Saturday, January 18", "Sat Jan 18"],["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
+            </div>
+            <div class="small-12 medium-6 columns">
+              <p>First delivery dates are based upon </p>
             </div>
           </div>
           <div class="row">

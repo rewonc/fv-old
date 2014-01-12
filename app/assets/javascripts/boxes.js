@@ -46,6 +46,24 @@ $(".checkout-button").click(function(){
     }, 1000);
 });
 
+//frequency select changes the text
+$('#box_frequency').change(function(){
+  switch($(this).val()){
+    case '1':
+      $('#total_period').text('week');
+      break;
+    case '2':
+      $('#total_period').text('2 weeks');
+      break;
+    case '4':
+      $('#total_period').text('month');
+      break;
+    default:
+      $('#total_period').text('week');
+  }
+
+});
+
 
 function updateModuleDescriptions(){
   var raw = parseInt($('#box_raw_num').val());

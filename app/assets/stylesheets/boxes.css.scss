@@ -230,7 +230,8 @@
           @include button-style($orangeDark);
           @include radius;
           margin-bottom:20px;
-          font-family:Garamond, Georgia, serif;
+          color:white;
+          font-weight:bold;
           margin-top:20px;
           padding:4px;
     }
