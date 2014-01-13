@@ -14,12 +14,13 @@ class ChargesController < ApplicationController
       card: params[:stripeToken]
     )
 
-    @charge = Stripe::Charge.create(
-      customer: @customer.id,
-      amount: amount,
-      description: @box.email.to_s,
-      currency: 'usd'
-    )
+    #@charge = Stripe::Charge.create(
+    #  customer: @customer.id,
+    #  amount: amount,
+    #  description: @box.email.to_s,
+    #  currency: 'usd'
+    #)
+    
     render 'charges/create', layout: 'application'
 
   rescue Stripe::CardError => e
