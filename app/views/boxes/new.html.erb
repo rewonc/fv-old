@@ -1,7 +1,7 @@
 <section class="intro">
   <div class="row">
     <div class="small-12 columns left location">
-      <p>Now serving New York City. <br />(<a href="#">Live elsewhere?</a>)</p>
+      <p>Now serving New York City. <br /><!--(<a href="#">Live elsewhere?</a>)</p>-->
     </div>
   </div>
   <div class="row">
@@ -668,10 +668,10 @@
           <div class="row">
             <div class="small-12 medium-6 columns">
               <%= f.label :startdate, "I want my first delivery on the following date:" %>
-              <%= f.select(:startdate, options_for_select([["Saturday, January 18", "Sat Jan 18"],["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
+              <%= f.select(:startdate, options_for_select([["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
             </div>
             <div class="small-12 medium-6 columns">
-              <p>First delivery dates are based upon </p>
+              <p><!-- Delivery dates are based upon (geographical location...)--></p>
             </div>
           </div>
           <div class="row">
