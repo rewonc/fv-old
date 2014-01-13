@@ -175,14 +175,14 @@ function tabsSelect(){
     {
       case 1:
         setModules(2,0,1);
-        $('#sample-box-title').text("What's inside a Raw Box");
+        $('#sample-box-title').text("A sample winter Raw Box");
         break;
       case 2:
         setModules(1,1,1);
-        $('#sample-box-title').text("What's inside a Variety Box");
+        $('#sample-box-title').text("A sample winter Variety Box");
         break;
       case 3:
-        $('#sample-box-title').text("What's inside a Custom Box");
+        $('#sample-box-title').text("A sample winter Custom Box");
         break;
     }
   });
@@ -208,7 +208,7 @@ function upgrade_price(){
     $('#sample-box-title').text("Minimum order of $10 - please increase order");
     shipping = 4;
   } else if (subtotal < 40) {
-    $('#sample-box-title').text("What's inside a Custom Box");
+    $('#sample-box-title').text("A sample winter Custom Box");
     shipping = 4;
   } else {
     shipping = 0;
