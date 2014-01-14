@@ -1,9 +1,10 @@
 <section class="intro">
   <div class="row">
-    <div class="small-4 columns left location">
-      <p>Now serving: <em>New Haven, CT.</em></p>
+    <div class="small-12 columns left location">
+      <p>Now serving New York City. <br /><a href="mailto:hello@farmivore.com?Subject=Delivery%20Locations&Body=Please%20add%20(my%20city)%20soon!">(<span data-tooltip class="has-tip" title="We are expanding quickly! Click this to email us your city. We seriously consider all requests here!">Live elsewhere?</span>)</a></p>
     </div>
   </div>
+  
   <div class="row">
     <div class="small-12 centered columns">
 
@@ -19,26 +20,25 @@
 
   <%= render 'shared/error_messages', object: f.object %>
 
-     
-<!--  begin delivery preferences -->
+ <!--  begin delivery preferences -->
 <div class="row">
   <div class="small-12 small-centered columns">
-    <fieldset class="delivery_preferences" id="edit_delivery_preferences">
+    <fieldset class="delivery_preferences" id="delivery_preferences">
 
       <div class="row">
         <div class="small-12 columns centered">
           <h2 class="header">Delivery Preferences</h2>
-          <h3 class="subheader">City of New Haven only</h3>
+          <h3 class="subheader">Now serving Manhattan, Queens, Brooklyn, and the Bronx</h3>
         </div>
       </div>
       <div class="row">
         <div class="small-6 small-offset-3 columns">
           <div class="row">
             <div class="small-6 columns">
-               <%= f.label :neighborhood, "Select your neighborhood", html_options = {class: "right inline", for: "box_neighborhood"} %>
+               <%#= f.label :neighborhood, "Select your neighborhood", html_options = {class: "right inline", for: "box_neighborhood"} %>
             </div>
             <div class="small-6 columns">
-               <%= f.select(:neighborhood, options_for_select([
+               <%#= f.select(:neighborhood, options_for_select([
 
 ["East Rock","East Rock"],
 ["Prospect Hill","Prospect Hill"],
@@ -105,9 +105,12 @@
 
           <h6 class="form-header">Delivery options</h6>
           <div class="row">
-            <div class="small-12 columns">
+            <div class="small-12 medium-6 columns">
               <%= f.label :startdate, "I want my first delivery on the following date:" %>
-              <%= f.select(:startdate, options_for_select([["Saturday, January 4", "Sat Jan 4"],["Saturday, January 11", "Sat Jan 11"]])) %>
+              <%= f.select(:startdate, options_for_select([["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
+            </div>
+            <div class="small-12 medium-6 columns">
+              <p><!-- Delivery dates are based upon (geographical location...)--></p>
             </div>
           </div>
           <div class="row">
