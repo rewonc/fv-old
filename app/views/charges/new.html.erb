@@ -18,7 +18,7 @@
             </div>
 
             <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
-            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %></strong> per week (delivery included).</p>
+            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %></strong>  <%= @box.frequency_string %> (delivery included).</p>
                <p>Your first delivery will be on <strong><%= @box.startdate %></strong>.</p>
                <p>Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
       
@@ -33,8 +33,8 @@
             <div class="terms">
               <div class="row">
                 <div class="small-10 columns small-centered small-offset-1">
-                <p>This is an automatically recurring order. Each week, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
-                <p>To skip a week, modify your box, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
+                <p>This is an automatically recurring order. <%= @box.frequency_string.capitalize %>, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
+                <p>To skip a box, modify your order, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
                 <%= check_box_tag(:agree) %>
                 <%= label_tag(:agree, "I have read and agree to the above terms") %>
               </div>

@@ -16,6 +16,20 @@ class Box < ActiveRecord::Base
   validates :instructions, presence: true
   
 
+  def frequency_string
+    case frequency
+      when 1
+        return "weekly"
+      when 2
+        return "every 2 weeks"
+      when 3
+        return "every 3 weeks"
+      when 4
+        return "every month"
+    end
+  end
+
+
   def get_box_name
     case box_num
       when 1
