@@ -1,45 +1,30 @@
 <table >
-<tr data-magellan-expedition="fixed">
-  <th>id</th>
-  <th>fn</th>
-  <th>ln</th>
-  <th>@</th>
-  <th>#</th>
+<tr class="fixedbar">
+  <th>Name</th>
+  <th>Email/phone</th>
   <th>freq(dep)</th>
   <th>d. pref</th>
-  <th>str1</th>
-  <th>str2</th>
-  <th>city</th>
-  <th>state</th>
-  <th>zip</th>
-  <th>instruc</th>
+  <th>Addy</th>
   <th>startdate</th>
-  <th>raw#</th>
-  <th>cook#</th>
-  <th>fruit#</th>
+  <th>Code</th>
   <th>text?</th>
   <th>call?</th>
   <th>hood</th>
 </tr>
 <% @boxes.each do |b| %>
 <tr>
-  <td><%= b.box_num %></td>
-  <td><%= b.firstname %></td>
-  <td><%= b.lastname %></td>
-  <td><%= b.email %></td>
-  <td><%= b.phone %></td>
-  <td><%= b.frequency %></td>
-  <td><%= b.delivery_preference %></td>
-  <td><%= b.street %></td>
-  <td><%= b.street2 %></td>
-  <td><%= b.city %></td>
-  <td><%= b.state %></td>
-  <td><%= b.zip %></td>
-  <td><%= b.instructions %></td>
+  <td><%= b.firstname %><br /><%= b.lastname %><</td>
+  <td><%= b.email %><br /><%= b.phone %></td>
+  <td><%= b.frequency_string %></td>
+  <td><%= b.delivery_preference_string %></td>
+  <td>
+    <span data-tooltip class="has-tip" title="<%= b.instructions %>">L
+      <%= b.street %>/<%= b.street2 %><br /><%= b.city %>, <%= b.state %> <%= b.zip %>
+    </span>
+      
+  </td>
   <td><%= b.startdate %></td>
-  <td><%= b.raw_num %></td>
-  <td><%= b.cook_num %></td>
-  <td><%= b.fruit_num %></td>
+  <td><%= b.raw_num %> - <%= b.cook_num %> - <%= b.fruit_num %></td>
   <td><%= b.text_me %></td>
   <td><%= b.call_me %></td>
   <td><%= b.neighborhood %></td>
