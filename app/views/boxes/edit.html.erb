@@ -1,11 +1,5 @@
 <section class="intro">
   <div class="row">
-    <div class="small-12 columns left location">
-      <p>Now serving New York City. <br /><a href="mailto:hello@farmivore.com?Subject=Delivery%20Locations&Body=Please%20add%20(my%20city)%20soon!">(<span data-tooltip class="has-tip" title="We are expanding quickly! Click this to email us your city. We seriously consider all requests here!">Live elsewhere?</span>)</a></p>
-    </div>
-  </div>
-
-  <div class="row">
     <div class="small-12 centered columns">
 
       <h1 class="header-main">Modify your settings</h1>
@@ -18,138 +12,11 @@
 
   <%= form_for @box, url: box_path(@box.id), :html => {"data-abide" => ''} do |f| %>
 
+  
+
   <%= render 'shared/error_messages', object: f.object %>
+  <%= render 'shared/delivery_preferences', f: f %>
 
- <!--  begin delivery preferences -->
-<div class="row">
-  <div class="small-12 small-centered columns">
-    <fieldset class="delivery_preferences">
 
-      <div class="row">
-        <div class="small-12 columns centered">
-          <h2 class="header">Delivery Preferences</h2>
-          <h3 class="subheader">Now serving Manhattan, Queens, Brooklyn, and the Bronx</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-6 small-offset-3 columns">
-          <div class="row">
-            <div class="small-6 columns">
-               <%#= f.label :neighborhood, "Select your neighborhood", html_options = {class: "right inline", for: "box_neighborhood"} %>
-            </div>
-            <div class="small-6 columns">
-               <%#= f.select(:neighborhood, options_for_select([
 
-["East Rock","East Rock"],
-["Prospect Hill","Prospect Hill"],
-["Dwight","Dwight"],
-["Dixwell","Dixwell"],
-["Union Station Area","Union Station Area"],
-["Long Wharf","Long Wharf"],
-["Mill River","Mill River"],
-["Westville / West Rock","Westville / West Rock"],
-["Fair Haven","Fair Haven"],
-["East Haven / Lighthouse Point", "East Haven / Lighthouse Point"],
-["Other", "Other"]
-
-])) %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-8 small-offset-2 columns">
-           <p>All deliveries go out each week on <strong>Saturday</strong>, immediately after we pick up the produce from farmers. If you are interested in piloting Wednesday delivery, email us at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="small-8 small-offset-2 columns">
-          <h6 class="form-header">Sign up!</h6>
-          <div class="row">
-            <div class="small-6 columns">
-              <%= f.text_field :firstname, :placeholder => "Your first name", :required => "" %>
-              <small class="error">You must enter your first name.</small>
-            </div>
-            <div class="small-6 columns">
-              <%= f.text_field :lastname, :placeholder => "Last name", :required => "" %>
-              <small class="error">You must enter your last name.</small>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="small-6 columns">
-              <%= f.text_field :email, :placeholder => "Your email address", :type => 'email', :required => '', :pattern => "\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i" %>
-              <small class="error">Email must be of a valid format.</small>
-            </div>
-            <div class="small-4 columns"><%= f.text_field :phone, :placeholder => "Your phone number", :required => '' %> </div>
-            <small class="error">You must enter a phone number</small>
-          </div>
-
-          <h6 class="form-header">Your delivery address</h6>
-          <div class="row">
-            <div class="small-12 columns">
-               <%= f.text_field :street, :placeholder => "Street address line 1", required: '' %>
-               <small class="error">You must enter a street address</small>
-               <%= f.text_field :street2, :placeholder => "Street address line 2" %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-4 columns"><%= f.text_field :city, :placeholder => "City", required: '' %></div>
-            <small class="error">You must enter a city</small>
-            <div class="small-4 columns"><%= f.text_field :state, :placeholder => "State", required: '' %></div>
-            <small class="error">You must enter a state</small>
-            <div class="small-4 columns"><%= f.text_field :zip, :placeholder => "Zip", required: '' %></div>
-            <small class="error">You must enter a zip code</small>
-          </div>
-
-          <h6 class="form-header">Delivery options</h6>
-          <div class="row">
-            <div class="small-12 medium-6 columns">
-              <%= f.label :startdate, "I want my first delivery on the following date:" %>
-              <%= f.select(:startdate, options_for_select([["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
-            </div>
-            <div class="small-12 medium-6 columns">
-              <p><!-- Delivery dates are based upon (geographical location...)--></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-12 columns">
-                <%= f.label :delivery_preference, "Time preference (default: as early as possible)" %>
-                  <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
-                </p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="small-12 columns">
-
-              <%= f.check_box(:text_me, html_options = {checked: true}) %>
-              <%= f.label(:text_me, "Notify me by text the status of my delivery") %>
-              <br />
-              <%= f.check_box(:call_me, html_options = {checked: true}) %>
-              <%= f.label(:call_me, "Call me when you arrive") %>
-            </div>
-          </div>
-        
-          <h6 class="form-header">Instructions</h6>
-          <div class="row">
-            <div class="small-12 columns">
-              <%= f.label(:instructions, "Please leave detailed instructions for the deliveryperson if you are not available. (We cannot return at a later time to your residence).") %></p>
-              <%= f.text_area :instructions, :placeholder => "Examples: Buzz apartment #202, leave in foyer. --OR-- Leave with doorman.  --OR-- leave on back porch.", required: '' %>
-
-              <small class="error">Please enter instructions for if you are not available</small>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="centered">
-        <%= f.submit 'Checkout!', class: "order-button" %>
-      </div>
-     <% end %>
-    </fieldset>
-  </div>
-</div>
-
+<% end %>

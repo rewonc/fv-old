@@ -62,6 +62,9 @@ class Box < ActiveRecord::Base
   def get_price
     modules = raw_num + cook_num + fruit_num
     subtotal = modules * 800
+    if subtotal.nil?
+      return 'nil'
+    end
     if subtotal >= 4000
       total = subtotal
       return total
@@ -70,5 +73,10 @@ class Box < ActiveRecord::Base
       return total
     end
   end
+
+  def get_price_string
+    return '$' + get_price.to_s.chop.chop + '.' + get_price.to_s.last(2)
+  end
+
 
 end

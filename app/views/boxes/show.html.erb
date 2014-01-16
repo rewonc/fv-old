@@ -1,0 +1,49 @@
+<%# create_table "boxes", force: true do |t|
+    t.integer  "box_num"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "frequency"
+    t.integer  "delivery_preference"
+    t.string   "street"
+    t.string   "street2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "startdate"
+    t.integer  "raw_num"
+    t.integer  "cook_num"
+    t.integer  "fruit_num"
+    t.boolean  "text_me"
+    t.boolean  "call_me"
+    t.string   "neighborhood"
+  end %>
+
+ <div class="row">
+    <div class="small-12 centered columns">
+
+      <h1><%= @box.firstname + ' ' + @box.lastname %>'s order</h1>
+
+       <section class="show-box"> <!-- start tabs -->
+        <div class="row"> 
+          <div class="small-12 columns">
+            <h3>Box details</h3>
+            <p>
+              This box is a <strong><%= @box.get_box_name %></strong> delivered <strong><%= @box.frequency_string %></strong>.  
+            </p>
+
+            <p>
+              Every week, 4 days before the delivery of goods, the total amount of <strong><%= @box.get_price_string %></strong> will be charged to your debit card.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+
+
