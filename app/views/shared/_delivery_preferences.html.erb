@@ -1,3 +1,5 @@
+
+
  <!--  begin delivery preferences -->
 <div class="row">
   <div class="small-12 small-centered columns">
@@ -84,8 +86,13 @@
           <h6 class="form-header">Delivery options</h6>
           <div class="row">
             <div class="small-12 medium-6 columns">
+              <% 
+                startdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 6)
+                seconddate = startdate + 7
+                thirddate = seconddate + 7
+              %>
               <%= f.label :startdate, "I want my first delivery on the following date:" %>
-              <%= f.select(:startdate, options_for_select([["Saturday, January 25", "Sat Jan 25"],["Saturday, February 1", "Sat Feb 1"]])) %>
+              <%= f.select(:startdate, options_for_select([[startdate.strftime("%A, %B %d"), startdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate]])) %>
             </div>
             <div class="small-12 medium-6 columns">
               <p><!-- Delivery dates are based upon (geographical location...)--></p>

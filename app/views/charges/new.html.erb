@@ -5,7 +5,12 @@
     <div class="row panel-box">
       <div class="small-7 small-centered columns">
         <%= render 'shared/box_display', box: @box %>
-        <br /><hr /><br />
+         <p class="back-link centered">
+      
+          <%= link_to "Go back and modify delivery settings", edit_box_path(@box.id) %>
+
+        </p>
+       <hr /><br />
       </div>
     
       <div class="row">

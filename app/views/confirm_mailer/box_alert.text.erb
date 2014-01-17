@@ -1,13 +1,18 @@
 Thank you for your order, <%= @box.firstname %>!
 ===============================================
 
+We're excited to have you on board. If you have any questions, wish to change your order, or wish to cancel your subscription, please email us at hello@farmivore.com. We normally respond within minutes.
 
-You selected a <%= @box.get_box_name %> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.
+We're looking forward to serving you. See you soon.
 
-Your total price will be $<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>, shipping included, per week.
+Best
+Rewon and Ray
 
-Your first delivery will be on <%= @box.startdate %>. Your preferred time of delivery is: <%= @box.delivery_preference_string %>
+------------------------------------------------------
 
+Your total price will be <%= @box.get_price_string %> (delivery included).
+ Your first delivery will be on <%= @box.startdate %>, and follow <%= @box.frequency_string %> thereafter.
+Your preferred time of delivery is: <%= @box.delivery_preference_string %>
 
 Delivery address:
 <%= @box.firstname + ' ' + @box.lastname%>
@@ -22,9 +27,5 @@ Contact information:
 <%= @box.phone %>
 
 
-If you have any questions or changes to make to your subscription, please contact us at hello@farmivore.com.
 
-Thanks for your order!  See you on Saturday.
 
-Best
-Rewon and Ray

@@ -4,42 +4,16 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-<fieldset>
-    <h2>Thank you for your Farmivore order!</h2>
-            <legend>Your order</legend>
-            <div class="row">
-              <div class="large-12 columns">
+    <h2>Thank you for your Farmivore order, <%= @box.firstname %>!</h2>
+    <p>We're excited to have you on board. If you have any questions, wish to change your order, or wish to cancel your subscription, please email us at hello@farmivore.com. We normally respond within minutes.</p>
 
-                 <p>You selected a <strong><%= @box.get_box_name %></strong> with <%=@box.raw_num %> raw pack/s,  <%=@box.cook_num %> cooking pack/s, and <%=@box.fruit_num %> fruit pack/s.</p>
+    <p>We're looking forward to serving you. See you soon!</p>
+    <p>-Rewon and Ray</p> 
+    <br /><br />
+    <fieldset>
+        <%= render 'shared/box_display', box: @box %>
+    </fieldset>
 
-                 <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %>,</strong> shipping included, per week.</p>
-
-                   <p>Your first delivery will be on <strong><%= @box.startdate %></strong>. Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
-                 </div>
-            </div>
-            <div class="row">
-              <div class="large-6 columns">
-                <p><strong>Delivery address:</strong><br/>
-                  <%= @box.firstname + ' ' + @box.lastname%><br />
-                  <%= @box.street%><br />
-                  <% if @box.street2.present? %>
-                  <%= @box.street2 %><br />
-                  <% end %>
-                  <%= @box.city %>, <%= @box.state %> <%= @box.zip %><br />
-                </p>
-              </div>
-              <div class="large-6 columns">
-                <p><strong>Contact information:</strong><br/>
-                  <%= @box.email %><br />
-                  <%= @box.phone %><br />
-                </p>
-              </div>
-            </div>
-</fieldset>
-
-<p>If you have any questions, wish to change your order, or wish to cancel your subscription, please email us at hello@farmivore.com.  </p>
-<p>Thanks again for your order. See you this Saturday!</p>
-<p>-Rewon and Ray</p> 
 
 
   </body>
