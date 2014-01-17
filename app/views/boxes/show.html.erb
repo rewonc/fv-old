@@ -23,7 +23,9 @@
     t.string   "neighborhood"
   end %>
 
- <div class="row">
+
+
+<div class="row">
     <div class="small-12 centered columns">
 
       <h1><%= @box.firstname + ' ' + @box.lastname %>'s order</h1>
@@ -31,19 +33,13 @@
        <section class="show-box"> <!-- start tabs -->
         <div class="row"> 
           <div class="small-12 columns">
-            <h3>Box details</h3>
-            <p>
-              This box is a <strong><%= @box.get_box_name %></strong> delivered <strong><%= @box.frequency_string %></strong>.  
-            </p>
-
-            <p>
-              Every week, 4 days before the delivery of goods, the total amount of <strong><%= @box.get_price_string %></strong> will be charged to your debit card.
-            </p>
+            <%= render 'shared/box_display', box: @box %>
           </div>
         </div>
       </section>
       
     </div>
   </div>
+ 
 
 
