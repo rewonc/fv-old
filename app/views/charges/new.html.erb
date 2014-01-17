@@ -2,77 +2,48 @@
   <div class="small-12 columns">
     
     <h2 class="header">Confirm and pay</h2>
-
-    
-    
     <div class="row panel-box">
       <div class="small-7 small-centered columns">
-
-        <div class="row">
-          <div class="small-12 columns">
-            <h4 class="subheader">Your order details</h4>
-
-            <div class="row back-link">
-              <div class="small-12 columns centered"><%= link_to "Go back and modify delivery settings", edit_box_path(session[:box_id]) %>
-              </div>
-            </div>
-
-            <p>You selected a <strong><%= @box.get_box_name %></strong>.</p>
-            <p>Your total price will be <strong>$<%= @box.get_price.to_s.chop.chop + '.' + @box.get_price.to_s.last(2) %></strong>  <%= @box.frequency_string %> (delivery included).</p>
-               <p>Your first delivery will be on <strong><%= @box.startdate %></strong>.</p>
-               <p>Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
-      
-          </div>
-        </div>
+        <%= render 'shared/box_display', box: @box %>
         <br /><hr /><br />
       </div>
     
-        <div class="row">
-          <div class="small-10 small-offset-1 columns centered">
-            <h5>Please note</h5>
-            <div class="terms">
-              <div class="row">
-                <div class="small-10 columns small-centered small-offset-1">
-                <p>This is an automatically recurring order. <%= @box.frequency_string.capitalize %>, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
-                <p>To skip a box, modify your order, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
-                <%= check_box_tag(:agree) %>
-                <%= label_tag(:agree, "I have read and agree to the above terms") %>
-              </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 columns centered">
+          <h5>Please note</h5>
+          <div class="terms">
+            <div class="row">
+              <div class="small-10 columns small-centered small-offset-1">
+              <p>This is an automatically recurring order. <%= @box.frequency_string.capitalize %>, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
+              <p>To skip a box, modify your order, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
+              <%= check_box_tag(:agree) %>
+              <%= label_tag(:agree, "I have read and agree to the above terms") %>
             </div>
-
           </div>
+
         </div>
+      </div>
         
-      
-        <div class="row">
-          <div class="small-4 columns small-centered centered" id="payment_box">
+      <div class="row">
+        <div class="small-4 columns small-centered centered" id="payment_box">
+          <button id="terms_button"><strong>Pay with card</strong></button>
+          <div id="terms_reveal">
+          <%= form_tag charges_path do %>
             
-            <button id="terms_button"><strong>Pay with card</strong></button>
-            <div id="terms_reveal">
-            <%= form_tag charges_path do %>
-              
-              <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-name="Farmivore"
-                      data-image=<%= asset_path('carrot-color.png') %>
-                      data-description="Subscription starting <%= @box.startdate%>"
-                      data-amount=<%= @box.get_price %>
-                      data-email=<%= @box.email %>
-                >
-              </script>
-
-            <% end %>
-            </div>
-            
+            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-name="Farmivore"
+                    data-image=<%= asset_path('carrot-color.png') %>
+                    data-description="Subscription starting <%= @box.startdate%>"
+                    data-amount=<%= @box.get_price %>
+                    data-email=<%= @box.email %>
+              >
+            </script>
+          <% end %>
           </div>
         </div>
-
+      </div>
     </div>
-
-
-      
-
-    
 
   </div>
 </div>

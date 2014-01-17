@@ -1,8 +1,62 @@
-<h3>Box details</h3>
-            <p>
-              This box is a <strong><%= @box.get_box_name %></strong> delivered <strong><%= @box.frequency_string %></strong>.  
-            </p>
+<div class="row">
+  <div class="small-12 columns">
+    <h4 class="subheader">Your order details</h4>
+    <p class="back-link centered"><%= link_to "Go back and modify delivery settings", edit_box_path(session[:box_id]) %>
+    </p>
+    
+    <div class="row">
+      <div class="small-9 columns">  
+        <p>Your total price will be <strong><%= @box.get_price_string %></strong>   (delivery included).</p>
+        <p>Your first delivery will be on <strong><%= @box.startdate %></strong>, and follow <strong><%= @box.frequency_string %><strong> thereafter.</p>
+        <p>Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
+      </div>
+      <div class="small-3 columns">
+        <ul class='vcard'>
+          <li><strong><%= @box.firstname + ' ' + @box.lastname %></strong></li>
+          <li><%= @box.street %></li>
+          <% if !@box.street2.empty? %>
+          <li>
+            <%= @box.street2 %>
+          </li>
+          <% end %>
+          <li><%= @box.city %> <span class="state"><%= @box.state %></span>, <span class="zip"><%= @box.zip %></span></li>
+          <li class="email"><a href="#"><%= @box.email %></a></li>
+          <li class="email"><a href="#"><%= @box.phone %></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <span class="instructions">Instructions for deliveryperson: <em> <%= @box.instructions %></em></small>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <p>
-              Every week, 4 days before the delivery of goods, the total amount of <strong><%= @box.get_price_string %></strong> will be charged to your debit card.
-            </p>
+
+
+<%# create_table "boxes", force: true do |t|
+    t.integer  "box_num"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "frequency"
+    t.integer  "delivery_preference"
+    t.string   "street"
+    t.string   "street2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "startdate"
+    t.integer  "raw_num"
+    t.integer  "cook_num"
+    t.integer  "fruit_num"
+    t.boolean  "text_me"
+    t.boolean  "call_me"
+    t.string   "neighborhood"
+  end %>
+
