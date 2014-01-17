@@ -7,6 +7,10 @@ $('#agree').click(function(){
   $('#agree').attr("disabled", true);
 });
 
+//zip code -- check based upon value
+$("#box_zip").change(function(){
+  $('#zip_action').text(this.value + 'still have to inactivate the selects to the left, and add a note about: your neighborhod is launching at this time.');
+})
 
 //hide form elements replace w/ js
 $(".box-select").hide();
@@ -14,8 +18,6 @@ $("#delivery_preferences").hide();
 selectForStatic();
 tabsSelect();
 selectToPrice();
-
-//accordionSelect FFox fix
 
 
 //make the select items change for custom box

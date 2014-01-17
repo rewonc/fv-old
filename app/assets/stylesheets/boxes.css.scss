@@ -1,4 +1,4 @@
-//New Boxes Page styling
+
 .boxes.index{
 
 }
@@ -14,7 +14,7 @@
   }
 }
 
-
+//New Boxes Page styling
 .boxes.new, .boxes.edit{
 
   //intro section styles
@@ -334,9 +334,26 @@
     }
     .subheader{
       margin-bottom:30px;
+      color:black;
+    }
+    .wed_delivery{
+      font-size:12px;
+      text-align:right;
     }
     .form-header{
       margin-top:20px;
+    }
+    .zip_action{
+      padding-top:30px;
+      padding-left:15px;
+      padding-right:15px;
+      p{
+        margin-top:20px;
+        font-size:15px;
+        color: $greenPrimary;
+        #zip_action{
+        }
+      }
     }
 
     .order-button{

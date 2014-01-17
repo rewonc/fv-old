@@ -7,12 +7,73 @@
 
       <div class="row">
         <div class="small-12 columns centered">
-          <h2 class="header">Delivery Preferences</h2>
-          <h3 class="subheader">Now serving Manhattan, Queens, Brooklyn, and the Bronx</h3>
+          <h3 class="subheader">Serving Manhattan, Brooklyn, Queens, &amp; the Bronx</h3>
         </div>
       </div>
+
       <div class="row">
-        <div class="small-6 small-offset-3 columns">
+        <div class="small-12 medium-8 small-centered medium-8 columns">
+          <p>Residential deliveries go out on <strong>Saturday</strong>, immediately after we pick up the produce from farmers. 
+
+          <br />
+           <em class="wed_delivery">If you are interested in piloting Wednesday workplace delivery, <%= mail_to "hello@farmivore.com","email us!" %></em>
+           </p>
+         </div>
+       </div>
+
+      <div class="row">
+        <div class="small-12 medium-8 small-centered medium-8 columns">
+          
+
+          <h6 class="form-header">The address where you will receive the box</h6>
+
+          <div class="row">
+            <div class="small-12 columns">
+               <%= f.text_field :street, :placeholder => "Street address line 1", required: '' %>
+               <small class="error">You must enter a street address</small>
+               <%= f.text_field :street2, :placeholder => "Street address line 2" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-4 columns"><%= f.text_field :city, :placeholder => "City", required: '' %></div>
+            <small class="error">You must enter a city</small>
+            <div class="small-4 columns"><%= f.text_field :state, :placeholder => "State", required: '' %></div>
+            <small class="error">You must enter a state</small>
+            <div class="small-4 columns"><%= f.text_field :zip, :placeholder => "Zip", required: '' %></div>
+            <small class="error">You must enter a zip code</small>
+          </div>
+
+
+          
+          <div class="row">
+            <div class="small-12 medium-6 columns">
+              <h6 class="form-header">Delivery options</h6>
+              <div class="row">
+              <% 
+                startdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 6)
+                seconddate = startdate + 7
+                thirddate = seconddate + 7
+                fourthdate = seconddate + 14
+                fifthdate = seconddate + 21
+                sixthdate = seconddate + 28
+              %>
+              <%= f.label :startdate, "I want my first delivery on:" %>
+              <%= f.select(:startdate, options_for_select([[startdate.strftime("%A, %B %d"), startdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate],[fourthdate.strftime("%A, %B %d"), fourthdate],[fifthdate.strftime("%A, %B %d"), fifthdate]])) %>
+              </div>
+              <div class="row">
+                <%= f.label :delivery_preference, "Time preference   &nbsp; <small>Default is as early as possible</small>".html_safe %>
+                <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
+              </div>
+            </div>
+            <div class="small-12 medium-6 columns centered zip_action">
+              <p><em id="zip_action"></em></p>
+            </div>
+          </div>
+          
+
+
+
+
           <div class="row">
             <div class="small-6 columns">
                <%#= f.label :neighborhood, "Select your neighborhood", html_options = {class: "right inline", for: "box_neighborhood"} %>
@@ -35,17 +96,10 @@
 ])) %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-8 small-offset-2 columns">
-           <p>All deliveries go out each week on <strong>Saturday</strong>, immediately after we pick up the produce from farmers. If you are interested in piloting Wednesday delivery, email us at <%= mail_to "hello@farmivore.com","hello@farmivore.com" %>.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="small-8 small-offset-2 columns">
-          <h6 class="form-header">Sign up!</h6>
+        
+           
+     
+          <h6 class="form-header">Register to modify and pause your subscription at any time</h6>
           <div class="row">
             <div class="small-6 columns">
               <%= f.text_field :firstname, :placeholder => "Your first name", :required => "" %>
@@ -66,45 +120,9 @@
             <small class="error">You must enter a phone number</small>
           </div>
 
-          <h6 class="form-header">Your delivery address</h6>
-          <div class="row">
-            <div class="small-12 columns">
-               <%= f.text_field :street, :placeholder => "Street address line 1", required: '' %>
-               <small class="error">You must enter a street address</small>
-               <%= f.text_field :street2, :placeholder => "Street address line 2" %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-4 columns"><%= f.text_field :city, :placeholder => "City", required: '' %></div>
-            <small class="error">You must enter a city</small>
-            <div class="small-4 columns"><%= f.text_field :state, :placeholder => "State", required: '' %></div>
-            <small class="error">You must enter a state</small>
-            <div class="small-4 columns"><%= f.text_field :zip, :placeholder => "Zip", required: '' %></div>
-            <small class="error">You must enter a zip code</small>
-          </div>
+          
 
-          <h6 class="form-header">Delivery options</h6>
-          <div class="row">
-            <div class="small-12 medium-6 columns">
-              <% 
-                startdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 6)
-                seconddate = startdate + 7
-                thirddate = seconddate + 7
-              %>
-              <%= f.label :startdate, "I want my first delivery on the following date:" %>
-              <%= f.select(:startdate, options_for_select([[startdate.strftime("%A, %B %d"), startdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate]])) %>
-            </div>
-            <div class="small-12 medium-6 columns">
-              <p><!-- Delivery dates are based upon (geographical location...)--></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-12 columns">
-                <%= f.label :delivery_preference, "Time preference (default: as early as possible)" %>
-                  <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
-                </p>
-            </div>
-          </div>
+          
 
           <div class="row">
             <div class="small-12 columns">
