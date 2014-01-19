@@ -10,6 +10,7 @@ Farmivore::Application.routes.draw do
   get "welcome/contact"
   get "welcome/terms"
   get "welcome/admin"
+  get "welcome/weekly_email"
 
   post 'sms', to: 'texts#catch'
   resources :texts

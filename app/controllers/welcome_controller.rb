@@ -18,4 +18,8 @@ class WelcomeController < ApplicationController
   def admin
   end
 
+  def weekly_email
+  end
+  
+
 end
