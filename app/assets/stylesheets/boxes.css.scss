@@ -17,6 +17,20 @@
 //New Boxes Page styling
 .boxes.new, .boxes.edit{
 
+  .orbit{
+    img{
+      height:380px;
+    }
+  }
+  .module-select{
+    background-color:white;
+  }
+  .tabs{
+    input{
+      width:40px;
+      display:inline;
+    }
+  }
   //intro section styles
   section.intro{
     .location{

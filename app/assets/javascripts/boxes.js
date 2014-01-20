@@ -1,3 +1,4 @@
+
 //checkout page
 $('#terms_reveal').hide();
 $('#terms_button').show();

@@ -1,0 +1,432 @@
+
+
+<%= f.radio_button(:box_num, 1) %><%= f.label(:box_1, "Raw Box") %>
+  <%= f.radio_button(:box_num, 2, checked: true) %><%= f.label(:box_2, "Culinary") %> 
+<%= f.radio_button(:box_num, 3) %><%= f.label(:box_3, "Custom") %>
+
+
+
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="tab-connected tab-bottom">
+          <div class="row">
+            <div class="small-12 medium-8 columns">
+              <div class="outer-box radius rounded">
+                <h5 class="centered" id="sample-box-title">A sample winter Variety Box</h5>
+               
+                <!-- Error starts here -->
+                <dl class="accordion" data-accordion>
+                  <dd>
+                    <a href="#raw_panel" id="raw_panel_accordion" class="panel-head">
+                      <div class="row">
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :raw_num, options_for_select([['None $0',0],['Small $8',1],['Med $16',2],['Large $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_raw_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of raw vegetables</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_raw_num_qty">enough for 2-3 large salads</em></small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-sort-asc fa-3x"></i></span>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="raw_panel" class="content">
+                      <ul class="raw_panel_subs" id="raw_sub_0">
+                        <li>
+                          <small><em>No raw vegetables included.</em></small>
+                        </li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="raw_sub_1">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/beets-golden.png')%></li>
+                            <li class="desc">Golden beets</li>
+                            <li class="qty">2 beets</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/radish-black.png')%></li>
+                            <li class="desc">Black radishes</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/greens-mixed.png')%></li>
+                            <li class="desc">Asian salad mix</li>
+                            <li class="qty">1/2 lb</li>
+                            <li class="farm">Waldingfield Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="raw_sub_2">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/beets-golden.png')%></li>
+                            <li class="desc">Golden beets</li>
+                            <li class="qty">2 beets</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/radish-black.png')%></li>
+                            <li class="desc">Black radishes</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/greens-mixed.png')%></li>
+                            <li class="desc">Asian salad mix</li>
+                            <li class="qty"><strong>1 lb</strong></li>
+                            <li class="farm">Waldingfield Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/swisschard.png')%></li>
+                            <li class="desc">Swiss Chard</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/carrots-baby.png')%></li>
+                            <li class="desc">Baby carrots</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Waldingfield Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="raw_panel_subs" id="raw_sub_3">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/beets-golden.png')%></li>
+                            <li class="desc">Golden beets</li>
+                            <li class="qty"><strong>4 beets</strong></li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/radish-black.png')%></li>
+                            <li class="desc">Black radishes</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/greens-mixed.png')%></li>
+                            <li class="desc">Asian salad mix</li>
+                            <li class="qty"><strong>1 lb</strong></li>
+                            <li class="farm">Waldingfield Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/swisschard.png')%></li>
+                            <li class="desc">Swiss Chard</li>
+                            <li class="qty">2 bunches</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/carrots-baby.png')%></li>
+                            <li class="desc">Baby carrots</li>
+                            <li class="qty">1 bunch</li>
+                            <li class="farm">Waldingfield Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/fennel.png')%></li>
+                            <li class="desc">Fennel</li>
+                            <li class="qty">1 bulb</li>
+                            <li class="farm">Stone Gardens Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dd>
+                    <a href="#cook_panel" id="cook_panel_accordion" class="panel-head">
+                      <div class="row">
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :cook_num, options_for_select([['None $0',0],['Small $8',1],['Med $16',2],['Large $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_cook_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of cooking vegetables</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_cook_num_qty">enough for 2-3 dishes</em></small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-sort-asc fa-3x"></i></span>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="cook_panel" class="content">
+                      <ul class="cook_panel_subs" id="cook_sub_0">
+                        <li>
+                          <small><em>No cooking vegetables included.</em></small>
+                        </li>
+                      </ul>
+                      <ul class="cook_panel_subs" id="cook_sub_1">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/rosemary.png')%></li>
+                            <li class="desc">Rosemary</li>
+                            <li class="qty">2 stalks</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/potatoes-mixedheirloom.png')%></li>
+                            <li class="desc">Mixed heirloom potatoes</li>
+                            <li class="qty">1 lb</li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/leek.png')%></li>
+                            <li class="desc">Organic leeks</li>
+                            <li class="qty">1 leek</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="cook_panel_subs" id="cook_sub_2">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/rosemary.png')%></li>
+                            <li class="desc">Rosemary</li>
+                            <li class="qty">2 stalks</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/potatoes-mixedheirloom.png')%></li>
+                            <li class="desc">Mixed heirloom potatoes</li>
+                            <li class="qty">1 lb</li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/leek.png')%></li>
+                            <li class="desc">Organic leeks</li>
+                            <li class="qty"><strong>2 leeks</strong></li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/bokchoy-baby.png')%></li>
+                            <li class="desc">Baby bok choy</li>
+                            <li class="qty">1 bag</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/brusselsprouts.png')%></li>
+                            <li class="desc">Brussel sprouts</li>
+                            <li class="qty">1 stalk</li>
+                            <li class="farm">Stone Gardens Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="cook_panel_subs" id="cook_sub_3">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/rosemary.png')%></li>
+                            <li class="desc">Rosemary</li>
+                            <li class="qty">2 stalks</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/potatoes-mixedheirloom.png')%></li>
+                            <li class="desc">Mixed heirloom potatoes</li>
+                            <li class="qty"><strong>2 lb</strong></li>
+                            <li class="farm">Red Fire Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/leek.png')%></li>
+                            <li class="desc">Organic leeks</li>
+                            <li class="qty"><strong>2 leeks</strong></li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/bokchoy-baby.png')%></li>
+                            <li class="desc">Baby bok choy</li>
+                            <li class="qty"><strong>2 bags</strong></li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/brusselsprouts.png')%></li>
+                            <li class="desc">Brussel sprouts</li>
+                            <li class="qty"><strong>2 stalks</strong></li>
+                            <li class="farm">Stone Gardens Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/kohlrabi.png')%></li>
+                            <li class="desc">Kohlrabi</li>
+                            <li class="qty">1 head</li>
+                            <li class="farm">Riverbank Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dd>
+                    <a href="#fruit_panel" id="fruit_panel_accordion" class="panel-head">
+                      <div class="row">
+                        <div class="small-12 medium-10 columns">
+                          <div class="row">
+                            <div class="small-3 medium-3 columns">
+                              <%= f.select :fruit_num, options_for_select([['None $0',0],['Small $8',1],['Med $16',2],['Large $24',3]], selected: 1) %>
+                              <h4 class="static-select"><span id="box_fruit_num_text">Small</span></h4>
+                            </div>
+                            <div class="small-9 medium-9 columns">
+                              <h4>bundle of fruit</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="medium-8 columns medium-centered">
+                              <small><em id="box_fruit_num_qty">4-8 pieces</em></small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="small-12 medium-2 columns centered">
+                          <span class="expand_me">See sample<br /><i class="fa fa-sort-asc fa-3x"></i></span>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="fruit_panel" class="content">
+                      <ul class="fruit_panel_subs" id="fruit_sub_0">
+                        <li>
+                          <small><em>No fruits included.</em></small>
+                        </li>
+                      </ul>
+                      <ul class="fruit_panel_subs" id="fruit_sub_1">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/apple-mutsu.png')%></li>
+                            <li class="desc">Mutsu Crispin apples</li>
+                            <li class="qty">3 apples</li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/pear-anjou.png')%></li>
+                            <li class="desc">Anjou pears</li>
+                            <li class="qty">3 pears</li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="fruit_panel_subs" id="fruit_sub_2">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/apple-mutsu.png')%></li>
+                            <li class="desc">Mutsu Crispin apples</li>
+                            <li class="qty"><strong>6 apples</strong></li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/pear-anjou.png')%></li>
+                            <li class="desc">Anjou pears</li>
+                            <li class="qty"><strong>6 pears</strong></li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/grapefruit.png')%></li>
+                            <li class="desc">Caribbean grapefruit</li>
+                            <li class="qty">1 grapefruit</li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="fruit_panel_subs" id="fruit_sub_3">
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/apple-mutsu.png')%></li>
+                            <li class="desc">Mutsu Crispin apples</li>
+                            <li class="qty"><strong>6 apples</strong></li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/pear-anjou.png')%></li>
+                            <li class="desc">Anjou pears</li>
+                            <li class="qty"><strong>6 pears</strong></li>
+                            <li class="farm">Lyman Orchards</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/grapefruit.png')%></li>
+                            <li class="desc">Caribbean grapefruit</li>
+                            <li class="qty"><strong>2 grapefruit</strong></li>
+                            <li class="farm">Urban Oaks Farm</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="small-block-grid-4 line-item">
+                            <li class="pic"><%= image_tag('produce_icons/apple-northernspy.png')%></li>
+                            <li class="desc">Northern Spy apples</li>
+                            <li class="qty">3 apples</li>
+                            <li class="farm">Belltown Hill Orchards</li>
+                          </ul>
+                        </li>
+                      </ul>
+                       
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
