@@ -7,33 +7,6 @@
 </section>
 
 
-<div class="row">
-  <div class="small-12 centered columns">
-
-    <ul class="orbit" data-orbit>
-      <li>
-        <%= image_tag('sungold-tomato.jpg') %>
-        <div class="orbit-caption">
-          The Farmivore box...
-        </div>
-      </li>
-      <li>
-        <%= image_tag('sungold-tomato.jpg') %>
-        <div class="orbit-caption">
-       The Farmivore box...    
-     </div>
-      </li>
-      <li>
-        <%= image_tag('sungold-tomato.jpg') %>
-        <div class="orbit-caption">
-       The Farmivore box...
-         </div>
-      </li>
-    </ul>
-    
-  </div>
-</div>
-
 <div class="form">
   <%= form_for @box, url: boxes_path, :html => {"data-abide" => ''} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
@@ -46,19 +19,17 @@
     <div class="small-12 columns module-select">
       <dl class="tabs vertical right" data-tab>
         <dd class="active"><a href="#panel1a">Greenhouse greens and yada yada<br /> $8 x   <%= f.number_field(:module_1, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
         <dd><a href="#panel2a">Tab 2   <%= f.number_field(:module_2, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
         <dd><a href="#panel3a">Tab 3  <%= f.number_field(:module_3, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
         <dd><a href="#panel4a">Tab 4  <%= f.number_field(:module_4, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
         <dd><a href="#panel4a">Tab 5  <%= f.number_field(:module_5, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
         <dd><a href="#panel4a">Tab 6  <%= f.number_field(:module_6, value: 1, in: 0...6) %>
-</a></dd>
-        <dd><a href="#panel4a">Tab 7  <%= f.number_field(:module_7, value: 1, in: 0...6) %>
-</a></dd>
+        </a></dd>
       </dl>
       <div class="tabs-content vertical">
         <div class="content active" id="panel1a">

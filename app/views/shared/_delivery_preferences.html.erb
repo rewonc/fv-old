@@ -7,13 +7,14 @@
 
       <div class="row">
         <div class="small-12 columns centered">
-          <h3 class="subheader">Serving Manhattan, Brooklyn, Queens, &amp; the Bronx</h3>
+          <h2>Delivery Preferences</h2>
+          <h4 class="subheader">Serving Manhattan, Brooklyn, Queens, &amp; the Bronx</h4>
         </div>
       </div>
 
       <div class="row">
         <div class="small-12 medium-8 small-centered medium-8 columns">
-          <p>Residential deliveries go out on <strong>Saturday</strong>, immediately after we pick up the produce from farmers. 
+          <p>Residential deliveries go out on <strong>Saturday</strong>, immediately after we receive produce from farmers.
 
           <br />
            <em class="wed_delivery">If you are interested in piloting Wednesday workplace delivery, <%= mail_to "hello@farmivore.com","email us!" %></em>
@@ -48,22 +49,28 @@
           <div class="row">
             <div class="small-12 medium-6 columns">
               <h6 class="form-header">Delivery options</h6>
-              <div class="row">
-              <% 
-                startdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 6)
-                seconddate = startdate + 7
-                thirddate = seconddate + 7
-                fourthdate = seconddate + 14
-                fifthdate = seconddate + 21
-                sixthdate = seconddate + 28
-              %>
-              <%= f.label :startdate, "I want my first delivery on:" %>
-              <%= f.select(:startdate, options_for_select([[startdate.strftime("%A, %B %d"), startdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate],[fourthdate.strftime("%A, %B %d"), fourthdate],[fifthdate.strftime("%A, %B %d"), fifthdate]])) %>
+        
+              <div id="delivery-datetime-1">
+                <div class="row">
+                <% 
+                  firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 6)
+                  seconddate = firstdate + 7
+                  thirddate = seconddate + 7
+                  fourthdate = seconddate + 14
+                  fifthdate = seconddate + 21
+                  sixthdate = seconddate + 28
+                %>
+                <%= f.label :startdate, "I want my first delivery on:" %>
+                <%= f.select(:startdate, options_for_select([[firstdate.strftime("%A, %B %d"), firstdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate],[fourthdate.strftime("%A, %B %d"), fourthdate],[fifthdate.strftime("%A, %B %d"), fifthdate]])) %>
+                </div>
+                <div class="row">
+                  <%= f.label :delivery_preference, "Time preference   &nbsp; <small>Default is as early as possible</small>".html_safe %>
+                  <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
+                
+                </div>
               </div>
-              <div class="row">
-                <%= f.label :delivery_preference, "Time preference   &nbsp; <small>Default is as early as possible</small>".html_safe %>
-                <%= f.select(:delivery_preference, options_for_select([["No preference",1],["Saturday morning, 8am-10am",2],["Saturday lunch, 10am-12pm",3],["Saturday afternoon, 12pm-2pm",4],["Saturday evening, 3pm-5pm",5]])) %>
-              </div>
+
+
             </div>
             <div class="small-12 medium-6 columns centered zip_action">
               <p><em id="zip_action"></em></p>
