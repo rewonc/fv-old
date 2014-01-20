@@ -366,6 +366,9 @@
         font-size:15px;
         color: $greenPrimary;
         #zip_action{
+          .zip-error{
+            color:red;
+          }
         }
       }
     }

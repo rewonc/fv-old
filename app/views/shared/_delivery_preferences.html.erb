@@ -61,7 +61,7 @@
                   sixthdate = seconddate + 28
                 %>
                 <%= f.label :startdate, "I want my first delivery on:" %>
-                <%= f.select(:startdate, options_for_select([[firstdate.strftime("%A, %B %d"), firstdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate],[fourthdate.strftime("%A, %B %d"), fourthdate],[fifthdate.strftime("%A, %B %d"), fifthdate]])) %>
+                <%= f.select(:startdate, options_for_select([[firstdate.strftime("%A, %B %d"), firstdate],[seconddate.strftime("%A, %B %d"), seconddate],[thirddate.strftime("%A, %B %d"), thirddate],[fourthdate.strftime("%A, %B %d"), fourthdate],[fifthdate.strftime("%A, %B %d"), fifthdate], [sixthdate.strftime("%A, %B %d"), sixthdate]])) %>
                 </div>
                 <div class="row">
                   <%= f.label :delivery_preference, "Time preference   &nbsp; <small>Default is as early as possible</small>".html_safe %>
@@ -73,7 +73,7 @@
 
             </div>
             <div class="small-12 medium-6 columns centered zip_action">
-              <p><em id="zip_action"></em></p>
+              <p><span id="zip_action"></span></p>
             </div>
           </div>
           
