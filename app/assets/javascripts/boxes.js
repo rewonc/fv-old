@@ -22,7 +22,7 @@ $(".checkout-button").click(function(){
 //customize button
 $('.customize-button').click(function(){
   $('html, body').animate({
-        scrollTop: $(".module-select").offset().top
+        scrollTop: $(".form").offset().top
     }, 1000);
   $('#no-customize-modules').hide();
   $('#customize-modules').fadeIn();

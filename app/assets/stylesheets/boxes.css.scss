@@ -44,24 +44,28 @@
     box-shadow:         0px 0px 2px 0px $white2;
     padding:20px;
     #customize-modules{
-      display:block;
-      padding-left:0px;
-      padding-right:0px;
+      display:none;
+      padding-left: 0px;
+      padding-right: 0px;
+      .customizers{
+        position:absolute;
+        top:6px;
+        right:0px;
+        color:$greenPrimary;
+      }
+      a{
+        position:relative;
+      }
     }
     #no-customize-modules{
+      
       padding-left:0px;
-      display:none;
       padding-right:0px;
     }
     .tabs-content{
       min-height:500px;
       margin:0px;
       padding:0px;
-    }
-    .tabs.vertical{
-
-      dd.active{
-     }
     }
     
   }
@@ -90,7 +94,12 @@
     padding-top:5px;
     padding-bottom:15px;
     background-color: $white3;
-
+    .no-list{
+      display:block;
+    }
+    .customize-replace{
+      display:none;
+    }
     .subhead{
       margin-top:15px;
     }

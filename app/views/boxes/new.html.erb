@@ -23,7 +23,7 @@
     <div class="small-12 columns module-select">
       <div class="row">
         <div class="small-12 medium-8 columns">
-          <h4><strong>Inside the winter box:</strong></h4>
+          <h4><strong>Winter box ($38):</strong></h4>
         </div>
         <div class="small-12 medium-4 columns">
           <h6><em>Box makes approx. 3 dinners for 2 people</em></h6>
@@ -44,23 +44,23 @@
 
         <div class="small-12 medium-4 columns right" id="customize-modules">
            <dl class="tabs vertical right" data-tab>
-              <dd class="active"><a href="#panel1a">Description of module 1<br /> <%= Box.module_price_string(1,false) %>
-       x   <%= f.number_field(:module_1, value: 1, in: 0...6, :"data-price" => Box.module_price(1), class: "module-number") %>
+              <dd class="active"><a href="#panel1a">Description of module 1 <span class="customizers"><%= Box.module_price_string(1,false) %>
+       x   <%= f.number_field(:module_1, value: 1, in: 0...6, :"data-price" => Box.module_price(1), class: "module-number") %></span>
               </a></dd>
-              <dd><a href="#panel2a">Description of module 2<br /> <%= Box.module_price_string(2,false) %>
-       x      <%= f.number_field(:module_2, value: 1, in: 0...6, :"data-price" => Box.module_price(2), class: "module-number") %>
+              <dd><a href="#panel2a">Description of module 2<span class="customizers"><%= Box.module_price_string(2,false) %>
+       x      <%= f.number_field(:module_2, value: 1, in: 0...6, :"data-price" => Box.module_price(2), class: "module-number") %></span>
               </a></dd>
-              <dd><a href="#panel3a">Description of module 3<br /> <%= Box.module_price_string(3,false) %>
-       x     <%= f.number_field(:module_3, value: 1, in: 0...6, :"data-price" => Box.module_price(3), class: "module-number") %>
+              <dd><a href="#panel3a">Description of module 3<span class="customizers"> <%= Box.module_price_string(3,false) %>
+       x     <%= f.number_field(:module_3, value: 1, in: 0...6, :"data-price" => Box.module_price(3), class: "module-number") %></span>
               </a></dd>
-              <dd><a href="#panel4a">Description of module 4<br /> <%= Box.module_price_string(4,false) %>
-       x    <%= f.number_field(:module_4, value: 1, in: 0...6, :"data-price" => Box.module_price(4), class: "module-number") %>
+              <dd><a href="#panel4a">Description of module 4<span class="customizers"> <%= Box.module_price_string(4,false) %>
+       x    <%= f.number_field(:module_4, value: 1, in: 0...6, :"data-price" => Box.module_price(4), class: "module-number") %></span>
               </a></dd>
-              <dd><a href="#panel4a">Description of module 5<br /> <%= Box.module_price_string(5,false) %>
-       x    <%= f.number_field(:module_5, value: 1, in: 0...6, :"data-price" => Box.module_price(5), class: "module-number") %>
+              <dd><a href="#panel4a">Description of module 5<span class="customizers"> <%= Box.module_price_string(5,false) %>
+       x    <%= f.number_field(:module_5, value: 1, in: 0...6, :"data-price" => Box.module_price(5), class: "module-number") %></span>
               </a></dd>
-              <dd><a href="#panel4a">Description of module 6<br /> <%= Box.module_price_string(6,false) %>
-       x    <%= f.number_field(:module_6, value: 1, in: 0...6, :"data-price" => Box.module_price(6), class: "module-number") %>
+              <dd><a href="#panel4a">Description of module 6<span class="customizers"> <%= Box.module_price_string(6,false) %>
+       x    <%= f.number_field(:module_6, value: 1, in: 0...6, :"data-price" => Box.module_price(6), class: "module-number") %></span>
               </a></dd>
             </dl>
         </div>
@@ -87,19 +87,27 @@
 
         <div class="price-box small-12 medium-4 right columns">
           <div class="outer-box radius rounded">
-            
-            <div class="row">
-              <div class="small-12 columns small-centered centered">
-                <p class="subhead">Want more or less of something?</p>
+            <div class="customize-replace">
+              <div class="row">
+                <div class="small-12 columns small-centered centered">
+                  <p class="subhead">Want more or less of something?</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="small-12 columns centered" id="customize-toggle">
+                  <a href="#" class="customize-button">Customize</a>
+                </div>
               </div>
             </div>
-
-            <div class="row">
-              <div class="small-12 columns centered" id="customize-toggle">
-                <a href="#" class="customize-button">Customize</a>
+            <div class="no-list">
+              <div class="row">
+                <div class="small-8 columns small-centered centered">
+                  <p class="subhead"><span data-tooltip class="has-tip" title="We will attempt to substitute items you indicate here with double quantities of other items from a given week. Please restrict to 3 items or less.">Items to exclude</span></p>
+                  <%= f.text_field :no_list, placeholder: "e.g. parsnips, turnips" %>
+                </div>
               </div>
             </div>
-
             
 
             <div class="row select-frequency">
