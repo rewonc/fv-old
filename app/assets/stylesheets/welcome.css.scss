@@ -30,7 +30,7 @@
 
   section.introduction.segment {
     padding-top: 10px;
-    background-image: image-url("fullbox.jpg");
+    background-image: url(image-path('fullbox.jpg'));
     background-repeat: no-repeat;
     background-position: center bottom;
     -webkit-background-size: cover;
