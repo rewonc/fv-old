@@ -952,7 +952,7 @@ $topbar-dropdown-toggle-color: #333;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
- $topbar-link-color: $lightGray3;
+ $topbar-link-color: $darkGray;
  $topbar-link-color-hover: #333;
  $topbar-link-color-active: #333;
  $topbar-link-weight: normal;
@@ -967,14 +967,14 @@ $topbar-dropdown-toggle-color: #333;
 
 // $topbar-dropdown-label-color: #777;
 // $topbar-dropdown-label-text-transform: uppercase;
-// $topbar-dropdown-label-font-weight: bold;
+ $topbar-dropdown-label-font-weight: normal;
 // $topbar-dropdown-label-font-size: rem-calc(10);
 // $topbar-dropdown-label-bg: #333;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
-// $topbar-menu-link-weight: bold;
+ $topbar-menu-link-weight: normal;
  $topbar-menu-link-color: $lightGray3;
  $topbar-menu-icon-color: $lightGray3;
  $topbar-menu-link-color-toggled: $white4;
