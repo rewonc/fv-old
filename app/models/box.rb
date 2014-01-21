@@ -62,7 +62,14 @@ class Box < ActiveRecord::Base
       module_6 * Box.module_price(6) + 
       module_7 * Box.module_price(7)
     #add some logic for delivery below a certain amount
-    return price
+    if (price < 4000) && (price > 1999)
+      total = price + 400
+    elsif (price < 2000)
+      total = price + 400
+    else
+      total = price
+    end
+    return total
   end
 
   def box_price_string(zeroes)

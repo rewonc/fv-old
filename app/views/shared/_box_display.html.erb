@@ -24,8 +24,33 @@
       </div>
     </div>
     <div class="row">
-      <div class="small-12 columns centered">
-        <span class="instructions">Instructions for deliveryperson: <em> <%= @box.instructions %></em></small>
+      <div class="small-12 columns">
+        <table>
+          <tr>
+            <th>Greenhouse greens</th>
+            <th>Quick cookers</th>
+            <th>Slow cookers</th>
+            <th>Herbs and alliums</th>
+            <th>Mushrooms</th>
+            <th>Fruit</th>
+          </tr>
+          <tr>
+            <td><%= @box.module_1 %></td>
+            <td><%= @box.module_2 %></td>
+            <td><%= @box.module_3 %></td>
+            <td><%= @box.module_4 %></td>
+            <td><%= @box.module_5 %></td>
+            <td><%= @box.module_6 %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <small class="instructions">Instructions for deliveryperson: <em> <%= @box.instructions %></em></small>
+      </div>
+      <div class="small-6 columns">
+        <small class="no-list">No list: <em> <%= @box.no_list %></em></small>
       </div>
     </div>
   </div>
