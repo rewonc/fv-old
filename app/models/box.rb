@@ -19,7 +19,7 @@ class Box < ActiveRecord::Base
   validates :module_4, presence: true
   validates :module_5, presence: true
   validates :module_6, presence: true
-  validates :module_7, presence: true
+  #validates :module_7, presence: true
 
 
 

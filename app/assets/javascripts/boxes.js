@@ -29,7 +29,7 @@ $('.customize-button').click(function(){
 });
 
 //price checking
-$(".module-select").change(function(){
+$(".module-number").change(function(){
   updatePrices();
 });
 
