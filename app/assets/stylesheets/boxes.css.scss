@@ -15,23 +15,9 @@
 }
 
 //New Boxes Page styling
-.boxes.new, .boxes.edit{
 
-  .orbit{
-    img{
-      height:380px;
-    }
-  }
-  .module-select{
-    background-color:white;
-  }
-  .tabs{
-    input{
-      width:40px;
-      display:inline;
-    }
-  }
-  //intro section styles
+.boxes.new, .boxes.edit{
+//intro section styles
   section.intro{
     .location{
       padding:15px;
@@ -40,202 +26,44 @@
     .progress{
       margin: 15px;
     }
-    .header-main{
+    .header{
       font-weight:bold;
       color:$darkGray;
-      margin-bottom:35px;
+      margin-bottom:0px;
+    }
+    .subheader{
+      margin-bottom:25px;
     }
 
   }
 
-  //tab select styles
-  section.select{
-    @import "custom/tabs";
-    
-    .tabs{
-      position:relative;
-      dd{}
-      .profiles{
-        padding-top:20px;
-        text-align:center;
-        .icon{
-          width:190px;
-          height:180px;
-          margin-bottom:10px;
-          margin-left:auto;
-          margin-right:auto;
-          background-color:$white2;
-          top:-10px;
-          img{
-            width:80%;
-          }
-          .fa{
-            position:absolute;
-            z-index:10;
-            top:220px;
-            left:120px;
-            color:$orange;
-            display:none;
-          }
-          .price{
-            position:absolute;
-            font-size:30px;
-            font-weight:bolder;
-            color:white;
-            left:50px;
-            top:10px;
-            background-color:$midGray;
-            border-radius:50%;
-            @include radius(50%);
-            padding:10px;
-            small{
-              color:white;
-              position:relative;
-              top:-10px;
-            }
-          }
-          .title{
-            position:absolute;
-            font-size:20px;
-            font-weight:bolder;
-            top:180px;
-            left:0px;
-            width:100%;
-            z-index:10;
-
-            em{
-              background-color: $midGray;
-              color:white;
-              padding-top:3px;
-              padding-left:10px;
-              padding-right:10px;
-              z-index:10;
-            }
-          }
-        }
-
-      }
-    }
-
-    dd.active {
-      -moz-box-shadow:    0px -2px 3px 0px $white2;
-      -webkit-box-shadow: 0px -2px 3px 0px $white2;
-      box-shadow:         0px -2px 3px 0px $white2;
-      z-index:4;
-      .profiles .icon{
-        background-color:$darkGray;
-        .title em{
-
-          background-color: $greenPrimary;
-          padding-top:3px;
-          padding-left:10px;
-          padding-right:10px;
-
-        }
-        .price{
-          background-color: $greenPrimary;
-        }
-      }
-    }
-
-    .tab-connected{
-      -moz-box-shadow:    0px 1px 3px 0px $white2;
-      -webkit-box-shadow: 0px 1px 3px 0px $white2;
-      box-shadow:         0px 1px 3px 0px $white2;
-      background-color:white;
-      padding-top: 20px;
-      padding-left:40px;
-      padding-right:40px;
-      border-left: 1px solid #e6e6e6;
-      border-right: 1px solid #e6e6e6;
-    }
-
-    .tab-bottom{
-      border-bottom: 1px solid #e6e6e6;
-      margin-bottom: 20px;
-    }
-  }
-
-  //accordion styles
-
-  .accordion{
-    line-height:auto;
-    margin-left:15px;
-    margin-right:15px;
-    padding-bottom:20px;
-    a.panel-head{
-      padding:10px;
-      border:solid 1px $white3;
-      z-index:-1;
-      select{
-        z-index: 50;
-        * {
-          z-index:50;
-        }
-      }
-      .static-select{
-        font-weight:bolder;
-        text-align:right;
-        padding-right:0px;
-        margin-right:-7px;
-        display:none;
-      }
-      h4{
-        margin-bottom:0px;
-      }
-      .right{
-      }
-      span.expand_me{
-        margin-left:auto;
-        margin-right:auto;
-        padding-top:40px;
-        text-align: center;
-        font-size:9px;
-        color:$darkGray;
-      }
-
+  .module-select{
+    background-color:white;
+    padding:20px;
+    #customize-modules{
+      display:none;
     }
     .content{
-      padding:0px;
-      margin-bottom:-20px;
-      ul{
-        list-style-type: none;
-      }
+      min-height:500px;
     }
-
-    .line-item{
-      padding-top:10px;
-      border-bottom:1px solid $white3;
-      font-size:11px;
-      .pic{
-      }
+    .active{
     }
-    
-
-    .raw_panel_subs{
-      display:none;
-    }
-    .cook_panel_subs{
-      display:none;
-    }
-    .fruit_panel_subs{
-      display:none;
-    }
-    #raw_sub_1{
-      display:block;
-    }
-    #cook_sub_1{
-      display:block;
-    }
-    #fruit_sub_1{
-      display:block;
-    }
-
-
-
   }
 
+
+
+  .tabs{
+    input{
+      width:40px;
+      display:inline;
+    }
+    width: 100%;
+  }
+
+
+//payment box
   .outer-box{
+    margin-top:15px;
     @include radius(10px);
     margin-left:5px;
     margin-right:5px;

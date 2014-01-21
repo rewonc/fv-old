@@ -1,32 +1,29 @@
 
 <section class="introduction segment">
   <div class="row">
-    
-    <div class="small-1 medium-5 columns">
-      <%= image_tag 'cabbage_600.png', id: "cabbage-image" %>
-    </div>
 
-    
-    <div class="small-11 medium-7 columns">
+    <div class="small-10 columns small-centered centered">
       
       <h1 class="landing-page-tag">
-        A weekly produce box, delivered to your door
+        Local produce delivered to your door
       </h1>
 
+      <div class="row">
+        <div class="small-10 medium-5 medium-centered small-centered columns">
+          <div class="landing-page-tag">
+            <h5>Simple subscriptions to freshly harvested fruits and vegetables</h5>
+          </div>
+        </div>
+      </div>
+
       <div class="row button-group">
-        <div class="large-12 columns"> 
+        <div class="small-12 columns"> 
           <%= link_to 'Learn more', welcome_features_path, class: "learn-more-button", id: "header-howitworks" %>
           <%= link_to 'Sign up', new_box_path, class: "get-started-button", id: "header-ourboxes" %>
         </div>
       </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="landing-page-tag">
-            <h5>Whether you seek convenient nutrition or culinary adventure, we have a box for you.</h5>
-          </div>
-        </div>
-      </div>
+      
 
       
     </div>
@@ -54,7 +51,7 @@
                 <li>
                   <div class="step-option">
                     <h5 class="title">Effortless subscription</h5>
-                    <span class="caption">Cancel or delay whenever you want. Starting at $16/box. <br/>
+                    <span class="caption">Cancel or delay whenever you want. Starting from $20/box. <br/>
                       <%= link_to "See box options", new_box_path, id: "tribar-ourboxes" %></span>
                   </div>
                 </li>

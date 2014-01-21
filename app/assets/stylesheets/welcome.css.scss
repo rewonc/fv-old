@@ -30,7 +30,14 @@
 
   section.introduction.segment {
     padding-top: 10px;
-    background-color:$greenPrimary;
+    background-image: image-url("fullbox.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color:$darkGray;
     //background gradient  http://www.colorzilla.com/gradient-editor/
     //background: $greenPrimary; /* Old browsers */
     //background: -moz-linear-gradient(-45deg, $greenPrimary 0%, $greenPrimaryLight 100%); /* FF3.6+ */
@@ -48,7 +55,8 @@
       color: white;
       font-weight:bold;
       font-size:48px;
-      margin-bottom:50px;
+      margin-bottom:30px;
+      text-shadow: 1px 1px black;
   }
 
   h5{
@@ -56,6 +64,8 @@
       font-size: 22px;  
       color:$white3;
       margin-bottom:30px;
+      text-shadow: 1px 1px black;
+
       }
 
     .landing-page-tag {
@@ -63,22 +73,15 @@
       z-index: 2;
     }
 
-    #cabbage-image {
-      position: relative;
-      left:-70px;
-      top:-10px;
-      z-index: 0;
-      max-width: 135%;
-      min-width:300px;
-    }
-
     .learn-more-button {
       @include button(1rem,$orangeAccent,10px,false,false,false);
-      margin-left:25px;
+      margin-left:10px;
+      margin-right:10px;
     }
     .get-started-button {
       @include button(1rem,$white3,10px,false,false,false);
-      margin-left:25px;
+      margin-left:10px;
+      margin-right:10px;
     }
 
     .button-group{
