@@ -23,9 +23,11 @@ $(".checkout-button").click(function(){
 $('.customize-button').click(function(){
   $('html, body').animate({
         scrollTop: $(".form").offset().top
-    }, 1000);
+    }, 1000).delay(1000);
   $('#no-customize-modules').hide();
   $('#customize-modules').fadeIn();
+  $('.customize-replace').hide();
+  $('.no-list').fadeIn();
 });
 
 //price checking
