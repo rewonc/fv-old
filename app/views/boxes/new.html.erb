@@ -6,9 +6,6 @@
   </div>
 </section>
 
-<% boxy = Box.new(module_1: 1, module_2: 1, module_3: 1, module_4: 1, module_5: 1, module_6: 1, module_7: 0) %>
-<%= boxy.box_price_string(true) %>
-
 <div class="form">
   <%= form_for @box, url: boxes_path, :html => {"data-abide" => ''} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
@@ -21,22 +18,22 @@
     <div class="small-12 columns module-select">
       <dl class="tabs vertical right" data-tab>
         <dd class="active"><a href="#panel1a">Description of module 1<br /> <%= Box.module_price_string(1,false) %>
- x   <%= f.number_field(:module_1, value: 1, in: 0...6) %>
+ x   <%= f.number_field(:module_1, value: 1, in: 0...6, :"data-price" => Box.module_price(1), class: "module-select") %>
         </a></dd>
         <dd><a href="#panel2a">Description of module 2<br /> <%= Box.module_price_string(2,false) %>
- x      <%= f.number_field(:module_2, value: 1, in: 0...6) %>
+ x      <%= f.number_field(:module_2, value: 1, in: 0...6, :"data-price" => Box.module_price(2), class: "module-select") %>
         </a></dd>
         <dd><a href="#panel3a">Description of module 3<br /> <%= Box.module_price_string(3,false) %>
- x     <%= f.number_field(:module_3, value: 1, in: 0...6) %>
+ x     <%= f.number_field(:module_3, value: 1, in: 0...6, :"data-price" => Box.module_price(3), class: "module-select") %>
         </a></dd>
         <dd><a href="#panel4a">Description of module 4<br /> <%= Box.module_price_string(4,false) %>
- x    <%= f.number_field(:module_4, value: 1, in: 0...6) %>
+ x    <%= f.number_field(:module_4, value: 1, in: 0...6, :"data-price" => Box.module_price(4), class: "module-select") %>
         </a></dd>
         <dd><a href="#panel4a">Description of module 5<br /> <%= Box.module_price_string(5,false) %>
- x    <%= f.number_field(:module_5, value: 1, in: 0...6) %>
+ x    <%= f.number_field(:module_5, value: 1, in: 0...6, :"data-price" => Box.module_price(5), class: "module-select") %>
         </a></dd>
         <dd><a href="#panel4a">Description of module 6<br /> <%= Box.module_price_string(6,false) %>
- x    <%= f.number_field(:module_6, value: 1, in: 0...6) %>
+ x    <%= f.number_field(:module_6, value: 1, in: 0...6, :"data-price" => Box.module_price(6), class: "module-select") %>
         </a></dd>
       </dl>
       <div class="tabs-content vertical">
@@ -94,9 +91,9 @@
 
       <div class="row">
         <div class="small-12 columns totals">
-          <h5>Subtotal:  $<span id="price_sum">40</span>.00</h5>
-          <h5>Delivery:  $<span id="price_delivery">0</span>.00</h5>
-          <h5>Total per <span id="total_period">week</span>: <strong>$<span id="price_total">40</span>.00</h5></strong>
+          <h5>Subtotal:  <span id="price_sum">$40.00</span></h5>
+          <h5>Delivery:  $<span id="price_delivery">0.00</span></h5>
+          <h5>Total per <span id="total_period">week</span>: <strong><span id="price_total">$40.00</span></strong>
         </div>
         <div class="small-12 columns checkout centered">
           <a class="checkout-button">Select this box</a>

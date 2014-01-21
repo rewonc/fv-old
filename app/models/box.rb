@@ -61,6 +61,7 @@ class Box < ActiveRecord::Base
       module_5 * Box.module_price(5) + 
       module_6 * Box.module_price(6) + 
       module_7 * Box.module_price(7)
+    #add some logic for delivery below a certain amount
     return price
   end
 
