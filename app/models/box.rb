@@ -30,9 +30,9 @@ class Box < ActiveRecord::Base
       when 2
         price = 700
       when 3
-        price = 600
+        price = 700
       when 4
-        price = 600
+        price = 500
       when 5
         price = 600
       when 6
