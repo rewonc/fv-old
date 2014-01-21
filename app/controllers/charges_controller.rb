@@ -7,10 +7,10 @@ class ChargesController < ApplicationController
     # Amount in cents
     # https://stripe.com/docs/tutorials/charges  <-- on how to store the token and charge it later
     @box = Box.find(session[:box_id])
-    amount = @box.get_price
+    amount = @box.box_price
     @customer = Stripe::Customer.create(
       email: @box.email,
-      description: 'Modules:' + @box.raw_num.to_s + '-' + @box.cook_num.to_s + @box.fruit_num.to_s + '. Deliver: ' + @box.startdate.to_s + '. Every: ' + @box.frequency.to_s + 'weeks',
+      description: 'Modules:' + @box.module_1.to_s + '-' + @box.module_2.to_s + '-' + @box.module_3.to_s + '-' + @box.module_4.to_s + '-' + @box.module_5.to_s + '-' + @box.module_6.to_s + '. Deliver: ' + @box.startdate.to_s + '. ' + @box.frequency_string + '.',
       card: params[:stripeToken]
     )
 

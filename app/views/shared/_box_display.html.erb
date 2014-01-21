@@ -4,7 +4,7 @@
     
     <div class="row">
       <div class="small-9 columns">  
-        <p>Your total price will be <strong><%= @box.get_price_string %></strong>   (delivery included).</p>
+        <p>Your total price will be <strong><%= @box.box_price_string(true) %></strong>   (delivery included).</p>
         <p>Your first delivery will be on <strong><%= @box.startdate %></strong>, and follow <strong><%= @box.frequency_string %><strong> thereafter.</p>
         <p>Your preferred time of delivery is: <strong><%= @box.delivery_preference_string %></strong></p>
       </div>

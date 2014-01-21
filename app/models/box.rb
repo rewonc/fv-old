@@ -59,8 +59,8 @@ class Box < ActiveRecord::Base
       module_3 * Box.module_price(3) + 
       module_4 * Box.module_price(4) + 
       module_5 * Box.module_price(5) + 
-      module_6 * Box.module_price(6) + 
-      module_7 * Box.module_price(7)
+      module_6 * Box.module_price(6)
+      #module_7 * Box.module_price(7)
     #add some logic for delivery below a certain amount
     if (price < 4000) && (price > 1999)
       total = price + 400

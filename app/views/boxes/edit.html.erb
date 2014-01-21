@@ -12,11 +12,13 @@
 
   <%= form_for @box, url: box_path(@box.id), :html => {"data-abide" => ''} do |f| %>
 
-  
-
   <%= render 'shared/error_messages', object: f.object %>
-  <%= render 'shared/delivery_preferences', f: f %>
 
+  <!-- module chooser -->
+   <%= render 'shared/module_choice', f: f %>
+  <div id="delivery_preferences">
+  <%= render 'shared/delivery_preferences', f: f %>
+  </div>
 
 
 <% end %>
