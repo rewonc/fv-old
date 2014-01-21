@@ -940,7 +940,7 @@
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+ //$topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
 // RC : switched white for 333 and vice versa
@@ -955,8 +955,8 @@ $topbar-dropdown-toggle-color: #333;
  $topbar-link-color: $darkGray;
  $topbar-link-color-hover: #333;
  $topbar-link-color-active: #333;
- $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+ //$topbar-link-weight: light;
+ //$topbar-link-font-size: 14px;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
  $topbar-link-bg-hover: $white4  ;
 // $topbar-link-bg-active: $primary-color;
