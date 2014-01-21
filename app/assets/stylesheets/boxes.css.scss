@@ -103,17 +103,27 @@
     .subhead{
       margin-top:15px;
     }
+    #error_fee{
+      color:$IMP;
+      display:none;
+    }
+    #delivery_free{
+      display:block;
+    }
+    #delivery_fee{
+      display:none;
+    }
 
     .customize-button{
       @include button-base;
-          @include button-size(0, -1);
-          @include button-style($orangeAccent);
-          @include radius;
-          margin-bottom:20px;
-          color:white;
-          font-weight:bold;
-          margin-top:0px;
-          padding:4px;
+      @include button-size(0, -1);
+      @include button-style($orangeAccent);
+      @include radius;
+      margin-bottom:20px;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:4px;
     }
 
     .select-frequency{

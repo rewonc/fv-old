@@ -304,9 +304,32 @@ function updatePrices(){
     $('#box_module_4').val() * $('#box_module_4').data('price') +
     $('#box_module_5').val() * $('#box_module_5').data('price') +
     $('#box_module_6').val() * $('#box_module_6').data('price');
-  str = price.toString();
-  $('#price_total').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
-  $('#price_sum').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
+    str = price.toString();
+    $('#price_sum').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
+    
+    if ((price < 4000) && (price > 1999)) {
+      //no free delivery
+      $('#delivery_free').hide();
+      $('#delivery_fee').show();
+      $('#error_fee').hide()
+      $('#delivery_fee').fadeIn();
+      $('#price_delivery').text('$4.00');
+      total = (price + 400).toString();
+      $('#price_total').text( '$' + total.slice(0,-2) + '.' + total.substr(total.length - 2));
+
+    } else if (price < 2000) {
+      //no able to order.. must go above $20
+      $('#delivery_fee').hide();
+      $('#error_fee').fadeIn().text('Minimum order: $20. Please increase your order.');
+      $('#price_total').text('N/A');
+    } else {
+      delivery = 0;
+      $('#delivery_free').show();
+      $('#delivery_fee').hide();
+      $('#price_total').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
+    }
+
+
   //add some programming for delivery costs
 }
 
