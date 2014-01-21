@@ -32,29 +32,44 @@
       margin-bottom:0px;
     }
     .subheader{
-      margin-bottom:25px;
+      margin-bottom:40px;
     }
 
   }
 
   .module-select{
     background-color:white;
+    -moz-box-shadow:    0px 0px 2px 0px $white2;
+    -webkit-box-shadow: 0px 0px 2px 0px $white2;
+    box-shadow:         0px 0px 2px 0px $white2;
     padding:20px;
     #customize-modules{
+      padding-left:0px;
+      padding-right:0px;
+    }
+    #no-customize-modules{
+      padding-left:0px;
       display:none;
+      padding-right:0px;
     }
-    .content{
+    .tabs-content{
       min-height:500px;
+      margin:0px;
+      padding:0px;
     }
-    .active{
+    .tabs.vertical{
+
+      dd.active{
+     }
     }
+    
   }
 
 
-
   .tabs{
+    position:relative;
     input{
-      width:40px;
+      width:50px;
       display:inline;
     }
     width: 100%;
@@ -64,6 +79,7 @@
 //payment box
   .outer-box{
     margin-top:15px;
+    border: 1px solid $lightGray3;
     @include radius(10px);
     margin-left:5px;
     margin-right:5px;
@@ -74,23 +90,19 @@
     padding-bottom:15px;
     background-color: $white3;
 
-    .carrot{
-      img{
-        max-height:30px;
-        margin-top:10px;
-        margin-bottom:10px;
-      }
+    .subhead{
+      margin-top:15px;
     }
 
     .customize-button{
       @include button-base;
           @include button-size(0, -1);
-          @include button-style($orangeDark);
+          @include button-style($orangeAccent);
           @include radius;
           margin-bottom:20px;
           color:white;
           font-weight:bold;
-          margin-top:20px;
+          margin-top:0px;
           padding:4px;
     }
 
@@ -106,12 +118,12 @@
       position:relative;
     }
     .delivery-ribbon{
-      background-color:$orangeAccent;
+      background-color:$orangeDark;
       padding-top:5px;
       padding-bottom:5px;
       margin-left:-10px;
       margin-right:-10px;
-      border: 1px dashed $orange;
+      border: 1px dashed darken($orangeDark, 5%);
       h6{
         color:white;
         font-weight:bolder;
