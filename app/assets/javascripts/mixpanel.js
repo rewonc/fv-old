@@ -24,90 +24,60 @@ Do we have viewcount for tumblr, etc?
 
 //Visited Homepage
 if ($('body.welcome.index').length != 0) {
-   mixpanel.track("Visited landing page");
+   mixpanel.track("Visited landing page", {"Version": "0.7"});
 }
 
 //Visited How it Works page
 $('#nav-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Navbar"});
+  mixpanel.track("Viewed How it Works", {"From": "Navbar","Version": "0.7"});
 });
 
 $('#header-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Header"});
+  mixpanel.track("Viewed How it Works", {"From": "Header","Version": "0.7"});
 });
 
 $('#tribar-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Tribar"});
+  mixpanel.track("Viewed How it Works", {"From": "Tribar","Version": "0.7"});
 });
 
 $('#about-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "About Us page"});
+  mixpanel.track("Viewed How it Works", {"From": "About Us page","Version": "0.7"});
 });
 
 //See about our product
 $('#nav-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Navbar"});
+  mixpanel.track("Viewed Box Selection", {"From": "Navbar","Version": "0.7"});
 });
 
 $('#header-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Header"});
+  mixpanel.track("Viewed Box Selection", {"From": "Header","Version": "0.7"});
 });
 
 $('#tribar-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Tribar"});
+  mixpanel.track("Viewed Box Selection", {"From": "Tribar","Version": "0.7"});
 });
 
 $('#about-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "About Us Page"});
+  mixpanel.track("Viewed Box Selection", {"From": "About Us Page","Version": "0.7"});
 });
 
 $('#farms-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Farms Page"});
+  mixpanel.track("Viewed Box Selection", {"From": "Farms Page","Version": "0.7"});
 });
 
 $('#features-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Features Page"});
+  mixpanel.track("Viewed Box Selection", {"From": "Features Page","Version": "0.7"});
 });
 
 //Customize box
-$('#raw-tab').click(function(){
-  mixpanel.track("Customized box", {"Type": "Switched Tab to Raw"});
-});
-
-$('#cook-tab').find('img').click(function(){
-  mixpanel.track("Customized box", {"Type": "Switched tab to Variety"});
-});
-
-$('#custom-tab').click(function(){
-  mixpanel.track("Customized box", {"Type": "Switched tab to Custom"});
-});
-
-$('#raw_panel_accordion').click(function(){
-  mixpanel.track("Customized box", {"Type": "Accordion raw"});
-});
-
-$('#cook_panel_accordion').click(function(){
-  mixpanel.track("Customized box", {"Type": "Accordion cooking"});
-});
-
-$('#fruit_panel_accordion').click(function(){
-  mixpanel.track("Customized box", {"Type": "Accordion fruit"});
-});
-
-$('#box_raw_num').change(function(){
-  mixpanel.track("Customized box", {"Type": "Raw select change"});
-});
-$('#box_cook_num').change(function(){
-  mixpanel.track("Customized box", {"Type": "Cooking select change"});
-});
-$('#box_fruit_num').change(function(){
-  mixpanel.track("Customized box", {"Type": "Fruit select change"});
+$(".customize-button").click(function(){
+  mixpanel.track("Chose customization", {"Version": "0.7"});
 });
 
 //expand to delivery
 
 $('.checkout-button').click(function(){
-  mixpanel.track("Chose a box / expanded delivery preferences");
+  mixpanel.track("Chose a box / expanded delivery preferences", {"Version": "0.7"});
 });
 
 
