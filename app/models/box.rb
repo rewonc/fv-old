@@ -19,9 +19,59 @@ class Box < ActiveRecord::Base
   validates :module_4, presence: true
   validates :module_5, presence: true
   validates :module_6, presence: true
-  #validates :module_7, presence: true
+  validates :module_7, presence: true
 
-  
+
+
+  def self.module_price(number)
+    case number
+      when 1
+        price = 900
+      when 2
+        price = 700
+      when 3
+        price = 600
+      when 4
+        price = 600
+      when 5
+        price = 600
+      when 6
+        price = 600
+      when 7
+        price = 600
+    end
+    return price
+  end  
+
+  def self.module_price_string(number, zeroes)
+    if zeroes
+      return '$' + Box.module_price(number).to_s.chop.chop + '.' + Box.module_price(number).to_s.last(2)
+    else
+      return '$' + Box.module_price(number).to_s.chop.chop
+    end
+  end
+
+  def box_price
+    #will error out if modules are not set.
+    price = 
+      module_1 * Box.module_price(1) + 
+      module_2 * Box.module_price(2) + 
+      module_3 * Box.module_price(3) + 
+      module_4 * Box.module_price(4) + 
+      module_5 * Box.module_price(5) + 
+      module_6 * Box.module_price(6) + 
+      module_7 * Box.module_price(7)
+    return price
+  end
+
+  def box_price_string(zeroes)
+    if zeroes
+      return '$' + self.box_price.to_s.chop.chop + '.' + self.box_price.to_s.last(2)
+    else
+      return '$' + self.box_price.to_s.chop.chop
+    end
+  end
+
 
   def frequency_string
     case frequency
