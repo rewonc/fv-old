@@ -3,6 +3,7 @@
 //= require_self
 //= require boxes
 //= require mixpanel
-//= require number-polyfill.js
+//= require number-polyfill
+//= require modernizr
 
 $(function(){ $(document).foundation(); });
