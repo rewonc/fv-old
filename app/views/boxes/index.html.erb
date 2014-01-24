@@ -1,7 +1,9 @@
+<p>todo -- sortable, ranked, autotext, iOS maps integration, iOS phone integration.
+++ edit/delete capability.</p>
 <table >
 <tr class="fixedbar">
   <th>Name</th>
-  <th>Email/phone</th>
+  <th>Email/phone <--LINK for IOS</th>
   <th>freq(dep)</th>
   <th>d. pref</th>
   <th>Addy</th>
@@ -10,11 +12,13 @@
   <th>Code2</th>
   <th>text?</th>
   <th>call?</th>
-  <th>hood</th>
+  <th>30 min text</th>
+  <th>Rank for This Week's Delivery (or inactive)</th>
+  <th>Edit/delete</th>
 </tr>
 <% @boxes.each do |b| %>
 <tr>
-  <td><%= b.firstname %><br /><%= b.lastname %><</td>
+  <td><%= b.firstname %><br /><%= b.lastname %></td>
   <td><%= b.email %><br /><%= b.phone %></td>
   <td><%= b.frequency_string %></td>
   <td><%= b.delivery_preference_string %></td>
@@ -29,7 +33,9 @@
   <td><%= b.module_1 %> - <%= b.module_2 %> - <%= b.module_3 %> - <%= b.module_4 %> - <%= b.module_5 %> - <%= b.module_6 %> - <%= b.module_7 %></td>
   <td><%= b.text_me %></td>
   <td><%= b.call_me %></td>
-  <td><%= b.neighborhood %></td>
+  <td>30 min text link // respond</td>
+  <td>Delivery rank</td>
+  <td><%= link_to 'edit', edit_box_path(b) %>// <%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
 
 <% end %>

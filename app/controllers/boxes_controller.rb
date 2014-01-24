@@ -47,6 +47,14 @@ class BoxesController < ApplicationController
     end
   end
 
+  def destroy
+    @box = Box.find(params[:id])
+    @box.destroy
+    respond_to do |format|
+      format.html { redirect_to boxes_url }
+      format.json { head :no_content }
+    end
+  end
 
 
   private
