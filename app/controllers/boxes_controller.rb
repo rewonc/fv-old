@@ -2,6 +2,7 @@ class BoxesController < ApplicationController
   http_basic_authenticate_with name: "orange1", password: "orangutan", only: [:index, :show]
 
   def index
+    require "uri"
     @boxes = Box.all
   end
 
