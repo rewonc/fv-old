@@ -25,7 +25,7 @@
   <td>
     
       <% url =  b.street + ', ' + b.street2 + ', ' + b.city + ', ' + b.state + ' ' + b.zip %>
-      <a href="http://maps.google.com/?q=<%= URI::encode(url) %>"><%= url %></a>
+      <a href="comgooglemaps://<%= URI::encode(url) %>"><%= url %></a>
       
   </td>
   <td>
