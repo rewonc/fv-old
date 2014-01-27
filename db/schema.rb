@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121061143) do
+ActiveRecord::Schema.define(version: 20140127163402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140121061143) do
     t.integer  "module_6"
     t.integer  "module_7"
     t.string   "no_list"
+    t.string   "promo"
   end
 
   create_table "charges", force: true do |t|

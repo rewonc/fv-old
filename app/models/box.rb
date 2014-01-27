@@ -22,6 +22,13 @@ class Box < ActiveRecord::Base
   #validates :module_7, presence: true
 
 
+  def promo_string
+     if promo == "goodroots2040"
+      return "You secured the $20 for $40 discount, and will receive a $40 box for $20 on your appointed delivery date."
+     else 
+      return nil
+    end
+  end
 
   def self.module_price(number)
     case number
@@ -61,8 +68,11 @@ class Box < ActiveRecord::Base
       module_5 * Box.module_price(5) + 
       module_6 * Box.module_price(6)
       #module_7 * Box.module_price(7)
+    
     #add some logic for delivery below a certain amount
-    if (price < 4000) && (price > 1999)
+    if (promo == "goodroots2040")
+      total = 2000
+    elsif (price < 4000) && (price > 1999)
       total = price + 400
     elsif (price < 2000)
       total = price + 400

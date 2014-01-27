@@ -118,23 +118,23 @@
         
           <h6 class="form-header">Instructions</h6>
           <div class="row">
-            <div class="small-12 columns">
+            <div class="small-7 columns">
               <%= f.label(:instructions, "Please leave detailed instructions for the deliveryperson if you are not available. (We cannot return at a later time to your residence).") %></p>
               <%= f.text_area :instructions, :placeholder => "Examples: Buzz apartment #202, leave in foyer. --OR-- Leave with doorman.  --OR-- leave on back porch.", required: '' %>
 
               <small class="error">Please enter instructions for if you are not available</small>
             </div>
-          </div>
+            <div class="small-5 columns">
+              <div class="row">
+                <div class="small-11 medium-6 small-centered columns">
 
-          <div class="row">
-            <div class="small-12 columns">
-              <%= f.label(:promo, "Have a promo or invite code? Enter it here (discount will be applied on confirmation screen") %></p>
-              <%= f.text_field :promo, :placeholder => "", required: '' %>
+                       <%= f.label(:promo, "Promo code") %> <small><em>Applied on next screen</em></small>
+                       <%= f.text_field :promo, :placeholder => "" %>
 
-              <small class="error">Please enter instructions for if you are not available</small>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -142,6 +142,7 @@
         <%= f.submit 'Checkout!', class: "order-button" %>
       </div>
 
+      
 
      
     </fieldset>

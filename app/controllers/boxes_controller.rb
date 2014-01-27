@@ -60,7 +60,7 @@ class BoxesController < ApplicationController
 
   private
     def box_params
-      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate, :call_me, :text_me, :raw_num, :cook_num, :fruit_num, :module_1, :module_2, :module_3, :module_4, :module_5, :module_6, :module_7, :no_list)
+      params.require(:box).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate, :call_me, :text_me, :raw_num, :cook_num, :fruit_num, :module_1, :module_2, :module_3, :module_4, :module_5, :module_6, :module_7, :no_list, :promo)
     end
 
 end
