@@ -126,6 +126,15 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="small-12 columns">
+              <%= f.label(:promo, "Have a promo or invite code? Enter it here (discount will be applied on confirmation screen") %></p>
+              <%= f.text_field :promo, :placeholder => "", required: '' %>
+
+              <small class="error">Please enter instructions for if you are not available</small>
+            </div>
+          </div>
+
         </div>
       </div>
 
