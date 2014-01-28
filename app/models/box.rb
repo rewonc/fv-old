@@ -23,7 +23,7 @@ class Box < ActiveRecord::Base
 
 
   def promo_string
-     if promo == "goodroots2040"
+     if promo.strip.downcase == "goodroots2040"
       return "You secured the $20 for $40 discount, and will receive a $40 box for $20 on your appointed delivery date."
      else 
       return nil
@@ -70,7 +70,7 @@ class Box < ActiveRecord::Base
       #module_7 * Box.module_price(7)
     
     #add some logic for delivery below a certain amount
-    if (promo == "goodroots2040")
+    if (promo.strip.downcase == "goodroots2040")
       total = 2000
     elsif (price < 4000) && (price > 1999)
       total = price + 400
