@@ -23,8 +23,9 @@
           <div class="terms">
             <div class="row">
               <div class="small-10 columns small-centered small-offset-1">
-              <p>This is an automatically recurring order. <%= @box.frequency_string.capitalize %>, you will receive a fresh Farmivore box at your subscription price (shown above), which will be charged to the card you provide today.</p>
-              <p>To skip a box, modify your order, or cancel your subscription for any reason, email <%= mail_to "orders@farmivore.com" %> at least 4 days before your next scheduled delivery.</p></div>
+              <p><%= @box.frequency_string.capitalize %>, you will receive an email preview of the box contents. Each week you can opt-out for any reason by responding to that email within the given timeframe.</p>
+              <p>Otherwise, the above price will be charged to your card and we'll deliver a fresh batch of goods to your door!</p>
+              <p>If you don't like your box, we will refund your payment. No questions asked.</p></div>
               <%= check_box_tag(:agree) %>
               <%= label_tag(:agree, "I have read and agree to the above terms") %>
             </div>
