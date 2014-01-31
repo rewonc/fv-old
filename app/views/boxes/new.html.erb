@@ -1,9 +1,24 @@
 <section class="intro">
   <div class="row">
-    <div class="small-12 columns left location">
-      <p><a href="mailto:hello@farmivore.com?Subject=Delivery%20Locations&Body=Please%20add%20(my%20city)%20soon!">(<span data-tooltip class="has-tip" title="Click to let us know!">Want us to serve your city next?</span>)</a></p>
-    </div>
+   <div class="small-12 columns left location">
+  <a href="#" data-reveal-id="myModal">
+  (
+  <span data-tooltip class="has-tip" title="Click to let us know!">Want us to serve your city next?</span>
+  )
+  </a>
   </div>
+  </div>
+  <div class="reveal-modal-bg" style="display: none"></div>
+  <div id="myModal" class="reveal-modal" data-reveal>
+  <p class="lead">Tell us where you are,and we'll let you know<br/>when we launch near you!</p>
+  <%= form_tag do %>
+<%= email_field(:zip_mailer, :address) %>
+
+ <%= submit_tag("sub") %>
+<% end %>
+  <p>Interested in selling your food?<br/><a href="#">Let us know</a></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
   <div class="row">
     <div class="small-12 columns centered">
       <h1 class="header">Eat from farms in the Northeast<h1>
