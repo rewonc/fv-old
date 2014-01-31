@@ -1,7 +1,8 @@
 Farmivore::Application.routes.draw do
 
 
-  resources :boxes, :charges
+  get "zipcodes/create"
+  resources :boxes, :charges, :zipcodes
 
   root 'welcome#index'
   get "welcome/farms"

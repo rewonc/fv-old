@@ -9,22 +9,24 @@
   </div>
   </div>
   <div class="reveal-modal-bg" style="display: none"></div>
-  <div id="myModal" class="reveal-modal" data-reveal>
-  <p class="lead">Tell us where you are,and we'll let you know<br/>when we launch near you!</p>
-  <%= form_tag do %>
-<%= email_field(:zip_mailer, :address) %>
-
- <%= submit_tag("sub") %>
-<% end %>
-  <p>Interested in selling your food?<br/><a href="#">Let us know</a></p>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-  <div class="row">
-    <div class="small-12 columns centered">
-      <h1 class="header">Eat from farms in the Northeast<h1>
-      <h4 class="subheader">Try our winter selection. Available through March 2014.</h4>
+    <div id="myModal" class="reveal-modal" data-reveal>
+      <p class="lead">Tell us where you are,and we'll let you know<br/>when we launch near you!</p>
+      <%= form_for :zipcode, url: zipcodes_path do |f| %>
+        <%= f.text_field(:zipcode) %>
+        <%= f.text_field(:email) %>
+        <%= f.submit %>
+      <% end %>
+      <p>Interested in selling your food?<br/><a href="#">Let us know</a></p>
+      <a class="close-reveal-modal">&#215;</a>
     </div>
-  </div>
+    
+
+    <div class="row">
+      <div class="small-12 columns centered">
+        <h1 class="header">Eat from farms in the Northeast<h1>
+        <h4 class="subheader">Try our winter selection. Available through March 2014.</h4>
+      </div>
+    </div>
 </section>
 
 
