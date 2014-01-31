@@ -7,8 +7,8 @@ auth_token = '97abaf7b5f45920a2f1d767401d54d3d'
 @client = Twilio::REST::Client.new account_sid, auth_token
  
 message = @client.account.messages.create(
-	:body => "www.farmivore.com/texts.   lol",
-    :to => "+19018250094",
+	:body => "Hello Jose",
+    :to => "+13476815301",
     :from => "+16474963276",
 )
 puts message.to + ' ' + message.status
