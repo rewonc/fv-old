@@ -19,7 +19,6 @@ class BoxesController < ApplicationController
     @box = Box.new(box_params)
     #TO DO: validations. return errors or save
     if @box.save
-       ZipMailer.zip_email_confirmation(@zip_mailer).deliver
        ConfirmMailer.box_alert(@box).deliver
        session[:box_id] = @box.id
        render 'charges/new'
