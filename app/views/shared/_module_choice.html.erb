@@ -3,8 +3,8 @@
     <div class="small-12 columns">
       <div class="row">
 
-        <ul class="medium-block-grid-3 small-block-grid-1 box-num centered">
-            <li>
+        <ul class="medium-block-grid-2 small-block-grid-1 box-num centered">
+            <!--<li>
               <div class="row">
                 <div class="small-10 small-centered columns box-display">
                   <h4>Starter Box</h4>
@@ -16,7 +16,7 @@
                   <h3>$40 per box</h3>
                   <div class="row no-subscribe">
                     <div class="small-12 columns">
-                      Single subscription-free box. <br /><em>Try it out!</em>
+                      Single -free box. <br /><em>Try it out!</em>
                     </div>
                   </div>
                   <span class="boxnum-radio">
@@ -25,7 +25,7 @@
                   </span>
                 </div>
               </div>
-            </li>
+            </li>-->
             <li>
               <div class="row">
                 <div class="small-10 small-centered columns box-display">
@@ -33,12 +33,12 @@
                   <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">1-2 people</span></p>
                   <div class="image-box">
                     <%= image_tag('simp-v.8/Standardbox.png') %>
-                    <div class="choose-me">Choose me!</div>
+                    <div class="choose-me"><a href="#" data-reveal-id="standard-inside"><small>(Peek inside!)</small></a></div>
                   </div>
                   <h3>$35 per box</h3>
                   <div class="row yes-subscribe">
                     <div class="small-12 columns">
-                      Flexible subscription. <br /><em>Opt-out or cancel anytime.</em>
+                      <div class="big-button">Choose me</div>
                     </div>
                   </div>
                   <span class="boxnum-radio">
@@ -56,12 +56,12 @@
                   <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">3-4 people</span></p>
                   <div class="image-box">
                     <%= image_tag('simp-v.8/Jumbobox.png') %>
-                    <div class="choose-me">Choose me!</div>
+                    <div class="choose-me"><a href="#" data-reveal-id="family-inside"><small>(Peek inside!)</small></a></div>
                   </div>
                   <h3>$60 per box</h3>
                   <div class="row yes-subscribe">
                     <div class="small-12 columns">
-                      Flexible subscription. <br /><em>Opt-out or cancel anytime.</em>
+                      <div class="big-button">Choose me</div>
                     </div>
                   </div>
                   <span class="boxnum-radio">
@@ -73,15 +73,38 @@
             </li>
         </ul>
       </div>
+      <div class="row">
+        <div class="small-6 columns right">
+          <h5><strong>Not quite ready to commit?</strong> <em><a>Order a single box</a></em></h5>
+          
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="small-12 columns centered see-more">
-      <h3>Peek inside a typical box</h3>
-      <i class="fa fa-caret-down"></i>
-      <div class="row">
-        <div class="small-12 columns inside-box">
-          <p> Hello there</p>
+  <div id="standard-inside" class="reveal-modal" data-reveal>
+    <div class="row">
+      <div class="small-12 columns centered see-more">
+        <h3>Standard box hello inside a typical box</h3>
+        <i class="fa fa-caret-down"></i>
+        <div class="row">
+          <div class="small-12 columns">
+            <p> Hello there</p>
+            <a class="close-reveal-modal">&#215;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="family-inside" class="reveal-modal" data-reveal>
+    <div class="row">
+      <div class="small-12 columns centered see-more">
+        <h3>Peek inside a typical box</h3>
+        <i class="fa fa-caret-down"></i>
+        <div class="row">
+          <div class="small-12 columns">
+            <p> Family box hello there</p>
+            <a class="close-reveal-modal">&#215;</a>
+          </div>
         </div>
       </div>
     </div>

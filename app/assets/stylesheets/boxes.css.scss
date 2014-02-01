@@ -53,7 +53,7 @@
 section.box-select{
   margin-top:15px;
   ul li .box-display{
-    cursor:pointer;
+    //cursor:pointer;
     padding:20px;
     margin:10px;
      background-color:white;
@@ -68,14 +68,12 @@ section.box-select{
     .image-box{
       position:relative;
       .choose-me{
-        position:absolute;
+        position:relative;
         text-align:center;
-        font-weight:bold;
+        font-weight:normal;
         font-size:22px;
-        color:$gold;
-        top:140px;
+        top:0px;
         width:100%;
-        display:none;
       }
     }
     img{
@@ -92,18 +90,30 @@ section.box-select{
       margin-bottom:0px;
     }
     .no-subscribe{
-      padding:10px;
-      background-color:$orangeSoftComplement;
-      color:white;
-      margin-left:-20px;
-      margin-right:-20px;
+      //padding:10px;
+      //background-color:$orangeSoftComplement;
+      //color:white;
+      //margin-left:-20px;
+      //margin-right:-20px;
     }
     .yes-subscribe{
-      padding:10px;
-      background-color:$greenPrimary;
+      //padding:10px;
+      //background-color:$greenPrimary;
+      //color:white;
+      //margin-left:-20px;
+      //margin-right:-20px;
+    }
+
+    .big-button{
+      @include button-base;
+      @include button-size(1, 1);
+      @include button-style($greenPrimary);
+      @include radius;
+      margin-bottom:20px;
       color:white;
-      margin-left:-20px;
-      margin-right:-20px;
+      font-weight:bold;
+      margin-top:0px;
+      padding:20px;
     }
   }
   .see-more{
