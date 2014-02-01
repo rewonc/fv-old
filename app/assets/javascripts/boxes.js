@@ -1,4 +1,20 @@
-
+//box selection effects
+$('.boxnum-radio').css('display','none');
+$('.box-display').mouseenter(function(e) {
+        $(this).find('img').animate({ top: '-25px'}, 120);
+        $(this).css("box-shadow", "0px 0px 2px 0px #00be4c");
+        $(this).css("-moz-box-shadow", "0px 0px 2px 0px #00be4c");
+        $(this).css("-webkit-box-shadow", "0px 0px 2px 0px #00be4c");
+        $(this).find('.choose-me').fadeIn(80);
+        //$(this).children('a').children('span').fadeIn(200);
+    }).mouseleave(function(e) {
+        $(this).find('img').animate({ top: '0px'}, 50);
+        $(this).css("box-shadow", "0px 0px 2px 0px #D0D0D0");
+        $(this).css("-moz-box-shadow", "0px 0px 2px 0px #D0D0D0");
+        $(this).css("-webkit-box-shadow", "0px 0px 2px 0px #D0D0D0");
+         $(this).find('.choose-me').fadeOut(25);
+        //$(this).children('a').children('span').fadeOut(200);
+    });
 
 
 

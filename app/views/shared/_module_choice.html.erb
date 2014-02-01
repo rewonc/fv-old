@@ -9,15 +9,20 @@
                 <div class="small-10 small-centered columns box-display">
                   <h4>Starter Box</h4>
                   <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">1-2 people</span></p>
-                  <%= image_tag('simp-v.8/Starterbox.png') %>
+                  <div class="image-box">
+                    <%= image_tag('simp-v.8/Starterbox.png') %>
+                    <div class="choose-me">Choose me!</div>
+                  </div>
                   <h3>$40 per box</h3>
                   <div class="row no-subscribe">
                     <div class="small-12 columns">
                       Single subscription-free box. <br /><em>Try it out!</em>
                     </div>
                   </div>
-                  <%= f.radio_button(:box_num, 1) %>
-                  <%= label :box_num_1, 'Starter Box' %>
+                  <span class="boxnum-radio">
+                    <%= f.radio_button(:box_num, 1) %>
+                    <%= label :box_num_1, 'Starter Box' %>
+                  </span>
                 </div>
               </div>
             </li>
@@ -26,15 +31,20 @@
                 <div class="small-10 small-centered columns box-display">
                   <h4>Standard Box</h4>
                   <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">1-2 people</span></p>
-                  <%= image_tag('simp-v.8/Standardbox.png') %>
+                  <div class="image-box">
+                    <%= image_tag('simp-v.8/Standardbox.png') %>
+                    <div class="choose-me">Choose me!</div>
+                  </div>
                   <h3>$35 per box</h3>
                   <div class="row yes-subscribe">
                     <div class="small-12 columns">
                       Flexible subscription. <br /><em>Opt-out or cancel anytime.</em>
                     </div>
                   </div>
-                  <%= f.radio_button(:box_num, 2, :checked => true) %>
-                  <%= label :box_num_2, 'Standard Box' %>
+                  <span class="boxnum-radio">
+                    <%= f.radio_button(:box_num, 2, :checked => true) %>
+                    <%= label :box_num_2, 'Standard Box' %>
+                  </span>
                 </div>
               </div>
             </li>
@@ -43,16 +53,21 @@
               <div class="row">
                 <div class="small-10 small-centered columns box-display">
                   <h4>Family Box</h4>
-                  <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">1-2 people</span></p>
-                  <%= image_tag('simp-v.8/Jumbobox.png') %>
+                  <p>Week's produce for <span data-tooltip class="has-tip" title="Enough to cook 2-3 dinners">3-4 people</span></p>
+                  <div class="image-box">
+                    <%= image_tag('simp-v.8/Jumbobox.png') %>
+                    <div class="choose-me">Choose me!</div>
+                  </div>
                   <h3>$60 per box</h3>
                   <div class="row yes-subscribe">
                     <div class="small-12 columns">
                       Flexible subscription. <br /><em>Opt-out or cancel anytime.</em>
                     </div>
                   </div>
-                  <%= f.radio_button(:box_num, 3) %>
-                  <%= label :box_num_3, 'Family Box' %>
+                  <span class="boxnum-radio">
+                    <%= f.radio_button(:box_num, 3) %>
+                    <%= label :box_num_3, 'Family Box' %>
+                  </span>
                 </div>
               </div>
             </li>

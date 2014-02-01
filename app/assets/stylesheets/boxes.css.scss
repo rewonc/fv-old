@@ -53,6 +53,7 @@
 section.box-select{
   margin-top:15px;
   ul li .box-display{
+    cursor:pointer;
     padding:20px;
     margin:10px;
      background-color:white;
@@ -63,6 +64,32 @@ section.box-select{
       font-weight:800;
       font-size:20px;
       text-transform:uppercase;
+    }
+    .image-box{
+      position:relative;
+      .choose-me{
+        position:absolute;
+        text-align:center;
+        font-weight:bold;
+        font-size:22px;
+        color:$gold;
+        top:140px;
+        width:100%;
+        display:none;
+      }
+    }
+    img{
+      position:relative;
+      top:0px;
+      z-index:0;
+    }
+    p{
+      position:relative;
+      span{
+        z-index:100;
+      }
+      z-index:10;
+      margin-bottom:0px;
     }
     .no-subscribe{
       padding:10px;
