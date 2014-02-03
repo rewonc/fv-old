@@ -1,6 +1,6 @@
 class Box < ActiveRecord::Base
   validates :street, presence: true
-  #validates :box_num, presence: true
+  validates :box_num, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :frequency, presence: true
@@ -13,12 +13,12 @@ class Box < ActiveRecord::Base
   validates :street, presence: true
   validates :zip, presence: true
   validates :city, presence: true
-  validates :module_1, presence: true
-  validates :module_2, presence: true
-  validates :module_3, presence: true
-  validates :module_4, presence: true
-  validates :module_5, presence: true
-  validates :module_6, presence: true
+ # validates :module_1, presence: true
+  #validates :module_2, presence: true
+  #validates :module_3, presence: true
+  #validates :module_4, presence: true
+  #validates :module_5, presence: true
+  #validates :module_6, presence: true
   #validates :module_7, presence: true
 
 
@@ -60,13 +60,13 @@ class Box < ActiveRecord::Base
 
   def box_price
     #will error out if modules are not set.
-    price = 
-      module_1 * Box.module_price(1) + 
-      module_2 * Box.module_price(2) + 
-      module_3 * Box.module_price(3) + 
-      module_4 * Box.module_price(4) + 
-      module_5 * Box.module_price(5) + 
-      module_6 * Box.module_price(6)
+    price = 4000
+      #module_1 * Box.module_price(1) + 
+      #module_2 * Box.module_price(2) + 
+      #module_3 * Box.module_price(3) + 
+      #module_4 * Box.module_price(4) + 
+      #module_5 * Box.module_price(5) + 
+      #module_6 * Box.module_price(6)
       #module_7 * Box.module_price(7)
     
     #add some logic for delivery below a certain amount

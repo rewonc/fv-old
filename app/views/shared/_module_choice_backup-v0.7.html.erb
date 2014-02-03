@@ -1,3 +1,89 @@
+//payment box
+  .outer-box{
+    margin-top:15px;
+    border: 1px solid $lightGray3;
+    @include radius(10px);
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:15px;
+    padding-left:9px;
+    padding-right:9px;
+    padding-top:5px;
+    padding-bottom:15px;
+    background-color: $white3;
+    .no-list{
+      display:none;
+    }
+    .customize-replace{
+      display:block;
+    }
+    .subhead{
+      margin-top:15px;
+    }
+    #error_fee{
+      color:$IMP;
+      display:none;
+    }
+    #delivery_free{
+      display:block;
+    }
+    #delivery_fee{
+      display:none;
+    }
+
+    .customize-button{
+      @include button-base;
+      @include button-size(0, -1);
+      @include button-style($orangeAccent);
+      @include radius;
+      margin-bottom:20px;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:4px;
+    }
+
+    .select-frequency{
+      margin-top:10px;
+    }
+
+    h5{
+      color: $darkGray;
+    }
+
+    .delivery-row{
+      position:relative;
+    }
+    .delivery-ribbon{
+      background-color:$orangeDark;
+      padding-top:5px;
+      padding-bottom:5px;
+      margin-left:-10px;
+      margin-right:-10px;
+      border: 1px dashed darken($orangeDark, 5%);
+      h6{
+        color:white;
+        font-weight:bolder;
+      }
+    }
+
+    
+
+    .totals{
+      margin-top:0px;
+      text-align:right;
+      padding-right:10px;
+      
+    }
+
+    .checkout{
+        .checkout-button{
+          
+          
+        }
+        
+    }
+
 //price checking
 $(".module-number").change(function(){
   updatePrices();

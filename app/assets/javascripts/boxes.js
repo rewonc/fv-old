@@ -1,21 +1,26 @@
-//box selection effects
-$('.boxnum-radio').css('display','none');
-/*$('.box-display').mouseenter(function(e) {
-        $(this).find('img').animate({ top: '-25px'}, 120);
-        $(this).css("box-shadow", "0px 0px 2px 0px #00be4c");
-        $(this).css("-moz-box-shadow", "0px 0px 2px 0px #00be4c");
-        $(this).css("-webkit-box-shadow", "0px 0px 2px 0px #00be4c");
-        $(this).find('.choose-me').fadeIn(80);
-        //$(this).children('a').children('span').fadeIn(200);
-    }).mouseleave(function(e) {
-        $(this).find('img').animate({ top: '0px'}, 50);
-        $(this).css("box-shadow", "0px 0px 2px 0px #D0D0D0");
-        $(this).css("-moz-box-shadow", "0px 0px 2px 0px #D0D0D0");
-        $(this).css("-webkit-box-shadow", "0px 0px 2px 0px #D0D0D0");
-         $(this).find('.choose-me').fadeOut(25);
-        //$(this).children('a').children('span').fadeOut(200);
-    });
-*/
+///////////////box selection effects
+$('.single-box-checkout').click(function(){
+  $("#box_box_num_1").prop('checked', true);
+});
+$('.select-size').change(function(){
+  if ($(this).val() == '2') {
+    $("#box_box_num_2").prop('checked', true);
+    $('#subscription-price').text('$35');
+    $('.image-box-jumbo').hide();
+    $('.image-box-starter').fadeIn();
+  } else if ($(this).val() == '3'){
+    $("#box_box_num_3").prop('checked', true);
+    $('#subscription-price').text('$60');
+    $('.image-box-starter').hide();
+    $('.image-box-jumbo').fadeIn();
+  } else{
+  }
+});
+
+/////////////
+//checkout-button will hide select and unhide the delivery fieldset
+stepInit();
+
 
 
 //checkout page
@@ -26,28 +31,6 @@ $('#agree').click(function(){
   $('#terms_reveal').fadeIn(50);
   $('#agree').attr("disabled", true);
 });
-
-//delivery preferences button
-$("#delivery_preferences").hide();
-   //checkout-button will hide select and unhide the delivery fieldset
-$(".checkout-button").click(function(){
-  //$('.select').hide();
-  $('#delivery_preferences').fadeIn();
-  $('html, body').animate({
-        scrollTop: $("#delivery_preferences").offset().top
-    }, 1000);
-});
-//customize button
-$('.customize-button').click(function(){
-  $('html, body').animate({
-        scrollTop: $(".form").offset().top
-    }, 1000).delay(1000);
-  $('#no-customize-modules').hide();
-  $('#customize-modules').fadeIn();
-  $('.customize-replace').hide();
-  $('.no-list').fadeIn();
-});
-
 
 //zip code -- check based upon value
 
@@ -291,27 +274,42 @@ $("#box_zip").change(function(){
   }
 })
 
-
-//frequency select changes the text
-$('#box_frequency').change(function(){
-  switch($(this).val()){
-    case '1':
-      $('#total_period').text('week');
-      break;
-    case '2':
-      $('#total_period').text('2 weeks');
-      break;
-    case '4':
-      $('#total_period').text('month');
-      break;
-    default:
-      $('#total_period').text('week');
-  }
-
-});
-
-
-
 function parseZipcode(zipcode){
   return $.trim(zipcode).substring(0,5);
+}
+
+function stepInit(){
+  $(".checkout-button").click(function(){
+    $('html, body').animate({
+          scrollTop: $(".bottom-bar").offset().top - 30
+      }, 300).delay(300, function(){
+        stepTwo();
+      });
+  });
+}
+
+function stepTwo(){
+  $('#step1').addClass('linkable active');
+  $('#step2').addClass('active');
+  $('section.box-select').hide();
+  $('#delivery_preferences').fadeIn();
+  $("#step1.linkable.active").click(function(){
+    stepOne();
+  });
+}
+
+function stepOne(){
+  stepZero();
+  $('#step1').addClass('active');
+  $('#delivery_preferences').hide();
+  $('section.box-select').fadeIn();
+  $(".checkout-button").click(function(){
+    stepTwo();
+  });
+}
+
+function stepZero(){
+  $('#step1').removeClass('active').removeClass('linkable');
+  $('#step2').removeClass('active').removeClass('linkable');
+  $('#step3').removeClass('active').removeClass('linkable');
 }
