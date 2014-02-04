@@ -24,58 +24,25 @@ class Box < ActiveRecord::Base
 
   def promo_string
      if promo.strip.downcase == "goodroots2040"
-      return "You secured the $20 for $40 discount, and will receive a $40 box for $20 on your appointed delivery date."
+      return "You secured the $20 for $40 discount, and will receive a $20 off your first order."
      else 
       return nil
     end
   end
 
-  def self.module_price(number)
-    case number
-      when 1
-        price = 900
-      when 2
-        price = 700
-      when 3
-        price = 700
-      when 4
-        price = 500
-      when 5
-        price = 600
-      when 6
-        price = 600
-      when 7
-        price = 600
-    end
-    return price
-  end  
-
-  def self.module_price_string(number, zeroes)
-    if zeroes
-      return '$' + Box.module_price(number).to_s.chop.chop + '.' + Box.module_price(number).to_s.last(2)
-    else
-      return '$' + Box.module_price(number).to_s.chop.chop
-    end
-  end
-
   def box_price
-    #will error out if modules are not set.
-    price = 4000
-      #module_1 * Box.module_price(1) + 
-      #module_2 * Box.module_price(2) + 
-      #module_3 * Box.module_price(3) + 
-      #module_4 * Box.module_price(4) + 
-      #module_5 * Box.module_price(5) + 
-      #module_6 * Box.module_price(6)
-      #module_7 * Box.module_price(7)
-    
+   case box_num
+      when 1
+        price = 4000
+      when 2
+        price = 3500
+      when 3
+        price = 6000
+    end
+
     #add some logic for delivery below a certain amount
     if (promo.strip.downcase == "goodroots2040")
-      total = 2000
-    elsif (price < 4000) && (price > 1999)
-      total = price + 400
-    elsif (price < 2000)
-      total = price + 400
+      total = price - 2000
     else
       total = price
     end
@@ -108,13 +75,13 @@ class Box < ActiveRecord::Base
   def get_box_name
     case box_num
       when 1
-        box_name = "Raw Box"
+        box_name = "Single Box"
       when 2
-        box_name = "Variety Box"
+        box_name = "Standard Box subscription"
       when 3
-        box_name = "Custom Box"
+        box_name = "Family Box subscription"
     end
-    return box_name #+ ', with ' + raw_num.to_s + ' raw pack/s, ' cook_num.to_s + ' culinary packs, and ' + fruit_num.to_s ' fruit packs.'
+    return box_name 
   end
 
   def delivery_preference_string
@@ -133,29 +100,5 @@ class Box < ActiveRecord::Base
         return "No preference"
     end
   end
-
-  def get_price
-    if raw_num.blank?
-      return 4000
-    else
-      modules = raw_num + cook_num + fruit_num
-      subtotal = modules * 800
-      if subtotal.nil?
-        return 'nil'
-      end
-      if subtotal >= 4000
-        total = subtotal
-        return total
-      else
-        total = subtotal + 400
-        return total
-      end
-    end
-  end
-
-  def get_price_string
-    return '$' + get_price.to_s.chop.chop + '.' + get_price.to_s.last(2)
-  end
-
 
 end

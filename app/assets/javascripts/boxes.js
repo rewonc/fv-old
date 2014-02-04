@@ -280,11 +280,7 @@ function parseZipcode(zipcode){
 
 function stepInit(){
   $(".checkout-button").click(function(){
-    $('html, body').animate({
-          scrollTop: $(".bottom-bar").offset().top - 30
-      }, 300).delay(300, function(){
-        stepTwo();
-      });
+    stepTwo();
   });
 }
 
