@@ -1,60 +1,161 @@
 <div class="row">
   <div class="small-12 columns">
-
-    <h1 class="centered header">How it works</h1>
-
-
     <div class="row">
       <div class="small-12 columns">
-       <ul class="small-block-grid-1 medium-block-grid-3 centered">
+       <h1 class="header centered">Produce done right.</h1>
+       <ul class="small-block-grid-1 medium-block-grid-3 centered photos">
         <li>
           <div class="image">
             <%= image_tag 'simp-v.8/Howto-1.png'%>
           </div>
-          <p class="caption">1.  Order your box online and pick a delivery plan.</p>
-        </li>
-        <li>
-          <div class="image">
-            <%= image_tag 'simp-v.8/Howto-2.png'%>
-          </div>
-          <p class="caption">2.  We team up with farmers to fill your box with the freshest, tastiest produce around.</p>
+          <h3 class="caption">1. Subscribe to a box</h3>
         </li>
         <li>
           <div class="image">
             <%= image_tag 'simp-v.8/Howto-3.png'%>
           </div>
-          <p class="caption">3.  Sit back and enjoy the awesome fruits and veggies that arrive at your door!</p>
+          <h3 class="caption">2. Get it delivered</h3>
+        </li>
+        <li>
+          <div class="image">
+            <%= image_tag 'simp-v.8/Howto-2.png'%>
+          </div>
+          <h3 class="caption">3. Enjoy!</h3>
         </li>
        </ul>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="small-12 columns centered">
+    <h4 class="whylove"><strong>Reasons to choose subscription produce</strong></h4>
+     <hr />
+    <ul class="small-block-grid-3 medium-block-grid-5 featurettes">
+      <li>
+        <a href="#ft-fresh">
+          <i class="fa fa-3x fa-pagelines"></i>
+          <p><strong>Fresh</strong><br />Harvested hours before delivery</p>
+        </a>
+      </li>
+      <li><a href="#ft-diverse">
+        <i class="fa fa-3x fa-star-o"></i>
+        <p><strong>Diverse</strong><br />Local and exquisite varieties</p></a>
+      </li>
+      <li><a href="#ft-convenient">
+        <i class="fa fa-3x fa-truck"></i>
+        <p><strong>Convenient</strong><br />Delivered to your door</p></a>
+      </li>
+      <li><a href="#ft-cook">
+        <i class="fa fa-3x fa-cutlery"></i>
+        <p><strong>Easy to prepare</strong><br />Preparation tips included</p></a>
+      </li>
+      <li><a href="#ft-honest">
+        <i class="fa fa-3x fa-thumbs-up"></i>
+        <p><strong>Honestly sourced</strong><br />All local and organic farms</p></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row feature" id="ft-fresh">
+  <div class="small-12 columns panel-box">
+    <div class="centered">
+      <i class="fa fa-3x fa-pagelines"></i>
+      <h2>Fresh and nutritious</h2>
+    </div>
     <div class="row">
-      <div class="small-12 columns panel-box">
+      <div class="small-12 medium-6 medium-offset-1 columns featurette-text">
+        <p>We’re obsessed with maximizing the freshness of the vegetables we deliver. Often, the items in your box are delivered within <strong>24 hours</strong> of being harvested by local farmers.</p><p>Less time in storage means vegetables keep more of their essential nutrients, stay fresh longer in your refrigerator, and taste how they are supposed to taste.
+        </p>
+
+      </div>
+      <div class="small-12 medium-5 columns caption"><%= image_tag('greenbeans.jpg') %><small>Freshness is important for nutrition. Green beans can lose up to 77% of their vitamin C content from just one week's worth of cold storage.</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="row feature" id="ft-diverse">
+  <div class="small-12 columns panel-box">
+    
+    <div class="row">
+      <div class="small-12 medium-5 columns"><%= image_tag('sungold-tomato.jpg'); %><p class="small">Sun gold tomatoes have nearly the highest sugar and lowest acid levels of any tomatoes, but have thin skins that make them unsuitable for long transport. Find them in our summer boxes.</p></div>
+      
+      <div class="small-12 medium-7 columns featurette-text">
+        <div class="centered"><i class="fa fa-3x fa-star-o"></i>
+        <h2>Diverse, ripe, and local</h2></div>
+        <div class="featurette-text"><p>Most supermarket produce today is selected for high yield and long shelf-life. The local farmers we source from however, can grow more diverse and delicate varieties because they don’t need to worry about packing and shipping long distances.</p><p> Experience a whole new world of produce, with everything from pink baby ginger to juicy gooseberries. 
+        </p></div>
+      </div>
+    </div>
+    <br /><br /><br />
+  </div>
+</div>
+
+<div class="row feature" id="ft-convenient">
+  <div class="small-12 columns panel-box">
+    <div class="centered"><a><i class="fa fa-3x fa-truck"></i></a>
+    <h2>Simple and convenient</h2></div>
+    <div class="row">
+      <div class="small-6 small-offset-1 columns featurette-text">
+        <p>
+          Choose a box that fits your lifestyle and subscribe. Select whether you'd like vegetables for raw consumption or for cooking, and choose the amount of fruit you'd like to get. 
+        </p>
+        <p>Then sit back. We fill your box each week with fresh ingredients from local farms and deliver it to your door. </p>
+      </div>
+      <div class="small-5 columns">
         <div class="row">
-          <div class="small-12 medium-8 columns content">
-            <p>
-When you sign up for Farmivore, you get a recurring subscription of local and organic produce delivered to your door. We work directly with farmers and farm cooperatives to bring you the best fruits and veggies of the season. 
-            </p>
-            <p>
-Each box always features a variety of flavors and textures so that you can create nutritious, balanced meals at home. If you get something you don't recognize, just check the order insert for easy recipes and preparation tips. 
-            </p>
-            <p>
-With every box you order, you support small farms in your community. Learn more about the producers by reading about <%= link_to 'our farms', welcome_farms_path %> and <%= link_to 'sourcing standards.', welcome_about_path %>
-            </p>
-            <p>
-Have any questions? Email us at <%= mail_to 'hello@farmivore.com', 'hello@farmivore.com' %>!
-            </p>
-          </div>
-          <div class="small-12 medium-4 columns">
-            <h4>Get a box today!</h4>
-            <h5>Starting at $35 per box</h5>
-            <%= link_to "Local box", new_box_path, class: "box-button"  %>
-            <%= link_to "Juicing box", new_juicebox_path, class: "juicing-button"  %>
+          <div class="small-12 columns centered">
+            <br />
+            <p>Starting from $20 per week. <br />Cancel anytime.</p>
+            <%= link_to 'Get started!', new_box_path, html_options = {class: "get-started-button", id: "features-ourboxes"} %>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="row feature" id="ft-cook">
+  <div class="small-12 columns panel-box">
+    <div class="centered"><i class="fa fa-3x fa-cutlery"></i>
+    <h2>Easy to prepare</h2></div>
+    <div class="row">
+      <div class="small-8 small-offset-2 columns featurette-text"><p>When you’re working with quality ingredients, creating flavorful meals becomes a lot easier. With each box, we include simple preparation tips and recipes designed to bring out the best in our produce whether you choose to cook it or eat it raw.
+      </p></div>
+    </div>
+    <br /><br />
+  </div>
+</div>
+
+<div class="row feature" id="ft-honest">
+  <div class="small-12 columns panel-box">
+    <div class="centered"><i class="fa fa-3x fa-thumbs-up"></i>
+    <h2>Honestly sourced</h2></div>
+    <div class="row">
+      <div class="small-6 small-offset-1 columns featurette-text">
+        <p>We make an effort to tour the farms we source from and see their growing practices firsthand so we can share that information with you. Beyond the quality of the produce itself, we also look for farms that:</p>
+        <ul>
+          <li>are family-owned and operated</li>
+          <li>refrain from using genetically modified seed varieties</li>
+          <li>care about maintaining and improving the health of the soil and the environment</li>
+          <li>use no or low spray growing practices</li>
+          <li>minimize external inputs (like synthetic fertilizers) and waste outputs</li>
+        </ul>
+
+        <p>Every delivery comes with information about where each vegetable comes from and the growing practices on the farms.  
+        </p>
+      </div>
+      <div class="small-5 columns">
+        <div class="row">
+          <div class="small-12 columns centered">
+            <br /><br /><br />
+            <p>Learn more about our sourcing practices</p>
+            <%= link_to 'Our farms', welcome_farms_path, html_options = {class: "get-started-button"} %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -143,9 +143,9 @@
 }
 
 
-//////////// welcome#features
+//////////// welcome#howitworks
 
-.welcome.about{
+.welcome.howitworks{
   .title{
     margin-top:30px;
     color:$darkGray;
@@ -274,7 +274,18 @@
 
 .welcome.howitworks{
   .panel-box{
+    //margin-top:0px;
+  }
+  .whylove{
+    color:$darkGray;
+    margin-bottom:0px;
+    margin-top:30px;
+  }
+  hr{
     margin-top:0px;
+  }
+  .photos{
+    margin-top:40px;
   }
   .image{
     padding:20px;
@@ -282,7 +293,6 @@
     border: 1px solid $white2;
   }
   .caption{
-    text-align:left;
     padding:15px;
     margin-bottom:0px;
   }

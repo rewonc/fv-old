@@ -1,0 +1,157 @@
+<section class="box-select">
+  <div class="row">
+    <div class="small-12 columns"><!-- container -->
+      
+
+      <div class="row box-row"><!-- row of boxes -->
+        
+        <div class="small-12 medium-8 columns right centered"><!-- subscription panel -->
+          <div class="row sub-table">
+            <h4 class="boldcaps">Subscribe &amp; Join</h4>
+            <div class="small-12 medium-6 columns box-display box-middle">
+                <div class="image-box-starter">
+                  <%= image_tag('simp-v.8/Starterbox.png') %>
+                </div>
+                <div class="image-box-jumbo">
+                  <%= image_tag('simp-v.8/Jumbobox.png') %>
+                </div>
+                
+                
+                <span class="boxnum-radio">
+                  <%= f.radio_button(:box_num, 2, :checked => true) %>
+                  <%= label :box_num_2, 'Standard Box' %>
+                  <%= f.radio_button(:box_num, 3) %>
+                  <%= label :box_num_2, 'Family Box' %>
+                </span>
+
+                 <h2><strong id="subscription-price">$35</strong> <small>per box</small></h2>
+
+                 <p>
+                <em>A commitment-free subscription that allows you maximum choice and selection.</em>
+                </p>
+
+                <div class="row select-size">
+                  <div class="small-4 columns">
+                    <label for="select-size" class="right inline has-tip" data-tooltip title="Boxes provide enough produce for approximately 3 dinners">Size</label>
+                  </div>
+                  <div class="small-8 columns">
+                    <select class="select-size">
+                      <option value='2'>Standard (1-2 people)</option>
+                      <option value='3'>Family (3-4 people)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row select-frequency">
+                  <div class="small-4 columns">
+                    <%= f.label :frequency, "Delivery", html_options = {class: "right inline", for: "select-frequency"} %>
+                  </div>
+                  <div class="small-8 columns">
+                    <%= f.select(:frequency, options_for_select([
+                      ["Weekly",1],
+                      ["Every 2 weeks",2]#,
+                      #["Every month",4]
+                    ])) %>
+                    <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
+                  </div>
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="small-12 medium-6 columns box-display box-description">
+              <p><strong>Preview</strong><br />We send you an email before each delivery, detailing what to expect in your box. </p>
+              <p><strong>Pause or skip</strong><br />If you like it, we'll deliver it to you automatically. If not, opt out 3 days before delivery for no charge.</p>
+              <p><strong>Juice!</strong><br />With our pre-washed, pre-portioned juice packs, you can juice immediately out of the box. Yum!</p>
+             
+              <div class="row yes-subscribe">
+                  <div class="small-12 columns">
+                    <div class="big-button boldcaps checkout-button">Join the club</div>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div><!-- end subscription panel -->
+
+        <div class="small-12 medium-4 columns"><!-- single box -->
+          <div class="row">
+            <div class="small-10 columns small-centered centered single-box">
+              <h4 class="boldcaps">Get one box</h4>
+              <div class="image-box">
+                <%= image_tag('simp-v.8/Starterbox.png') %>
+              </div>
+              <h2><strong>$40</strong> <small>per box</small></h2>
+              <p>
+                <em>A simple, one-time purchase of a standard box without the subscription benefits. </em>
+              </p>
+              <span class="boxnum-radio">
+                <%= f.radio_button(:box_num, 1) %>
+                <%= label :box_num_1, 'Starter Box' %>
+              </span>
+              <div class="row no-subscribe">
+                <div class="small-12 columns">
+                  <div class="big-button boldcaps checkout-button single-box-checkout">Buy one box</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div><!-- end single box -->
+
+      </div><!-- end row of boxes -->
+
+       <div class="row">
+        <div class="small-12 columns trifecta">
+          <ul class="small-block-grid-3">
+            <li>
+              <div class="row">
+                <div class="small-12 large-3 columns icon">
+                  <%= image_tag('simp-v.8/icon1-75.png') %>
+                </div>
+                <div class="small-12 large-9 columns">
+                  <p><strong>Awesome recipes</strong><br />
+                    Boxes include tasty, nutritious, and easy-to-follow recipes.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="small-12 large-3 columns icon">
+                  <%= image_tag('simp-v.8/icon2-75.png') %>
+                </div>
+                <div class="small-12 large-9 columns">
+                  <p><strong>Free delivery</strong><br />
+                    Pay for quality produce, not shipping. More veggies for all!
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="small-12 large-3 columns icon">
+                  <%= image_tag('simp-v.8/icon3-75.png') %>
+                </div>
+                <div class="small-12 large-9 columns">
+                  <p><strong>Flexible subscription</strong><br />
+                    Skip your order, pause your order, or request substitutions at any time.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 columns centered peek-inside">
+          <h4><em>Peek inside the box!</em></h4>
+          <i class="fa fa-chevron-down"></i>
+        </div>
+      </div>
+
+    </div><!-- end container -->
+  </div>
+</section>

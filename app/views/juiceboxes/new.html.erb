@@ -8,7 +8,7 @@
     
     <div class="small-12 columns centered">
 
-      <img data-interchange="[<%= asset_path 'simp-v.8/localheader.png'%>, (large)], [<%= asset_path 'simp-v.8/localheader.png'%>, (medium)], [<%= asset_path 'simp-v.8/localheader-small.png'%>, (small)]">
+      <img data-interchange="[<%= asset_path 'simp-v.8/juiceheader-700.png'%>, (large)], [<%= asset_path 'simp-v.8/juiceheader-700.png'%>, (medium)], [<%= asset_path 'simp-v.8/juiceheader-350'%>, (small)]">
 
       <h5><span class="bottom-bar"><span id="step1" class="active">Pick a Plan &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step2">Delivery Preferences &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step3"> Checkout </span></span></h5>
       <div class="row">
@@ -28,7 +28,7 @@
   <%= form_for @juicebox, url: juiceboxes_path, :html => {"data-abide" => ''} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 <!-- module chooser -->
-   <%= render 'shared/module_choice', f: f %>
+   <%= render 'shared/module_choice_juicing', f: f %>
      
 <!--  begin delivery preferences -->
   <div id="delivery_preferences">
