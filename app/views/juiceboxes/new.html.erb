@@ -1,5 +1,39 @@
-<h1>New juicebox</h1>
+<section class="intro">
+  <div class="row">
+    <div class="small-12 columns left location">
+      <p>Serving New York City. &nbsp; &nbsp;<a href="mailto:hello@farmivore.com?Subject=Delivery%20Locations&Body=Please%20add%20(my%20city)%20soon!">(<span data-tooltip class="has-tip" title="Click to open your mail client and let us know!">Live somewhere else?</span>)</a></p>
+    </div>
+  </div>
+  <div class="row">
+    
+    <div class="small-12 columns centered">
 
-<%= render 'form' %>
+      <img data-interchange="[<%= asset_path 'simp-v.8/localheader.png'%>, (large)], [<%= asset_path 'simp-v.8/localheader.png'%>, (medium)], [<%= asset_path 'simp-v.8/localheader-small.png'%>, (small)]">
 
-<%= link_to 'Back', juiceboxes_path %>
+      <h5><span class="bottom-bar"><span id="step1" class="active">Pick a Plan &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step2">Delivery Preferences &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step3"> Checkout </span></span></h5>
+      <div class="row">
+        <div class="small-12 columns centered">
+          <span class="back-button"><a>Select a different box</a></span>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+
+<div class="form">
+  <%= form_for @juicebox, url: juiceboxes_path, :html => {"data-abide" => ''} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+<!-- module chooser -->
+   <%= render 'shared/module_choice', f: f %>
+     
+<!--  begin delivery preferences -->
+  <div id="delivery_preferences">
+    <%= render 'shared/delivery_preferences', f: f %>
+  </div>
+
+ <% end %>
+</div>

@@ -1,3 +1,321 @@
 // Place all the styles related to the juiceboxes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.juiceboxes.index{
+
+}
+
+.juiceboxes.show{
+  h1{
+    margin-top:40px;
+    margin-bottom:40px;
+  }
+  .show-box{
+    background-color:white;
+    padding:40px;
+  }
+}
+
+//New Boxes Page styling
+
+.juiceboxes.new, .juiceboxes.edit{
+//intro section styles
+
+  //.tabs.vertical dd.active, .tabs.vertical li.active { margin-top: 0; border-top: 1px solid green; border-left: 4px solid #1a1a1a; }
+  //.tabs.vertical dd.active a, .tabs.vertical li.active a { background: red; border: none; color: #fff; height: auto; margin: 0; position: static; top: 0; -webkit-box-shadow: 0 0 0; -moz-box-shadow: 0 0 0; box-shadow: 0 0 0; }
+  #delivery_preferences{
+    display:none;
+  }
+  section.intro{
+    h3{
+      font-weight:500;
+    }
+    img{
+      margin-top:-60px;
+      max-height:200px;
+      @media only screen and (max-width: 40em) {margin-top:0px;}
+      
+      margin-bottom:20px;
+    }
+    .back-button{
+      display:none;
+    }
+    .bottom-bar{
+        border-top: 3px solid $white2;
+        padding-top:10px;
+      }
+    .subheader{
+      color:$darkGray1;
+      margin-top:0px;
+    }
+    h5{
+      color:$darkGray1;
+      margin-top:20px;
+      margin-bottom:0px;
+    }
+    .location{
+      padding:15px;
+      p{
+        font-size:12px;
+        z-index:10;
+        a{
+          z-index:10;
+        }
+      }
+    }
+    .fa{
+      font-size:16px;
+    }
+    #step1{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step2{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step3{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step1.active, #step2.active, #step3.active{
+      color:black;
+
+    }
+    #step1.active.linkable, #step2.active.linkable, #step3.active.linkable{
+      color:$midGray;
+      cursor:pointer;
+      pointer-events:auto;
+
+    }
+
+  }
+
+section.box-select{
+  p{
+      em{
+        font-size:12px;
+      }
+  }
+  .boxnum-radio{
+    display:none;
+  }
+  .image-box-jumbo{
+    display:none;
+  }
+  .boldcaps{
+      font-weight:800;
+      font-size:20px;
+      text-transform:uppercase;
+  }
+  .box-row{
+    margin-top:30px;
+  }
+  .sub-table{
+    .boldcaps{
+      position:relative;
+      top:15px;
+    }
+    padding-bottom:0px;
+    min-height:100%;
+    background-color:white;
+    -moz-box-shadow:    0px 0px 2px 0px $white2;
+    -webkit-box-shadow: 0px 0px 2px 0px $white2;
+    box-shadow:         0px 0px 2px 0px $white2;
+  }
+  #standard-family{
+    padding-top:10px;
+  }
+  span.boxnum-radio{
+    text-align:left;
+  }
+  .box-display{
+    .big-button{
+      @include button-base;
+      @include button-size(1, 1);
+      @include button-style($greenPrimary);
+      @include radius;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:20px;
+      h2{
+        margin-bottom:0px;
+      }
+    }
+  }
+
+  .single-box{
+    .big-button{
+      @include button-base;
+      @include button-size(1, 1);
+      @include button-style($midGray);
+      @include radius;
+      margin-bottom:20px;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:20px;
+    }
+    h2{
+      margin-bottom:0px;
+    }
+  }
+
+  .box-display, .single-box{
+    padding:20px;
+    //cursor:pointer;
+
+    .image-box, .image-box-starter, .image-box-jumbo{
+      position:relative;
+        img{
+        position:relative;
+        top:0px;
+        z-index:0;
+        margin-top:-20px;
+        margin-bottom:5px;
+      }
+    }
+    
+  }
+
+  .box-middle{
+    border-right: dashed 1px $white3;
+    border-bottom: dashed 1px $white3;
+  }
+  .box-description{
+    text-align:left;
+    p{
+      font-size:14px;}
+  }
+  .peek-inside{
+    margin-top:40px;
+  }
+}
+
+
+ 
+
+
+  //fieldset style
+  fieldset.delivery_preferences{
+    background-color:white;
+    -moz-box-shadow:    0px 0px 3px 0px $white2;
+    -webkit-box-shadow: 0px 0px 3px 0px $white2;
+    box-shadow:         0px 0px 3px 0px $white2;
+    
+    h2{
+      margin-bottom:15px;
+    }
+    .subheader{
+      margin-bottom:30px;
+      color:black;
+    }
+    .wed_delivery{
+      font-size:12px;
+      text-align:right;
+    }
+    .form-header{
+      margin-top:20px;
+    }
+    .zip_action{
+      padding-top:30px;
+      padding-left:15px;
+      padding-right:15px;
+      p{
+        margin-top:20px;
+        font-size:15px;
+        color: $greenPrimary;
+        #zip_action{
+          .zip-error{
+            color:red;
+          }
+        }
+      }
+    }
+
+    .order-button{
+      @include fv-button();
+    }
+
+
+  }
+
+
+  //full page styles
+  
+  .panel{
+    font-size: 13px;
+    text-align: center;
+  }
+  #payment_box{
+    display:none;
+  }
+
+  .juiceboxes .header-main {
+    text-align: center;
+    margin-bottom:0px;
+  }
+
+}
+
+//Create Boxes Page styling
+.juiceboxes.create, .juiceboxes.update, .juiceboxes.show{
+  .panel-box{
+    //padding:30px;
+    margin-top:20px;
+    padding-top:20px;
+    background-color:white;
+    -moz-box-shadow:    0px 0px 2px 0px $white2;
+    -webkit-box-shadow: 0px 0px 2px 0px $white2;
+    box-shadow:         0px 0px 2px 0px $white2;
+  }
+  .instructions{
+    font-size:12px;
+    font-weight:normal;
+  }
+  .header{
+    margin-top:30px;
+    font-weight:bold;
+    text-align:center;
+    color:$darkGray;
+  }
+  .subheader{
+    margin-bottom:15px;
+    text-align:center;
+  }
+  .back-link{
+    margin-bottom:20px;
+    a{
+      font-size:11px;
+    }
+  }
+  .terms{
+    padding-left:20px;
+    padding-right:20px;
+    p{
+      font-size:12px; 
+    }
+  }
+  #terms_button{
+    padding:7px;
+    padding-left:10px;
+    padding-right:10px;
+    font-size:14px;
+    font-weight:bold;
+    display:none;
+    background-color:$lightGray3;
+  }
+  #terms_reveal{
+  }
+  .vcard{
+    font-weight:normal;
+  }
+
+}

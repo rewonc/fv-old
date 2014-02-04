@@ -8,6 +8,7 @@ class CreateJuiceboxes < ActiveRecord::Migration
       t.string :phone
       t.integer :frequency
       t.integer :delivery_preference
+      t.string :startdate
       t.string :street
       t.string :street2
       t.string :city

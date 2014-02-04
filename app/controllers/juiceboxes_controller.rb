@@ -1,6 +1,6 @@
 class JuiceboxesController < ApplicationController
   before_action :set_juicebox, only: [:show, :edit, :update, :destroy]
-
+  http_basic_authenticate_with name: "orange1", password: "orangutan", only: [:index, :show]
   # GET /juiceboxes
   # GET /juiceboxes.json
   def index
@@ -69,6 +69,6 @@ class JuiceboxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def juicebox_params
-      params[:juicebox]
+      params.require(:juicebox).permit(:box_num, :firstname, :lastname, :email, :phone, :frequency, :delivery_preference, :street, :street2, :city, :state, :zip, :instructions, :startdate, :call_me, :text_me, :promo)
     end
 end
