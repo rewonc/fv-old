@@ -21,211 +21,181 @@
 
   //.tabs.vertical dd.active, .tabs.vertical li.active { margin-top: 0; border-top: 1px solid green; border-left: 4px solid #1a1a1a; }
   //.tabs.vertical dd.active a, .tabs.vertical li.active a { background: red; border: none; color: #fff; height: auto; margin: 0; position: static; top: 0; -webkit-box-shadow: 0 0 0; -moz-box-shadow: 0 0 0; box-shadow: 0 0 0; }
-
+  #delivery_preferences{
+    display:none;
+  }
   section.intro{
+    h3{
+      font-weight:500;
+      
+    }
+    img{
+      margin-top:-60px;
+      height:200px;
+      @media only screen and (max-width: 40em) {margin-top:0px;}
+      
+      margin-bottom:20px;
+    }
+    .back-button{
+      display:none;
+    }
+    .bottom-bar{
+        border-bottom: 3px solid $white2;
+        padding-bottom:1px;
+      }
+    .subheader{
+      color:$darkGray1;
+      margin-top:0px;
+    }
+    h5{
+      color:$darkGray1;
+      margin-top:20px;
+      margin-bottom:35px;
+    }
     .location{
       padding:15px;
-      p{font-size:12px;}
+      p{
+        font-size:12px;
+        z-index:10;
+        a{
+          z-index:10;
+        }
+      }
     }
-    .progress{
-      margin: 15px;
+    .fa{
+      font-size:16px;
     }
-    .header{
-      font-weight:bold;
-      color:$darkGray;
-      margin-bottom:0px;
+    #step1{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
     }
-    .subheader{
-      margin-bottom:60px;
+    #step2{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step3{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step1.active, #step2.active, #step3.active{
+      color:black;
+
+    }
+    #step1.active.linkable, #step2.active.linkable, #step3.active.linkable{
+      color:$midGray;
+      cursor:pointer;
+      pointer-events:auto;
+
     }
 
   }
 
-  .module-select{
+section.box-select{
+  p{
+      em{
+        font-size:12px;
+      }
+  }
+  .boxnum-radio{
+    display:none;
+  }
+  .image-box-jumbo{
+    display:none;
+  }
+  .boldcaps{
+      font-weight:800;
+      font-size:20px;
+      text-transform:uppercase;
+  }
+  .box-row{
+    margin-top:30px;
+  }
+  .sub-table{
+    .boldcaps{
+      position:relative;
+      top:15px;
+    }
+    padding-bottom:0px;
+    min-height:100%;
     background-color:white;
     -moz-box-shadow:    0px 0px 2px 0px $white2;
     -webkit-box-shadow: 0px 0px 2px 0px $white2;
     box-shadow:         0px 0px 2px 0px $white2;
-    padding:40px;
-    .underline{
-      text-decoration:underline;
-      margin-bottom: 0px;
-    }
-    #customize-modules{
-     
-      a{
-        -moz-box-shadow:    0px 0px 2px 0px $white2;
-        -webkit-box-shadow: 0px 0px 2px 0px $white2;
-        box-shadow:         0px 0px 2px 0px $white2;
-      }
-      display:none;
-      padding-left: 0px;
-      padding-right: 0px;
-      .customizers{
-        position:absolute;
-        top:6px;
-        right:0px;
-        color:$greenPrimary;
-      }
-      a{
-        position:relative;
-      }
-    }
-    #no-customize-modules{
-      a{
-        -moz-box-shadow:    0px 0px 2px 0px $white2;
-        -webkit-box-shadow: 0px 0px 2px 0px $white2;
-        box-shadow:         0px 0px 2px 0px $white2;
-      }
-      padding-left:0px;
-      padding-right:0px;
-    }
-    .tabs-content{
-      min-height:500px;
-      margin:0px;
-      padding:0px;
-      .content{
-        width:100%;
-        padding-top:0px;
-        h4{
-          margin-top:15px;
-          margin-bottom:15px;
-        }
-      }
-      img{
-        width:100%;
-        -moz-box-shadow:    0px 0px 2px 0px $white2;
-        -webkit-box-shadow: 0px 0px 2px 0px $white2;
-        box-shadow:         0px 0px 2px 0px $white2;
-      }
-    }
-    
   }
-
-
-  .tabs{
-    position:relative;
-    input{
-      width:50px;
-      display:inline;
-    }
-    width: 100%;
+  #standard-family{
+    padding-top:10px;
   }
-
-
-//payment box
-  .outer-box{
-    margin-top:15px;
-    border: 1px solid $lightGray3;
-    @include radius(10px);
-    margin-left:5px;
-    margin-right:5px;
-    margin-bottom:15px;
-    padding-left:9px;
-    padding-right:9px;
-    padding-top:5px;
-    padding-bottom:15px;
-    background-color: $white3;
-    .no-list{
-      display:none;
-    }
-    .customize-replace{
-      display:block;
-    }
-    .subhead{
-      margin-top:15px;
-    }
-    #error_fee{
-      color:$IMP;
-      display:none;
-    }
-    #delivery_free{
-      display:block;
-    }
-    #delivery_fee{
-      display:none;
-    }
-
-    .customize-button{
+  span.boxnum-radio{
+    text-align:left;
+  }
+  .box-display{
+    .big-button{
       @include button-base;
-      @include button-size(0, -1);
-      @include button-style($orangeAccent);
+      @include button-size(1, 1);
+      @include button-style($greenPrimary);
+      @include radius;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:20px;
+      h2{
+        margin-bottom:0px;
+      }
+    }
+  }
+
+  .single-box{
+    .big-button{
+      @include button-base;
+      @include button-size(1, 1);
+      @include button-style($midGray);
       @include radius;
       margin-bottom:20px;
       color:white;
       font-weight:bold;
       margin-top:0px;
-      padding:4px;
+      padding:20px;
     }
-
-    .select-frequency{
-      margin-top:10px;
+    h2{
+      margin-bottom:0px;
     }
+  }
 
-    h5{
-      color: $darkGray;
-    }
+  .box-display, .single-box{
+    padding:20px;
+    //cursor:pointer;
 
-    .delivery-row{
+    .image-box, .image-box-starter, .image-box-jumbo{
       position:relative;
-    }
-    .delivery-ribbon{
-      background-color:$orangeDark;
-      padding-top:5px;
-      padding-bottom:5px;
-      margin-left:-10px;
-      margin-right:-10px;
-      border: 1px dashed darken($orangeDark, 5%);
-      h6{
-        color:white;
-        font-weight:bolder;
+        img{
+        position:relative;
+        top:0px;
+        z-index:0;
+        margin-top:-20px;
+        margin-bottom:5px;
       }
     }
-
-    div.delivery-ribbon::before{
-      display: block;
-      width: 10px;
-      height: 0px;
-      position: absolute;
-      bottom: -10px;
-      left: -11px;
-      content: "";
-      border-bottom: 10px solid transparent;
-      border-right: 10px solid $orangeDark;
-    }
-     
-    div.delivery-ribbon::after{
-      display: block;
-      width: 10px;
-      height: 0px;
-      position: absolute;
-      bottom: -10px;
-      right: -10px;
-      content: "";
-      border-bottom: 10px solid transparent;
-      border-left: 10px solid $orangeDark;
-    }
-
-    .totals{
-      margin-top:0px;
-      text-align:right;
-      padding-right:10px;
-      
-    }
-
-    .checkout{
-        .checkout-button{
-          @include button-base;
-      @include button-size;
-      @include button-style($greenMute);
-      @include radius;
-      border: 0;
-          
-        }
-        
-    }
-
+    
   }
+
+  .box-middle{
+    border-right: dashed 1px $white3;
+  }
+  .box-description{
+    text-align:left;
+    p{
+      font-size:14px;}
+  }
+  .peek-inside{
+    margin-top:40px;
+  }
+}
+
+
+ 
 
 
   //fieldset style

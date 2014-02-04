@@ -1,3 +1,26 @@
+///////////////box selection effects
+$('.single-box-checkout').click(function(){
+  $("#box_box_num_1").prop('checked', true);
+});
+$('.select-size').change(function(){
+  if ($(this).val() == '2') {
+    $("#box_box_num_2").prop('checked', true);
+    $('#subscription-price').text('$35');
+    $('.image-box-jumbo').hide();
+    $('.image-box-starter').fadeIn();
+  } else if ($(this).val() == '3'){
+    $("#box_box_num_3").prop('checked', true);
+    $('#subscription-price').text('$60');
+    $('.image-box-starter').hide();
+    $('.image-box-jumbo').fadeIn();
+  } else{
+  }
+});
+
+/////////////
+//checkout-button will hide select and unhide the delivery fieldset
+stepInit();
+
 
 
 //checkout page
@@ -7,32 +30,6 @@ $('#agree').click(function(){
   $('#terms_button').hide();
   $('#terms_reveal').fadeIn(50);
   $('#agree').attr("disabled", true);
-});
-
-//delivery preferences button
-$("#delivery_preferences").hide();
-   //checkout-button will hide select and unhide the delivery fieldset
-$(".checkout-button").click(function(){
-  //$('.select').hide();
-  $('#delivery_preferences').fadeIn();
-  $('html, body').animate({
-        scrollTop: $("#delivery_preferences").offset().top
-    }, 1000);
-});
-//customize button
-$('.customize-button').click(function(){
-  $('html, body').animate({
-        scrollTop: $(".form").offset().top
-    }, 1000).delay(1000);
-  $('#no-customize-modules').hide();
-  $('#customize-modules').fadeIn();
-  $('.customize-replace').hide();
-  $('.no-list').fadeIn();
-});
-
-//price checking
-$(".module-number").change(function(){
-  updatePrices();
 });
 
 //zip code -- check based upon value
@@ -277,62 +274,38 @@ $("#box_zip").change(function(){
   }
 })
 
-
-//frequency select changes the text
-$('#box_frequency').change(function(){
-  switch($(this).val()){
-    case '1':
-      $('#total_period').text('week');
-      break;
-    case '2':
-      $('#total_period').text('2 weeks');
-      break;
-    case '4':
-      $('#total_period').text('month');
-      break;
-    default:
-      $('#total_period').text('week');
-  }
-
-});
-
-function updatePrices(){
-  var price = 
-    $('#box_module_1').val() * $('#box_module_1').data('price') +
-    $('#box_module_2').val() * $('#box_module_2').data('price') +
-    $('#box_module_3').val() * $('#box_module_3').data('price') +
-    $('#box_module_4').val() * $('#box_module_4').data('price') +
-    $('#box_module_5').val() * $('#box_module_5').data('price') +
-    $('#box_module_6').val() * $('#box_module_6').data('price');
-    str = price.toString();
-    $('#price_sum').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
-    
-    if ((price < 4000) && (price > 1999)) {
-      //no free delivery
-      $('#delivery_free').hide();
-      $('#delivery_fee').show();
-      $('#error_fee').hide()
-      $('#delivery_fee').fadeIn();
-      $('#price_delivery').text('$4.00');
-      total = (price + 400).toString();
-      $('#price_total').text( '$' + total.slice(0,-2) + '.' + total.substr(total.length - 2));
-
-    } else if (price < 2000) {
-      //no able to order.. must go above $20
-      $('#delivery_fee').hide();
-      $('#error_fee').fadeIn().text('Minimum order: $20. Please increase your order.');
-      $('#price_total').text('N/A');
-    } else {
-      delivery = 0;
-      $('#delivery_free').show();
-      $('#delivery_fee').hide();
-      $('#price_total').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
-    }
-
-
-  //add some programming for delivery costs
-}
-
 function parseZipcode(zipcode){
   return $.trim(zipcode).substring(0,5);
+}
+
+function stepInit(){
+  $(".checkout-button").click(function(){
+    stepTwo();
+  });
+}
+
+function stepTwo(){
+  $('#step1').addClass('linkable active');
+  $('#step2').addClass('active');
+  $('section.box-select').hide();
+  $('#delivery_preferences').fadeIn();
+  $("#step1.linkable.active").click(function(){
+    stepOne();
+  });
+}
+
+function stepOne(){
+  stepZero();
+  $('#step1').addClass('active');
+  $('#delivery_preferences').hide();
+  $('section.box-select').fadeIn();
+  $(".checkout-button").click(function(){
+    stepTwo();
+  });
+}
+
+function stepZero(){
+  $('#step1').removeClass('active').removeClass('linkable');
+  $('#step2').removeClass('active').removeClass('linkable');
+  $('#step3').removeClass('active').removeClass('linkable');
 }

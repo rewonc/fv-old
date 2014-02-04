@@ -1,0 +1,383 @@
+//payment box
+  .outer-box{
+    margin-top:15px;
+    border: 1px solid $lightGray3;
+    @include radius(10px);
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:15px;
+    padding-left:9px;
+    padding-right:9px;
+    padding-top:5px;
+    padding-bottom:15px;
+    background-color: $white3;
+    .no-list{
+      display:none;
+    }
+    .customize-replace{
+      display:block;
+    }
+    .subhead{
+      margin-top:15px;
+    }
+    #error_fee{
+      color:$IMP;
+      display:none;
+    }
+    #delivery_free{
+      display:block;
+    }
+    #delivery_fee{
+      display:none;
+    }
+
+    .customize-button{
+      @include button-base;
+      @include button-size(0, -1);
+      @include button-style($orangeAccent);
+      @include radius;
+      margin-bottom:20px;
+      color:white;
+      font-weight:bold;
+      margin-top:0px;
+      padding:4px;
+    }
+
+    .select-frequency{
+      margin-top:10px;
+    }
+
+    h5{
+      color: $darkGray;
+    }
+
+    .delivery-row{
+      position:relative;
+    }
+    .delivery-ribbon{
+      background-color:$orangeDark;
+      padding-top:5px;
+      padding-bottom:5px;
+      margin-left:-10px;
+      margin-right:-10px;
+      border: 1px dashed darken($orangeDark, 5%);
+      h6{
+        color:white;
+        font-weight:bolder;
+      }
+    }
+
+    
+
+    .totals{
+      margin-top:0px;
+      text-align:right;
+      padding-right:10px;
+      
+    }
+
+    .checkout{
+        .checkout-button{
+          
+          
+        }
+        
+    }
+
+//price checking
+$(".module-number").change(function(){
+  updatePrices();
+});
+
+function updatePrices(){
+  var price = 
+    $('#box_module_1').val() * $('#box_module_1').data('price') +
+    $('#box_module_2').val() * $('#box_module_2').data('price') +
+    $('#box_module_3').val() * $('#box_module_3').data('price') +
+    $('#box_module_4').val() * $('#box_module_4').data('price') +
+    $('#box_module_5').val() * $('#box_module_5').data('price') +
+    $('#box_module_6').val() * $('#box_module_6').data('price');
+    str = price.toString();
+    $('#price_sum').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
+    
+    if ((price < 4000) && (price > 1999)) {
+      //no free delivery
+      $('#delivery_free').hide();
+      $('#delivery_fee').show();
+      $('#error_fee').hide()
+      $('#delivery_fee').fadeIn();
+      $('#price_delivery').text('$4.00');
+      total = (price + 400).toString();
+      $('#price_total').text( '$' + total.slice(0,-2) + '.' + total.substr(total.length - 2));
+
+    } else if (price < 2000) {
+      //no able to order.. must go above $20
+      $('#delivery_fee').hide();
+      $('#error_fee').fadeIn().text('Minimum order: $20. Please increase your order.');
+      $('#price_total').text('N/A');
+    } else {
+      delivery = 0;
+      $('#delivery_free').show();
+      $('#delivery_fee').hide();
+      $('#price_total').text( '$' + str.slice(0,-2) + '.' + str.substr(str.length - 2));
+    }
+
+
+  //add some programming for delivery costs
+}
+
+
+
+
+
+  .module-select{
+   
+    padding:40px;
+    .underline{
+      text-decoration:underline;
+      margin-bottom: 0px;
+    }
+    #customize-modules{
+     
+      a{
+        -moz-box-shadow:    0px 0px 2px 0px $white2;
+        -webkit-box-shadow: 0px 0px 2px 0px $white2;
+        box-shadow:         0px 0px 2px 0px $white2;
+      }
+      display:none;
+      padding-left: 0px;
+      padding-right: 0px;
+      .customizers{
+        position:absolute;
+        top:6px;
+        right:0px;
+        color:$greenPrimary;
+      }
+      a{
+        position:relative;
+      }
+    }
+    #no-customize-modules{
+      a{
+        -moz-box-shadow:    0px 0px 2px 0px $white2;
+        -webkit-box-shadow: 0px 0px 2px 0px $white2;
+        box-shadow:         0px 0px 2px 0px $white2;
+      }
+      padding-left:0px;
+      padding-right:0px;
+    }
+    .tabs-content{
+      min-height:500px;
+      margin:0px;
+      padding:0px;
+      .content{
+        width:100%;
+        padding-top:0px;
+        h4{
+          margin-top:15px;
+          margin-bottom:15px;
+        }
+      }
+      img{
+        width:100%;
+        -moz-box-shadow:    0px 0px 2px 0px $white2;
+        -webkit-box-shadow: 0px 0px 2px 0px $white2;
+        box-shadow:         0px 0px 2px 0px $white2;
+      }
+    }
+    
+  }
+
+
+  .tabs{
+    position:relative;
+    input{
+      width:50px;
+      display:inline;
+    }
+    width: 100%;
+  }
+
+<div class="row">
+    <div class="small-12 columns module-select">
+      <div class="row">
+        <div class="small-12 medium-8 columns">
+          <h3><strong>The Winter Box</strong></h3>
+        </div>
+        <div class="small-12 medium-4 columns centered">
+          <h6 class="underline"><em>Box contents</em></h6><small>Enough for 3 meals for 2 people</small>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="small-12 medium-4 columns right" id="no-customize-modules">
+           <dl class="tabs vertical right" data-tab>
+              <dd class="active"><a href="#panel1a">Greenhouse greens</a></dd>
+              <dd><a href="#panel2a">Quick cookers</a></dd>
+              <dd><a href="#panel3a">Slow cookers</a></dd>
+              <dd><a href="#panel4a">Aromatics</a></dd>
+              <dd><a href="#panel5a">Mushrooms</a></dd>
+              <dd><a href="#panel6a">Fruit</a></dd>
+            </dl>
+        </div>
+
+        <div class="small-12 medium-4 columns right" id="customize-modules">
+           <dl class="tabs vertical right" data-tab>
+              <dd class="active"><a href="#panel1a">Greenhouse greens <span class="customizers"><%= Box.module_price_string(1,false) %>
+       x   <%= f.number_field(:module_1, value: 1, in: 0...6, :"data-price" => Box.module_price(1), class: "module-number") %></span>
+              </a></dd>
+              <dd><a href="#panel2a">Quick cookers<span class="customizers"><%= Box.module_price_string(2,false) %>
+       x      <%= f.number_field(:module_2, value: 1, in: 0...6, :"data-price" => Box.module_price(2), class: "module-number") %></span>
+              </a></dd>
+              <dd><a href="#panel3a">Slow cookers<span class="customizers"> <%= Box.module_price_string(3,false) %>
+       x     <%= f.number_field(:module_3, value: 1, in: 0...6, :"data-price" => Box.module_price(3), class: "module-number") %></span>
+              </a></dd>
+              <dd><a href="#panel4a">Aromatics<span class="customizers"> <%= Box.module_price_string(4,false) %>
+       x    <%= f.number_field(:module_4, value: 1, in: 0...6, :"data-price" => Box.module_price(4), class: "module-number") %></span>
+              </a></dd>
+              <dd><a href="#panel5a">Mushrooms<span class="customizers"> <%= Box.module_price_string(5,false) %>
+       x    <%= f.number_field(:module_5, value: 1, in: 0...6, :"data-price" => Box.module_price(5), class: "module-number") %></span>
+              </a></dd>
+              <dd><a href="#panel6a">Fruit<span class="customizers"> <%= Box.module_price_string(6,false) %>
+       x    <%= f.number_field(:module_6, value: 1, in: 0...6, :"data-price" => Box.module_price(6), class: "module-number") %></span>
+              </a></dd>
+            </dl>
+        </div>
+
+        <div class="small-12 medium-8 columns tabs-content">
+          <div class="content active" id="panel1a">
+            <%= image_tag('box/greens.jpg') %>
+            <h4><strong>Greenhouse greens</strong></h4>
+            <p>Our winter selection includes items like baby kale, bok choy, butterhead lettuce, gourmet salad mix, and hearty chicories (endive, frisée, radicchio, escarole). All are grown throughout the season in local greenhouses and high tunnels!</p>
+            <p><strong>Producers:</strong>  Gotham Greens, Obercreek Farm, Rogowski Farm, Myers Produce</p>
+            <p><strong>Sample:</strong> 1/4 pound sprouts mix, 1/2 pound baby greens mix</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Arugula and Pear Salad With Maple Vinaigrette</em><br />
+              <em>Frisee, Spanish Chorizo, and Boursin Crostini</em><br />
+              <em>Grilled Butter Lettuce with Buttermilk-Chive Dressing</em><br />
+            </p>
+          </div>
+          <div class="content" id="panel2a">
+            <%= image_tag('box/quickcookers.jpg') %>
+            <h4><strong>Quick cookers</strong></h4>
+            <p>This season, expect a variety of carrots, beets, cabbages, and radishes. These diverse veggies can be enjoyed raw or with minimal preparation. Use them in simple and nutritious slaws, salads, smoothies, and juices. </p>
+            <p><strong>Producers:</strong>  Willow Wisp Organic Farm, Myers Produce, Fishkill Farms</p>
+            <p><strong>Sample:</strong>  1 bunch rainbow carrots, 3 large watermelon radishes, 1 head savoy cabbage</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Apple and Watermelon Radish Salad</em><br />
+              <em>Carrot Salad with Harissa, Feta, and Mint</em><br />
+              <em>Raw Beet Salad with Carrots and Ginger</em><br />
+            </p>
+          </div>
+          <div class="content" id="panel3a">
+            <%= image_tag('box/slowcookers.jpg') %>
+            <h4><strong>Slow cookers</strong></h4>
+            <p>This selection rotates through vegetables that often require longer cooking times, such as potatoes, sweet potatoes, squash, parsnips, rutabagas, turnips, and sunchokes. We’re obsessed with all the incredible flavors and textures you’ll find in this category: nutty, creamy, earthy, sweet, and buttery. Try the items roasted, mashed, pureed, or thrown into hearty soups and stews. </p>
+            <p><strong>Producers:</strong>  Lancaster Farm Fresh Cooperative, Myer Produce, Willow Wisp Organic Farm</p>
+            <p><strong>Sample:</strong> 1 lb of Yukon Gold potatoes, 1 lb Beauregard sweet potatoes, 1 rutabaga</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Japanese Turnips with Miso Butter</em><br />
+              <em>Herb-roasted Baby Yukon Golds</em><br />
+              <em>Parmesan Root Vegetable Gratin</em><br />
+            </p>
+          </div>
+          <div class="content" id="panel4a">
+            <%= image_tag('box/aromatics.jpg') %>
+            <h4><strong>Aromatics</strong></h4>
+            <p>Our winter selection of aromatics features leeks, heirloom garlics and garlic scapes, cilantro and parsley, shallots, a variety of onions, and fresh herbs. Let them shine on their own in brilliant sauces, marinades, and dressings, or use them to take other dishes from boring to bold!</p>
+            <p><strong>Producers:</strong> Blooming Hill Farm, Myers Produce, Ragowski Farm, Lancaster Fresh Farm Cooperative</p>
+            <p><strong>Sample:</strong> 1 lb of Cippolini onions, 2 heads of Hungarian Purple Stripe garlic</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Broccoli and Garlic Stirfry</em><br />
+              <em>Balsamic-Glazed Cippolini Onions</em><br />
+              <em>Fragrant Cilantro-Lime Rice</em><br />
+            </p>
+          </div>
+          <div class="content" id="panel5a">
+            <%= image_tag('box/mushrooms.jpg') %>
+            <h4><strong>Mushrooms</strong></h4>
+            <p>Our winter mushroom rotation includes white and crimini mushrooms, shiitakes, oyster, white elm, white trumpet, and beech mushrooms. Savory, meaty, and decadent, mushrooms can be used to deepen flavor and add umami to any dish. </p>
+            <p><strong>Producers:</strong> Lancaster Farm Fresh Cooperative, Primordia Mushroom Farm</p>
+            <p><strong>Sample:</strong>  ½ lb of crimini mushrooms</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Garlic Butter Roasted Mushrooms</em><br />
+              <em>Portobello Mushroom Cap Pizzas</em><br />
+              <em>Winter greens and Shiitake Mushroom Sauté</em><br />
+            </p>
+          </div>
+          <div class="content" id="panel6a">
+            <%= image_tag('box/fruit.jpg') %>
+            <h4><strong>Fruit</strong></h4>
+            <p>Savor the fruits of the season! Experience a variety of apples and pears, as well as occasional specials, like cranberries and quince.  </p>
+            <p><strong>Producers:</strong> Ragowski Farm, Fishkill Farms, Samascott Orchards, Prospect Hill Orchards</p>
+            <p><strong>Sample:</strong> 1 Spartlett pear, 3 Mutsu apples, 2 Spartan apples</p>
+            <p><strong>Past recipes:</strong><br />
+              <em>Free-form Pear Crumble</em><br />
+              <em>Chopped Winter Salad with Apple and Kale</em><br />
+              <em>Apple and Cabbage Slaw with Dijon vinaigrette</em><br />
+            </p>
+          </div>
+        </div>
+
+        <div class="price-box small-12 medium-4 right columns">
+          <div class="outer-box radius rounded">
+            <div class="customize-replace">
+              <div class="row">
+                <div class="small-12 columns small-centered centered">
+                  <p class="subhead"><em>Want more or less of something?</em></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="small-12 columns centered" id="customize-toggle">
+                  <a href="#" class="customize-button">Customize</a>
+                </div>
+              </div>
+            </div>
+            <div class="no-list">
+              <div class="row">
+                <div class="small-8 columns small-centered centered">
+                  <p class="subhead"><span data-tooltip class="has-tip" title="We will attempt to substitute items you indicate here with double quantities of other items from a given week. Please restrict to 3 items or less.">Items to exclude</span></p>
+                  <%= f.text_field :no_list, placeholder: "e.g. parsnips, turnips" %>
+                  <hr />
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="row select-frequency">
+              <div class="small-6 columns">
+                <%= f.label :frequency, "Delivery", html_options = {class: "right inline", for: "select-frequency"} %>
+              </div>
+              <div class="small-6 columns">
+                <%= f.select(:frequency, options_for_select([
+                  ["Weekly",1],
+                  ["Every 2 weeks",2],
+                  ["Every month",4]
+                ])) %>
+                <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="small-12 columns totals">
+                <h5>Subtotal:  <span id="price_sum">$40.00</span></h5>
+                <div id="delivery_fee"><h6>Delivery fee <span id="price_delivery">$4.00</span></h6><small>(for orders less than $40)</small></div>
+                <div id="delivery_free"><h6><em>Free delivery</em></h6></div>
+                <div id="error_fee">Note</div>
+                <h5>Total per <span id="total_period">week</span>: <strong><span id="price_total">$40.00</span></strong>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="small-12 columns checkout centered">
+                <a class="checkout-button">Continue</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

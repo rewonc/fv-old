@@ -22,4 +22,8 @@ skip_before_filter :verify_authenticity_token
   	@texts = SmsLogger.all
   end
 
+  def thirty_minutes
+    
+  end
+
 end

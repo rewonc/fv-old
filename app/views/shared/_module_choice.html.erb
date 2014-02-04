@@ -1,182 +1,114 @@
-<div class="row">
-    <div class="small-12 columns module-select">
+<section class="box-select">
+  <div class="row">
+    <div class="small-12 columns"><!-- container -->
+      
+
+      <div class="row box-row"><!-- row of boxes -->
+        
+        <div class="small-12 medium-8 columns right centered"><!-- subscription panel -->
+          <div class="row sub-table">
+            <h4 class="boldcaps">Subscribe &amp; Join</h4>
+            <div class="small-12 medium-6 columns box-display box-middle">
+                <div class="image-box-starter">
+                  <%= image_tag('simp-v.8/Starterbox.png') %>
+                </div>
+                <div class="image-box-jumbo">
+                  <%= image_tag('simp-v.8/Jumbobox.png') %>
+                </div>
+                
+                
+                <span class="boxnum-radio">
+                  <%= f.radio_button(:box_num, 2, :checked => true) %>
+                  <%= label :box_num_2, 'Standard Box' %>
+                  <%= f.radio_button(:box_num, 3) %>
+                  <%= label :box_num_2, 'Family Box' %>
+                </span>
+
+                 <h2><strong id="subscription-price">$35</strong> <small>per box</small></h2>
+
+                 <p>
+                <em>A commitment-free subscription that allows you maximum choice and selection.</em>
+                </p>
+
+                <div class="row select-size">
+                  <div class="small-4 columns">
+                    <label for="select-size" class="right inline has-tip" data-tooltip title="Boxes provide enough produce for approximately 3 dinners">Size</label>
+                  </div>
+                  <div class="small-8 columns">
+                    <select class="select-size">
+                      <option value='2'>Standard (1-2 people)</option>
+                      <option value='3'>Family (3-4 people)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row select-frequency">
+                  <div class="small-4 columns">
+                    <%= f.label :frequency, "Delivery", html_options = {class: "right inline", for: "select-frequency"} %>
+                  </div>
+                  <div class="small-8 columns">
+                    <%= f.select(:frequency, options_for_select([
+                      ["Weekly",1],
+                      ["Every 2 weeks",2]#,
+                      #["Every month",4]
+                    ])) %>
+                    <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
+                  </div>
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="small-12 medium-6 columns box-display box-description">
+              <p><strong>Preview</strong><br />We send you an email beforehand detailing what's in the box.</p>
+              <p><strong>Easy to skip</strong><br />If you like it, we'll deliver it to you automatically. If not, opt out 3 days before delivery for no charge.</p>
+              <p><strong>Enjoy</strong><br />Cook from our recipes or your own, and share your successes with other Farmivores!</p>
+             
+              <div class="row yes-subscribe">
+                  <div class="small-12 columns">
+                    <div class="big-button boldcaps checkout-button">Join the club</div>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div><!-- end subscription panel -->
+
+        <div class="small-12 medium-4 columns"><!-- single box -->
+          <div class="row">
+            <div class="small-10 columns small-centered centered single-box">
+              <h4 class="boldcaps">Get one box</h4>
+              <div class="image-box">
+                <%= image_tag('simp-v.8/Starterbox.png') %>
+              </div>
+              <h2><strong>$40</strong> <small>per box</small></h2>
+              <p>
+                <em>A simple, one-time purchase of a standard box without the subscription benefits. </em>
+              </p>
+              <span class="boxnum-radio">
+                <%= f.radio_button(:box_num, 1) %>
+                <%= label :box_num_1, 'Starter Box' %>
+              </span>
+              <div class="row no-subscribe">
+                <div class="small-12 columns">
+                  <div class="big-button boldcaps checkout-button single-box-checkout">Buy one box</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div><!-- end single box -->
+
+      </div><!-- end row of boxes -->
+
       <div class="row">
-        <div class="small-12 medium-8 columns">
-          <h3><strong>The Winter Box</strong></h3>
-        </div>
-        <div class="small-12 medium-4 columns centered">
-          <h6 class="underline"><em>Box contents</em></h6><small>Enough for 3 meals for 2 people</small>
+        <div class="small-12 columns centered peek-inside">
+          <h4><em>Peek inside the box!</em></h4>
+          <i class="fa fa-chevron-down"></i>
         </div>
       </div>
-      <div class="row">
 
-        <div class="small-12 medium-4 columns right" id="no-customize-modules">
-           <dl class="tabs vertical right" data-tab>
-              <dd class="active"><a href="#panel1a">Greenhouse greens</a></dd>
-              <dd><a href="#panel2a">Quick cookers</a></dd>
-              <dd><a href="#panel3a">Slow cookers</a></dd>
-              <dd><a href="#panel4a">Aromatics</a></dd>
-              <dd><a href="#panel5a">Mushrooms</a></dd>
-              <dd><a href="#panel6a">Fruit</a></dd>
-            </dl>
-        </div>
-
-        <div class="small-12 medium-4 columns right" id="customize-modules">
-           <dl class="tabs vertical right" data-tab>
-              <dd class="active"><a href="#panel1a">Greenhouse greens <span class="customizers"><%= Box.module_price_string(1,false) %>
-       x   <%= f.number_field(:module_1, value: 1, in: 0...6, :"data-price" => Box.module_price(1), class: "module-number") %></span>
-              </a></dd>
-              <dd><a href="#panel2a">Quick cookers<span class="customizers"><%= Box.module_price_string(2,false) %>
-       x      <%= f.number_field(:module_2, value: 1, in: 0...6, :"data-price" => Box.module_price(2), class: "module-number") %></span>
-              </a></dd>
-              <dd><a href="#panel3a">Slow cookers<span class="customizers"> <%= Box.module_price_string(3,false) %>
-       x     <%= f.number_field(:module_3, value: 1, in: 0...6, :"data-price" => Box.module_price(3), class: "module-number") %></span>
-              </a></dd>
-              <dd><a href="#panel4a">Aromatics<span class="customizers"> <%= Box.module_price_string(4,false) %>
-       x    <%= f.number_field(:module_4, value: 1, in: 0...6, :"data-price" => Box.module_price(4), class: "module-number") %></span>
-              </a></dd>
-              <dd><a href="#panel5a">Mushrooms<span class="customizers"> <%= Box.module_price_string(5,false) %>
-       x    <%= f.number_field(:module_5, value: 1, in: 0...6, :"data-price" => Box.module_price(5), class: "module-number") %></span>
-              </a></dd>
-              <dd><a href="#panel6a">Fruit<span class="customizers"> <%= Box.module_price_string(6,false) %>
-       x    <%= f.number_field(:module_6, value: 1, in: 0...6, :"data-price" => Box.module_price(6), class: "module-number") %></span>
-              </a></dd>
-            </dl>
-        </div>
-
-        <div class="small-12 medium-8 columns tabs-content">
-          <div class="content active" id="panel1a">
-            <%= image_tag('box/greens.jpg') %>
-            <h4><strong>Greenhouse greens</strong></h4>
-            <p>Our winter selection includes items like baby kale, bok choy, butterhead lettuce, gourmet salad mix, and hearty chicories (endive, frisée, radicchio, escarole). All are grown throughout the season in local greenhouses and high tunnels!</p>
-            <p><strong>Producers:</strong>  Gotham Greens, Obercreek Farm, Rogowski Farm, Myers Produce</p>
-            <p><strong>Sample:</strong> 1/4 pound sprouts mix, 1/2 pound baby greens mix</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Arugula and Pear Salad With Maple Vinaigrette</em><br />
-              <em>Frisee, Spanish Chorizo, and Boursin Crostini</em><br />
-              <em>Grilled Butter Lettuce with Buttermilk-Chive Dressing</em><br />
-            </p>
-          </div>
-          <div class="content" id="panel2a">
-            <%= image_tag('box/quickcookers.jpg') %>
-            <h4><strong>Quick cookers</strong></h4>
-            <p>This season, expect a variety of carrots, beets, cabbages, and radishes. These diverse veggies can be enjoyed raw or with minimal preparation. Use them in simple and nutritious slaws, salads, smoothies, and juices. </p>
-            <p><strong>Producers:</strong>  Willow Wisp Organic Farm, Myers Produce, Fishkill Farms</p>
-            <p><strong>Sample:</strong>  1 bunch rainbow carrots, 3 large watermelon radishes, 1 head savoy cabbage</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Apple and Watermelon Radish Salad</em><br />
-              <em>Carrot Salad with Harissa, Feta, and Mint</em><br />
-              <em>Raw Beet Salad with Carrots and Ginger</em><br />
-            </p>
-          </div>
-          <div class="content" id="panel3a">
-            <%= image_tag('box/slowcookers.jpg') %>
-            <h4><strong>Slow cookers</strong></h4>
-            <p>This selection rotates through vegetables that often require longer cooking times, such as potatoes, sweet potatoes, squash, parsnips, rutabagas, turnips, and sunchokes. We’re obsessed with all the incredible flavors and textures you’ll find in this category: nutty, creamy, earthy, sweet, and buttery. Try the items roasted, mashed, pureed, or thrown into hearty soups and stews. </p>
-            <p><strong>Producers:</strong>  Lancaster Farm Fresh Cooperative, Myer Produce, Willow Wisp Organic Farm</p>
-            <p><strong>Sample:</strong> 1 lb of Yukon Gold potatoes, 1 lb Beauregard sweet potatoes, 1 rutabaga</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Japanese Turnips with Miso Butter</em><br />
-              <em>Herb-roasted Baby Yukon Golds</em><br />
-              <em>Parmesan Root Vegetable Gratin</em><br />
-            </p>
-          </div>
-          <div class="content" id="panel4a">
-            <%= image_tag('box/aromatics.jpg') %>
-            <h4><strong>Aromatics</strong></h4>
-            <p>Our winter selection of aromatics features leeks, heirloom garlics and garlic scapes, cilantro and parsley, shallots, a variety of onions, and fresh herbs. Let them shine on their own in brilliant sauces, marinades, and dressings, or use them to take other dishes from boring to bold!</p>
-            <p><strong>Producers:</strong> Blooming Hill Farm, Myers Produce, Ragowski Farm, Lancaster Fresh Farm Cooperative</p>
-            <p><strong>Sample:</strong> 1 lb of Cippolini onions, 2 heads of Hungarian Purple Stripe garlic</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Broccoli and Garlic Stirfry</em><br />
-              <em>Balsamic-Glazed Cippolini Onions</em><br />
-              <em>Fragrant Cilantro-Lime Rice</em><br />
-            </p>
-          </div>
-          <div class="content" id="panel5a">
-            <%= image_tag('box/mushrooms.jpg') %>
-            <h4><strong>Mushrooms</strong></h4>
-            <p>Our winter mushroom rotation includes white and crimini mushrooms, shiitakes, oyster, white elm, white trumpet, and beech mushrooms. Savory, meaty, and decadent, mushrooms can be used to deepen flavor and add umami to any dish. </p>
-            <p><strong>Producers:</strong> Lancaster Farm Fresh Cooperative, Primordia Mushroom Farm</p>
-            <p><strong>Sample:</strong>  ½ lb of crimini mushrooms</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Garlic Butter Roasted Mushrooms</em><br />
-              <em>Portobello Mushroom Cap Pizzas</em><br />
-              <em>Winter greens and Shiitake Mushroom Sauté</em><br />
-            </p>
-          </div>
-          <div class="content" id="panel6a">
-            <%= image_tag('box/fruit.jpg') %>
-            <h4><strong>Fruit</strong></h4>
-            <p>Savor the fruits of the season! Experience a variety of apples and pears, as well as occasional specials, like cranberries and quince.  </p>
-            <p><strong>Producers:</strong> Ragowski Farm, Fishkill Farms, Samascott Orchards, Prospect Hill Orchards</p>
-            <p><strong>Sample:</strong> 1 Spartlett pear, 3 Mutsu apples, 2 Spartan apples</p>
-            <p><strong>Past recipes:</strong><br />
-              <em>Free-form Pear Crumble</em><br />
-              <em>Chopped Winter Salad with Apple and Kale</em><br />
-              <em>Apple and Cabbage Slaw with Dijon vinaigrette</em><br />
-            </p>
-          </div>
-        </div>
-
-        <div class="price-box small-12 medium-4 right columns">
-          <div class="outer-box radius rounded">
-            <div class="customize-replace">
-              <div class="row">
-                <div class="small-12 columns small-centered centered">
-                  <p class="subhead"><em>Want more or less of something?</em></p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="small-12 columns centered" id="customize-toggle">
-                  <a href="#" class="customize-button">Customize</a>
-                </div>
-              </div>
-            </div>
-            <div class="no-list">
-              <div class="row">
-                <div class="small-8 columns small-centered centered">
-                  <p class="subhead"><span data-tooltip class="has-tip" title="We will attempt to substitute items you indicate here with double quantities of other items from a given week. Please restrict to 3 items or less.">Items to exclude</span></p>
-                  <%= f.text_field :no_list, placeholder: "e.g. parsnips, turnips" %>
-                  <hr />
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="row select-frequency">
-              <div class="small-6 columns">
-                <%= f.label :frequency, "Delivery", html_options = {class: "right inline", for: "select-frequency"} %>
-              </div>
-              <div class="small-6 columns">
-                <%= f.select(:frequency, options_for_select([
-                  ["Weekly",1],
-                  ["Every 2 weeks",2],
-                  ["Every month",4]
-                ])) %>
-                <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="small-12 columns totals">
-                <h5>Subtotal:  <span id="price_sum">$40.00</span></h5>
-                <div id="delivery_fee"><h6>Delivery fee <span id="price_delivery">$4.00</span></h6><small>(for orders less than $40)</small></div>
-                <div id="delivery_free"><h6><em>Free delivery</em></h6></div>
-                <div id="error_fee">Note</div>
-                <h5>Total per <span id="total_period">week</span>: <strong><span id="price_total">$40.00</span></strong>
-              </div>
-            </div>
-            
-            <div class="row">
-              <div class="small-12 columns checkout centered">
-                <a class="checkout-button">Continue</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    </div><!-- end container -->
   </div>
+</section>
