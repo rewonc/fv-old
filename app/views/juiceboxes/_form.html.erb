@@ -1,0 +1,17 @@
+<%= form_for(@juicebox) do |f| %>
+  <% if @juicebox.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@juicebox.errors.count, "error") %> prohibited this juicebox from being saved:</h2>
+
+      <ul>
+      <% @juicebox.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

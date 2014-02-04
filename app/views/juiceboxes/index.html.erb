@@ -1,0 +1,25 @@
+<h1>Listing juiceboxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @juiceboxes.each do |juicebox| %>
+      <tr>
+        <td><%= link_to 'Show', juicebox %></td>
+        <td><%= link_to 'Edit', edit_juicebox_path(juicebox) %></td>
+        <td><%= link_to 'Destroy', juicebox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Juicebox', new_juicebox_path %>

@@ -1,6 +1,8 @@
 Farmivore::Application.routes.draw do
 
 
+  resources :juiceboxes
+
   resources :boxes, :charges
 
   root 'welcome#index'

@@ -1,4 +1,5 @@
-class Box < ActiveRecord::Base
+class Juicebox < ActiveRecord::Base
+
   validates :street, presence: true
   validates :box_num, presence: true
   validates :firstname, presence: true
