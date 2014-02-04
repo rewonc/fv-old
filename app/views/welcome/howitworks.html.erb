@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="small-12 columns">
+
+    <h1 class="centered header">How it works</h1>
+
+
+    <div class="row">
+      <div class="small-12 columns">
+       <ul class="small-block-grid-1 medium-block-grid-3 centered">
+        <li>
+          <div class="image">
+            <%= image_tag 'simp-v.8/Howto-1.png'%>
+          </div>
+          <p class="caption">1.  Order your box online and pick a delivery plan.</p>
+        </li>
+        <li>
+          <div class="image">
+            <%= image_tag 'simp-v.8/Howto-2.png'%>
+          </div>
+          <p class="caption">2.  We team up with farmers to fill your box with the freshest, tastiest produce around.</p>
+        </li>
+        <li>
+          <div class="image">
+            <%= image_tag 'simp-v.8/Howto-3.png'%>
+          </div>
+          <p class="caption">3.  Sit back and enjoy the awesome fruits and veggies that arrive at your door!</p>
+        </li>
+       </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns panel-box">
+        <div class="row">
+          <div class="small-12 medium-8 columns content">
+            <p>
+When you sign up for Farmivore, you get a recurring subscription of local and organic produce delivered to your door. We work directly with farmers and farm cooperatives to bring you the best fruits and veggies of the season. 
+            </p>
+            <p>
+Each box always features a variety of flavors and textures so that you can create nutritious, balanced meals at home. If you get something you don't recognize, just check the order insert for easy recipes and preparation tips. 
+            </p>
+            <p>
+With every box you order, you support small farms in your community. Learn more about the producers by reading about <%= link_to 'our farms', welcome_farms_path %> and <%= link_to 'sourcing standards.', welcome_about_path %>
+            </p>
+          </div>
+          <div class="small-12 medium-4 columns">
+            <h4>Get a box today!</h4>
+            <h5>Starting at $35 per box</h5>
+            <%= link_to "Local box", new_box_path, class: "box-button"  %>
+            <%= link_to "Juicing box", new_box_path, class: "juicing-button"  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

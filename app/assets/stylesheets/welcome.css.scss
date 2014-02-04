@@ -145,7 +145,7 @@
 
 //////////// welcome#features
 
-.welcome.features{
+.welcome.about{
   .title{
     margin-top:30px;
     color:$darkGray;
@@ -258,7 +258,7 @@
   }
 }
 
-.welcome.about{
+.welcome.team{
   h2{
     margin-bottom:15px;
   }
@@ -270,7 +270,37 @@
       border: 1px solid $midGray;
     }
   }
+}
 
+.welcome.howitworks{
+  .panel-box{
+    margin-top:0px;
+  }
+  .image{
+    padding:20px;
+    background-color:white;
+    border: 1px solid $white2;
+  }
+  .caption{
+    text-align:left;
+    padding:15px;
+    margin-bottom:0px;
+  }
+  .content{
+    padding:20px;
+  }
+  .box-button {
+      @include button(1rem,$orangeAccent,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+
+    }
+  .juicing-button{
+      @include button(1rem,$greenPrimary,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+
+  }
 }
 
 

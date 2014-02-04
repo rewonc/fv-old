@@ -6,6 +6,12 @@ class WelcomeController < ApplicationController
   def farms
   end
 
+  def team
+  end
+
+  def howitworks
+  end
+
   def about
   end
 

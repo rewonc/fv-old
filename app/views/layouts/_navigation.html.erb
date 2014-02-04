@@ -8,13 +8,15 @@
 
   <section class="top-bar-section">
     <ul class="left">
-    	<li><%= link_to 'How it works', welcome_features_path, html_options = {id: "nav-howitworks"} %></li>
-      <li><%= link_to 'Order a box', new_box_path, html_options = {id: "nav-ourboxes"} %></li>
-      <li><%= link_to 'Our farms', welcome_farms_path %></li>
+    	<li><%= link_to 'How it works', welcome_howitworks_path, html_options = {id: "nav-howitworks"} %></li>
+      <li><%= link_to 'Local box', new_box_path, html_options = {id: "nav-ourboxes"} %></li>
+      <li><%= link_to 'Juicing box', welcome_farms_path %></li>
+      <li><%= link_to 'About us', welcome_about_path %></li>
       <li class="has-dropdown">
         <a href="#">More&nbsp;&nbsp;&nbsp;&nbsp;</a>
         <ul class="dropdown">
-          <li><%= link_to 'About us', welcome_about_path %></li>
+          <li><%= link_to 'Our farms', welcome_farms_path %></li>
+          <li><%= link_to 'Team', welcome_team_path %></li>
           <li><a href="http://farmivore.tumblr.com">Blog</a></li>
           <li><%= link_to 'Contact us', welcome_contact_path %></li>
         </ul>
