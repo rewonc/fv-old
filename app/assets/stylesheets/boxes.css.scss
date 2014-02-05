@@ -67,7 +67,7 @@
 
   section.intro{
     padding-top: 10px;
-    background-image: image-url("fullbox.jpg");
+    background-image: image-url("simp-v.8/photo-localheader.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -80,9 +80,9 @@
       font-weight:500;
     }
     img{
-      margin-top:60px;
+      margin-top:00px;
       max-height:200px;
-      margin-bottom:100px;
+      margin-bottom:160px;
       @media only screen and (max-width: 40em) {margin-top:0px;}
     }
 
@@ -97,12 +97,16 @@
       margin-bottom:0px;
     }
     .location{
+      color:white;
       padding:15px;
       p{
         font-size:12px;
         z-index:10;
         a{
           z-index:10;
+          span.has-tip{
+            color:$white3;
+          }
         }
       }
     }
