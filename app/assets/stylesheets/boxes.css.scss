@@ -24,47 +24,10 @@
   #delivery_preferences{
     display:none;
   }
-  section.intro{
-    h3{
-      font-weight:500;
-    }
-    img{
-      margin-top:-60px;
-      max-height:200px;
-      @media only screen and (max-width: 40em) {margin-top:0px;}
-      
-      margin-bottom:20px;
-    }
-    .back-button{
-      display:none;
-    }
-    .bottom-bar{
-        border-top: 3px solid $white2;
-        padding-top:10px;
-      }
-    .subheader{
-      color:$darkGray1;
-      margin-top:0px;
-    }
-    h5{
-      color:$darkGray1;
-      margin-top:20px;
-      margin-bottom:0px;
-    }
-    .location{
-      padding:15px;
-      p{
-        font-size:12px;
-        z-index:10;
-        a{
-          z-index:10;
-        }
-      }
-    }
-    .fa{
-      font-size:16px;
-    }
-    #step1{
+
+
+//...............for the progress bar
+  #step1{
       color:$midGray;
       pointer-events: none;
       cursor: default;
@@ -89,7 +52,73 @@
       pointer-events:auto;
 
     }
+    .bottom-bar{
+        border-bottom: 3px solid $white2;
+        padding-top:10px;
+        margin-top:20px;
+      }
+    .back-button{
+      display:none;
+    }
+    .progress-bar{
+      margin-top:20px;
+    }
+///////////// end progress
+
+  section.intro{
+    h3{
+      font-weight:500;
+    }
+    img{
+      margin-top:-60px;
+      max-height:200px;
+      @media only screen and (max-width: 40em) {margin-top:0px;}
+      
+      margin-bottom:20px;
+    }
+
+    
+    .subheader{
+      color:$darkGray1;
+      margin-top:0px;
+    }
+    h5{
+      color:$darkGray1;
+      margin-top:20px;
+      margin-bottom:0px;
+    }
+    .location{
+      padding:15px;
+      p{
+        font-size:12px;
+        z-index:10;
+        a{
+          z-index:10;
+        }
+      }
+    }
+    .fa{
+      font-size:16px;
+    }
   }
+
+section.box-preview{
+  > .row{
+  }
+  h3{
+    margin-top:20px;
+    margin-bottom:30px;
+  }
+  img{
+    border: 1px solid $midGray;
+  }
+  .local-orbit{
+    margin-bottom:20px;
+  }
+  h6{
+    font-size:13px;
+  }
+}
 
 section.box-select{
   p{
