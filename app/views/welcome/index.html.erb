@@ -33,22 +33,22 @@
       
       <li>
         <div class="row">
-          <div class="small-12 columns photo1">
+          <a class="small-12 columns photo1" href="<%= new_box_path %>">
             <%= image_tag 'simp-v.8/photo-localheader-small.jpg' %>
             <h3>Cooking box</h3>
             <p>Local, seasonal produce<br />
             <em>Starting from $35 per box</em></p>
-          </div>
+          </a>
         </div>
       </li>
       <li>
         <div class="row">
-          <div class="small-12 columns photo2">
+          <a class="small-12 columns photo2" href="<%= new_juicebox_path %>">
             <%= image_tag 'simp-v.8/photo-juiceheader-small.jpg' %>
             <h3>Juicing box</h3>
             <p>Packs of produce for home juicing<br />
             <em>Starting from $35 per box</em></p>
-          </div>
+          </a>
         </div>
       </li>
     </ul>
@@ -57,7 +57,7 @@
 
 <div class="row learn-more">
   <div class="small-12 columns centered">
-    <p>Curious about how it works? <br /><strong>Learn about</strong> how Farmivore gets you the best produce possible.</p>
+    <p>Curious about how it works? <br />Learn about how <strong>Farmivore</strong> gets you the best produce possible.</p>
     <%= link_to 'How it works', welcome_howitworks_path, class: "get-started-button" %>
   </div>
 </div>
