@@ -4,7 +4,7 @@ class JuiceboxesController < ApplicationController
   # GET /juiceboxes
   # GET /juiceboxes.json
   def index
-    @juiceboxes = Juicebox.all
+    @boxes = Juicebox.all
   end
 
   # GET /juiceboxes/1
@@ -19,35 +19,38 @@ class JuiceboxesController < ApplicationController
 
   # GET /juiceboxes/1/edit
   def edit
+    if (session[:juicebox_id].to_s == params[:id])
+      @juicebox = Juicebox.find(session[:juicebox_id])
+    else
+      flash[:error] = "You don't have permission to edit this. " + params[:id]
+      redirect_to root_path
+    end
   end
 
   # POST /juiceboxes
   # POST /juiceboxes.json
   def create
-    @juicebox = Juicebox.new(juicebox_params)
+    @box = Juicebox.new(juicebox_params)
 
-    respond_to do |format|
-      if @juicebox.save
-        format.html { redirect_to @juicebox, notice: 'Juicebox was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @juicebox }
+      if @box.save
+        ConfirmMailer.box_alert(@box).deliver
+        session[:juicebox_id] = @box.id
+        render 'charges/new', notice: 'Juicebox was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @juicebox.errors, status: :unprocessable_entity }
+        render action: 'new', notice: 'Order could not be saved'
       end
-    end
+
   end
 
   # PATCH/PUT /juiceboxes/1
   # PATCH/PUT /juiceboxes/1.json
   def update
-    respond_to do |format|
-      if @juicebox.update(juicebox_params)
-        format.html { redirect_to @juicebox, notice: 'Juicebox was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @juicebox.errors, status: :unprocessable_entity }
-      end
+    @box = Juicebox.find(params[:id])
+    if @box.update(juicebox_params)
+       session[:juicebox_id] = @box.id
+       render 'charges/new'
+    else
+       render action: 'new'
     end
   end
 

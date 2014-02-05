@@ -13,21 +13,21 @@
                   <%= image_tag('simp-v.8/juicebox.png') %>
                 </div>
                 <div class="image-box-jumbo">
-                  <%= image_tag('simp-v.8/juicebox.png') %>
+                  <%= image_tag('simp-v.8/Jumbojuice.png') %>
                 </div>
                 
                 
                 <span class="boxnum-radio">
-                  <%= f.radio_button(:box_num, 2, :checked => true) %>
-                  <%= label :box_num_2, 'Standard Box' %>
-                  <%= f.radio_button(:box_num, 3) %>
-                  <%= label :box_num_2, 'Family Box' %>
+                  <%= f.radio_button(:box_num, 5, :checked => true) %>
+                  <%= label :box_num_5, 'Standard Box' %>
+                  <%= f.radio_button(:box_num, 6) %>
+                  <%= label :box_num_6, 'Family Box' %>
                 </span>
 
                  <h2><strong id="subscription-price">$35</strong> <small>per box</small></h2>
 
                  <p>
-                <em>A commitment-free subscription that lets you </em>
+                <em>A commitment-free subscription and the best value.</em>
                 </p>
 
                 <div class="row select-size">
@@ -52,7 +52,6 @@
                       ["Every 2 weeks",2]#,
                       #["Every month",4]
                     ])) %>
-                    <%# In editing the frequency, remember to edit jscript which changes the Total: text %>
                   </div>
                 </div>
                 
@@ -87,8 +86,8 @@
                 <em>A simple, one-time purchase of a standard box without the subscription benefits. </em>
               </p>
               <span class="boxnum-radio">
-                <%= f.radio_button(:box_num, 1) %>
-                <%= label :box_num_1, 'Starter Box' %>
+                <%= f.radio_button(:box_num, 4) %>
+                <%= label :box_num_4, 'Starter Box' %>
               </span>
               <div class="row no-subscribe">
                 <div class="small-12 columns">

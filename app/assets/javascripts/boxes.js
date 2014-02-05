@@ -1,27 +1,8 @@
 ///////////////box selection effects
-$('.single-box-checkout').click(function(){
-  $("#box_box_num_1").prop('checked', true);
-});
-$('.select-size').change(function(){
-  if ($(this).val() == '2') {
-    $("#box_box_num_2").prop('checked', true);
-    $('#subscription-price').text('$35');
-    $('.image-box-jumbo').hide();
-    $('.image-box-starter').fadeIn();
-  } else if ($(this).val() == '3'){
-    $("#box_box_num_3").prop('checked', true);
-    $('#subscription-price').text('$60');
-    $('.image-box-starter').hide();
-    $('.image-box-jumbo').fadeIn();
-  } else{
-  }
-});
-
+selectify();
 /////////////
 //checkout-button will hide select and unhide the delivery fieldset
 stepInit();
-
-
 
 //checkout page
 $('#terms_reveal').hide();
@@ -273,6 +254,63 @@ $("#box_zip").change(function(){
     $('#zip_action').html('<span class="zip-error">Sorry, we currently do not serve that zipcode. Please check to see you have entered it correctly.</span>');
   }
 })
+
+function selectify(){
+  //prefill the default value
+  switch( $('input[type="radio"][name="juicebox[box_num]"]:checked').val()){
+  case '4':
+    break;
+  case '5':
+    $('.select-size').val('2');
+    break;
+  case '6':
+    $('.select-size').val('3');
+    $('#subscription-price').text('$60');
+      $('.image-box-starter').hide();
+      $('.image-box-jumbo').fadeIn();
+    break;
+  }
+ 
+
+
+  //boxes page
+  $('.single-box-checkout').click(function(){
+    $("#box_box_num_1").prop('checked', true);
+  });
+  $('.select-size').change(function(){
+    if ($(this).val() == '2') {
+      $("#box_box_num_2").prop('checked', true);
+      $('#subscription-price').text('$35');
+      $('.image-box-jumbo').hide();
+      $('.image-box-starter').fadeIn();
+    } else if ($(this).val() == '3'){
+      $("#box_box_num_3").prop('checked', true);
+      $('#subscription-price').text('$60');
+      $('.image-box-starter').hide();
+      $('.image-box-jumbo').fadeIn();
+    } else{
+    }
+  });
+
+  //juiceboxes page
+  $('.single-box-checkout').click(function(){
+    $("#juicebox_box_num_4").prop('checked', true);
+  });
+  $('.select-size').change(function(){
+    if ($(this).val() == '2') {
+      $("#juicebox_box_num_5").prop('checked', true);
+      $('#subscription-price').text('$35');
+      $('.image-box-jumbo').hide();
+      $('.image-box-starter').fadeIn();
+    } else if ($(this).val() == '3'){
+      $("#juicebox_box_num_6").prop('checked', true);
+      $('#subscription-price').text('$60');
+      $('.image-box-starter').hide();
+      $('.image-box-jumbo').fadeIn();
+    } else{
+    }
+  });
+}
 
 function parseZipcode(zipcode){
   return $.trim(zipcode).substring(0,5);

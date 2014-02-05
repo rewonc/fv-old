@@ -1,6 +1,24 @@
-<h1>Editing juicebox</h1>
+<section class="intro">
+  <div class="row">
+    <div class="small-12 centered columns">
 
-<%= render 'form' %>
+      <h1 class="header-main">Modify your settings</h1>
+      
+    </div>
+  </div>
+</section>
 
-<%= link_to 'Show', @juicebox %> |
-<%= link_to 'Back', juiceboxes_path %>
+<div class="form">
+
+  <%= form_for @juicebox, url: juicebox_path(@juicebox.id), :html => {"data-abide" => ''} do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <!-- module chooser -->
+   <%= render 'shared/module_choice_juicing', f: f %>
+  <div id="delivery_preferences">
+  <%= render 'shared/delivery_preferences', f: f %>
+  </div>
+
+
+<% end %>

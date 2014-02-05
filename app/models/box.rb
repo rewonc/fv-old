@@ -65,11 +65,11 @@ class Box < ActiveRecord::Base
   def get_box_name
     case box_num
       when 1
-        box_name = "Single Box"
+        box_name = "Single Cooking Box"
       when 2
-        box_name = "Standard Box subscription"
+        box_name = "Standard Cooking Box subscription"
       when 3
-        box_name = "Family Box subscription"
+        box_name = "Family Cooking Box subscription"
     end
     return box_name 
   end

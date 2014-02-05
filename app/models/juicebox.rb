@@ -23,11 +23,11 @@ class Juicebox < ActiveRecord::Base
 
   def box_price
    case box_num
-      when 1
+      when 4
         price = 4000
-      when 2
+      when 5
         price = 3500
-      when 3
+      when 6
         price = 6000
     end
 
@@ -65,12 +65,12 @@ class Juicebox < ActiveRecord::Base
 
   def get_box_name
     case box_num
-      when 1
-        box_name = "Single Box"
-      when 2
-        box_name = "Standard Box subscription"
-      when 3
-        box_name = "Family Box subscription"
+      when 4
+        box_name = "Single Juicing Box"
+      when 5
+        box_name = "Standard (7 pack) Juicing subscription"
+      when 6
+        box_name = "Jumbo (14 pack) Juicing subscription"
     end
     return box_name 
   end

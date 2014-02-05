@@ -8,8 +8,18 @@
       <div class="small-7 small-centered columns">
         <%= render 'shared/box_display', box: @box %>
          <p class="back-link centered">
-      
-          <%= link_to "Go back and modify delivery settings", edit_box_path(@box.id) %>
+          <% 
+            case @box.box_num
+            when 1..3
+              path = edit_box_path(@box.id) 
+            when 4..6
+              path = edit_juicebox_path(@box.id)
+            else
+              path = root_path
+            end
+            
+          %>
+          <%= link_to "Go back and modify delivery settings", path %>
 
         </p>
        <hr /><br />

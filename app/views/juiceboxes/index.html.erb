@@ -1,25 +1,49 @@
-<h1>Listing juiceboxes</h1>
+<p>todo -- sortable, ranked, autotext, </p>
+<table >
+<tr class="fixedbar">
+  <th>Name</th>
+  <th>Addy</th>
+  <th>Email/phone <-LINK for IOS </th>
+  <th>30 min text</th>
+  <th>freq(dep)</th>
+  <th>d. pref</th>
+  
+  <th>Instructions</th>
+  <th>startdate</th>
+  <th>box num</th>
+  <th>text?</th>
+  <th>call?</th>
+  
+  <th>Rank for This Week's Delivery (or inactive)</th>
+  <th>Edit/delete</th>
+  <th>Promo code</th>
+</tr>
+<% @boxes.each do |b| %>
+<tr>
+  <td><%= b.firstname %><br /><%= b.lastname %></td>
+  <td>
+    
+      <% url =  b.street + ', ' + b.street2 + ', ' + b.city + ', ' + b.state + ' ' + b.zip %>
+      <a href="comgooglemaps://?q=<%= URI::encode(url) %>"><%= url %></a>
+      
+  </td>
+  <td><%= b.email %><br /><a href="tel:<%= b.phone %>"><%= b.phone %></a></td>
+  <td>30 min text link // respond</td>
+  <td><%= b.frequency_string %></td>
+  <td><%= b.delivery_preference_string %></td>
+  
+  <td>
+    <%= b.instructions %>
+  </td>
+  <td><%= b.startdate %></td>
+  <td><%= b.box_num %></td>
+  <td><%= b.text_me %></td>
+  <td><%= b.call_me %></td>
+  
+  <td>Delivery rank</td>
+  <td><%= link_to 'edit', edit_box_path(b) %>// <%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= b.promo %></td>
+</tr>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @juiceboxes.each do |juicebox| %>
-      <tr>
-        <td><%= link_to 'Show', juicebox %></td>
-        <td><%= link_to 'Edit', edit_juicebox_path(juicebox) %></td>
-        <td><%= link_to 'Destroy', juicebox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Juicebox', new_juicebox_path %>
