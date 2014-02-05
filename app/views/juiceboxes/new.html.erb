@@ -5,19 +5,8 @@
     </div>
   </div>
   <div class="row">
-    
     <div class="small-12 columns centered">
-
       <img data-interchange="[<%= asset_path 'simp-v.8/juiceheader2-820.png'%>, (large)], [<%= asset_path 'simp-v.8/juiceheader2-820.png'%>, (medium)], [<%= asset_path 'simp-v.8/juiceheader2-350'%>, (small)]">
-
-      <h5><span class="bottom-bar"><span id="step1" class="active">Pick a Plan &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step2">Delivery Preferences &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step3"> Checkout </span></span></h5>
-      <div class="row">
-        <div class="small-12 columns centered">
-          <span class="back-button"><a>Select a different box</a></span>
-        </div>
-      </div>
-
-      
     </div>
   </div>
 </section>
@@ -25,40 +14,146 @@
 <section class="box-preview">
   <div class="row">
     <div class="small-12 columns">
-      <ul class="local-orbit" data-orbit>
-        <li>
-          <div class="row">
-            <div class="small-12 medium-6 columns">
-              <%= image_tag 'box/greens.jpg'%>
+
+      <h3 class="centered"><strong>What's in the box</strong></h3>
+        <ul class="local-orbit" data-orbit data-options="timer_speed: 5000; resume_on_mouseout: true">
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/greens.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Greens
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      Yukina Savoy, Butterhead lettuce, baby Red Russian kale, endive, frisée, radicchio, escarole, bok choy, pea tendrils, green sorrel
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="small-12 medium-6 columns">
-              <h3>
-GREENS
-              </h3>
-              <p>
-<strong>Available this season:</strong><br />
-Yukina Savoy, Butterhead lettuce, baby Red Russian kale, endive, frisée, radicchio, escarole, bok choy, pea tendrils, green sorrel
-              </p>
+          </li>
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/quickcookers.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Quick cooking vegetables
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      Rainbow carrots, red and golden beets, Savoy cabbage, watermelon radishes
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <img src="../assets/img/examples/andromeda-orbit.jpg" alt="slide 2" />
-          <div class="orbit-caption">
-            Caption Two.
-          </div>
-        </li>
-        <li>
-          <img src="../assets/img/examples/launch-orbit.jpg" alt="slide 3" />
-          <div class="orbit-caption">
-            Caption Three.
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/slowcookers.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Slow cooking vegetables
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      Japanese sweet potatoes, winter squash, parsnips, Purple Viking potatoes, rutabagas, scarlet and purple-top turnips, sunchokes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/mushrooms.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Mushrooms
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      White and cremini mushrooms, portobellos, shiitakes, oyster, white elm, white trumpet, and beech mushrooms
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/aromatics.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Aromatics and alliums
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      Leeks, heirloom garlics and garlic scapes, cilantro and parsley, shallots, a variety of onions, and fresh herbs
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="small-10 small-centered medium-10 medium-centered columns">
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <%= image_tag 'box/fruit.jpg'%>
+                  </div>
+                  <div class="small-12 medium-6 columns">
+                    <h3>
+      Fruit
+                    </h3>
+                    <p>
+      <strong>Available this season:</strong><br />
+      Apples (Pink Lady, Mutsu, Spigold, Spartan) and pears (Potomac, Bosc, Spartlett), as well occasional specialties like cranberries and quince. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <h6 class="centered">Each box features a mix of the items above. <br />
+          Specific items vary based on freshness and seasonal availability.</h6>
     </div>
   </div>
 </section>
-
+<div class="row">
+  <div class="small-12 columns centered">
+    <h4 class="progress-bar"><span class="bottom-bar"><span id="step1" class="active">Pick a Plan &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step2">Delivery Preferences &nbsp; <i class="fa fa-caret-right"></i> &nbsp; </span><span id="step3"> Checkout </span></span></h4>
+    <div class="row">
+      <div class="small-12 columns centered">
+        <span class="back-button"><a>Select a different box</a></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="form">
   <%= form_for @juicebox, url: juiceboxes_path, :html => {"data-abide" => ''} do |f| %>
