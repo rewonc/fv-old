@@ -69,7 +69,7 @@ class Box < ActiveRecord::Base
       when 2
         box_name = "Standard Cooking Box subscription"
       when 3
-        box_name = "Family Cooking Box subscription"
+        box_name = "Double Cooking Box subscription"
     end
     return box_name 
   end
