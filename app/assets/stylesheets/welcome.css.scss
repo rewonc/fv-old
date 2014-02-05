@@ -157,6 +157,7 @@
   .featurettes{
     margin-top:10px;
     margin-bottom:-30px;
+
     p{
       font-size:12px;
       color:$darkGray;
@@ -201,10 +202,10 @@
         }
         small{
           position:absolute;
+          font-size:14px;
           width:260px;
           left:70px;
           top:20px;
-          line-height:12px;
         }
     }
     .featurette-text{
@@ -215,7 +216,7 @@
   }
   #ft-diverse{
     img{
-      max-width:120%;
+      max-width:100%;
       margin-bottom:15px;
 
     }
@@ -273,13 +274,53 @@
 }
 
 .welcome.howitworks{
+
+  #ft-fresh{
+    .panel-box{
+      background-image: image-url("greenbeans.jpg");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+  }
+  #ft-diverse{
+    .panel-box{
+      background-image: image-url("sungold-tomato.jpg");
+      background-repeat: no-repeat;
+      background-position: -40px -10px;
+    }
+  }
+  #ft-convenient{
+    h2{
+      margin-bottom:20px;
+    }
+    h5{
+      font-size:20px;
+    }
+    p{
+    }
+    .featurette-text{
+      margin-bottom:20px;
+    }
+
+  }
   .panel-box{
     //margin-top:0px;
+    h2.text-z{
+      z-index:10;
+    }
+  }
+  .greenbeans{
+    position:relative;
+    img{
+      position:absolute;
+      top:-130px; 
+      z-index:0;     
+    }
   }
   .whylove{
     color:$darkGray;
     margin-bottom:0px;
-    margin-top:30px;
+    margin-top:10px;
   }
   hr{
     margin-top:0px;
