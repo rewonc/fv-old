@@ -256,24 +256,39 @@ $("#box_zip").change(function(){
 })
 
 function selectify(){
-  //prefill the default value
-  switch( $('input[type="radio"][name="juicebox[box_num]"]:checked').val()){
-  case '4':
-    break;
-  case '5':
-    $('.select-size').val('2');
-    break;
-  case '6':
-    $('.select-size').val('3');
-    $('#subscription-price').text('$60');
-      $('.image-box-starter').hide();
-      $('.image-box-jumbo').fadeIn();
-    break;
+  //prefill the default value on edit
+  if ($('body.edit').length > 0) {
+    switch( $('input[type="radio"][name="juicebox[box_num]"]:checked').val()){
+    case '4':
+      break;
+    case '5':
+      break;
+    case '6':
+      $('.select-size').val('6');
+      $('#subscription-price').text('$60');
+        $('.image-box-starter').hide();
+        $('.image-box-jumbo').fadeIn();
+      break;
+    }
+
+    switch( $('input[type="radio"][name="box[box_num]"]:checked').val()){
+    case '1':
+      break;
+    case '2':
+      break;
+    case '3':
+      $('.select-size').val('3');
+      $('#subscription-price').text('$60');
+        $('.image-box-starter').hide();
+        $('.image-box-jumbo').fadeIn();
+      break;
+    }
   }
  
 
 
   //boxes page
+
   $('.single-box-checkout').click(function(){
     $("#box_box_num_1").prop('checked', true);
   });
@@ -297,12 +312,12 @@ function selectify(){
     $("#juicebox_box_num_4").prop('checked', true);
   });
   $('.select-size').change(function(){
-    if ($(this).val() == '2') {
+    if ($(this).val() == '5') {
       $("#juicebox_box_num_5").prop('checked', true);
       $('#subscription-price').text('$35');
       $('.image-box-jumbo').hide();
       $('.image-box-starter').fadeIn();
-    } else if ($(this).val() == '3'){
+    } else if ($(this).val() == '6'){
       $("#juicebox_box_num_6").prop('checked', true);
       $('#subscription-price').text('$60');
       $('.image-box-starter').hide();
@@ -323,18 +338,28 @@ function stepInit(){
 }
 
 function stepTwo(){
-  $('#step1').addClass('linkable active');
+  stepZero();
+  $('#step1').addClass('linkable');
   $('#step2').addClass('active');
-  $('section.box-select').hide();
-  $('#delivery_preferences').fadeIn();
-  $("#step1.linkable.active").click(function(){
-    stepOne();
-  });
+  $('html,body').animate({
+            scrollTop: $('.progress-bar').offset().top
+        }, 500);
+  
+   $('section.box-select').hide();
+   $('#delivery_preferences').fadeIn();
+   $("#step1.linkable").click(function(){
+      stepOne();
+    });
+       
 }
 
 function stepOne(){
   stepZero();
   $('#step1').addClass('active');
+  $('#step2').addClass('linkable');
+  $('#step2').click(function(){
+    stepTwo();
+  });
   $('#delivery_preferences').hide();
   $('section.box-select').fadeIn();
   $(".checkout-button").click(function(){

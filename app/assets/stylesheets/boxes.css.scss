@@ -50,7 +50,7 @@
       color:black;
 
     }
-    #step1.active.linkable, #step2.active.linkable, #step3.active.linkable{
+    #step1.linkable, #step2.linkable, #step3.linkable{
       color:$midGray;
       cursor:pointer;
       pointer-events:auto;
