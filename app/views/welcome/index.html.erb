@@ -2,24 +2,14 @@
 <section class="introduction segment">
   <div class="row">
 
-    <div class="small-10 columns small-centered centered">
+    <div class="small-12 medium-10 medium-centered columns centered">
       
-      <h1 class="landing-page-tag">
-        Local produce delivered to your door
-      </h1>
-
-      <div class="row">
-        <div class="small-10 medium-5 medium-centered small-centered columns">
-          <div class="landing-page-tag">
-            <h5>Subscribe today for a curated box of fresh fruits and vegetables</h5>
-          </div>
-        </div>
-      </div>
+      <%= image_tag 'simp-v.8/landingheader-850.png'%>
 
       <div class="row button-group">
         <div class="small-12 columns"> 
-          <%= link_to 'Learn more', welcome_features_path, class: "learn-more-button", id: "header-howitworks" %>
-          <%= link_to 'Sign up', new_box_path, class: "get-started-button", id: "header-ourboxes" %>
+          <%= link_to 'I like cooking', new_box_path, class: "learn-more-button", id: "header-howitworks" %> &nbsp; &nbsp; <em> - or - </em>&nbsp; &nbsp; 
+          <%= link_to 'I like juicing', new_juicebox_path, class: "get-started-button", id: "header-ourboxes" %>
         </div>
       </div>
 
@@ -31,45 +21,50 @@
 </section>
 
 
-<div class="row now-serving">
+<div class="row learn-more">
   <div class="small-12 columns centered">
-    <p><strong>Now delivering</strong> to Manhattan, Brooklyn, Queens, and the Bronx. <%= link_to 'Order now',new_box_path %></p>
+    <p><strong>Now delivering</strong> to Manhattan, Brooklyn, Queens, and the Bronx!</p>
   </div>
 </div>
 
-<section class="how-it-works segment">
-  <div class="row three-points">
-    <div class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+<section class="deals">
+  <div class="row">
+    <ul class="small-block-grid-1 medium-block-grid-2 centered">
       
-                <li>
-                  <div class="step-option">
-                    <h5 class="title">Wholesome produce</h5>
-                    <span class="caption">Harvested within hours of delivery. Recipes included. <br/>
-                      <%= link_to "Learn more", welcome_features_path, id: "tribar-howitworks" %></span>
-                  </div>
-                </li>
-                <li>
-                  <div class="step-option">
-                    <h5 class="title">Effortless subscription</h5>
-                    <span class="caption">Cancel or delay whenever you want. Starting from $20/box. <br/>
-                      <%= link_to "See box options", new_box_path, id: "tribar-ourboxes" %></span>
-                  </div>
-                </li>
-                <li>
-                  <div class="step-option">
-                    <h5 class="title">Real farms</h5>
-                    <span class="caption">Selected for the best growing practices. All local.<br/>
-                      <%= link_to "See our farms", welcome_farms_path %></span>
-                  </div>
-                </li>
-             
-    </div>
+      <li>
+        <div class="row">
+          <div class="small-12 columns photo1">
+            <%= image_tag 'simp-v.8/photo-localheader-small.jpg' %>
+            <h3>Cooking box</h3>
+            <p>Local, seasonal produce<br />
+            <em>Starting from $35 per box</em></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="small-12 columns photo2">
+            <%= image_tag 'simp-v.8/photo-juiceheader-small.jpg' %>
+            <h3>Juicing box</h3>
+            <p>Packs of produce for home juicing<br />
+            <em>Starting from $35 per box</em></p>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
+<div class="row learn-more">
+  <div class="small-12 columns centered">
+    <p>Curious about how it works? <br /><strong>Learn about</strong> how Farmivore gets you the best produce possible.</p>
+    <%= link_to 'How it works', welcome_howitworks_path, class: "get-started-button" %>
+  </div>
+</div>
+
 <div class="row">
   <div class="small-12 columns centered">
-    <br /><br /><blockquote>We have been introduced to so many new fruits and vegetables, allowing us to explore new recipes and ways of cooking. Receiving  fresh, seasonal produce delivered straight to our door is such a convenience for our busy family. We look forward to our delivery each week!
+    <hr /><br /><blockquote>We have been introduced to so many new fruits and vegetables, allowing us to explore new recipes and ways of cooking. Receiving  fresh, seasonal produce delivered straight to our door is such a convenience for our busy family. We look forward to our delivery each week!
 <br /> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><cite>Kimberly, New Haven</cite></blockquote>
   </div>
 </div>
