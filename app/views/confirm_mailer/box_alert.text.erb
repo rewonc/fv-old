@@ -10,7 +10,7 @@ Rewon and Ray
 
 ------------------------------------------------------
 
-Your total price will be <%= @box.get_price_string %> (delivery included).
+Your total price will be <%= @box.box_price_string(true) %> (delivery included).
  Your first delivery will be on <%= @box.startdate %>, and follow <%= @box.frequency_string %> thereafter.
 Your preferred time of delivery is: <%= @box.delivery_preference_string %>
 

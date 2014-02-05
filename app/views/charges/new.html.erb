@@ -18,16 +18,18 @@
     
 
       <div class="row">
-        <div class="small-10 small-offset-1 columns centered">
-          <h5>Club Rules</h5>
+        <div class="small-10 small-offset-1 columns">
+          <h4 class="centered">Club Rules</h4>
           <div class="terms">
             <div class="row">
               <div class="small-10 columns small-centered small-offset-1">
-              <p><%= @box.frequency_string.capitalize %>, you will receive an email preview of the box contents. Each week you can opt-out for any reason by responding to that email within the given timeframe.</p>
-              <p>Otherwise, the above price will be charged to your card and we'll deliver a fresh batch of goods to your door!</p>
-              <p>If you don't like your box, we will refund your payment. No questions asked.</p></div>
-              <%= check_box_tag(:agree) %>
-              <%= label_tag(:agree, "I have read and agree to the above terms") %>
+              <ol>
+                <li><p><%= @box.frequency_string.capitalize %>, you'll receive an email preview of your box.</p></li>
+                <li><p>Opt out within 3 days of delivery at no charge. Otherwise, enjoy your veggies!</p></li>
+                <li><p>If you don't like your box, we will refund your payment. No questions asked.</p></li>
+              </ol>
+              </div>
+              <div class="centered"><%= check_box_tag(:agree) %><%= label_tag(:agree, "I have read and agree to the above terms") %></div>
             </div>
           </div>
 
@@ -51,6 +53,7 @@
             </script>
           <% end %>
           </div>
+          <h5>100% satisfaction guaranteed.</h5>
         </div>
       </div>
     </div>
