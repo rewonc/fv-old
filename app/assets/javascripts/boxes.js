@@ -201,53 +201,53 @@ $("#box_zip").change(function(){
     switch(time){
       case 1:
         message = neighborhood + ' area is currently served by Farmivore. Choose a time from your left.'
-        $('#juicebox_startdate').children().eq(0).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(1).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(2).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(3).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(4).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(5).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(0).attr('selected',true);
+        $('#box_startdate').children().eq(0).attr('disabled',false);
+        $('#box_startdate').children().eq(1).attr('disabled',false);
+        $('#box_startdate').children().eq(2).attr('disabled',false);
+        $('#box_startdate').children().eq(3).attr('disabled',false);
+        $('#box_startdate').children().eq(4).attr('disabled',false);
+        $('#box_startdate').children().eq(5).attr('disabled',false);
+        $('#box_startdate').children().eq(0).attr('selected',true);
         break;
       case 2:
         message = neighborhood + ' area service is starting soon. Choose a time from your left.'
-        $('#juicebox_startdate').children().eq(0).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(1).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(2).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(3).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(4).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(5).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(2).attr('selected',true);
+        $('#box_startdate').children().eq(0).attr('disabled',true);
+        $('#box_startdate').children().eq(1).attr('disabled',true);
+        $('#box_startdate').children().eq(2).attr('disabled',false);
+        $('#box_startdate').children().eq(3).attr('disabled',false);
+        $('#box_startdate').children().eq(4).attr('disabled',false);
+        $('#box_startdate').children().eq(5).attr('disabled',false);
+        $('#box_startdate').children().eq(2).attr('selected',true);
         break;
       case 3:
         message = neighborhood + ' area service will begin soon.  See available dates to the left.'
-        $('#juicebox_startdate').children().eq(0).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(1).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(2).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(3).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(4).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(5).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(3).attr('selected',true);
+        $('#box_startdate').children().eq(0).attr('disabled',true);
+        $('#box_startdate').children().eq(1).attr('disabled',true);
+        $('#box_startdate').children().eq(2).attr('disabled',true);
+        $('#box_startdate').children().eq(3).attr('disabled',false);
+        $('#box_startdate').children().eq(4).attr('disabled',false);
+        $('#box_startdate').children().eq(5).attr('disabled',false);
+        $('#box_startdate').children().eq(3).attr('selected',true);
         break;
       case 4:
         message = neighborhood + ' area service will begin soon.  See available dates to the left.'
-        $('#juicebox_startdate').children().eq(0).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(1).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(2).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(3).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(4).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(5).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(4).attr('selected',true);
+        $('#box_startdate').children().eq(0).attr('disabled',true);
+        $('#box_startdate').children().eq(1).attr('disabled',true);
+        $('#box_startdate').children().eq(2).attr('disabled',true);
+        $('#box_startdate').children().eq(3).attr('disabled',true);
+        $('#box_startdate').children().eq(4).attr('disabled',false);
+        $('#box_startdate').children().eq(5).attr('disabled',false);
+        $('#box_startdate').children().eq(4).attr('selected',true);
         break;
       default:
         message = neighborhood + ' area service will begin next season.  Reserve your spot now.'
-        $('#juicebox_startdate').children().eq(0).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(1).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(2).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(3).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(4).attr('disabled',true);
-        $('#juicebox_startdate').children().eq(5).attr('disabled',false);
-        $('#juicebox_startdate').children().eq(5).attr('selected',true);
+        $('#box_startdate').children().eq(0).attr('disabled',true);
+        $('#box_startdate').children().eq(1).attr('disabled',true);
+        $('#box_startdate').children().eq(2).attr('disabled',true);
+        $('#box_startdate').children().eq(3).attr('disabled',true);
+        $('#box_startdate').children().eq(4).attr('disabled',true);
+        $('#box_startdate').children().eq(5).attr('disabled',false);
+        $('#box_startdate').children().eq(5).attr('selected',true);
     }
     $('#zip_action').text(message);
   } else {

@@ -65,7 +65,7 @@ $('#cookingbox-single').click(function(){
 });
 
 $('#box_zip').change(function(){
-  mixpanel.track("Saw available times / location via zipcode", {"From": "Cooking box","Version": "0.8"});
+  mixpanel.track("Saw available times / location via zipcode", {"From": "Cooking box","Version": "0.8", "Zipcode": $(this).val()});
 });
 
 $('#juicingbox-subscribe').click(function(){
