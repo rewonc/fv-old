@@ -377,12 +377,12 @@ function selectify(){
   $('.select-size').change(function(){
     if ($(this).val() == '5') {
       $("#juicebox_box_num_5").prop('checked', true);
-      $('#subscription-price').text('$35');
+      $('#subscription-price').text('$45');
       $('.image-box-jumbo').hide();
       $('.image-box-starter').fadeIn();
     } else if ($(this).val() == '6'){
       $("#juicebox_box_num_6").prop('checked', true);
-      $('#subscription-price').text('$60');
+      $('#subscription-price').text('$80');
       $('.image-box-starter').hide();
       $('.image-box-jumbo').fadeIn();
     } else{
