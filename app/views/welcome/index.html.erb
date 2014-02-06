@@ -8,8 +8,8 @@
 
       <div class="row button-group">
         <div class="small-12 columns"> 
-          <%= link_to 'I like cooking', new_box_path, class: "learn-more-button", id: "header-howitworks" %> &nbsp; &nbsp; <em> - or - </em>&nbsp; &nbsp; 
-          <%= link_to 'I like juicing', new_juicebox_path, class: "get-started-button", id: "header-ourboxes" %>
+          <%= link_to 'I like cooking', new_box_path, class: "learn-more-button", id: "header-cookingbox" %> &nbsp; &nbsp; <em> - or - </em>&nbsp; &nbsp; 
+          <%= link_to 'I like juicing', new_juicebox_path, class: "get-started-button", id: "header-juicebox" %>
         </div>
       </div>
 
@@ -33,7 +33,7 @@
       
       <li>
         <div class="row">
-          <a class="small-12 columns photo1" href="<%= new_box_path %>">
+          <a id="body-cookingbox" class="small-12 columns photo1" href="<%= new_box_path %>">
             <%= image_tag 'simp-v.8/photo-localheader-small.jpg' %>
             <h3>Cooking box</h3>
             <p>Local, seasonal produce<br />
@@ -43,7 +43,7 @@
       </li>
       <li>
         <div class="row">
-          <a class="small-12 columns photo2" href="<%= new_juicebox_path %>">
+          <a id="body-juicebox" class="small-12 columns photo2" href="<%= new_juicebox_path %>">
             <%= image_tag 'simp-v.8/photo-juiceheader-small.jpg' %>
             <h3>Juicing box</h3>
             <p>Packs of produce for home juicing<br />
@@ -58,7 +58,7 @@
 <div class="row learn-more">
   <div class="small-12 columns centered">
     <p>Curious about how it works? <br />Learn about how <strong>Farmivore</strong> gets you the best produce possible.</p>
-    <%= link_to 'How it works', welcome_howitworks_path, class: "get-started-button" %>
+    <%= link_to 'How it works', welcome_howitworks_path, class: "get-started-button", id: "body-howitworks" %>
   </div>
 </div>
 

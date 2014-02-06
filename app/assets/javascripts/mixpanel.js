@@ -1,88 +1,101 @@
 /*
 Metrics to track:
-
-Learn more (position: navbar, header, three, body, )
-
-See our product
-  See box (position: aboutus?, )
-  From our Farms?, etc 
-
-Research / Customize
-Switch items
-Switch tabs?
-Accordion it
-
-Choose delivery preferences and areas
-
-Pay -- checkout
-
-
-Do we have viewcount for tumblr, etc?
-
+ page loads
+ of each thing
 */
 
 
 //Visited Homepage
 if ($('body.welcome.index').length != 0) {
-   mixpanel.track("Visited landing page", {"Version": "0.7"});
+   mixpanel.track("Visited landing page", {"Version": "0.8"});
 }
 
 //Visited How it Works page
 $('#nav-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Navbar","Version": "0.7"});
+  mixpanel.track("Viewed How it Works", {"From": "Navbar","Version": "0.8"});
 });
 
-$('#header-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Header","Version": "0.7"});
-});
-
-$('#tribar-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "Tribar","Version": "0.7"});
-});
-
-$('#about-howitworks').click(function(){
-  mixpanel.track("Viewed How it Works", {"From": "About Us page","Version": "0.7"});
+$('#body-howitworks').click(function(){
+  mixpanel.track("Viewed How it Works", {"From": "Homepage body","Version": "0.8"});
 });
 
 //See about our product
 $('#nav-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Navbar","Version": "0.7"});
+  mixpanel.track("Visited Cooking Box", {"From": "Navbar","Version": "0.8"});
 });
 
-$('#header-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Header","Version": "0.7"});
+$('#nav-ourjuiceboxes').click(function(){
+  mixpanel.track("Visited Juice Box", {"From": "Navbar","Version": "0.8"});
 });
 
-$('#tribar-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Tribar","Version": "0.7"});
+$('#header-cookingbox').click(function(){
+  mixpanel.track("Visited Cooking Box", {"From": "Header","Version": "0.8"});
 });
 
-$('#about-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "About Us Page","Version": "0.7"});
+$('#header-juicebox').click(function(){
+  mixpanel.track("Visited Juice Box", {"From": "Header","Version": "0.8"});
 });
 
-$('#farms-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Farms Page","Version": "0.7"});
+$('#body-juicebox').click(function(){
+  mixpanel.track("Visited Juice Box", {"From": "Body","Version": "0.8"});
 });
 
-$('#features-ourboxes').click(function(){
-  mixpanel.track("Viewed Box Selection", {"From": "Features Page","Version": "0.7"});
+$('#body-cookingbox').click(function(){
+  mixpanel.track("Visited Cooking Box", {"From": "Body","Version": "0.8"});
 });
 
-//Customize box
-$(".customize-button").click(function(){
-  mixpanel.track("Chose customization", {"Version": "0.7"});
+$('#howitworks-juicebox').click(function(){
+  mixpanel.track("Visited Juice Box", {"From": "How it works","Version": "0.8"});
 });
+
+$('#howitworks-cookingbox').click(function(){
+  mixpanel.track("Visited Cooking Box", {"From": "How it works","Version": "0.8"});
+});
+
+
 
 //expand to delivery
 
-$('.checkout-button').click(function(){
-  mixpanel.track("Chose a box / expanded delivery preferences", {"Version": "0.7"});
+$('#cookingbox-subscribe').click(function(){
+  mixpanel.track("Expanded delivery preferences", {"From": "Subscription to cooking box","Version": "0.8"});
+});
+
+$('#cookingbox-single').click(function(){
+  mixpanel.track("Expanded delivery preferences", {"From": "Single cooking box","Version": "0.8"});
+});
+
+$('#box_zip').change(function(){
+  mixpanel.track("Saw available times / location via zipcode", {"From": "Cooking box","Version": "0.8"});
+});
+
+$('#juicingbox-subscribe').click(function(){
+  mixpanel.track("Expanded delivery preferences", {"From": "Subscription to juicing box","Version": "0.8"});
+});
+
+$('#juicingbox-single').click(function(){
+  mixpanel.track("Expanded delivery preferences", {"From": "Single juicing box","Version": "0.8"});
+});
+
+$('#juicebox_zip').change(function(){
+  mixpanel.track("Saw available times / location via zipcode", {"From": "Cooking box","Version": "0.8"});
 });
 
 
 
 
+// last step
+
+$('.order-button').click(function(){
+    mixpanel.track("Proceeded to payment", {"Version": "0.8"});
+});
+
+$('#agree').click(function(){
+    mixpanel.track("Agree to terms", {"Version": "0.8"});
+});
+
+$('#terms_reveal').click(function(){
+    mixpanel.track("Pay via stripe", {"Version": "0.8"});
+});
 
 
 
