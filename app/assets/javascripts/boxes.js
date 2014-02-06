@@ -405,7 +405,7 @@ function stepTwo(){
   $('#step1').addClass('linkable');
   $('#step2').addClass('active');
   $('html,body').animate({
-            scrollTop: $('.progress-bar').offset().top
+            scrollTop: $('.box-row').offset().top - 90
         }, 500);
   
    $('section.box-select').hide();
