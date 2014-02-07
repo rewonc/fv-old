@@ -10,6 +10,15 @@ if ($('body.welcome.index').length != 0) {
    mixpanel.track("Visited landing page", {"Version": "0.8"});
 }
 
+//visited other pages
+if ($('body.boxes.new').length != 0) {
+   mixpanel.track("Loaded cooking boxes page", {"Version": "0.8"});
+}
+
+if ($('body.juiceboxes.new').length != 0) {
+   mixpanel.track("Loaded juicing boxes page", {"Version": "0.8"});
+}
+
 //Visited How it Works page
 $('#nav-howitworks').click(function(){
   mixpanel.track("Viewed How it Works", {"From": "Navbar","Version": "0.8"});
