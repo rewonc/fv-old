@@ -22,6 +22,10 @@ class Juicebox < ActiveRecord::Base
       return "You secured the $20 discount, and will receive $20 off your first order."
      elsif promo.strip.downcase == "lettuce2000"
       return "You secured the $20 discount, and will receive $20 off your first order."
+     elsif promo.strip.downcase == "friendsnfam"
+      return "You secured the $20 discount, and will receive $20 off your first order."
+     elsif promo.strip.downcase == "eralovesveggies"
+      return "You secured the $20 discount, and will receive $20 off your first order."
      else 
       return nil
     end
@@ -45,6 +49,10 @@ class Juicebox < ActiveRecord::Base
     elsif (promo.strip.downcase == "carrot2000")
       total = price - 2000
     elsif (promo.strip.downcase == "lettuce2000")
+      total = price - 2000
+    elsif (promo.strip.downcase == "friendsnfam")
+      total = price - 2000
+    elsif (promo.strip.downcase == "eralovesveggies")
       total = price - 2000
     else
       total = price

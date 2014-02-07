@@ -21,6 +21,8 @@ class Box < ActiveRecord::Base
       return "You secured the $20 discount, and will receive $20 off your first order."
      elsif promo.strip.downcase == "lettuce2000"
       return "You secured the $20 discount, and will receive $20 off your first order."
+     elsif promo.strip.downcase == "sweetbeets1020"
+      return "You secured a $10 discount, and will receive $10 off your first order."
      else 
       return nil
     end
@@ -45,6 +47,8 @@ class Box < ActiveRecord::Base
       total = price - 2000
     elsif (promo.strip.downcase == "lettuce2000")
       total = price - 2000
+    elsif (promo.strip.downcase == "sweetbeets1020")
+      total = price - 1000
     else
       total = price
     end
