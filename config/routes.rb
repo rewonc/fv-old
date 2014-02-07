@@ -16,6 +16,9 @@ Farmivore::Application.routes.draw do
   get "welcome/weekly_email"
   get "welcome/howitworks"
 
+  get 'juicing', to:'juiceboxes#new'
+  get 'cooking', to:'boxes#new'
+
   post 'sms', to: 'texts#catch'
   resources :texts
 
