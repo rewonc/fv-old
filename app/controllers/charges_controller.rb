@@ -10,7 +10,7 @@ class ChargesController < ApplicationController
     amount = @box.box_price
     @customer = Stripe::Customer.create(
       email: @box.email,
-      description: 'Modules:' + @box.module_1.to_s + '-' + @box.module_2.to_s + '-' + @box.module_3.to_s + '-' + @box.module_4.to_s + '-' + @box.module_5.to_s + '-' + @box.module_6.to_s + '. Deliver: ' + @box.startdate.to_s + '. ' + @box.frequency_string + '.',
+      description: @box.get_box_name + ' . Deliver: ' + @box.startdate.to_s + '. ' + @box.frequency_string + '.',
       card: params[:stripeToken]
     )
 
