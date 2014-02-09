@@ -14,9 +14,8 @@ class Juicebox < ActiveRecord::Base
 
 
   def promo_string
-     if promo.strip.downcase == "goodroots2040"
-      return "You secured the $20 for $40 discount, and will receive $20 off your first order."
-     elsif promo.strip.downcase == "beets2000"
+    ##when editing promo codes -- edit BOX as well, as well as LOGIC below
+     if promo.strip.downcase == "beets2000"
       return "You secured the $20 discount, and will receive $20 off your first order."
      elsif promo.strip.downcase == "carrot2000"
       return "You secured the $20 discount, and will receive $20 off your first order."
@@ -26,6 +25,8 @@ class Juicebox < ActiveRecord::Base
       return "You secured the $20 discount, and will receive $20 off your first order."
      elsif promo.strip.downcase == "eralovesveggies"
       return "You secured the $20 discount, and will receive $20 off your first order."
+     elsif promo.strip.downcase == "sweetbeets1020"
+      return "You secured a $10 discount, and will receive $10 off your first order."
      else 
       return nil
     end
@@ -42,9 +43,7 @@ class Juicebox < ActiveRecord::Base
     end
 
     #add some logic for delivery below a certain amount
-    if (promo.strip.downcase == "goodroots2040")
-      total = price - 2000
-    elsif (promo.strip.downcase == "beets2000")
+    if (promo.strip.downcase == "beets2000")
       total = price - 2000
     elsif (promo.strip.downcase == "carrot2000")
       total = price - 2000
@@ -54,6 +53,8 @@ class Juicebox < ActiveRecord::Base
       total = price - 2000
     elsif (promo.strip.downcase == "eralovesveggies")
       total = price - 2000
+    elsif (promo.strip.downcase == "sweetbeets1020")
+      total = price - 1000
     else
       total = price
     end
