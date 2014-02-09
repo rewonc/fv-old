@@ -21,6 +21,7 @@ class BoxesController < ApplicationController
     if @box.save
        ConfirmMailer.box_alert(@box).deliver
        session[:box_id] = @box.id
+       session[:juicebox_id] = nil
        render 'charges/new'
 
     else

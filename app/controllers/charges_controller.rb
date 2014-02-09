@@ -6,7 +6,14 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     # https://stripe.com/docs/tutorials/charges  <-- on how to store the token and charge it later
-    @box = Box.find(session[:box_id])
+    if session[:box_id].nil? && !session[:juicebox_id].nil?
+      @box = Juicebox.find(session[:juicebox_id])
+    elsif !session[:box_id].nil? && session[:juicebox_id].nil?
+      @box = Box.find(session[:box_id])
+    else
+      return redirect_to :root, notice: "Your application appears to come from an unauthorized source. Our apologies for this inconvenience. Please contact support@farmivore.com to register for an account."
+    end
+     
     amount = @box.box_price
     @customer = Stripe::Customer.create(
       email: @box.email,

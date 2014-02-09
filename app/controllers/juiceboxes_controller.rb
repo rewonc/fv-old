@@ -35,6 +35,7 @@ class JuiceboxesController < ApplicationController
       if @box.save
         ConfirmMailer.box_alert(@box).deliver
         session[:juicebox_id] = @box.id
+        session[:box_id] = nil
         render 'charges/new', notice: 'Juicebox was successfully created.'
       else
         render action: 'new', notice: 'Order could not be saved'
