@@ -19,6 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe OrdersController do
+  #include all the view tests
 
   # This should return the minimal set of attributes required to create a valid
   # Order. As you add validations to Order, be sure to

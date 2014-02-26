@@ -11,14 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
+  
   <div class="field">
     <%= f.label :frequency %><br>
     <%= f.text_field :frequency %>
@@ -27,10 +20,7 @@
     <%= f.label :plan %><br>
     <%= f.text_field :plan %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
+  
   <div class="field">
     <%= f.label :promocode %><br>
     <%= f.text_field :promocode %>
@@ -63,15 +53,35 @@
     <%= f.label :zip %><br>
     <%= f.text_field :zip %>
   </div>
+  
+  
+  <div class="actions">
+    <%= f.submit id: "order-submit" %>
+  </div>
+
+<span>Hidden fields</span>
+
+<div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
   <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  
+<div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+<div class="field">
     <%= f.label :stripetoken %><br>
     <%= f.text_field :stripetoken %>
   </div>
+
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
