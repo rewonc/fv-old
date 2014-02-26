@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @order.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order.price %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @order.frequency %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @order.plan %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order.price %>
+</p>
+
+<p>
+  <strong>Promocode:</strong>
+  <%= @order.promocode %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @order.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @order.lastname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Apt:</strong>
+  <%= @order.apt %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @order.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @order.zip %>
+</p>
+
+<p>
+  <strong>Stripetoken:</strong>
+  <%= @order.stripetoken %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

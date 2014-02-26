@@ -1,0 +1,57 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Price</th>
+      <th>Frequency</th>
+      <th>Plan</th>
+      <th>Price</th>
+      <th>Promocode</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Address</th>
+      <th>Apt</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Stripetoken</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.size %></td>
+        <td><%= order.price %></td>
+        <td><%= order.frequency %></td>
+        <td><%= order.plan %></td>
+        <td><%= order.price %></td>
+        <td><%= order.promocode %></td>
+        <td><%= order.firstname %></td>
+        <td><%= order.lastname %></td>
+        <td><%= order.address %></td>
+        <td><%= order.apt %></td>
+        <td><%= order.city %></td>
+        <td><%= order.state %></td>
+        <td><%= order.zip %></td>
+        <td><%= order.stripetoken %></td>
+        <td><%= order.user_id %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

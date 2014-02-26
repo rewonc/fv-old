@@ -1,6 +1,8 @@
 Farmivore::Application.routes.draw do
 
 
+  resources :orders
+
   resources :juiceboxes
 
   resources :boxes, :charges

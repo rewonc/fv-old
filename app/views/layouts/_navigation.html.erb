@@ -23,7 +23,8 @@
     </ul>
 
     <ul class="right">
-        <li><%= link_to 'Log in', new_user_session_path %></li>
+        <li><%= render 'devise/menu/registration_items' %></li>
+        <li><%= render 'devise/menu/login_items' %></li>
     </ul>
   </section>
 </nav>
