@@ -3,8 +3,9 @@
 <h5><%= session[:referrer].inspect %> </h5>
 
 <!-- User Form -->
-<%= form_for(:user, :url => "#", :html => { :id => "ajax_signup", :ajax_path => usersjson_path }) do |f| %>
- 
+
+<%= form_for(:user, :url => "#", :html => { :id => "ajax_signup", :ajax_path => user_registration_path }, method: :post) do |f| %>
+ <span class="registration-errors"></span>
   <p><%= f.email_field :email, :placeholder => "Email" %></p>
   <p><%= f.password_field :password, :placeholder => "Password" %></p>
   <p><%= f.submit "Sign up" %></p>

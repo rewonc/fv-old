@@ -1,4 +1,5 @@
 $("form#ajax_signup").submit(function(e){
+     var form = $(this);
      e.preventDefault(); //This prevents the form from submitting normally
      var user_info = {};
      user_info['user[email]'] = $('#user_email').val();
@@ -6,12 +7,18 @@ $("form#ajax_signup").submit(function(e){
      console.log("About to post to /users: " + JSON.stringify(user_info));
      $.ajax({
        type: "POST",
-       url: $(this).attr('ajax_path'),
+       url: form.attr('ajax_path'),
        data: user_info,
        success: function(json){
+         var id = json['id'];
+         $('input#order_user_id').val(id);
          console.log("The Devise Response: " + JSON.stringify(json));
          //alert("The Devise Response: " + JSON.stringify(json));
        }, error: function(json) { 
+        $.each(json['responseJSON']['errors'], function(key, value){
+          form.find('.registration-errors').append(key + ' ' + value + "<br />");
+        });
+        $('html,body').animate({scrollTop: $('.registration-errors').offset().top});
         console.log("The Devise Error: " + JSON.stringify(json));
        }, 
        dataType: "json"

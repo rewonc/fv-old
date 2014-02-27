@@ -21,11 +21,11 @@ Farmivore::Application.routes.draw do
   get 'juicing', to:'juiceboxes#new'
   get 'cooking', to:'boxes#new'
 
-  post 'usersjson', to: 'registrations#create'
   post 'sms', to: 'texts#catch'
   resources :texts
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+   # Add a Custom Route for Registrations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
