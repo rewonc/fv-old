@@ -4,12 +4,22 @@
 
 <!-- User Form -->
 
-<%= form_for(:user, :url => "#", :html => { :id => "ajax_signup", :ajax_path => user_registration_path }, method: :post) do |f| %>
- <span class="registration-errors"></span>
-  <p><%= f.email_field :email, :placeholder => "Email" %></p>
-  <p><%= f.password_field :password, :placeholder => "Password" %></p>
-  <p><%= f.submit "Sign up" %></p>
-  
+<%= form_for(:user, :url => "#", :html => { :id => "ajax_signup", :ajax_path => user_registration_path, :"data-registered" => @registered, :"data-abide" => ''}, method: :post) do |f| %>
+   <% if !user_signed_in? %>
+    <span class="registration-errors"></span>
+    <div class="name-field">
+      <label>Your email
+        <%= f.email_field :email, :placeholder => "", :required => '', :pattern => "email" %>
+        <small class="error">Email is must be in a valid format (example@example.com).</small>
+      </label>
+    </div>
+    <div class="password-field">
+      <label>Your password
+        <%= f.password_field :password, :placeholder => "", :type => 'password', :required => '', :pattern => "password" %>
+        <small class="error">Password must be at least 8 characters.</small>
+      </label>
+    </div>
+   <% end #have some replacement: say you're signed in as x%>
 <% end %>
 
 <!-- CC Form -->

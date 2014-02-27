@@ -8,4 +8,7 @@
 //= require number-polyfill
 //= require modernizr
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  Foundation.libs.abide.settings.patterns.password = /^[a-zA-Z0-9\s\D]{8,}$/;
+  $(document).foundation(); 
+});

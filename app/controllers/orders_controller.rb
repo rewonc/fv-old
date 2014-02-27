@@ -15,6 +15,12 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @name = referrer_params['name']
+    #some code here to get name, price, and other code for view from the model
+    if user_signed_in?
+      @registered = true
+    else
+      @registered = false
+    end
     @order = Order.new
   end
 
@@ -25,8 +31,11 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    #must authenticate user here...
+    #authenticate that everything is in order
     @order = Order.new(order_params)
-
+    user_id = current_user[:id]
+    #ref_id = session[:referrer] if session[:referrer]
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
