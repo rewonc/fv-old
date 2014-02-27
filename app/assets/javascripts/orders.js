@@ -1,3 +1,22 @@
+$("form#ajax_signup").submit(function(e){
+     e.preventDefault(); //This prevents the form from submitting normally
+     var user_info = {};
+     user_info['user[email]'] = $('#user_email').val();
+     user_info['user[password]'] = $('#user_password').val();
+     console.log("About to post to /users: " + JSON.stringify(user_info));
+     $.ajax({
+       type: "POST",
+       url: $(this).attr('ajax_path'),
+       data: user_info,
+       success: function(json){
+         console.log("The Devise Response: " + JSON.stringify(json));
+         //alert("The Devise Response: " + JSON.stringify(json));
+       }, error: function(json) { 
+        console.log("The Devise Error: " + JSON.stringify(json));
+       }, 
+       dataType: "json"
+     });
+  });
 
 $('#new_order').submit(function(event) {
     var $form = $(this);

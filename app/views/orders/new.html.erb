@@ -3,15 +3,13 @@
 <h5><%= session[:referrer].inspect %> </h5>
 
 <!-- User Form -->
-<form action="" method="POST" id="registration-form">
-  <span class="registration-errors"></span>
-  <span>Email for user registration</span>
-  <input type="text" id="user_email" placeholder="email"></input>
-  <span>Password</span>
-  <input type="text" id="user_password" placeholder="password"></input>
-  <span>Password confirmation</span>
-  <input type="text" id="user_password_confirm" placeholder="password confirm"></input>
-</form>
+<%= form_for(:user, :url => "#", :html => { :id => "ajax_signup", :ajax_path => usersjson_path }) do |f| %>
+ 
+  <p><%= f.email_field :email, :placeholder => "Email" %></p>
+  <p><%= f.password_field :password, :placeholder => "Password" %></p>
+  <p><%= f.submit "Sign up" %></p>
+  
+<% end %>
 
 <!-- CC Form -->
 <form action="" method="POST" id="payment-form">

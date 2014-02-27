@@ -21,6 +21,7 @@ Farmivore::Application.routes.draw do
   get 'juicing', to:'juiceboxes#new'
   get 'cooking', to:'boxes#new'
 
+  post 'usersjson', to: 'registrations#create'
   post 'sms', to: 'texts#catch'
   resources :texts
 
