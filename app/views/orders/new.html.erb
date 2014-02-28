@@ -23,30 +23,37 @@
 <% end %>
 
 <!-- CC Form -->
-<form action="" method="POST" id="payment-form">
+<form action="" method="POST" id="payment-form" data-abide>
   <span class="payment-errors"></span>
   <div class="form-row">
     <label>
       <span>Card Number</span>
-      <input type="text" size="20" data-stripe="number"/>
+      <input type="text" size="20" data-stripe="number" required pattern="card"/>
+      <small class="error">This doesn't look like a valid card number</small>
     </label>
   </div>
 
   <div class="form-row">
     <label>
       <span>CVC</span>
-      <input type="text" size="4" data-stripe="cvc"/>
+      <input type="text" size="4" data-stripe="cvc" required pattern="cvv"/>
+      <small class="error">This doesn't look like a valid CVC</small>
     </label>
   </div>
 
   <div class="form-row">
     <label>
       <span>Expiration (MM/YYYY)</span>
-      <input type="text" size="2" data-stripe="exp-month"/>
+        <input type="text" size="2" maxlength="2" data-stripe="exp-month" required pattern="integer" />
+        <small class="error">Please enter a valid 2-digit month</small>
     </label>
     <span> / </span>
-    <input type="text" size="4" data-stripe="exp-year"/>
+    <label>
+        <input type="text" size="4" maxlength="4" data-stripe="exp-year" required pattern="integer"/>
+        <small class="error">Please enter a valid 4 digit year</small>
+    </label>
   </div>
+
 </form>
 
 <!-- Order Form -->

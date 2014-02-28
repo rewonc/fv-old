@@ -57,10 +57,10 @@ function submitUser(){
        success: function(json){
          console.log("The Devise Response: " + JSON.stringify(json));
          //mark true so it doesn't submit for future form requests
-         $userform.data('registered') = true;
+         $('form#ajax_signup').data('registered') = true;
          submitStripe();
        }, error: function(json) { 
-        
+        //todo -- RC
         //if there's an error for same email, try logging in
         $.each(json['responseJSON']['errors'], function(key, value){
           $userform.find('.registration-errors').append(key + ' ' + value + "<br />");
