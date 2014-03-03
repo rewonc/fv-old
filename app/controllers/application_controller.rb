@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
   def capture_referral
-    session[:referrer] = params[:referrer] if params[:referrer]
+    session[:referrer] = params[:r] if params[:r]
   end
 
 end

@@ -15,6 +15,11 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @name = referrer_params['name']
+    
+    #hardcode some variables for the sake of now
+    @name = 'joe3day'
+    session[:referrer] = '10e8hez'
+    
     #some code here to get name, price, and other code for view from the model
     if user_signed_in?
       @registered = true

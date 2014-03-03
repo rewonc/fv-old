@@ -3,8 +3,171 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body.orders.new{
+body.orders.new, body.orders.edit{
+  background-image: image-url("orders/greyzz.png");
+  background-repeat: repeat;
+
+  .form{
+    margin:10px;
+    margin-top:0px;
+    padding:10px;
+    background-color:white;
+  }
+
+  .summary{
+    background-color:white;
+    margin-top:100px;
+  }
   .registration-errors{
     text-transform:capitalize;
   }
+//...............for the progress bar
+  #step1{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step2{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step3{
+      color:$midGray;
+      pointer-events: none;
+      cursor: default;
+    }
+    #step1.active, #step2.active, #step3.active{
+      color:black;
+
+    }
+    #step1.linkable, #step2.linkable, #step3.linkable{
+      color:$midGray;
+      cursor:pointer;
+      pointer-events:auto;
+
+    }
+    .bottom-bar{
+        border-bottom: 3px solid $white2;
+        padding-top:10px;
+        margin-top:20px;
+      }
+    .back-button{
+      display:none;
+    }
+    .progress-bar{
+      margin-top:20px;
+    }
+///////////// end progress
+
+  section.delivery{
+    padding-top: 10px;
+    background-image: image-url("orders/gj-blur.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    h3{
+      font-weight:500;
+    }
+    img{
+      margin-top:00px;
+      max-height:200px;
+      margin-bottom:160px;
+      @media only screen and (max-width: 40em) {margin-top:0px;}
+    }
+
+    
+    .subheader{
+      color:$darkGray1;
+      margin-top:0px;
+    }
+    h5{
+      color:$darkGray1;
+      margin-top:20px;
+      margin-bottom:0px;
+    }
+    .location{
+      color:white;
+      padding:15px;
+      p{
+        font-size:12px;
+        z-index:10;
+        a{
+          z-index:10;
+          span.has-tip{
+            color:$white3;
+          }
+        }
+      }
+    }
+    .fa{
+      font-size:16px;
+    }
+  }
+
+  
+  //fieldset style
+  fieldset.delivery_preferences{
+    background-color:white;
+    -moz-box-shadow:    0px 0px 3px 0px $white2;
+    -webkit-box-shadow: 0px 0px 3px 0px $white2;
+    box-shadow:         0px 0px 3px 0px $white2;
+    
+    h2{
+      margin-bottom:15px;
+    }
+    .subheader{
+      margin-bottom:30px;
+      color:black;
+    }
+    .wed_delivery{
+      font-size:12px;
+      text-align:right;
+    }
+    .form-header{
+      margin-top:20px;
+    }
+    .zip_action{
+      padding-top:30px;
+      padding-left:15px;
+      padding-right:15px;
+      p{
+        margin-top:20px;
+        font-size:15px;
+        color: $greenPrimary;
+        #zip_action{
+          .zip-error{
+            color:red;
+          }
+        }
+      }
+    }
+
+    .order-button{
+      @include fv-button();
+    }
+
+
+  }
+
+
+  //full page styles
+  
+  .panel{
+    font-size: 13px;
+    text-align: center;
+  }
+  #payment_box{
+    display:none;
+  }
+
+  .juiceboxes .header-main {
+    text-align: center;
+    margin-bottom:0px;
+  }
+
 }
