@@ -1,51 +1,6 @@
-<div class="row">
-  <div class="small-12 columns">
-   
 
-    <h2 class="header">Confirm and pay</h2>
-    <div class="row panel-box">
-        
-      <div class="small-7 small-centered columns">
-        <%= render 'shared/box_display', box: @box %>
-         <p class="back-link centered">
-          <% 
-            case @box.box_num
-            when 1..3
-              path = edit_box_path(@box.id) 
-            when 4..6
-              path = edit_juicebox_path(@box.id)
-            else
-              path = root_path
-            end
-            
-          %>
-          <%= link_to "Go back and modify delivery settings", path %>
+<%= render 'shared/order_bg_1', stage: 3 %> 
 
-        </p>
-       <hr /><br />
-      </div>
-    
-    
-
-      <div class="row">
-        <div class="small-10 small-offset-1 columns">
-          <h4 class="centered">Club Rules</h4>
-          <div class="terms">
-            <div class="row">
-              <div class="small-10 columns small-centered small-offset-1">
-              <ol>
-                <li><p><%= @box.frequency_string.capitalize %>, you'll receive an email preview of your box.</p></li>
-                <li><p>Opt out within 3 days of delivery at no charge. Otherwise, enjoy your veggies!</p></li>
-                <li><p>If you don't like your box, we will refund your payment. No questions asked.</p></li>
-              </ol>
-              </div>
-              <div class="centered"><%= check_box_tag(:agree) %><%= label_tag(:agree, "I have read and agree to the above terms") %></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-        
       <div class="row">
         <div class="small-4 columns small-centered centered" id="payment_box">
           <button id="terms_button"><strong>Pay with card</strong></button>
@@ -66,12 +21,8 @@
           <h5>100% satisfaction guaranteed.</h5>
         </div>
       </div>
-    </div>
 
-  </div>
-</div>
-
-
+<%= render 'shared/order_bg_2', summary: {title: 'hello'} %> 
 
 
 

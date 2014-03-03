@@ -1,0 +1,8 @@
+<% if user_signed_in? && is_order_set? %>
+  <%= link_to 'Signed in, chose a box', new_charge_path, class: "button signup-button" %>
+<% elsif user_signed_in? %>
+  <%= link_to 'Signed in, no chose box', new_order_path, class: "button signup-button" %>
+<% else %>
+  <%= link_to 'No signed in', new_user_registration_path, class: "button signup-button" %>
+<% end %>
+
