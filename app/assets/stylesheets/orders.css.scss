@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
+
 body.registrations.new{
   .headline{
     .tagline{
@@ -16,7 +19,11 @@ body.registrations.new{
 body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, body.charges.new, body.charges.create{
   background-image: image-url("orders/greyzz.png");
   background-repeat: repeat;
-
+  h3.green{
+    color:$greenHeader;
+    font-weight:bold;
+    font-size:30px;
+  }
   .form-nav{
       background-color:rgba(255,255,255,0.6);
       border-left:1px solid $white2;
@@ -78,4 +85,13 @@ body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, bo
     -o-background-size: 100%;
     background-size: 100%;
   }
+
+  .signin{
+    padding:30px;
+    background-color:white;
+    margin-top:30px;
+    margin-bottom:30px;
+    border: solid 1px $white2;
+  }
+
 }

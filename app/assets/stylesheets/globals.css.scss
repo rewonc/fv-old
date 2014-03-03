@@ -1,3 +1,9 @@
+.fv-button{
+  @include button(1rem,$orangeAccent,10px,false,false,false);
+  border:0px;
+}
+
+
  a {
     cursor: pointer;
 }
