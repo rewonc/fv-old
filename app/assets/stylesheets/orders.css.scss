@@ -3,7 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body.orders.new, body.orders.edit, body.registrations.new, body.charges.new, body.charges.create{
+body.registrations.new{
+  .headline{
+    .tagline{
+      margin-top:25px;
+      color: $lightGray3;
+    }
+  }
+}
+
+
+body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, body.charges.new, body.charges.create{
   background-image: image-url("orders/greyzz.png");
   background-repeat: repeat;
 
@@ -46,8 +56,7 @@ body.orders.new, body.orders.edit, body.registrations.new, body.charges.new, bod
   .form{
     background-color:white;
     border:solid 1px $white2;
-    padding-top:30px;
-    padding-bottom:30px;
+    padding:20px;
   }
   .summary{
     background-color:white;
@@ -61,7 +70,7 @@ body.orders.new, body.orders.edit, body.registrations.new, body.charges.new, bod
 
   section.delivery{
     padding-top: 0px;
-    background-image: image-url("orders/greens.jpg");
+    background-image: image-url("orders/greens-1.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     -webkit-background-size: 100%;

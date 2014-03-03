@@ -1,7 +1,8 @@
+       <h2>Your plan</h2>
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h3><%= pluralize(@order.errors.count, "error") %> were found:</h3>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -11,35 +12,34 @@
     </div>
   <% end %>
 
+<div class="row">
+  <div class="small-6 medium-5 large-3 columns">
+
+      <%= f.label :"Number of juices" %>
+      <%= f.text_field :box_count %>
+
+
+      <%= f.label :"Delivered every: " %>
+      <%= f.text_field :frequency %>
+
+  </div>
+</div>
   
+
+
+<h2>Delivery details</h2>
+<p>Your address</p>
   <div class="field">
-    <%= f.label :frequency %><br>
-    <%= f.text_field :frequency %>
+    <%= f.label :"Full name" %><br>
+    <%= f.text_field :fullname %>
   </div>
   <div class="field">
-    <%= f.label :plan %><br>
-    <%= f.text_field :plan %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :promocode %><br>
-    <%= f.text_field :promocode %>
+    <%= f.label :"Address" %><br>
+    <%= f.text_field :address1 %>
   </div>
   <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :apt %><br>
-    <%= f.text_field :apt %>
+    <%= f.label :"Address (cont)" %><br>
+    <%= f.text_field :address2 %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
@@ -53,35 +53,24 @@
     <%= f.label :zip %><br>
     <%= f.text_field :zip %>
   </div>
-  
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+
+  <p>Preferred delivery time</p>
+  <div class="field">
+    <%= f.label :"Delivery window" %><br>
+    <%= f.text_field :delivery_window %>
+  </div>
+  <div class="field">
+    <%= f.label :"First delivery" %><br>
+    <%= f.text_field :first_delivery %>
+  </div>
   
   <div class="actions">
     <%= f.submit id: "order-submit" %>
   </div>
 
-<span>Hidden fields</span>
 
-<div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
-  
-<div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-
-<div class="field">
-    <%= f.label :stripetoken %><br>
-    <%= f.text_field :stripetoken %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
 <% end %>

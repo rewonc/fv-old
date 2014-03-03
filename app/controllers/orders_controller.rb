@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :create, :update]
+  http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", only: [:index, :show, :destroy]
+
 
   # GET /orders
   # GET /orders.json
@@ -30,13 +33,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    #authenticate
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    #must authenticate user here...
-    #authenticate that everything is in order
     @order = Order.new(order_params)
     user_id = current_user[:id]
     #ref_id = session[:referrer] if session[:referrer]
@@ -66,7 +68,6 @@ class OrdersController < ApplicationController
   end
 
   # DELETE /orders/1
-  # DELETE /orders/1.json
   def destroy
     @order.destroy
     respond_to do |format|

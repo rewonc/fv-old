@@ -1,23 +1,20 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-      t.string :name
-      t.string :size
-      t.string :price
-      t.string :frequency
-      t.string :plan
-      t.string :price
-      t.string :promocode
-      t.string :firstname
-      t.string :lastname
-      t.string :address
-      t.string :apt
+      t.integer :box_count
+      t.integer :frequency
+      t.string :fullname
+      t.string :address1
+      t.string :address2
       t.string :city
       t.string :state
       t.string :zip
-      t.string :stripetoken
-      t.integer :user_id
-
+      t.string :phone
+      t.string :delivery_window
+      t.string :first_delivery
+      t.references :user_id
+      t.references :product_id
+      t.references :promocode_id
       t.timestamps
     end
   end
