@@ -12,9 +12,9 @@ class CreateOrders < ActiveRecord::Migration
       t.string :phone
       t.string :delivery_window
       t.string :first_delivery
-      t.references :user_id
-      t.references :product_id
-      t.references :promocode_id
+      t.references :user
+      t.references :product
+      t.references :promocode
       t.timestamps
     end
   end

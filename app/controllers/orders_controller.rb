@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
       @order.product_id = 1
     end
 
-    @order.fullname = current_user.first + ' ' + current_user.last
+    @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
 
   end

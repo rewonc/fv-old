@@ -1,7 +1,6 @@
 class Order < ActiveRecord::Base
   validates :box_count, presence: true
   validates :frequency, presence: true
-  validates :firstname, presence: true
   validates :fullname, presence: true
   validates :address1, presence: true
   validates :address2, presence: true

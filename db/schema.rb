@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 20140303172958) do
     t.string   "phone"
     t.string   "delivery_window"
     t.string   "first_delivery"
-    t.integer  "user_id_id"
-    t.integer  "product_id_id"
-    t.integer  "promocode_id_id"
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "promocode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
