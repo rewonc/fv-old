@@ -16,7 +16,7 @@ body.registrations.new{
 }
 
 
-body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, body.registrations.create, body.sessions.new, body.charges.new, body.charges.create{
+body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, body.registrations.edit, body.registrations.create, body.sessions.new, body.charges.new, body.charges.create{
   background-image: image-url("orders/greyzz.png");
   background-repeat: repeat;
   #error_explanation{
