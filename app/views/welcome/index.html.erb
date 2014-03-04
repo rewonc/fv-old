@@ -4,12 +4,11 @@
 
     <div class="small-12 medium-10 medium-centered columns centered">
       
-      <%= image_tag 'simp-v.8/landingheader-850.png'%>
+      <%= image_tag 'simp-v.8/juiceheader2-820.png' %>
 
       <div class="row button-group">
         <div class="small-12 columns"> 
-          <%= link_to 'I like cooking', new_box_path, class: "learn-more-button", id: "header-cookingbox" %> &nbsp; &nbsp; <em> - or - </em>&nbsp; &nbsp; 
-          <%= link_to 'I like juicing', new_juicebox_path, class: "get-started-button", id: "header-juicebox" %>
+         <%= render 'shared/signup_button_large'%>
         </div>
       </div>
 
@@ -23,7 +22,7 @@
 
 <div class="row learn-more">
   <div class="small-12 columns centered">
-    <%= render 'shared/signup_button', locals: {big: true} %>
+    
   </div>
 </div>
 
