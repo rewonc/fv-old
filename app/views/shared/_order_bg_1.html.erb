@@ -10,7 +10,7 @@
             <div class="wedge">
               <ul class="small-block-grid-3">
                 <li<% if stage == 1 || stage == 2 || stage == 3 %> class="active" <% end %>> <span class="numeral">1.</span><h3>Sign up</h3></li>
-                <li<% if stage == 2 || stage == 3 %> class="active" <% end %>><span class="numeral">2.</span><h3>Order</h3></li>
+                <li<% if stage == 2 || stage == 3 %> class="active" <% end %>><span class="numeral">2.</span><% if stage ==3 %><h3><%= link_to 'Order', edit_order_path(order) %></h3><% else %><h3>Order</h3><% end %></li>
                 <li<% if stage == 3 %> class="active" <% end %>><span class="numeral">3.</span><h3>Payment</h3></li>
               </ul>
             </div>

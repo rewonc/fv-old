@@ -1,19 +1,23 @@
 class ChargesController < ApplicationController
+  before_filter :get_order, :only => [:new, :create, :edit, :update]
+  before_filter :authenticate_user!, only: [:new, :edit, :create, :update]
+  http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", only: [:index, :show, :destroy]
+
   def index
   end
 
   def new
+    render 'charges/new', layout: 'application'
   end
 
   def create
-    # Amount in cents
-    # https://stripe.com/docs/tutorials/charges  <-- on how to store the token and charge it later
+    
     if session[:box_id].nil? && !session[:juicebox_id].nil?
       @box = Juicebox.find(session[:juicebox_id])
     elsif !session[:box_id].nil? && session[:juicebox_id].nil?
       @box = Box.find(session[:box_id])
     else
-      return redirect_to :root, notice: "Your application appears to come from an unauthorized source. Our apologies for this inconvenience. Please contact support@farmivore.com to register for an account."
+      return redirect_to :back, notice: "Your application appears to come from an unauthorized source. Our apologies for this inconvenience. Please contact support@farmivore.com to register for an account."
     end
      
     amount = @box.box_price
@@ -36,5 +40,16 @@ class ChargesController < ApplicationController
     flash[:error] = e.message
     redirect_to :back
   end
+
+  private
+
+  def get_order
+    if session[:order_id].present?
+      @order = Order.find(session[:order_id])
+    else
+      redirect_to :root, notice: "Your application appears to come from an unauthorized source. Please contact support@farmivore.com for assistance."
+    end
+  end
+
 
 end

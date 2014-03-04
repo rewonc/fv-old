@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :edit, :create, :update]
+  before_action :new_order, only: [:create, :new]
   http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", only: [:index, :show, :destroy]
 
 
@@ -17,32 +18,13 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    #@name = referrer_params['name']
-    #hardcode some variables for the sake of now
-    #@name = 'joe3day'
-    #session[:referrer] = '10e8hez'
-    #session[:order_id] = 'blahblah'
-    #some code here to get name, price, and other code for view from the model
-    #if user_signed_in?
-    #  @registered = true
-    #else
-    #  @registered = false
-    #end
-    @order = Order.new
-    @order.user = current_user
-
-    if session[:product_id].present?
-      @order.product = Product.find(session[:product_id])
-    else
-      #set to default
-      @order.product = Product.find(6)
-    end
-
     @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
     firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5)
     @order.first_delivery = firstdate
-
+    @order.delivery_window = "Friday"
+    @order.frequency = 1
+    @order.box_count = 1
   end
 
   # GET /orders/1/edit
@@ -53,18 +35,10 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-    @order.user = current_user
-    if session[:product_id].present?
-      @order.product = Product.find(session[:product_id])
-    else
-      #set to default
-      @order.product = Product.find(6)
-    end
-    #user_id = current_user[:id]
-    #ref_id = session[:referrer] if session[:referrer]
+    @order.attributes = order_params
     respond_to do |format|
       if @order.save
+        session[:order_id] = @order.id
         format.html { redirect_to new_charge_path}
         #format.json { render action: 'show', status: :created, location: @order }
       else
@@ -79,7 +53,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to new_charge_path, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -101,6 +75,18 @@ class OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
+    end
+
+    def new_order
+      @order = Order.new
+      @order.user = current_user
+      if session[:product_id].present?
+        @order.product = Product.find(session[:product_id])
+      else
+        #set to default
+        @order.product = Product.find(6)
+      end
+
     end
 
     def referrer_params

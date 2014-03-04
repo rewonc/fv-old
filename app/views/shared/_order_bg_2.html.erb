@@ -16,21 +16,20 @@
           <div class="small-12 columns">
             <h3 class="green">Summary</h3>
             <h5><%= order.product.box_num_menu['title'] %>:</h5>
-            <p><%= order.product.box_num_menu['options'][:'1'] %></p>
+            <p><%= order.box_count_string %></p>
             <h5><%= order.product.delivery_frequency_menu['title'] %>:</h5>
-            <p><%= order.product.delivery_frequency_menu['options'][:'1'] %></p>
+            <p><%= order.frequency_string %></p>
             <h5>Delivery time:</h5>
-            <p>Friday</p>
+            <p><%= order.delivery_window.to_s %></p>
 
             <h3 class="green">First delivery</h3>
-            <% firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5) %>
-            <p><%= firstdate.strftime("%A, %B %d") %> (<a href="#">change</a>)</p>
+            <p><%= order.first_delivery_string %> (<a href="#">change</a>)</p>
 
             <h3 class="green">Total price</h3>
             <div class="pricer">
-              <div class="text-right">Subtotal: <span id="subtotal">$60</span></div>
+              <div class="text-right">Subtotal: <span id="subtotal"><%= order.price_string(false) %></span></div>
               <div class="text-right"><em>Free delivery!</em></div>
-              <div class="text-right"><strong>Total: <span id="total">$60</span></strong></div>
+              <div class="text-right"><strong>Total: <span id="total"><%= order.price_string(false) %></span></strong></div>
             </div>
 
             <h4><%#= summary[:title] %></h4>
