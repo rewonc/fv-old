@@ -1,6 +1,5 @@
-<h1>Editing order</h1>
+<%= render 'shared/order_bg_1', stage: 2 %>  
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<%= render 'shared/order_bg_2', summary: {title: "hello world!"}, order: @order %> 

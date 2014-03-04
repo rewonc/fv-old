@@ -2,7 +2,7 @@
 <%= form_for (@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(@order.errors.count, "error") %> were found:</h3>
+      <h3><%= pluralize(@order.errors.count, "error") %>:</h3>
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,12 +13,12 @@
 
 <div class="row">
   <div class="small-6 medium-5 large-3 columns">
-      <%= f.label :"Number of juices" %>
-      <%= f.text_field :box_count %>
+      <%= f.label @order.product.box_num_menu['title'] %>
+      <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] } %>
   </div>
-  <div class="small-6 medium-5 large-3 columns">
-      <%= f.label :"Delivered every: " %>
-      <%= f.text_field :frequency %>
+  <div class="small-6 medium-7 large-5 columns">
+      <%= f.label @order.product.delivery_frequency_menu['title'] %>
+      <%= f.select :frequency, @order.product.delivery_frequency_menu['options'].map{ |key, value| [value, key] } %>
   </div>
   <div class="small-6 medium-2 large-6 columns">
       &nbsp;
@@ -72,18 +72,18 @@
 
   <div class="large-6 columns small-12 columns">
     <h2>&nbsp;</h2>
-    <h5>Delivery time</h5>
+    <h5>Time preference</h5>
     <div class="field">
-      <%= f.label :"Delivery window" %>
-      <%= f.text_field :delivery_window %>
+      <%= f.label :delivery_window, "Delivery day" %>
+      <%= f.select(:delivery_window, options_for_select([["Friday", 5],["Saturday", 6],["Tuesday",2],["Wednesday",3],["Thursday", 4]])) %>
     </div>
     <div class="field">
-      <%= f.label :"First delivery" %>
-      <%= f.text_field :first_delivery %>
+
+      <%= f.hidden_field :first_delivery %>
     </div>
 
         <%= f.label :"Phone number" %>
-        <%= f.text_field :phone %>
+        <%= f.text_field :phone, :placeholder => "e.g. 203-333-4567" %>
     
     
       <%= f.submit id: "order-submit", value: "Checkout", class: "fv-button" %>

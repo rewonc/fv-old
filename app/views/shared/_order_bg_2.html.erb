@@ -15,15 +15,16 @@
         <div class="row summary">
           <div class="small-12 columns">
             <h3 class="green">Summary</h3>
-            <h5>Number of juices:</h5>
-            <p>12</p>
-            <h5>Frequency of delivery:</h5>
-            <p>Every week</p>
+            <h5><%= order.product.box_num_menu['title'] %>:</h5>
+            <p><%= order.product.box_num_menu['options'][:'1'] %></p>
+            <h5><%= order.product.delivery_frequency_menu['title'] %>:</h5>
+            <p><%= order.product.delivery_frequency_menu['options'][:'1'] %></p>
             <h5>Delivery time:</h5>
-            <p>Wednesday (7am-7pm)</p>
+            <p>Friday</p>
 
             <h3 class="green">First delivery</h3>
-            <p>Wednesday 3/12 (<a href="#">change</a>)</p>
+            <% firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5) %>
+            <p><%= firstdate.strftime("%A, %B %d") %> (<a href="#">change</a>)</p>
 
             <h3 class="green">Total price</h3>
             <div class="pricer">

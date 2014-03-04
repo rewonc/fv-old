@@ -3,7 +3,6 @@ class Order < ActiveRecord::Base
   validates :frequency, presence: true
   validates :fullname, presence: true
   validates :address1, presence: true
-  validates :address2, presence: true
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
@@ -11,4 +10,5 @@ class Order < ActiveRecord::Base
   validates :delivery_window, presence: true
   validates :first_delivery, presence: true
   belongs_to :user
+  belongs_to :product
 end

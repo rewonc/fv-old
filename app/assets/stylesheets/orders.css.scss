@@ -16,9 +16,14 @@ body.registrations.new{
 }
 
 
-body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, body.charges.new, body.charges.create{
+body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, body.registrations.create, body.sessions.new, body.charges.new, body.charges.create{
   background-image: image-url("orders/greyzz.png");
   background-repeat: repeat;
+  #error_explanation{
+    h2, h3{
+      font-size:16px;
+    }
+  }
   h3.green{
     color:$greenHeader;
     font-weight:bold;

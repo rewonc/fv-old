@@ -32,14 +32,16 @@ class OrdersController < ApplicationController
     @order.user = current_user
 
     if session[:product_id].present?
-      @order.product_id = session[:product_id]
+      @order.product = Product.find(session[:product_id])
     else
       #set to default
-      @order.product_id = 1
+      @order.product = Product.find(6)
     end
 
     @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
+    firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5)
+    @order.first_delivery = firstdate
 
   end
 
@@ -52,6 +54,13 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user = current_user
+    if session[:product_id].present?
+      @order.product = Product.find(session[:product_id])
+    else
+      #set to default
+      @order.product = Product.find(6)
+    end
     #user_id = current_user[:id]
     #ref_id = session[:referrer] if session[:referrer]
     respond_to do |format|
