@@ -44,10 +44,12 @@ body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, bo
         }
         li{
         position:relative;
+        h3{color:$midGray;}
         .numeral{
           font-size:40px;
           font-weight:bold;
           position:absolute;
+          color:$midGray;
           top:5px;
           left:10px;
         }
@@ -67,8 +69,20 @@ body.orders.new, body.orders.edit, body.registrations.new, body.sessions.new, bo
   }
   .summary{
     background-color:white;
-    margin-top:100px;
+    margin-top:85px;
+    padding-top: 20px;
+    padding-bottom:20px;
     border-radius:10px;
+    margin-left:10px;
+    margin-right:10px;
+    border:1px solid $white2;
+  }
+  .pricer{
+    div{
+      margin-top:8px;
+      margin-bottom:8px;
+      font-size:18px;
+    }
   }
   .registration-errors{
     text-transform:capitalize;

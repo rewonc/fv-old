@@ -1,4 +1,4 @@
-$("form#ajax_signup").submit(function(e){
+/*$("form#ajax_signup").submit(function(e){
     alert($('form#ajax_signup').data('registered'));
      var form = $(this);
      e.preventDefault(); //This prevents the form from submitting normally
@@ -101,3 +101,4 @@ var stripeResponseHandler = function(status, response) {
   }
 };
 
+*/

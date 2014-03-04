@@ -2,7 +2,13 @@
   @include button(1rem,$orangeAccent,10px,false,false,false);
   border:0px;
 }
-
+.green-button{
+  @include button(1rem,$greenButton,10px,false,false,false);
+  border:0px;
+}
+.text-right{
+  text-align:right;
+}
 
  a {
     cursor: pointer;

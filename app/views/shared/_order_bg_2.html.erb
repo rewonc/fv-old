@@ -8,11 +8,37 @@
     </div>
 <!-- Summary Page Page 2+ -->
 <% if !summary.empty? %>
+
       <div class="medium-4 small-12 columns">
-        <div class="summary">
-          <h4><%= summary[:title] %></h4>
+        
+
+        <div class="row summary">
+          <div class="small-12 columns">
+            <h3 class="green">Summary</h3>
+            <h5>Number of juices:</h5>
+            <p>12</p>
+            <h5>Frequency of delivery:</h5>
+            <p>Every week</p>
+            <h5>Delivery time:</h5>
+            <p>Wednesday (7am-7pm)</p>
+
+            <h3 class="green">First delivery</h3>
+            <p>Wednesday 3/12 (<a href="#">change</a>)</p>
+
+            <h3 class="green">Total price</h3>
+            <div class="pricer">
+              <div class="text-right">Subtotal: <span id="subtotal">$60</span></div>
+              <div class="text-right"><em>Free delivery!</em></div>
+              <div class="text-right"><strong>Total: <span id="total">$60</span></strong></div>
+            </div>
+
+            <h4><%#= summary[:title] %></h4>
+          </div>
         </div>
+
+
       </div>
+
 <% end %>
 <!-- Summary Page Page 2+ -->
 

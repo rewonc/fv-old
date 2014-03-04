@@ -29,6 +29,18 @@ class OrdersController < ApplicationController
     #  @registered = false
     #end
     @order = Order.new
+    @order.user = current_user
+
+    if session[:product_id].present?
+      @order.product_id = session[:product_id]
+    else
+      #set to default
+      @order.product_id = 1
+    end
+
+    @order.fullname = current_user.first + ' ' + current_user.last
+    @order.zip = current_user.zip
+
   end
 
   # GET /orders/1/edit
@@ -40,12 +52,12 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    user_id = current_user[:id]
+    #user_id = current_user[:id]
     #ref_id = session[:referrer] if session[:referrer]
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order }
+        format.html { redirect_to new_charge_path}
+        #format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -88,6 +100,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :size, :price, :frequency, :plan, :price, :promocode, :firstname, :lastname, :address, :apt, :city, :state, :zip, :stripetoken, :user_id)
+      params.require(:order).permit(:box_count, :frequency, :fullname, :address1, :address2, :city, :state, :zip, :phone, :delivery_window, :first_delivery)
     end
 end
