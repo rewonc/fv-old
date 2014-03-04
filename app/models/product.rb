@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
 
 =begin
   a = Product.new
+  a.id = 5
   a.name = "Reboot with Joe"
   boxnummenu = Hash.new
   dfreqmenu = Hash.new
@@ -19,6 +20,7 @@ class Product < ActiveRecord::Base
 
   a = Product.new
   a.name = "Default"
+  a.id = 6
   boxnummenu = Hash.new
   dfreqmenu = Hash.new
   boxnummenu['title'] = 'Number of juices'

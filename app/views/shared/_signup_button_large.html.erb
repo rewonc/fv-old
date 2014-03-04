@@ -1,8 +1,8 @@
 <% if user_signed_in? && is_order_set? %>
   <%= link_to '<h3>Join the club!</h3><small>Order a box today</small><span class="price-tag"><strong>$5</strong><br />per juice!</span>'.html_safe, new_charge_path, class: "green-button signup-button-large" %>
 <% elsif user_signed_in? %>
-  <%= link_to '<h3>Join the club!</h3><small>Order a box today</small><span class="price-tag"><strong>$5</strong><br /> per juice!</span>'.html_safe, new_order_path, class: "green-button signup-button-large" %>
+  <%= link_to '<h3>Join the club!</h3><small>Order a box today</small><span class="price-tag"><strong>$5</strong><br /> per juice!</span>'.html_safe, new_order_path(:p => 6), class: "green-button signup-button-large" %>
 <% else %>
-  <%= link_to '<h3>Join the club!</h3><small>Order a box today</small><span class="price-tag"><strong>$5</strong><br /> per juice!</span>'.html_safe, new_user_registration_path, class: "green-button signup-button-large" %>
+  <%= link_to '<h3>Join the club!</h3><small>Order a box today</small><span class="price-tag"><strong>$5</strong><br /> per juice!</span>'.html_safe, new_user_registration_path(:p => 6), class: "green-button signup-button-large" %>
 <% end %>
 

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   private
   def capture_referral
     session[:referrer] = params[:r] if params[:r]
+    session[:product_id] = params[:p] if params[:p]
   end
 
   protected

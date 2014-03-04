@@ -10,7 +10,7 @@
     <ul class="left">
       <li><%= link_to 'Home', root_path, html_options = {id: "nav-root"} %></li>
     	<li><%= link_to 'Learn more', welcome_howitworks_path, html_options = {id: "nav-howitworks"} %></li>
-      <li><%= link_to 'Join', new_user_registration_path, html_options = {id: "nav-order"} %></li>
+      <li><% if user_signed_in? %><%= link_to 'Join', new_order_path(:p => 6), html_options = {id: "nav-order"} %><% else %><%= link_to 'Join', new_user_registration_path(:p => 6), html_options = {id: "nav-order"} %><% end %></li>
       <li><%= link_to 'Recipes', root_path, html_options = {id: "nav-ourrecipes"} %></li>
       <li class="has-dropdown">
         <a href="#">More&nbsp;&nbsp;&nbsp;&nbsp;</a>
