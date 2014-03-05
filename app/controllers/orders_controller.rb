@@ -80,6 +80,7 @@ class OrdersController < ApplicationController
     def new_order
       @order = Order.new
       @order.user = current_user
+      #session[:product_id] = 5
       if session[:product_id].present?
         @order.product = Product.find(session[:product_id])
       else

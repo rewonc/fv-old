@@ -12,16 +12,32 @@
   <% end %>
 
 <div class="row">
-  <div class="small-6 medium-5 large-3 columns">
+  <div class="small-12 columns">
+    <% if @order.product.is_cleanse? %>
+    <p>You have currently selected a <strong><%= @order.product.name %> </strong> cleanse.</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-5 medium-5 large-3 columns">
       <%= f.label @order.product.box_num_menu['title'] %>
       <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] } %>
   </div>
-  <div class="small-6 medium-7 large-5 columns">
+  <div class="small-6 medium-6 large-5 columns">
       <%= f.label @order.product.delivery_frequency_menu['title'] %>
       <%= f.select :frequency, @order.product.delivery_frequency_menu['options'].map{ |key, value| [value, key] } %>
   </div>
-  <div class="small-6 medium-2 large-6 columns">
+  <div class="small-1 medium-1 large-4 columns">
       &nbsp;
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <% if @order.product.is_cleanse? %>
+    <div class="switch-juicing"><small>Want to switch to a standard Farmivore juicing plan? Click <%= link_to 'here', new_order_path(p: 6) %>.</small></div>
+    <% end %>
   </div>
 </div>
 

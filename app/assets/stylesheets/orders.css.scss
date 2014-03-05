@@ -74,6 +74,9 @@ body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, b
     background-color:white;
     border:solid 1px $white2;
     padding:20px;
+    .switch-juicing{
+      margin-bottom:5px;
+    }
   }
   .summary{
     background-color:white;

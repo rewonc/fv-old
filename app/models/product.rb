@@ -3,6 +3,13 @@ class Product < ActiveRecord::Base
   serialize :delivery_frequency_menu
   has_many :orders
 
+  def is_cleanse?
+    if id === 5
+      return true
+    else
+      return false
+    end
+  end
 =begin
   a = Product.new
   a.id = 5
