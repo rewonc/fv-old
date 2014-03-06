@@ -16,20 +16,29 @@
           <div class="small-12 columns">
             <h3 class="green">Summary</h3>
             <h5><%= order.product.box_num_menu['title'] %>:</h5>
-            <p><%= order.box_count_string %></p>
+            <p id="boxcountstring"><%= order.box_count_string %></p>
+
+            <% if !order.product.is_cleanse? %>
             <h5><%= order.product.delivery_frequency_menu['title'] %>:</h5>
             <p><%= order.frequency_string %></p>
-            <h5>Delivery time:</h5>
-            <p><%= order.delivery_window.to_s %></p>
+            <% end %>
 
-            <h3 class="green">First delivery</h3>
-            <p><%= order.first_delivery_string %> (<a href="#">change</a>)</p>
+            <% if !order.product.is_cleanse? %>
+              <h5>Delivery time:</h5>
+              <p><%= order.delivery_window.to_s %></p>
+
+              <h3 class="green">First delivery</h3>
+              <p><%= order.first_delivery_string %> (<a href="#">change</a>)</p>
+            <% else %>
+              <h5>Delivery time:</h5>
+              <p id="firstdeliverystring"><%= order.first_delivery.to_s %></p>
+            <% end %>
 
             <h3 class="green">Total price</h3>
             <div class="pricer">
-              <div class="text-right">Subtotal: <span id="subtotal"><%= order.price_string(false) %></span></div>
+              <div class="text-right">Subtotal: <span id="subtotalprice"><%= order.price_string(false) %></span></div>
               <div class="text-right"><em>Free delivery!</em></div>
-              <div class="text-right"><strong>Total: <span id="total"><%= order.price_string(false) %></span></strong></div>
+              <div class="text-right"><strong>Total: <span id="totalprice"><%= order.price_string(false) %></span></strong></div>
             </div>
 
             <h4><%#= summary[:title] %></h4>

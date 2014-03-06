@@ -14,7 +14,7 @@
 <div class="row">
   <div class="small-12 columns">
     <% if @order.product.is_cleanse? %>
-    <p>You have currently selected a <strong><%= @order.product.name %> </strong> cleanse.</p>
+    <p>You have selected a <strong><%= @order.product.name %> </strong> cleanse.</p>
     <% end %>
   </div>
 </div>
@@ -22,12 +22,15 @@
 <div class="row">
   <div class="small-5 medium-5 large-3 columns">
       <%= f.label @order.product.box_num_menu['title'] %>
-      <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] } %>
+      <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => @order.product.price %>
   </div>
+  <% if !get_product.is_cleanse? %>
   <div class="small-6 medium-6 large-5 columns">
       <%= f.label @order.product.delivery_frequency_menu['title'] %>
       <%= f.select :frequency, @order.product.delivery_frequency_menu['options'].map{ |key, value| [value, key] } %>
   </div>
+  <% end %>
+
   <div class="small-1 medium-1 large-4 columns">
       &nbsp;
   </div>
@@ -36,7 +39,7 @@
 <div class="row">
   <div class="small-12 columns">
     <% if @order.product.is_cleanse? %>
-    <div class="switch-juicing"><small>Want to switch to a standard Farmivore juicing plan? Click <%= link_to 'here', new_order_path(p: 6) %>.</small></div>
+    <!-- <div class="switch-juicing"><small>Want to switch to a standard Farmivore juicing plan? Click <%= link_to 'here', new_order_path(p: 6) %>.</small></div> -->
     <% end %>
   </div>
 </div>
@@ -88,14 +91,22 @@
 
   <div class="large-6 columns small-12 columns">
     <h2>&nbsp;</h2>
-    <h5>Time preference</h5>
-    <div class="field">
-      <%= f.label :delivery_window, "Delivery day" %>
-      <%= f.select(:delivery_window, options_for_select([["Friday"],["Saturday"],["Tuesday"],["Wednesday"],["Thursday"]])) %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :first_delivery %>
-    </div>
+    <% if !@order.product.is_cleanse? %>
+      <h5>Time preference</h5>
+      <div class="field">
+        <%= f.label :delivery_window, "Delivery day" %>
+        <%= f.select(:delivery_window, options_for_select([["Friday"],["Saturday"],["Tuesday"],["Wednesday"],["Thursday"]])) %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :first_delivery %>
+      </div>
+    <% else %>
+      <h5>When to start your cleanse</h5>
+      <div class="field">
+        <%= f.label :first_delivery, "Date to expect your first delivery" %>
+        <%= f.select(:first_delivery, options_for_select([["Wednesday, March 19"],["Thursday, March 20"],["Friday, March 21"],["Saturday, March 22"],["Tuesday, March 25"],["Wednesday, March 26"],["Thursday, March 27"],["Friday, March 28"]])) %>
+      </div>
+    <% end %>
 
         <%= f.label :"Phone number" %>
         <%= f.text_field :phone, :placeholder => "e.g. 203-333-4567" %>

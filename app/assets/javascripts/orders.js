@@ -1,3 +1,31 @@
+$('#order_box_count').change(function(event){
+  $('p#boxcountstring').text($(this).find(":selected").text());
+  $('p#boxcountstring').addClass('updated');
+  setTimeout( function(){
+      $('p#boxcountstring').removeClass('updated');
+    },1000);
+  priceRefresh();
+});
+
+$('#order_first_delivery').change(function(event){
+  $('p#firstdeliverystring').text($(this).find(":selected").text());
+  $('p#firstdeliverystring').addClass('updated');
+  setTimeout( function(){
+      $('p#firstdeliverystring').removeClass('updated');
+    },1000);
+});
+
+function priceRefresh(){
+  price = (($('#order_box_count').data('price') * $('#order_box_count').val())/100).toString();
+  $('#totalprice').text('$' + price);
+  $('#subtotalprice').text('$' + price);
+  $('#totalprice').addClass('updated');
+  setTimeout( function(){
+      $('#totalprice').removeClass('updated');
+    },1000);
+}
+
+
 /*$("form#ajax_signup").submit(function(e){
     alert($('form#ajax_signup').data('registered'));
      var form = $(this);

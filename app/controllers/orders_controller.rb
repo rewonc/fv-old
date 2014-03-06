@@ -20,7 +20,8 @@ class OrdersController < ApplicationController
   def new
     @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
-    firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5)
+    #firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5)
+    firstdate = "Wednesday, March 19"
     @order.first_delivery = firstdate
     @order.delivery_window = "Friday"
     @order.frequency = 1

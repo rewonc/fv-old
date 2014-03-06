@@ -87,6 +87,11 @@ body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, b
     margin-left:10px;
     margin-right:10px;
     border:1px solid $white2;
+    .updated{
+      color:green;
+      background-color:rgba(170,240,220,0.6);
+    }
+    
   }
   .pricer{
     div{

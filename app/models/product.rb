@@ -17,12 +17,12 @@ class Product < ActiveRecord::Base
   boxnummenu = Hash.new
   dfreqmenu = Hash.new
   boxnummenu['title'] = 'Number of days'
-  boxnummenu['options'] = {:"1" => "2 days", :"2" => "4 days", :"3" => "6 days"}
+  boxnummenu['options'] = {:"1" => "3 days", :"2" => "6 days", :"3" => "9 days", :"4" => "12 days"}
   dfreqmenu['title'] = 'Recurring delivery'
   dfreqmenu['options'] = {:"1" => "No recurring delivery", :"2" => "Once every 2 weeks", :"3" => "Once every week"}
   a.box_num_menu = boxnummenu
   a.delivery_frequency_menu = dfreqmenu
-  a.price = 7400
+  a.price = 11400
   a.save
 
   a = Product.new
