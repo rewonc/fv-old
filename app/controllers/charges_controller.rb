@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
       description: @order.product.name + '. ' + @order.product.price.to_s + '. ' + @order.box_count.to_s + ' boxes. ' + @order.first_delivery + '.  Freq:' + @order.frequency.to_s,
       card: allow_stripe_token
     )
-
+    ConfirmMailer.box_alert(@order).deliver
     #@charge = Stripe::Charge.create(
     #  customer: @customer.id,
     #  amount: amount,
