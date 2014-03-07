@@ -1,3 +1,13 @@
+$('#stripe-submit').hide();
+$('#stripe-disabled').show();
+
+
+$('#terms-agree').click(function(){
+  $('#terms-agree').attr("disabled", true);
+  $('#stripe-submit').fadeIn();
+  $('#stripe-disabled').hide();
+});
+
 jQuery(function($) {
   $('#payment-form').submit(function(event) {
     var $form = $(this);

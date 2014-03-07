@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //confirmation page
+
+.charges.new{
+  #stripe-submit{
+    display:block;
+  }
+  #stripe-disabled{
+    display:none;
+  }
+}
 .charges.create{
     .panel-box{
       padding:30px;

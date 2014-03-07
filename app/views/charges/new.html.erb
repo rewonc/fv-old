@@ -5,7 +5,7 @@
 <div id="page-3">
   <h3 class="green">Payment information</h3>
 
-        <form action="<%= new_charge_path %>" method="POST" id="payment-form" data-abide>
+        <form action="<%= charges_path %>" method="POST" id="payment-form" data-abide>
           <span class="payment-errors"></span>
           
           <div class="row">
@@ -66,13 +66,14 @@
 
           <div class="row">
             <div class="small-11 medium-8 columns">
-              <label><input type="checkbox"> I agree to the terms of service</label>
+              <label><input type="checkbox" id="terms-agree"> I agree to the <a href="#">terms of service</a></label>
             </div>
           </div>
 
           <div class="row">
             <div class="small-6 medium-4 columns">
-              <submit class="fv-button">Finish!</submit>
+              <submit class="fv-button" id="stripe-submit">Finish!</submit>
+              <div class="fv-button-disabled" id="stripe-disabled">Finish!</div>
             </div>
           </div>
 

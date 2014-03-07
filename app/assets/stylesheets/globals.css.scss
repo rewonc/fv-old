@@ -2,6 +2,10 @@
   @include button(1rem,$orangeAccent,10px,false,false,false);
   border:0px;
 }
+.fv-button-disabled{
+  @include button(1rem,$orangeAccent,10px,false,true,false);
+  border:0px;
+}
 .green-button{
   position:relative;
   @include button(1rem,$greenButton,10px,false,false,false);
