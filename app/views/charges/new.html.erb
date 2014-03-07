@@ -66,14 +66,13 @@
 
           <div class="row">
             <div class="small-11 medium-8 columns">
-              <label><input type="checkbox" id="terms-agree"> I agree to the <a href="#">terms of service</a></label>
+              <label><input type="checkbox" id="terms-agree"> I agree to the <a href="#" data-reveal data-reveal-id="terms-of-service">terms of service</a></label>
             </div>
           </div>
 
           <div class="row">
             <div class="small-6 medium-4 columns">
-              <submit class="fv-button" id="stripe-submit">Finish!</submit>
-              <div class="fv-button-disabled" id="stripe-disabled">Finish!</div>
+              <button class="fv-button" id="stripe-submit" type="button">Finish!</button>
             </div>
           </div>
 
@@ -83,8 +82,13 @@
 
 <%= render 'shared/order_bg_2', summary: {title: 'hello'}, order: @order %> 
 
+<div id="terms-of-service" class="reveal-modal" data-reveal>
+  <%= render 'shared/tos' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-  Stripe.setPublishableKey(<%= Rails.configuration.stripe[:publishable_key] %>);
+  Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
 </script>
 

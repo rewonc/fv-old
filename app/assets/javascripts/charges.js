@@ -1,26 +1,22 @@
-$('#stripe-submit').hide();
-$('#stripe-disabled').show();
-
 
 $('#terms-agree').click(function(){
   $('#terms-agree').attr("disabled", true);
-  $('#stripe-submit').fadeIn();
-  $('#stripe-disabled').hide();
 });
 
-jQuery(function($) {
-  $('#payment-form').submit(function(event) {
-    var $form = $(this);
 
-    // Disable the submit button to prevent repeated clicks
-    $form.find('button').prop('disabled', true);
+$('#payment-form').submit(function(event) {
+  alert('hi');
+  var $form = $(this);
 
-    Stripe.card.createToken($form, stripeResponseHandler);
+  // Disable the submit button to prevent repeated clicks
+  $form.find('button').prop('disabled', true);
 
-    // Prevent the form from submitting with the default action
-    return false;
-  });
+  Stripe.card.createToken($form, stripeResponseHandler);
+
+  // Prevent the form from submitting with the default action
+  return false;
 });
+
 
 
 var stripeResponseHandler = function(status, response) {
