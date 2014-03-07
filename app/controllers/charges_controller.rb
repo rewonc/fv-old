@@ -18,6 +18,10 @@ class ChargesController < ApplicationController
       card: allow_stripe_token
     )
     ConfirmMailer.box_alert(@order).deliver
+    
+    #make it so they can make a new order now
+    session[:order_id] = nil
+
     #@charge = Stripe::Charge.create(
     #  customer: @customer.id,
     #  amount: amount,
