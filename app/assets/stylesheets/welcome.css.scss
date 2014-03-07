@@ -28,7 +28,7 @@
 
   section.introduction.segment {
     padding-top: 10px;
-    background-image: url(image-path("simp-v.8/photo-localheader.jpg"));
+    background-image: url(image-path("simp-v.8/photo-landingheader.jpg"));
     background-repeat: no-repeat;
     background-position: center bottom;
     -webkit-background-size: cover;
@@ -100,13 +100,41 @@
 
   }//-------end section deals
 
-  .learn-more{
+  .midbar{
     margin-top:20px;
-    .get-started-button {
-      @include button(1rem,$orangeAccent,10px,false,false,false);
-      margin-left:10px;
-      margin-right:10px;
-    }
+  }
+  .learn-more{
+    margin-top:0px;
+    padding-top:20px;
+    background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height:500px;
+    background-position: center bottom;
+    
+  }
+   .gah-more{
+    background-color: $olive;
+    background-size:cover;
+    //background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom:0px;
+    padding-top:40px;
+    padding-bottom:40px;
+    
+  }
+  .blah-more{
+    background-color: white;
+    border-bottom:1px solid $white2;
+    background-size:cover;
+    //background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom:0px;
+    padding-top:40px;
+    padding-bottom:40px;
+    
   }
   blockquote{
     border-left:0px;

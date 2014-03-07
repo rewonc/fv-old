@@ -17,6 +17,7 @@ $greenMute: desaturate($greenPrimary, 30%);
 $orangeLight: lighten($orange, 20%);
 $orangeDark: darken($orange, 20%);
 $gold: darken(gold, 2%);
+$olive: #ebf4ef;
 
 $redAccent: rgb(243, 63, 0);
 $redSoft: desaturate(lighten($redAccent, 10%), 5%);

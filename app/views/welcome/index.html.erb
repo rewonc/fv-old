@@ -19,52 +19,62 @@
   </div>
 </section>
 
-
-<div class="row learn-more">
+<div class="row midbar">
   <div class="small-12 columns centered">
-    
+    <p><strong>Now delivering</strong> to zipcodes in Eastern Time Zones. Get your box today!</p>
   </div>
 </div>
 
-<section class="deals">
+<div class="learn-more">
   <div class="row">
-    <ul class="small-block-grid-1 medium-block-grid-2 centered">
-      
-      <li>
-        <div class="row">
-          <a id="body-cookingbox" class="small-12 columns photo1" href="<%= new_box_path %>">
-            <%= image_tag 'simp-v.8/photo-localheader-small.jpg' %>
-            <h3>Cooking box</h3>
-            <p>Local, seasonal produce<br />
-            <em>Starting from $35 per box</em></p>
-          </a>
-        </div>
-      </li>
-      <li>
-        <div class="row">
-          <a id="body-juicebox" class="small-12 columns photo2" href="<%= new_juicebox_path %>">
-            <%= image_tag 'simp-v.8/photo-juiceheader-small.jpg' %>
-            <h3>Juicing box</h3>
-            <p>Packs of produce for home juicing<br />
-            <em>Starting from $45 per box</em></p>
-          </a>
-        </div>
-      </li>
-    </ul>
+    <div class="small-12 medium-8 medium-offset-4 columns centered">
+      <h1><%= image_tag 'simp-v.8/juiceicon1-75.png' %></h1>
+      <h2>Easier juicing than ever before</h2>
+      <p>Sorted recipe packs include all produce portioned exactly for delicious juices. Save yourself the time and energy of shopping.</p>
+        <br /><div class="centered"><%= render 'shared/signup_button' %></div>
+    </div>
   </div>
-</section>
+</div>
 
-<div class="row learn-more">
-  <div class="small-12 columns centered">
-    <p>Curious about how it works? <br />Learn about how <strong>Farmivore</strong> gets you the best produce possible.</p>
-    <%= link_to 'How it works', welcome_howitworks_path, class: "get-started-button", id: "body-howitworks" %>
+
+<div class="gah-more">
+  <div class="row">
+    <div class="small-12 medium-12 columns centered">
+      <h1><%= image_tag 'simp-v.8/juiceicon2-75.png' %></h1>
+      <h2>100% organic</h2>
+      <p>All of our farms are certified organic and use sustainable farming methods. </p>
+        <br /><div class="centered"><%= render 'shared/signup_button' %></div>
+    </div>
+  </div>
+</div>
+
+<div class="blah-more">
+  <div class="row">
+    <div class="small-12 medium-7 columns centered">
+      <h1><%= image_tag 'simp-v.8/juiceicon3-75.png' %></h1>
+      <h2>Free delivery</h2>
+      <p>Produce arrives on your doorstep during the time window you request. It's that easy!</p>
+        <br /><div class="centered"><%= render 'shared/signup_button' %></div>
+    </div>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 columns centered">
-    <hr /><br /><blockquote>We have been introduced to so many new fruits and vegetables, allowing us to explore new recipes and ways of cooking. Receiving  fresh, seasonal produce delivered straight to our door is such a convenience for our busy family. We look forward to our delivery each week!
-<br /> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><cite>Kimberly, New Haven</cite></blockquote>
+    <br /><blockquote>“My Farmivore box arrives every week with the ingredients measured perfectly for  delicious recipes. I save so much time not having to plan out a trip to the store. Anybody can eat tons of veggies when it is this easy!"
+<br /> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><cite>Josh Gomez, New York</cite></blockquote>
   </div>
 </div>
+
+<br />
+<section class="deals">
+  <div class="row centered">
+    <%= image_tag 'orders/fans-of-fv.jpg' %>
+  </div>
+</section>
+
+<br /><br />
+ <h3 class="centered">Start eating the best quality produce today. Sign up!</h3><br />
+  <div class="centered"><%= render 'shared/signup_button' %></div>
+  
 
