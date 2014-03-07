@@ -2,7 +2,7 @@
   <div class="small-12 columns">
     <div class="row">
       <div class="small-12 columns">
-       <h1 class="header centered">Produce done right</h1>
+       <h1 class="header centered">The freshest produce possible</h1>
        <ul class="small-block-grid-1 medium-block-grid-3 centered photos">
         <li>
           <div class="image">
@@ -70,8 +70,8 @@
     </div>
     <div class="row">
       <div class="small-12 medium-7 medium-offset-1 columns featurette-text">
-        <p>We’re obsessed with maximizing the freshness of the vegetables we deliver. Often, the items in your box are delivered within <strong>24 hours</strong> of being harvested by local farmers.</p>
-        <br /><br />
+        <p>We coordinate harvesting with your subscription to maximize freshness and quality. Many of our local products are delivered within <strong>24 hours</strong> of being harvested by farmers.</p>
+        <div class="centered"><%= render 'shared/signup_button' %></div>
         <p><em>Green beans can lose the majority of their nutrient content after just one week of storage! That's why Farmivore delivers them right after harvest.
         </em></p>
       </div>
@@ -91,7 +91,8 @@
       <div class="small-12 medium-7 medium-offset-5 columns featurette-text">
         <div class="centered"><i class="fa fa-3x fa-star-o"></i>
         <h2>Diverse selection</h2></div>
-        <div class="featurette-text"><p>Most supermarket produce today is selected for high yield and long shelf-life. </p><p>The farmers we source from, however, can grow more diverse and delicate varieties because they don’t need to worry about packing and shipping long distances.</p><p>
+        <div class="featurette-text"><p>Because we ship immediately to your door, the farmers we source from can grow more diverse and delicate varieties of produce than you'd find in the supermarket.</p>
+          <div class="centered"><%= render 'shared/signup_button' %></div>
           <em>Sungold tomatoes are ultra-sweet and rarely found in supermarkets. Find them in our summer boxes.</em>
         </p>
       </div>
@@ -115,17 +116,12 @@
     </div>
     
     <div class="row">
-      <div class="small-6 columns centered localbox">
-        <h5>The cooking box</h5>
-        <p>Local, seasonal produce<br />
-        <em>Starting from $35 for a weekly box</em></p>
-        <%= link_to 'Get started!', new_box_path, html_options = {class: "box-button", id: "howitworks-cookingbox"} %>
-      </div>
-      <div class="small-6 columns centered juicingbox">
+      
+      <div class="small-12 columns centered juicingbox">
         <h5>The juicing box</h5>
         <p>Packs of produce for home juicing<br />
-        <em>Starting from $45 for a weekly box</em></p>
-        <%= link_to 'Get started!', new_juicebox_path, html_options = {class: "juicing-button", id: "howitworks-juicebox"} %>
+        </p>
+        <%= render 'shared/signup_button' %>
       </div>
     </div>
   </div>
@@ -136,8 +132,10 @@
     <div class="centered"><i class="fa fa-3x fa-cutlery"></i>
     <h2>Easy to prepare</h2></div>
     <div class="row">
-      <div class="small-8 small-offset-2 columns featurette-text"><p>When you’re working with quality ingredients, creating flavorful meals becomes a lot easier. With each box, we include recipes designed to bring out the flavor of the ingredients, no matter if you're cooking or juicing.
-      </p></div>
+      <div class="small-8 small-offset-2 columns featurette-text"><p>Sorted recipe packs include all the produce you need for delicious juices, sized in the correct proportions. Save yourself time and energy from shopping. 
+      </p>
+      <div class="centered"><%= render 'shared/signup_button' %></div>
+      </div>
     </div>
     <br /><br />
   </div>
@@ -149,7 +147,7 @@
     <h2>Honestly sourced</h2></div>
     <div class="row">
       <div class="small-6 small-offset-1 columns featurette-text">
-        <p>We make an effort to tour the farms we source from and see their growing practices firsthand so we can share that information with you. Beyond the quality of the produce itself, we also look for farms that:</p>
+        <p>We make an effort to tour the farms we source from and see their growing practices firsthand.  Beyond the quality of the produce itself, we also look for farms that:</p>
         <ul>
           <li>are family-owned and operated</li>
           <li>refrain from using genetically modified seed varieties</li>
@@ -157,19 +155,22 @@
           <li>use no or low spray growing practices</li>
           <li>minimize external inputs (like synthetic fertilizers) and waste outputs</li>
         </ul>
-
-        <p>Every delivery comes with information about where each vegetable comes from and the growing practices on the farms.  
-        </p>
       </div>
+
       <div class="small-5 columns">
         <div class="row">
           <div class="small-12 columns centered">
             <br /><br /><br />
-            <p>Learn more about our sourcing practices</p>
-            <%= link_to 'Our farms', welcome_farms_path, html_options = {class: "get-started-button"} %>
+            <div class="centered"><%= render 'shared/signup_button' %></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <h1>&nbsp;</h1>
+  <h3 class="centered">Start eating the best quality produce today. Sign up!</h3>
+  <div class="centered"><%= render 'shared/signup_button' %></div>
 </div>

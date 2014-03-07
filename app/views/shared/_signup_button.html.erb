@@ -1,8 +1,8 @@
 <% if user_signed_in? && is_order_set? %>
-  <%= link_to 'Signed in, chose a box', new_charge_path, class: "green-button signup-button" %>
+  <%= link_to 'Get started!'.html_safe, new_charge_path, class: "green-button signup-button-large" %>
 <% elsif user_signed_in? %>
-  <%= link_to 'Signed in, no chose box', new_order_path, class: "green-button signup-button" %>
+  <%= link_to 'Get started!'.html_safe, new_order_path, class: "green-button signup-button-large" %>
 <% else %>
-  <%= link_to 'No signed in', new_user_registration_path, class: "green-button signup-button" %>
+  <%= link_to 'Get started!'.html_safe, new_user_registration_path, class: "green-button signup-button-large" %>
 <% end %>
 
