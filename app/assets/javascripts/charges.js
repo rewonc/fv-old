@@ -1,6 +1,7 @@
 
 $('#terms-agree').click(function(){
   $('#terms-agree').attr("disabled", true);
+  $('#stripe-submit').attr("disabled", false);
 });
 
 
