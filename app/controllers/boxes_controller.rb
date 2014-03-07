@@ -19,7 +19,7 @@ class BoxesController < ApplicationController
     @box = Box.new(box_params)
     #TO DO: validations. return errors or save
     if @box.save
-       ConfirmMailer.box_alert(@box).deliver
+       #ConfirmMailer.box_alert(@box).deliver
        session[:box_id] = @box.id
        session[:juicebox_id] = nil
        render 'charges/new'

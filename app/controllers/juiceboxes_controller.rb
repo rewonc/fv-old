@@ -33,7 +33,7 @@ class JuiceboxesController < ApplicationController
     @box = Juicebox.new(juicebox_params)
 
       if @box.save
-        ConfirmMailer.box_alert(@box).deliver
+        #ConfirmMailer.box_alert(@box).deliver
         session[:juicebox_id] = @box.id
         session[:box_id] = nil
         render 'charges/new', notice: 'Juicebox was successfully created.'
