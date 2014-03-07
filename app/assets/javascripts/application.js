@@ -3,6 +3,7 @@
 //= require_self
 //= require boxes
 //= require orders
+//= require charges
 //= require juiceboxes
 //= require mixpanel
 //= require number-polyfill
