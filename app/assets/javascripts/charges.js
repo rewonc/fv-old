@@ -6,7 +6,6 @@ $('#terms-agree').click(function(){
 
 
 $('#payment-form').submit(function(event) {
-  alert('hi');
   var $form = $(this);
 
   // Disable the submit button to prevent repeated clicks

@@ -4,8 +4,8 @@
 <!-- CC Form Page 3-->
 <div id="page-3">
   <h3 class="green">Payment information</h3>
-
-        <form action="<%= charges_path %>" method="POST" id="payment-form" data-abide>
+        <%= form_tag(charges_path, :'data-abide' => '', :id => 'payment-form' )%>
+        
           <span class="payment-errors"></span>
           
           <div class="row">

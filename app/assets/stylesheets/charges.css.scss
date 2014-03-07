@@ -11,6 +11,9 @@
   #stripe-disabled{
     display:none;
   }
+  .payment-errors{
+    color:red;
+  }
 }
 .charges.create{
     .panel-box{

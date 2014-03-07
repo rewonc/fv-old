@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
   before_filter :get_order, :only => [:new, :create, :edit, :update]
   before_filter :authenticate_user!, only: [:new, :edit, :create, :update]
   http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", only: [:index, :show, :destroy]
+  #protect_from_forgery with: :null_session
 
   def index
   end
@@ -11,20 +12,10 @@ class ChargesController < ApplicationController
   end
 
   def create
-    
-    if session[:box_id].nil? && !session[:juicebox_id].nil?
-      @box = Juicebox.find(session[:juicebox_id])
-    elsif !session[:box_id].nil? && session[:juicebox_id].nil?
-      @box = Box.find(session[:box_id])
-    else
-      return redirect_to :back, notice: "Your application appears to come from an unauthorized source. Our apologies for this inconvenience. Please contact support@farmivore.com to register for an account."
-    end
-     
-    amount = @box.box_price
     @customer = Stripe::Customer.create(
-      email: @box.email,
-      description: @box.get_box_name + ' . Deliver: ' + @box.startdate.to_s + '. ' + @box.frequency_string + '.',
-      card: params[:stripeToken]
+      email: current_user.email,
+      description: @order.product.name + '. ' + @order.product.price.to_s + '. ' + @order.box_count.to_s + ' boxes. ' + @order.first_delivery + '.  Freq:' + @order.frequency.to_s,
+      card: allow_stripe_token
     )
 
     #@charge = Stripe::Charge.create(
@@ -49,6 +40,10 @@ class ChargesController < ApplicationController
     else
       redirect_to :root, notice: "Your application appears to come from an unauthorized source. Please contact support@farmivore.com for assistance."
     end
+  end
+
+  def allow_stripe_token
+    params.require(:stripeToken)
   end
 
 
