@@ -3,45 +3,42 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Frequency</th>
-      <th>Plan</th>
-      <th>Price</th>
-      <th>Promocode</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Address</th>
-      <th>Apt</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Stripetoken</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>box_count</th>
+      <th>frequency</th>
+      <th>fullname</th>
+      <th>addy1</th>
+      <th>addy2</th>
+      <th>city</th>
+      <th>state</th>
+      <th>zip</th>
+      <th>phone</th>
+      <th>delivery window</th>
+      <th>first delivery</th>
+      <th>user id</th>
+      <th>product id</th>
+      <th>promocode id</th>
+      <th>User email</th>
     </tr>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.name %></td>
-        <td><%= order.size %></td>
+        <td><%= order.box_count %></td>
         <td><%= order.frequency %></td>
-        <td><%= order.plan %></td>
-        <td><%= order.price %></td>
-        <td><%= order.promocode %></td>
-        <td><%= order.firstname %></td>
-        <td><%= order.lastname %></td>
-        <td><%= order.address %></td>
-        <td><%= order.apt %></td>
+        <td><%= order.fullname %></td>
+        <td><%= order.address1 %></td>
+        <td><%= order.address2 %></td>
         <td><%= order.city %></td>
         <td><%= order.state %></td>
         <td><%= order.zip %></td>
-        <td><%= order.stripetoken %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.delivery_window %></td>
+        <td><%= order.first_delivery %></td>
         <td><%= order.user_id %></td>
+        <td><%= order.product_id %></td>
+        <td><%= order.promocode_id %></td>
+        <td><%= order.user.email %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
