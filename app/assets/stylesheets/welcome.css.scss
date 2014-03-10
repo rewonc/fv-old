@@ -37,6 +37,34 @@
     background-size: cover;
     background-color:$white2;
 
+    h1{
+      font-size:55px;
+      font-weight:bold;
+      color:white;
+      margin-top:60px;
+      text-shadow:1px 1px 0 $darkGray,
+                -1px -1px 0 $darkGray,
+                1px -1px 0 $darkGray,
+                -1px 1px 0 $darkGray,
+                0px 1px 0 $darkGray,
+                1px 0px 0 $darkGray,
+                0px -1px 0 $darkGray,
+                -1px 0px 0 $darkGray;
+    }
+    h3.subtitle{
+      font-size:24px;
+      color:white;
+      margin-bottom:60px;
+      text-shadow:1px 1px 0 $midGray,
+                -1px -1px 0 $midGray,
+                1px -1px 0 $midGray,
+                -1px 1px 0 $midGray,
+                0px 1px 0 $midGray,
+                1px 0px 0 $midGray,
+                0px -1px 0 $midGray,
+                -1px 0px 0 $midGray;
+    }
+
   img{
     margin-top:50px;
     margin-bottom:60px;
