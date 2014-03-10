@@ -37,6 +37,10 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order.attributes = order_params
+    if !session[:promocode_id].nil?
+      @order.promocode_id = session[:promocode_id]
+    end
+
     respond_to do |format|
       if @order.save
         session[:order_id] = @order.id

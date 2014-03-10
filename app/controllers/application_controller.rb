@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
 
   private
   def capture_referral
+    if params[:r] && params[:r] === "a67mm1"
+      session[:promocode_id] = 1
+    end
     session[:referrer] = params[:r] if params[:r]
     session[:product_id] = params[:p] if params[:p]
   end
@@ -19,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_devise_permitted_parameters
-    registration_params = [:first, :last, :email, :password, :password_confirmation, :zip]
+    registration_params = [:first, :last, :email, :password, :password_confirmation, :zip, :promocode_id]
 
     if params[:action] == 'update'
       devise_parameter_sanitizer.for(:account_update) { 

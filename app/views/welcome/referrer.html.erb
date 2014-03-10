@@ -1,0 +1,56 @@
+<section class="delivery">
+  <div class="row">
+    <div class="medium-12 small-12 columns">
+      
+      <div class="row">
+        <div class="small-12 columns">
+          
+
+          <div class="row summary">
+            <div class="small-12 columns">
+              <h1>Referrals from Joe's Reboot</h1>
+              <ul class="inline-list">
+                <li><strong>Totals: </strong></li>
+                <li>User registrations: 23</li>
+                <li>To checkout: 12</li>
+                <li>Payments:  6</li>
+              </ul>
+
+              <table>
+                <tr>
+                  <th>Email</th>
+                  <th>Registered?</th>
+                  <th>To checkout?</th>
+                  <th>Paid?</th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                </tr>
+
+                <% @users.each do |user| %>
+                <tr>
+                  <th>****<%= user.email[4..-1] %></th>
+                  <th>Yes</th>
+                  <th><% if !user.orders.empty? %>Yes<% end %></th>
+                  <th><% if !user.charges.empty? %>Yes<% end %></th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                </tr>
+                <% end %>
+
+              </table>
+
+
+            </div>
+          </div>
+
+  <h1>&nbsp;</h1>
+ <h1>&nbsp;</h1>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

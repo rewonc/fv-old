@@ -29,6 +29,8 @@
 			  <div><%= f.label :"Zip Code" %>
 			  <%= f.text_field :zip %></div>
 
+			  <%= f.hidden_field :promocode_id, value: session[:promocode_id] %>
+
 			  <div><%= f.submit "Sign up", class: "fv-button" %></div>
 			<% end %>
 

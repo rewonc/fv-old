@@ -11,6 +11,7 @@ Farmivore::Application.routes.draw do
 
   root 'welcome#index'
   get "welcome/farms"
+  get "welcome/referrer"
   get "welcome/features"
   get "welcome/about"
   get "welcome/contact"

@@ -22,14 +22,23 @@ class ChargesController < ApplicationController
     #make it so they can make a new order now
     session[:order_id] = nil
 
+    #save to db
+    @charge = Charge.new
+    @charge.order = @order
+    @charge.token = allow_stripe_token
+
     #@charge = Stripe::Charge.create(
     #  customer: @customer.id,
     #  amount: amount,
     #  description: @box.email.to_s,
     #  currency: 'usd'
     #)
-    
-    render 'charges/create', layout: 'application'
+    if @charge.save
+     render 'charges/create', layout: 'application'
+    else
+      redirect_to :back, alert: 'An error occurred with your payment. Please email support@farmivore.com if you continue to see this error.'
+    end
+
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

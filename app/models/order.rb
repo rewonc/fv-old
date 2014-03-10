@@ -11,6 +11,7 @@ class Order < ActiveRecord::Base
   validates :first_delivery, presence: true
   belongs_to :user
   belongs_to :product
+  has_one :charge
   
   def box_count_string
     return product.box_num_menu['options'][box_count.to_s.to_sym]
