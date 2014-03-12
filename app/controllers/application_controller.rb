@@ -9,8 +9,12 @@ class ApplicationController < ActionController::Base
 
   private
   def capture_referral
-    if params[:r] && params[:r] === "a67mm1"
-      session[:promocode_id] = 1
+    if params[:r]
+      promocode = Promocode.where(code: params[:r])
+      if promocode.length > 0
+        session[:promocode_id] = promocode.take.id
+      else
+      end
     end
     session[:product_id] = params[:p] if params[:p]
   end

@@ -41,13 +41,14 @@
                 <li><strong>Totals: </strong></li>
                 <li>User registrations: <%= @promocode.users.length %></li>
                 <li>To checkout: <%= @promocode.orders.length %></li>
-                <li>Payments:  <%= @promocode.orders.select {|x| !x.charge.nil?}. length %></li>
+                <li>Payments:  <%= @promocode.orders_with_charges.length %></li>
               </ul>
+               <p><strong>Total sales for this period:</strong> <%= @promocode.sales_string %></p>
 
               <h3>What we owe you:</h3>
-              <p>Total sales for this period: <%= @promocode.sales_string %></p>
-              <p>Your rate: <%= @promocode.rate_string %></p>
-              <p>Your total earnings: <%= @promocode.earnings_string %></p>
+             
+              <p><strong>Your rate:</strong> <%= @promocode.rate_string %></p>
+              <p><strong>Your total earnings:</strong> <%= @promocode.earnings_string %></p>
 
 
 

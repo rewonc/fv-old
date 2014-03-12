@@ -37,4 +37,8 @@ class Order < ActiveRecord::Base
       return '$' + price.to_s.chop.chop
     end
   end
+
+  def self.price_string(integer)
+    return '$' + integer.to_s.chop.chop + '.' + integer.to_s.last(2)
+  end
 end
