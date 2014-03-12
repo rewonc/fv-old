@@ -28,9 +28,13 @@ class WelcomeController < ApplicationController
   end
 
   def referrer
-    result = Promocode.where(email: current_user.email)
-    if result.length > 0
-      @promocode = result.take
+    if user_signed_in?
+      result = Promocode.where(email: current_user.email)
+      if result.length > 0
+        @promocode = result.take
+      else
+        redirect_to root_path, alert: "You are not authorized to view this page."
+      end
     else
       redirect_to root_path, alert: "You are not authorized to view this page."
     end
