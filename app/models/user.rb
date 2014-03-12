@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :orders
   has_many :charges, :through => :orders
+  belongs_to :promocode
   validates :first, presence: true
   validates :last, presence: true
   validates :zip, presence: true

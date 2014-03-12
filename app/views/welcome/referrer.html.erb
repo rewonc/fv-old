@@ -8,17 +8,12 @@
 
           <div class="row summary">
             <div class="small-12 columns">
-              <h1>Referrals from Joe's Reboot</h1>
-              <ul class="inline-list">
-                <li><strong>Totals: </strong></li>
-                <li>User registrations: 23</li>
-                <li>To checkout: 12</li>
-                <li>Payments:  6</li>
-              </ul>
-
+              <h1>Referrals for <%= @promocode.email %></h1>
+              
               <table>
                 <tr>
                   <th>Email</th>
+                  <th>Date registered</th>
                   <th>Registered?</th>
                   <th>To checkout?</th>
                   <th>Paid?</th>
@@ -26,18 +21,34 @@
                   <th>Total Price</th>
                 </tr>
 
-                <% @users.each do |user| %>
+                <% @promocode.users.each do |user| %>
                 <tr>
                   <th>****<%= user.email[4..-1] %></th>
+                  <th><%= user.created_at.to_s %></th>
                   <th>Yes</th>
-                  <th><% if !user.orders.empty? %>Yes<% end %></th>
-                  <th><% if !user.charges.empty? %>Yes<% end %></th>
-                  <th>Quantity</th>
-                  <th>Total Price</th>
+                  <th><% if !user.orders.empty? %>Yes 
+                    <% end %></th>
+                  <th><% if !user.charges.empty? %>Yes
+                    <% end %></th>
+                  <th><% if !user.charges.empty? %><%= user.charges.first.order.box_count_string %><% end %></th>
+                  <th><% if !user.charges.empty? %><%= user.charges.first.order.price_string(true) %><% end %></th>
                 </tr>
                 <% end %>
 
               </table>
+
+              <ul class="inline-list">
+                <li><strong>Totals: </strong></li>
+                <li>User registrations: <%= @promocode.users.length %></li>
+                <li>To checkout: <%= @promocode.orders.length %></li>
+                <li>Payments:  <%= @promocode.orders.select {|x| !x.charge.nil?}. length %></li>
+              </ul>
+
+              <h3>What we owe you:</h3>
+              <p>Total sales for this period: <%= @promocode.sales_string %></p>
+              <p>Your rate: <%= @promocode.rate_string %></p>
+              <p>Your total earnings: <%= @promocode.earnings_string %></p>
+
 
 
             </div>
