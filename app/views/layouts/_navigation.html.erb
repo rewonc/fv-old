@@ -2,7 +2,7 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <%= link_to image_tag('logo-allcaps.png', id: 'logo'), 'http://cleanse.farmivore.com/reboot-with-joe' %>
+        <%= link_to image_tag('logo-allcaps.png', id: 'logo'), 'http://partners.farmivore.com/reboot-with-joe' %>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
@@ -10,7 +10,7 @@
     <section class="top-bar-section">
       <ul class="left">
 
-        <li><%= link_to 'Home', 'http://cleanse.farmivore.com/reboot-with-joe', html_options = {id: "nav-root"} %></li>
+        <li><%= link_to 'Home', 'http://partners.farmivore.com/reboot-with-joe', html_options = {id: "nav-root"} %></li>
       	<li><%= link_to 'Learn more', welcome_howitworks_path, html_options = {id: "nav-howitworks"} %></li>
         <li><% if is_order_set? %>
             <%= link_to 'Join', new_charge_path, html_options = {id: "nav-order"} %>
