@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312175311) do
+ActiveRecord::Schema.define(version: 20140313234651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,8 @@ ActiveRecord::Schema.define(version: 20140312175311) do
     t.text     "delivery_frequency_menu"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
+    t.string   "note"
   end
 
   create_table "promocodes", force: true do |t|

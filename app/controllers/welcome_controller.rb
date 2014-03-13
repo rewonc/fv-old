@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
 
+
   def index
   end
 
@@ -39,6 +40,6 @@ class WelcomeController < ApplicationController
       redirect_to root_path, alert: "You are not authorized to view this page."
     end
   end
-  
 
+ 
 end

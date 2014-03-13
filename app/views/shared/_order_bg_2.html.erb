@@ -18,12 +18,12 @@
             <h5><%= order.product.box_num_menu['title'] %>:</h5>
             <p id="boxcountstring"><%= order.box_count_string %></p>
 
-            <% if !order.product.is_cleanse? %>
+            <% if !order.product.is_affiliate? %>
             <h5><%= order.product.delivery_frequency_menu['title'] %>:</h5>
             <p><%= order.frequency_string %></p>
             <% end %>
 
-            <% if !order.product.is_cleanse? %>
+            <% if !order.product.is_affiliate? %>
               <h5>Delivery time:</h5>
               <p><%= order.delivery_window.to_s %></p>
 
