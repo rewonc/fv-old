@@ -44,7 +44,8 @@ has_many :users
       orders_with_charges.each do |order|
         x = x + order.price * 0.025
       end
-      return Order.price_string(x)
+
+      return Order.price_string(x.round)
     else
       return ''
     end
