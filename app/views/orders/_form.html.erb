@@ -14,7 +14,7 @@
 <div class="row">
   <div class="small-12 columns">
     <% if @order.product.is_affiliate? %>
-    <p>You have selected a <strong><%= @order.product.name %> </strong> cleanse.</p>
+    <p>You have selected the <strong><%= @order.product.name %> </strong> program.</p>
     <% end %>
   </div>
 </div>
@@ -101,7 +101,7 @@
         <%= f.hidden_field :first_delivery %>
       </div>
     <% else %>
-      <h5>When to start your cleanse</h5>
+      <h5>When you want to begin</h5>
       <div class="field">
         <%= f.label :first_delivery, "Date to expect your first delivery" %>
         <%= f.select(:first_delivery, options_for_select([["Wednesday, March 19"],["Thursday, March 20"],["Friday, March 21"],["Saturday, March 22"],["Tuesday, March 25"],["Wednesday, March 26"],["Thursday, March 27"],["Friday, March 28"]])) %>

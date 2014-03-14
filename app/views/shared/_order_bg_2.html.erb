@@ -24,13 +24,13 @@
             <% end %>
 
             <% if !order.product.is_affiliate? %>
-              <h5>Delivery time:</h5>
+              <h5>First delivery:</h5>
               <p><%= order.delivery_window.to_s %></p>
 
               <h3 class="green">First delivery</h3>
               <p><%= order.first_delivery_string %> (<a href="#">change</a>)</p>
             <% else %>
-              <h5>Delivery time:</h5>
+              <h5>First delivery:</h5>
               <p id="firstdeliverystring"><%= order.first_delivery.to_s %></p>
             <% end %>
 
@@ -41,9 +41,16 @@
               <div class="text-right"><strong>Total: <span id="totalprice"><%= order.price_string(false) %></span></strong></div>
             </div>
 
-            <h4><%#= summary[:title] %></h4>
+            <h4 class="green">Notes</h4>
+              <div class="row sub-summary">
+                 <div class="small-12 columns">
+                  <em><%= @order.product.note %></em>
+                </div>
+              </div>
           </div>
         </div>
+
+       
 
 
       </div>

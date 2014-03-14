@@ -4,10 +4,10 @@ class Product < ActiveRecord::Base
   has_many :orders
 
   def is_affiliate?
-    if !id === 6
-      return true
-    else
+    if id === 6
       return false
+    else
+      return true
     end
   end
 
@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
   a.delivery_frequency_menu = dfreqmenu
   a.price = 11400
   a.link = "http://partners.farmivore.com/reboot-with-joe"
-  a.note = "This is a one-time order. At the end of your experience, you can subscribe to a recurring Farmivore plan."
+  a.note = "3 days worth of produce is sent at one time. 6, 9, and 12 day reboots receive multiple shipments of produce."
   a.save
 
   a = Product.new
@@ -40,7 +40,7 @@ class Product < ActiveRecord::Base
   a.box_num_menu = boxnummenu
   a.delivery_frequency_menu = dfreqmenu
   a.price = 6000
-  a.note = "This is a recurring subscription. You will receive a box according to the subscription preferences you set above. You can pause, delay, or cancel your subscription at any time through your account settings."
+  a.note = "This is a recurring subscription. You can pause, delay, or cancel your subscription at any time through your account settings."
   a.save
 
   a = Product.new
@@ -54,9 +54,9 @@ class Product < ActiveRecord::Base
   dfreqmenu['options'] = {:"1" => "Once a week", :"2" => "Twice per week", :"3" => "Once every two weeks"}
   a.box_num_menu = boxnummenu
   a.delivery_frequency_menu = dfreqmenu
-  a.price = 7800
+  a.price = 31200
   a.link = "http://partners.farmivore.com/30-day-challenge"
-  a.note = "This payment is for the first week of the challenge. You will be automatically enrolled for 3 weeks following the first week at $78 per week. You may pause, delay, or cancel the subsequent payments at any time through your account settings."
+  a.note = "Your delivery will come in four shipments, each with about a week's worth of juicing vegetables."
   a.save
   
 =end

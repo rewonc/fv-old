@@ -91,8 +91,16 @@ body.welcome.referrer, body.orders.new, body.orders.edit, body.orders.create, bo
       color:green;
       background-color:rgba(170,240,220,0.6);
     }
-    
   }
+   
+   .sub-summary{
+    margin-top:5px;
+    em{
+      line-height:20px;
+    }
+   } 
+    
+  
   .pricer{
     div{
       margin-top:8px;
