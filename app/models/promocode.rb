@@ -69,7 +69,7 @@ a.save
 
 a = Promocode.new
 a.code = "7zg66n"
-a.email = "rewoncc@gmail.com"
+a.email = "brandonjur@gmail.com"
 a.id = 2
 a.save
 
