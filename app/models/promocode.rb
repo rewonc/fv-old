@@ -13,7 +13,11 @@ has_many :users
       end
       return Order.price_string(x)
     when 2
-
+      x = 0
+      orders_with_charges.each do |order|
+        x = x + order.price 
+      end
+      return Order.price_string(x)
     else
       return ''
     end
@@ -24,7 +28,7 @@ has_many :users
     when 1
        return "$5 per order - cost of book"
     when 2
-
+       return "2.5% per box at n < 100"
     else
       return ''
     end
@@ -36,7 +40,11 @@ has_many :users
        x = orders_with_charges.length * 500
        return Order.price_string(x)
     when 2
-
+      x = 0
+      orders_with_charges.each do |order|
+        x = x + order.price * 0.025
+      end
+      return Order.price_string(x)
     else
       return ''
     end
@@ -54,7 +62,7 @@ end
 
 a = Promocode.new
 a.code = "a67mm1"
-a.email = "rewonc@gmail.com"
+a.email = "ameet@rebootwithjoe.com"
 a.id = 1
 a.save
 
