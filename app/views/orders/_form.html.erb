@@ -20,20 +20,18 @@
 </div>
 
 <div class="row">
-  <div class="small-5 medium-5 large-3 columns">
+  <div class="small-7 medium-6 large-6 columns">
       <%= f.label @order.product.box_num_menu['title'] %>
-      <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => @order.product.price %>
+      <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => @order.product.price, :'data-id' => @order.product.id %>
   </div>
   <% if !get_product.is_affiliate? %>
-  <div class="small-6 medium-6 large-5 columns">
+  <div class="small-5 medium-6 large-6 columns">
       <%= f.label @order.product.delivery_frequency_menu['title'] %>
       <%= f.select :frequency, @order.product.delivery_frequency_menu['options'].map{ |key, value| [value, key] } %>
   </div>
   <% end %>
 
-  <div class="small-1 medium-1 large-4 columns">
-      &nbsp;
-  </div>
+
 </div>
 
 <div class="row">

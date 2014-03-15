@@ -16,13 +16,26 @@ $('#order_first_delivery').change(function(event){
 });
 
 function priceRefresh(){
-  price = (($('#order_box_count').data('price') * $('#order_box_count').val())/100).toString();
-  $('#totalprice').text('$' + price);
-  $('#subtotalprice').text('$' + price);
-  $('#totalprice').addClass('updated');
-  setTimeout( function(){
-      $('#totalprice').removeClass('updated');
-    },1000);
+  switch($('#order_box_count').data('id')){
+    case 7:
+      price = ($('#order_box_count').data('price')/100).toString();
+      $('#totalprice').text('$' + price);
+      $('#subtotalprice').text('$' + price);
+      $('#totalprice').addClass('updated');
+      setTimeout( function(){
+          $('#totalprice').removeClass('updated');
+        },1000);
+      break;
+    default:
+      price = (($('#order_box_count').data('price') * $('#order_box_count').val())/100).toString();
+      $('#totalprice').text('$' + price);
+      $('#subtotalprice').text('$' + price);
+      $('#totalprice').addClass('updated');
+      setTimeout( function(){
+          $('#totalprice').removeClass('updated');
+        },1000);
+
+  }
 }
 
 

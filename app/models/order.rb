@@ -27,7 +27,12 @@ class Order < ActiveRecord::Base
   end
 
   def price
-    return box_count * product.price
+    if product.id === 7
+      return product.price
+    else
+      return box_count * product.price
+    end
+
   end
 
   def price_string(zeroes)
