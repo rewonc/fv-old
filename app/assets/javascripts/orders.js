@@ -1,3 +1,58 @@
+$('.checkboxes').find('input').change(function(){
+  
+  var count = $('.checkboxes').find('input:checked');
+  var string = count.map(function(){
+    return $(this).next("label").text().split(' ').join('%20');
+  }).get();
+  
+  $('#order_delivery_window').val(string);
+  
+  switch(count.length){
+    case 4:
+      $('#order_box_count').val(1);
+      $('p#boxcountstring').text($('#order_box_count').find(":selected").text());
+      priceRefresh();
+      $('p#boxcountstring').addClass('updated');
+        setTimeout( function(){
+            $('p#boxcountstring').removeClass('updated');
+          },1000);
+    break;
+    case 3:
+      $('#order_box_count').val(4);
+      $('p#boxcountstring').text($('#order_box_count').find(":selected").text());
+      priceRefresh();
+      $('p#boxcountstring').addClass('updated');
+        setTimeout( function(){
+            $('p#boxcountstring').removeClass('updated');
+          },1000);
+    break;
+    case 2:
+      $('#order_box_count').val(3);
+      $('p#boxcountstring').text($('#order_box_count').find(":selected").text());
+      priceRefresh();
+      $('p#boxcountstring').addClass('updated');
+        setTimeout( function(){
+            $('p#boxcountstring').removeClass('updated');
+          },1000);
+    break;
+    case 1:
+      $('#order_box_count').val(2);
+      $('p#boxcountstring').text($('#order_box_count').find(":selected").text());
+      priceRefresh();
+      $('p#boxcountstring').addClass('updated');
+        setTimeout( function(){
+            $('p#boxcountstring').removeClass('updated');
+          },1000);
+    break;
+    case 0:
+      alert('Please select at least one week');
+  }
+  //insert string here into a field to know the specific weeks ppl choose
+});
+$('#checkbox-click').click(function(){
+  $('.checkboxes').find('input').attr('disabled',false);
+});
+
 $('#order_box_count').change(function(event){
   $('p#boxcountstring').text($(this).find(":selected").text());
   $('p#boxcountstring').addClass('updated');

@@ -48,15 +48,15 @@ class Product < ActiveRecord::Base
   a.id = 7
   boxnummenu = Hash.new
   dfreqmenu = Hash.new
-  boxnummenu['title'] = 'Number of Days'
-  boxnummenu['options'] = {:"1" => "30 days (4 deliveries)", :"2" => "7 days (1 delivery)", :"3" => "14 days (2 deliveries)", :"4" => "22 days (3 deliveries)"}
+  boxnummenu['title'] = 'Number of Weeks'
+  boxnummenu['options'] = {:"1" => "4 weeks (4 deliveries)", :"2" => "1 week (1 delivery)", :"3" => "2 weeks (2 deliveries)", :"4" => "3 weeks (3 deliveries)"}
   dfreqmenu['title'] = 'Delivery frequency'
   dfreqmenu['options'] = {:"1" => "Once a week", :"2" => "Twice per week", :"3" => "Once every two weeks"}
   a.box_num_menu = boxnummenu
   a.delivery_frequency_menu = dfreqmenu
   a.price = 7800
   a.link = "http://partners.farmivore.com/30-day-challenge"
-  a.note = "This price is for each delivery. You can cancel future deliveries by just letting us know 4 days in advance."
+  a.note = "This is the price per week. You will be charged this amount each time you receive a delivery. You can skip, cancel, or pause shipments by letting us know 4 days in advance."
   a.save
   
 =end
