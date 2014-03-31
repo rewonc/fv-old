@@ -1,10 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "admin", password: "RailsRAILS2014"
+  http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", except: [:select]
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+  end
+
+  def select
+
   end
 
   # GET /products/1

@@ -1,32 +1,35 @@
 Farmivore::Application.routes.draw do
 
+  get "products/select"
+  root 'welcome#index'
+  #get "welcome/farms"
+  #get "welcome/referrer"
+  #get "welcome/features"
+  #get "welcome/about"
+  #get "welcome/contact"
+  #get "welcome/terms"
+  #get "welcome/admin"
+  #get "welcome/team"
+  #get "welcome/weekly_email"
+  #get "welcome/howitworks"
 
   resources :products
 
   resources :orders
+  #resources :subscriptions
 
-  resources :juiceboxes
+  #resources :juiceboxes
 
-  resources :boxes, :charges
+  #resources :boxes
+  resources :charges
 
-  root 'welcome#index'
-  get "welcome/farms"
-  get "welcome/referrer"
-  get "welcome/features"
-  get "welcome/about"
-  get "welcome/contact"
-  get "welcome/terms"
-  get "welcome/admin"
-  get "welcome/team"
-  get "welcome/weekly_email"
-  get "welcome/howitworks"
 
-  get 'juicing', to:'juiceboxes#new'
-  get 'cooking', to:'boxes#new'
+  #get 'juicing', to:'juiceboxes#new'
+  #get 'cooking', to:'boxes#new'
 
-  post 'unbounce', to: 'welcome#capture_referral'
-  post 'sms', to: 'texts#catch'
-  resources :texts
+  #post 'unbounce', to: 'welcome#capture_referral'
+  #post 'sms', to: 'texts#catch'
+  #resources :texts
 
   devise_for :users, controllers: { registrations: "registrations" }
    # Add a Custom Route for Registrations

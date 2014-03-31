@@ -1,0 +1,391 @@
+.welcome.weekly_email{
+  .email{
+    background-color:white;
+    img{
+      width: 200px;
+    }
+  }
+}
+.welcome{
+  h1.header{
+    margin-top:30px;
+    margin-bottom:20px;
+      color:$darkGray;
+      font-weight:bold;
+  }
+  .panel-box{
+    margin-top:30px;
+    padding-top:20px;
+    background-color:white;
+    -moz-box-shadow:    0px 0px 2px 0px $white2;
+    -webkit-box-shadow: 0px 0px 2px 0px $white2;
+    box-shadow:         0px 0px 2px 0px $white2;
+    padding-bottom:20px;
+  }
+}
+
+.welcome.index{
+
+  section.introduction.segment {
+    padding-top: 10px;
+    background-image: url(image-path("simp-v.8/photo-landingheader.jpg"));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color:$white2;
+
+    h1{
+      //background-color: rgba(50,50,50,0.3);
+      font-size:55px;
+      font-weight:bold;
+      color:white;
+      margin-top:60px;
+      text-shadow:1px 1px 1px $black3,
+                -1px -1px 1px $black3,
+                1px -1px 1px $black3,
+                -1px 1px 1px $black3,
+                0px 1px 1px $black3,
+                1px 0px 1px $black3,
+                0px -1px 1px $black3,
+                -1px 0px 1px $black3;
+    }
+    h3.subtitle{
+      font-size:24px;
+      color:white;
+      margin-bottom:60px;
+      text-shadow:1px 1px 1px $black3,
+                -1px -1px 1px $black3,
+                1px -1px 1px $black3,
+                -1px 1px 1px $black3,
+                0px 1px 1px $black3,
+                1px 0px 1px $black3,
+                0px -1px 1px $black3,
+                -1px 0px 1px $black3;
+    }
+
+  img{
+    margin-top:50px;
+    margin-bottom:60px;
+  }
+
+    .landing-page-tag {
+      margin-top: 20px;
+      z-index: 2;
+    }
+
+    .learn-more-button {
+      @include button(1rem,$greenPrimary,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+      border:4px solid white;
+    }
+    .get-started-button {
+      @include button(1rem,$orangeAccent,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+      border:4px solid white;
+    }
+
+    .button-group{
+      margin-top:25px;
+      margin-bottom:60px;
+      em{
+        font-size:24px;
+        color:white;
+        font-weight:bold;
+        font-family:Garamond, Georgia, serif;
+            text-shadow: 1px 1px $darkGray;
+      }
+    }
+
+  } // -- end section.introduction
+
+
+
+  .now-serving{
+    margin-top:0px;
+    padding-top:20px;
+
+    p{
+      color:$lightGray1;
+      strong{
+        color:$black3;
+      }
+    }
+  }
+
+  section.deals {
+    border-top: solid 1px $white2;
+    border-bottom: solid 1px $white2;
+    background: white;
+    padding-top:20px;
+    .photo{
+      position: relative;
+    }
+
+
+  }//-------end section deals
+
+  .midbar{
+    margin-top:20px;
+  }
+  .learn-more{
+    margin-top:0px;
+    padding-top:20px;
+    background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height:500px;
+    background-position: center bottom;
+    
+  }
+   .gah-more{
+    background-color: $olive;
+    background-size:cover;
+    //background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom:0px;
+    padding-top:40px;
+    padding-bottom:40px;
+    
+  }
+  .blah-more{
+    background-color: white;
+    border-bottom:1px solid $white2;
+    background-size:cover;
+    //background-image: url(image-path("orders/ingredients_photo.jpg"));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom:0px;
+    padding-top:40px;
+    padding-bottom:40px;
+    .juicebox{
+      padding-top:60px;
+    }
+  }
+  blockquote{
+    border-left:0px;
+  }
+  .fa-star{
+    color:$gold;
+  }
+}
+
+
+//////////// welcome#howitworks
+
+.welcome.howitworks{
+  .title{
+    margin-top:30px;
+    color:$darkGray;
+  }
+  .subhead{
+    color:$midGray;
+    font-size:20px;
+  }
+  .featurettes{
+    margin-top:10px;
+    margin-bottom:-30px;
+
+    p{
+      font-size:12px;
+      color:$darkGray;
+    }
+    a:hover{
+       .fa-pagelines{
+          color: darken($greenMute,6%);
+        }
+        .fa-star-o{
+          color: darken($redAccent,6%);
+        }
+        .fa-cutlery{
+          color: darken($midGray, 6%);
+        }
+        .fa-thumbs-up{
+          color:darken($gold,6%);
+        }
+    }
+  }
+  .fa-pagelines{
+    color: $greenMute;
+  }
+  .fa-star-o{
+    color: $redAccent;
+  }
+  .fa-cutlery{
+    color: $midGray;
+  }
+  .fa-thumbs-up{
+    color:$gold;
+  }
+
+  .feature{
+    h2{
+      margin-bottom:60px;
+    }
+    .caption{
+        position:relative;
+        img{
+          position:relative;
+          top:20px;
+        }
+        small{
+          position:absolute;
+          font-size:14px;
+          width:260px;
+          left:70px;
+          top:20px;
+        }
+    }
+    .featurette-text{
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+  }
+  #ft-diverse{
+    img{
+      max-width:100%;
+      margin-bottom:15px;
+
+    }
+    .small{
+     padding-left:30px;
+     font-size:10px;
+    }
+  }
+
+  #ft-convenient, #ft-honest{
+    .get-started-button{
+      @include fv-button();
+    }
+  }
+  
+}
+
+
+.welcome.farms{
+  
+  .description{
+    margin-top:30px;
+  }
+  .email{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .get-started-button{
+    @include fv-button();
+  }
+  .no-bullet{
+    font-size:13px;
+    font-family:Garamond, Georgia, serif;
+    text-transform:uppercase;
+    font-weight:bold;
+    line-height:20px;
+    li{
+      margin-top:2px;
+    }
+  }
+}
+
+.welcome.team{
+  h2{
+    margin-bottom:15px;
+  }
+  .bios{
+    padding-top:20px;
+    padding-bottom:20px;
+    img{
+      margin:10px;
+      border: 1px solid $midGray;
+    }
+  }
+}
+
+.welcome.howitworks{
+
+  #ft-fresh{
+    .panel-box{
+      background-image: image-url("greenbeans.jpg");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+  }
+  #ft-diverse{
+    .panel-box{
+      background-image: image-url("sungold-tomato.jpg");
+      background-repeat: no-repeat;
+      background-position: -40px -10px;
+    }
+  }
+  #ft-convenient{
+    h2{
+      margin-bottom:20px;
+    }
+    h5{
+      font-size:20px;
+    }
+    p{
+    }
+    .featurette-text{
+      margin-bottom:20px;
+    }
+
+  }
+  .panel-box{
+    //margin-top:0px;
+    h2.text-z{
+      z-index:10;
+    }
+  }
+  .greenbeans{
+    position:relative;
+    img{
+      position:absolute;
+      top:-130px; 
+      z-index:0;     
+    }
+  }
+  .whylove{
+    color:$darkGray;
+    margin-bottom:0px;
+    margin-top:10px;
+  }
+  hr{
+    margin-top:0px;
+  }
+  .photos{
+    margin-top:40px;
+  }
+  .image{
+    padding:20px;
+    background-color:white;
+    border: 1px solid $white2;
+  }
+  .caption{
+    padding:15px;
+    margin-bottom:0px;
+  }
+  .content{
+    padding:20px;
+  }
+  .box-button {
+      @include button(1rem,$orangeAccent,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+
+    }
+  .juicing-button{
+      @include button(1rem,$greenPrimary,10px,false,false,false);
+      margin-left:10px;
+      margin-right:10px;
+
+  }
+}
+
+
+

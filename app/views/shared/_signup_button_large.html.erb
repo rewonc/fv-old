@@ -1,8 +1,8 @@
 <% if user_signed_in? && is_order_set? %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, new_charge_path, class: "green-button signup-button-large" %>
+  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
 <% elsif user_signed_in? %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, new_order_path, class: "green-button signup-button-large" %>
+  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
 <% else %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, new_user_registration_path, class: "green-button signup-button-large" %>
+  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
 <% end %>
 

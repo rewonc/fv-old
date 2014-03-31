@@ -1,138 +1,19 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
-
-
-body.registrations.new{
-  .headline{
-    .tagline{
-      margin-top:25px;
-      color: $lightGray3;
-    }
-  }
-}
-
-
-body.welcome.referrer, body.orders.new, body.orders.edit, body.orders.create, body.registrations.new, body.registrations.edit, body.registrations.create, body.sessions.new, body.charges.new, body.charges.create{
-  background-image: image-url("orders/greyzz.png");
-  background-repeat: repeat;
-  #error_explanation{
-    h2, h3{
-      font-size:16px;
-    }
-  }
-  h3.green{
-    color:$greenHeader;
-    font-weight:bold;
-    font-size:30px;
-  }
-  .form-nav{
-      background-color:rgba(255,255,255,0.6);
-      border-left:1px solid $white2;
-      border-right:1px solid $white2;
-      .wedge{
-        margin-left:9px;
-        margin-right:9px;
+//progress bar isn't wrapped inside a specific controller
+.progress-bar{
+  margin-top:20px;
+  margin-bottom:20px;
+  .progress{
+    position:relative;
+    ul{
+      position:absolute;
+      width:100%;
+      li{
+        text-transform:uppercase;
+        font-size:12px;
       }
-      ul{
-        li.active{
-          background-color:rgba(15,100,15,0.6);
-          a{
-            color:white;
-          }
-          .numeral{
-            color:white;
-          }
-          h3{
-            color:white;
-          }
-        }
-        li{
-        position:relative;
-        h3{color:$midGray;}
-        .numeral{
-          font-size:40px;
-          font-weight:bold;
-          position:absolute;
-          color:$midGray;
-          top:5px;
-          left:10px;
-        }
-      }
-
-        h3{
-          margin-left:50px;
-          margin-top:20px;
-        }
+      li.active{
+        color:white;
       }
     }
-
-  .form{
-    background-color:white;
-    border:solid 1px $white2;
-    padding:20px;
-    .switch-juicing{
-      margin-bottom:5px;
-    }
-    .hidden-select{
-      display:none;
-    }
   }
-  .summary{
-    background-color:white;
-    margin-top:85px;
-    padding-top: 20px;
-    padding-bottom:20px;
-    border-radius:10px;
-    margin-left:10px;
-    margin-right:10px;
-    border:1px solid $white2;
-    .updated{
-      color:green;
-      background-color:rgba(170,240,220,0.6);
-    }
-  }
-   
-   .sub-summary{
-    margin-top:5px;
-    em{
-      line-height:20px;
-    }
-   } 
-    
-  
-  .pricer{
-    div{
-      margin-top:8px;
-      margin-bottom:8px;
-      font-size:18px;
-    }
-  }
-  .registration-errors{
-    text-transform:capitalize;
-  }
-
-
-  section.delivery{
-    padding-top: 0px;
-    background-image: image-url("orders/greens-1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-  }
-
-  .signin{
-    padding:30px;
-    background-color:white;
-    margin-top:30px;
-    margin-bottom:30px;
-    border: solid 1px $white2;
-  }
-
 }

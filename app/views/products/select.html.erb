@@ -1,0 +1,21 @@
+<%= render 'shared/status_bar', stage: 1 %>
+
+3 diff products + description and prices.
+
+<% if user_signed_in? %>
+
+<br />
+<%= link_to "Product 5", new_order_path(p: 5) %>
+<br />
+<%= link_to "Product 6", new_order_path(p: 6) %><br />
+<%= link_to "Product 7", new_order_path(p: 7) %>
+
+<% else %>
+
+<br />
+<%= link_to "Product 5", new_user_registration_path(p: 5) %>
+<br />
+<%= link_to "Product 6", new_user_registration_path(p: 6) %><br />
+<%= link_to "Product 7", new_user_registration_path(p: 7) %>
+
+<% end %>
