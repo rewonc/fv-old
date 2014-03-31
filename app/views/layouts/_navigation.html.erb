@@ -1,78 +1,25 @@
-<% if get_product.is_affiliate? %>
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <%= link_to image_tag('logo-allcaps.png', id: 'logo'), get_product.link %>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+<div class="nav">
 
-    <section class="top-bar-section">
-      <ul class="left">
-
-        <li><%= link_to 'Home', get_product.link, html_options = {id: "nav-root"} %></li>
-      	<li><%= link_to 'Learn more', welcome_howitworks_path, html_options = {id: "nav-howitworks"} %></li>
-        <li><% if is_order_set? %>
-            <%= link_to 'Join', new_charge_path, html_options = {id: "nav-order"} %>
-          <% elsif user_signed_in? %><%= link_to 'Join', new_order_path, html_options = {id: "nav-order"} %>
-          <% else %><%= link_to 'Join', new_user_registration_path, html_options = {id: "nav-order"} %>
-          <% end %></li>
-        <li class="has-dropdown">
-          <a href="#">More&nbsp;&nbsp;&nbsp;&nbsp;</a>
-          <ul class="dropdown">
-            <li><%= link_to 'Our farms', welcome_farms_path %></li>
-            <li><%= link_to 'About us', welcome_team_path %></li>
-            <li><a href="http://farmivore.tumblr.com">Blog</a></li>
-            <li><%= link_to 'Contact us', welcome_contact_path %></li>
-          </ul>
-        </li>
+  <div class="row">
+    <div class="small-12 columns">
+      <ul class="inline-list right">
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
       </ul>
+    </div>
+  </div>
 
-      <ul class="right">
-          <li><%= render 'devise/menu/registration_items' %></li>
-          <li><%= render 'devise/menu/login_items' %></li>
-      </ul>
-    </section>
-  </nav>
+  <div class="row">
+    <div class="small-12 columns">
 
-<% else %>
 
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <%= link_to image_tag('logo-allcaps.png', id: 'logo'), root_path %>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+    <%= link_to image_tag('logo-allcaps.png', id: 'logo'), root_path %>
 
-  <section class="top-bar-section">
-    <ul class="left">
 
-        <li><%= link_to 'Home', root_path, html_options = {id: "nav-root"} %></li>
+    </div>
+  </div>
 
-      <li><%= link_to 'Learn more', welcome_howitworks_path, html_options = {id: "nav-howitworks"} %></li>
-      
-      <li><% if is_order_set? %>
-            <%= link_to 'Join', new_charge_path, html_options = {id: "nav-order"} %>
-          <% elsif user_signed_in? %><%= link_to 'Join', new_order_path, html_options = {id: "nav-order"} %>
-          <% else %><%= link_to 'Join', new_user_registration_path, html_options = {id: "nav-order"} %>
-          <% end %></li>
-      <li class="has-dropdown">
-        <a href="#">More&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <ul class="dropdown">
-          <li><%= link_to 'Our farms', welcome_farms_path %></li>
-          <li><%= link_to 'About us', welcome_team_path %></li>
-          <li><a href="http://farmivore.tumblr.com">Blog</a></li>
-          <li><%= link_to 'Contact us', welcome_contact_path %></li>
-        </ul>
-      </li>
-    </ul>
+</div>
 
-    <ul class="right">
-        <li><%= render 'devise/menu/registration_items' %></li>
-        <li><%= render 'devise/menu/login_items' %></li>
-    </ul>
-  </section>
-</nav>
 
-<% end %>
+

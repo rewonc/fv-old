@@ -1,17 +1,21 @@
 
-nav.top-bar{
-  li{
-    letter-spacing:0.6px;
-  }
-   img {
-    height: $logoHeight;
-    width: auto;
-    margin:14px;
-    margin-right:21px;
-    margin-left:35px;
-    margin-top:19px;
 
+.nav{
+  padding-top:10px;
+  a{
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    color:$midGray;
+    font-size: 0.9rem;
+    text-transform:uppercase;
+    font-weight:bold;
   }
+  background-color:white;
+  text-align:center;
+   img {
+    height: 50px;
+    width: auto;
+  }
+  padding-bottom:55px;
   -moz-box-shadow:    0px 0px 2px 0px $white1;
   -webkit-box-shadow: 0px 0px 2px 0px $white1;
   box-shadow:         0px 0px 2px 0px $white1;
