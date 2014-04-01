@@ -8,7 +8,7 @@ Farmivore::Application.routes.draw do
   #get "welcome/about"
   #get "welcome/contact"
   #get "welcome/terms"
-  #get "welcome/admin"
+  get "welcome/settings"
   #get "welcome/team"
   #get "welcome/weekly_email"
   #get "welcome/howitworks"

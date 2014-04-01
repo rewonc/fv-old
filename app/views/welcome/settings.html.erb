@@ -1,0 +1,31 @@
+<h1>Settings</h1>
+<h3>Your orders</h3>
+<table>
+  <thead>
+    <tr>
+      <td>Item</td>
+      <td>Quantity</td>
+      <td>Frequency</td>
+      <td>Delivery Day</td>
+      <td>First Delivery</td>
+      <td>Price</td>
+      <td>Ordered on</td>
+    </tr>
+  </thead>
+  <tbody>
+<% @orders.each do |order|%>
+    <tr>
+      <td><%= order.product.name %></td>
+      <td><%= order.box_count_string %></td>
+      <td><%= order.frequency_string %></td>
+      <td><%= order.delivery_window_string %></td>
+      <td><%= order.first_delivery_string %></td>
+      <td><%= order.price_string(true) %></td>
+      <td><%= order.charge.created_at.strftime("%A, %B %d") %></td>
+    </tr>
+<% end %>
+    
+  </tbody>
+</table>
+<h3>Account settings</h3>
+<p><%= link_to 'Adjust your password or remove your account', edit_user_registration_path(current_user) %></p>

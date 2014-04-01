@@ -22,7 +22,11 @@ class WelcomeController < ApplicationController
   def contact
   end
 
-  def admin
+  def settings
+    if !user_signed_in?
+      redirect_to :root, alert: "Please sign in first"
+    end
+    @orders = current_user.orders.select{|x| !x.charge.nil? }
   end
 
   def weekly_email
