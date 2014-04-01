@@ -17,3 +17,12 @@
     }
   }
 }
+
+.orders.new, .orders.edit, .charges.new{
+  .first_delivery_date{
+    display:none;
+  }
+  .first_delivery_date.active{
+    display:block;
+  }
+}

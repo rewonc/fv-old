@@ -58,6 +58,52 @@ class Product < ActiveRecord::Base
   a.link = "http://partners.farmivore.com/30-day-challenge"
   a.note = "This is the price per week. You will be charged this amount each time you receive a delivery. You can skip, cancel, or pause shipments by letting us know 4 days in advance."
   a.save
+
+  a = Product.new
+  a.name = "30 Day Challenge"
+  a.id = 7
+  boxnummenu = Hash.new
+  dfreqmenu = Hash.new
+  boxnummenu['title'] = 'Number of Weeks'
+  boxnummenu['options'] = {:"1" => "4 weeks (4 deliveries)", :"2" => "1 week (1 delivery)", :"3" => "2 weeks (2 deliveries)", :"4" => "3 weeks (3 deliveries)"}
+  dfreqmenu['title'] = 'Delivery frequency'
+  dfreqmenu['options'] = {:"1" => "Once a week", :"2" => "Twice per week", :"3" => "Once every two weeks"}
+  a.box_num_menu = boxnummenu
+  a.delivery_frequency_menu = dfreqmenu
+  a.price = 7800
+  a.link = "http://partners.farmivore.com/30-day-challenge"
+  a.note = "This is the price per week. You will be charged this amount each time you receive a delivery. You can skip, cancel, or pause shipments by letting us know 4 days in advance."
+  a.save
+
+  a = Product.new
+  a.name = "Green"
+  a.id = 8
+  boxnummenu = Hash.new
+  boxnummenu['title'] = 'Boxes per delivery'
+  boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
+  a.box_num_menu = boxnummenu
+  a.price = 4500
+  a.save
+
+  a = Product.new
+  a.name = "Classic"
+  a.id = 9
+  boxnummenu = Hash.new
+  boxnummenu['title'] = 'Boxes per delivery'
+  boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
+  a.box_num_menu = boxnummenu
+  a.price = 4500
+  a.save
+
+  a = Product.new
+  a.name = "Alternating"
+  a.id = 10
+  boxnummenu = Hash.new
+  boxnummenu['title'] = 'Boxes per delivery'
+  boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
+  a.box_num_menu = boxnummenu
+  a.price = 4500
+  a.save
   
 =end
 end

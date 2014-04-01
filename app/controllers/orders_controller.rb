@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   before_action :new_order, only: [:create, :new]
   http_basic_authenticate_with name: "admin", password: "RailsRAILS2014", only: [:index, :show, :destroy]
 
-
   # GET /orders
   # GET /orders.json
   def index
@@ -20,12 +19,12 @@ class OrdersController < ApplicationController
   def new
     @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
-    #firstdate = Date.commercial(Date.today.year, 1+Date.today.cweek, 5)
-    firstdate = "Wednesday, March 19"
-    @order.first_delivery = firstdate
-    @order.delivery_window = "Friday"
-    @order.frequency = 1
+    @order.delivery_window = 4
+    @order.frequency = 4
     @order.box_count = 1
+
+    @order.first_delivery = Order.fd_date(@order.delivery_window, 1)
+    
   end
 
   # GET /orders/1/edit

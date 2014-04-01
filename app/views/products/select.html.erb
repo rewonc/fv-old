@@ -5,17 +5,17 @@
 <% if user_signed_in? %>
 
 <br />
-<%= link_to "Product 5", new_order_path(p: 5) %>
+<%= link_to "Green", new_order_path(p: 8) %>
 <br />
-<%= link_to "Product 6", new_order_path(p: 6) %><br />
-<%= link_to "Product 7", new_order_path(p: 7) %>
+<%= link_to "Classic", new_order_path(p: 9) %><br />
+<%= link_to "Alternating", new_order_path(p: 10) %>
 
 <% else %>
 
 <br />
-<%= link_to "Product 5", new_user_registration_path(p: 5) %>
+<%= link_to "Green", new_user_registration_path(p: 8) %>
 <br />
-<%= link_to "Product 6", new_user_registration_path(p: 6) %><br />
-<%= link_to "Product 7", new_user_registration_path(p: 7) %>
+<%= link_to "Classic", new_user_registration_path(p: 9) %><br />
+<%= link_to "Alternating", new_user_registration_path(p: 10) %>
 
 <% end %>

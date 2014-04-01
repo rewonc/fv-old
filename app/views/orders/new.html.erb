@@ -29,7 +29,7 @@
   </div>
   <div class="small-5 medium-6 large-6 columns">
       <%= f.label "Delivery frequency" %>
-      <%= f.select :frequency, options_for_select([["Twice per week", "Twice per week"], ["Once per week", "Once per week"], ["Once per two weeks", "Once per two weeks"]], "Once per week") %>
+      <%= f.select :frequency, options_for_select([["Twice per week", 8], ["Once per week", 4], ["Once per two weeks", 2]], 4) %>
   </div>
 </div>
 
@@ -82,8 +82,8 @@
     <h2>&nbsp;</h2>
       <h5>Time preference</h5>
       <div class="field">
-        <%= f.label :delivery_window, "Delivery day  <a>(?)</a>".html_safe %>
-        <%= f.select(:delivery_window, options_for_select([["Tuesday"],["Thursday"]])) %>
+        <%= f.label :delivery_window, "Delivery day  <a href='if you choose twice per week, you will get it on both days'>(?)</a>".html_safe %>
+        <%= f.select :delivery_window, options_for_select([["Tuesday", 2],["Thursday", 4]], @order.delivery_window) %>
       </div>
       <div class="field">
         <%= f.hidden_field :first_delivery %>
@@ -116,22 +116,25 @@
         <h5><%= @order.product.box_num_menu['title'] %>:</h5>
         <p id="boxcountstring"><%= @order.box_count_string %></p>
 
-        <% if !@order.product.is_affiliate? %>
-        <h5><%= @order.product.delivery_frequency_menu['title'] %>:</h5>
-        <p><%= @order.frequency_string %></p>
+        <h5>Delivery frequency:</h5>
+        <p id="frequencystring"><%= @order.frequency_string %></p>
+
+        <h5>First delivery</h5>
+        <%#Here, we'll loop through 1-7 and set up the menus. We'll set it to "active" when data-week === first_delivery. The first child will have the proper date info in data-date. %>
+        <% (1..7).each do |i| %>
+          <p class="first_delivery_date<% if @order.delivery_window == i %> active<% end %>" data-week="<%= i %>"><span class="selected_date" data-date="<%= Order.fd_date(i, 1) %>"><%= Order.fd_date_string(i, 1) %> </span>&nbsp;
+            <a href="#" data-options="align:down" data-dropdown="drop<%= i %>">Change &raquo;</a>
+            <ul id="drop<%= i %>" class="tiny f-dropdown" data-dropdown-content>
+              <% (1..5).each do |n| %>
+              <li><a class="dater" data-date="<%= Order.fd_date(i, n)%>"><%= Order.fd_date_string(i, n) %></a></li>
+              <% end %>
+            </ul>
+          </p>
         <% end %>
+          
 
-        <% if !@order.product.is_affiliate? %>
-          <h5>First delivery:</h5>
-          <p><%= @order.delivery_window.to_s %></p>
-
-          <h3 class="green">First delivery</h3>
-          <p><%= @order.first_delivery_string %> (<a href="#">change</a>)</p>
-        <% else %>
-          <h5>First delivery:</h5>
-          <p id="firstdeliverystring"><%= @order.first_delivery.to_s %></p>
-        <% end %>
-
+          
+        
         <h3 class="green">Total price</h3>
         <div class="pricer">
           <div class="text-right">Subtotal: <span id="subtotalprice"><%= @order.price_string(false) %></span></div>
@@ -139,12 +142,6 @@
           <div class="text-right"><strong>Total: <span id="totalprice"><%= @order.price_string(false) %></span></strong></div>
         </div>
 
-        <h4 class="green">Notes</h4>
-          <div class="row sub-summary">
-             <div class="small-12 columns">
-              <em><%= @order.product.note %></em>
-            </div>
-          </div>
       </div>
     </div>
   </div>
