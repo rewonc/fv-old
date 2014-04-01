@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313234651) do
+ActiveRecord::Schema.define(version: 20140401031523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,8 +109,8 @@ ActiveRecord::Schema.define(version: 20140313234651) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "delivery_window"
-    t.string   "first_delivery"
+    t.integer  "delivery_window"
+    t.date     "first_delivery"
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "promocode_id"
@@ -142,6 +142,38 @@ ActiveRecord::Schema.define(version: 20140313234651) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "usdas", force: true do |t|
+    t.string   "cityName"
+    t.string   "commodityName"
+    t.string   "packageDesc"
+    t.string   "varietyName"
+    t.string   "subvarName"
+    t.string   "gradeDesc"
+    t.string   "type_renamed"
+    t.date     "date"
+    t.integer  "lowMin"
+    t.integer  "highMax"
+    t.string   "originName"
+    t.string   "districtName"
+    t.string   "itemSize"
+    t.string   "environment"
+    t.string   "color"
+    t.string   "unitSale"
+    t.string   "quality"
+    t.string   "condition"
+    t.string   "storage"
+    t.string   "appearance"
+    t.string   "crop"
+    t.string   "transmode"
+    t.string   "repack"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "usdas", ["cityName"], name: "index_usdas_on_cityName", using: :btree
+  add_index "usdas", ["commodityName"], name: "index_usdas_on_commodityName", using: :btree
+  add_index "usdas", ["date"], name: "index_usdas_on_date", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

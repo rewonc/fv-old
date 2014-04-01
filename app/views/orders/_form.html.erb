@@ -1,10 +1,15 @@
-       <h3 class="green">Order a plan</h3>
-<%= form_for (@order) do |f| %>
-  <% if @order.errors.any? %>
+<!-- Form -->         
+    <div class="row form">
+      <div class="small-12 columns">
+        <h3 class="green">Delivery amount</h3>
+        <p>You chose the <strong><%= order.product.name %></strong> subscription.</p>
+      
+<%= form_for (order) do |f| %>
+  <% if order.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(@order.errors.count, "error") %>:</h3>
+      <h4><%= pluralize(order.errors.count, "error") %>:</h4>
       <ul>
-      <% @order.errors.full_messages.each do |msg| %>
+      <% order.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,53 +17,13 @@
   <% end %>
 
 <div class="row">
-  <div class="small-12 columns">
-    <% if @order.product.is_affiliate? %>
-    <p>You have selected the <strong><%= @order.product.name %> </strong> program.</p>
-    <% end %>
-  </div>
-</div>
-
- <% if get_product.id === 7 %>
-<div class="row checkboxes">
-  <div class="small-12 columns">
-    <input id="checkbox1" type="checkbox" checked="checked" disabled />
-    <label for="checkbox1" >Week 1</label>
-    <input id="checkbox2" type="checkbox" checked="checked" disabled />
-    <label for="checkbox2">Week 2</label>
-    <input id="checkbox3" type="checkbox" checked="checked" disabled />
-    <label for="checkbox3">Week 3</label>
-    <input id="checkbox4" type="checkbox" checked="checked" disabled />
-    <label for="checkbox4">Week 4</label>
-    <label id="checkbox-click"><a>Click here to do only part of the challenge</a></label>
-  </div>
-</div>
-
-  <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => @order.product.price, :'data-id' => @order.product.id, class: "hidden-select"%>
-  <%= f.hidden_field :delivery_window %>
-
-
- <% else %>
-<div class="row">
   <div class="small-7 medium-6 large-6 columns">
-        <%= f.label @order.product.box_num_menu['title'] %>
-        <%= f.select :box_count, @order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => @order.product.price, :'data-id' => @order.product.id %>
+    <%= f.label order.product.box_num_menu['title'] %>
+    <%= f.select :box_count, order.product.box_num_menu['options'].map{ |key, value| [value, key] }, {}, :'data-price' => order.product.price, :'data-id' => order.product.id %>
   </div>
-  <% if !get_product.is_affiliate? %>
   <div class="small-5 medium-6 large-6 columns">
-      <%= f.label @order.product.delivery_frequency_menu['title'] %>
-      <%= f.select :frequency, @order.product.delivery_frequency_menu['options'].map{ |key, value| [value, key] } %>
-  </div>
-  <% end %>
-</div>
-
- <% end %>
-
-<div class="row">
-  <div class="small-12 columns">
-    <% if @order.product.is_affiliate? %>
-    <!-- <div class="switch-juicing"><small>Want to switch to a standard Farmivore juicing plan? Click <%= link_to 'here', new_order_path(p: 6) %>.</small></div> -->
-    <% end %>
+      <%= f.label "Delivery frequency" %>
+      <%= f.select :frequency, options_for_select([["Twice per week", 8], ["Once per week", 4], ["Once per two weeks", 2]], 4) %>
   </div>
 </div>
 
@@ -66,7 +31,7 @@
   <div class="large-6 columns small-12 columns">
 
 
-    <h3 class="green">Your delivery</h3>
+    <h3 class="green">Address and time</h3>
     <h5>Delivery address</h5>
     <div class="row">
       <div class="small-12 medium-10 columns">
@@ -109,23 +74,14 @@
 
   <div class="large-6 columns small-12 columns">
     <h2>&nbsp;</h2>
-    <% if !@order.product.is_affiliate? %>
       <h5>Time preference</h5>
       <div class="field">
-        <%= f.label :delivery_window, "Delivery day" %>
-        <%= f.select(:delivery_window, options_for_select([["Friday"],["Saturday"],["Tuesday"],["Wednesday"],["Thursday"]])) %>
+        <%= f.label :delivery_window, "Delivery day  <a href='if you choose twice per week, you will get it on both days'>(?)</a>".html_safe %>
+        <%= f.select :delivery_window, options_for_select([["Tuesday", 2],["Thursday", 4]], order.delivery_window) %>
       </div>
       <div class="field">
         <%= f.hidden_field :first_delivery %>
       </div>
-    <% else %>
-      <h5>When you want to begin</h5>
-      <div class="field">
-        <%= f.label :first_delivery, "Date to expect your first delivery" %>
-        <%= f.select(:first_delivery, options_for_select([["Wednesday, March 19"],["Thursday, March 20"],["Friday, March 21"],["Saturday, March 22"],["Tuesday, March 25"],["Wednesday, March 26"],["Thursday, March 27"],["Friday, March 28"]])) %>
-      </div>
-    <% end %>
-
         <%= f.label :"Phone number" %>
         <%= f.text_field :phone, :placeholder => "e.g. 203-333-4567" %>
     
@@ -135,5 +91,7 @@
   </div>
 </div>
 
-
 <% end %>
+      </div>
+    </div>
+<!-- End Form --> 

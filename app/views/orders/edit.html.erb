@@ -1,5 +1,16 @@
-<%= render 'shared/order_bg_1', stage: 2 %>  
+<%= render 'shared/status_bar', stage: 2 %>  
 
-<%= render 'form' %>
 
-<%= render 'shared/order_bg_2', summary: {title: "hello world!"}, order: @order %> 
+<div class="row">
+  <div class="medium-8 small-12 columns">
+    
+    <%= render 'form', order: @order %> 
+
+  </div>
+
+  <div class="medium-4 small-12 columns">
+    
+    <%= render 'shared/sidebar', order: @order, charges: nil %> 
+    
+  </div>
+</div>

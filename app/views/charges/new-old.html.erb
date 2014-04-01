@@ -1,9 +1,5 @@
 <%= render 'shared/status_bar', stage: 3, order: @order %>
 
-
-<div class="row">
-  <div class="medium-8 small-12 columns">
-    
 <!-- CC Form Page 3-->
 <div id="page-3">
   <h3 class="green">Payment information</h3>
@@ -83,19 +79,7 @@
 </div>
 <!-- CC Form Page 3-->
 
-  </div>
-
-  <div class="medium-4 small-12 columns">
-    
-    <%= render 'shared/sidebar', order: @order, charges: true %> 
-    
-  </div>
-</div>
-
-
-
-
-<!-- END  -->
+<%= render 'shared/order_bg_2', summary: {title: 'hello'}, order: @order %> 
 
 <div id="terms-of-service" class="reveal-modal" data-reveal>
   <%= render 'shared/tos' %>

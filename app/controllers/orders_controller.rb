@@ -22,14 +22,16 @@ class OrdersController < ApplicationController
     @order.delivery_window = 4
     @order.frequency = 4
     @order.box_count = 1
-
     @order.first_delivery = Order.fd_date(@order.delivery_window, 1)
     
   end
 
   # GET /orders/1/edit
   def edit
-    #authenticate
+    #authenticate_user
+    if !(set_order.user.id === current_user.id)
+      redirect_to :root, alert: "You don't have access to that record."
+    end
   end
 
   # POST /orders
