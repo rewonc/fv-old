@@ -14,13 +14,15 @@ class ChargesController < ApplicationController
   def create
     @customer = Stripe::Customer.create(
       email: current_user.email,
-      description: @order.product.name + '. ' + @order.product.price.to_s + '. ' + @order.box_count.to_s + ' boxes. ' + @order.first_delivery + '.  Freq:' + @order.frequency.to_s,
+      description: 'hi', 
       card: allow_stripe_token
     )
     ConfirmMailer.box_alert(@order).deliver
-    
+    #@order.product.name + '. ' + @order.price_string(true) + '. ' + @order.box_count_string + '. ' + @order.first_delivery_string + '. ' + @order.frequency_string,
+  
     #make it so they can make a new order now
     session[:order_id] = nil
+    session[:product_id] = nil
 
     #save to db
     @charge = Charge.new

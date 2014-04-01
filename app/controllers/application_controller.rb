@@ -16,7 +16,15 @@ class ApplicationController < ActionController::Base
       else
       end
     end
-    session[:product_id] = params[:p] if params[:p]
+
+    if params[:p]
+      product = Product.where(id: params[:p])
+      if product.length > 0
+        session[:product_id] = product.take.id
+      else
+      end
+    end
+
   end
 
   protected

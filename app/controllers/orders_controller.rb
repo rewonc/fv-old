@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    
     @order.fullname = current_user.first.to_s + ' ' + current_user.last.to_s
     @order.zip = current_user.zip
     @order.delivery_window = 4
@@ -84,14 +85,19 @@ class OrdersController < ApplicationController
     end
 
     def new_order
+
+      if !session[:order_id].nil?
+        @order = Order.find(session[:order_id])
+        @order.product = Product.find(session[:product_id]) if !session[:product_id].nil?
+        render 'edit'
+      end
+
       @order = Order.new
       @order.user = current_user
-      #session[:product_id] = 5
       if session[:product_id].present?
         @order.product = Product.find(session[:product_id])
       else
-        #set to default
-        @order.product = Product.find(6)
+        @order.product = Product.find(9)
       end
 
     end
