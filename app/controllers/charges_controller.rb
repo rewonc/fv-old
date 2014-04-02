@@ -29,12 +29,6 @@ class ChargesController < ApplicationController
     @charge.order = @order
     @charge.token = allow_stripe_token
 
-    #@charge = Stripe::Charge.create(
-    #  customer: @customer.id,
-    #  amount: amount,
-    #  description: @box.email.to_s,
-    #  currency: 'usd'
-    #)
     if @charge.save
      render 'charges/create', layout: 'application'
     else
