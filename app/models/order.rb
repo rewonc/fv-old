@@ -13,6 +13,7 @@ class Order < ActiveRecord::Base
   belongs_to :product
   belongs_to :promocode
   has_one :charge
+  has_many :deliveries
   
   def box_count_string
     return product.box_num_menu['options'][box_count.to_s.to_sym]

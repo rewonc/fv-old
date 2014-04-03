@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to new_charge_path, notice: 'Order was successfully updated.' }
+        format.html { redirect_to new_charge_path }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

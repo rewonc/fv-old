@@ -1,0 +1,14 @@
+<h2>Welcome to Farmivore, <%= @order.user.first %>!</h2>
+<p>We're so happy to have you on board. To confirm, here's what you ordered:</p>
+<ul>
+  <li>Subscription: <strong><%= @order.product.name %></strong></li>
+  <li>Quantity: <strong><%= @order.box_count_string %></strong></li>
+  <li>Frequency of delivery: <strong><%= @order.frequency_string %></strong></li>
+  <li>Day of delivery: <strong><%= @order.delivery_window_string %></strong></li>
+  <li>First delivery: <strong><%= @order.first_delivery_string %></strong></li>
+  <li>Price per delivery: <strong><%= @order.price_string(true) %></strong></li>
+</ul>
+<p>If you have any concerns, questions, or concerns, feel free to respond to this email, or reach me at <%= mail_to 'orders@farmivore.com' 'orders@farmivore.com' %>.  I normally respond within minutes!</p>
+<p>Thank you again. Our whole team is happy to have you as a customer.</p>
+<p>Best regards,</p>
+<p>Rewon at Farmivore</p>

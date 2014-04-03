@@ -1,0 +1,46 @@
+<h1>Orders with charges.</h1>
+<p>Let the customer see the deliveries they have scheduled?</p>
+<p>Pause or cancel. + update their order.</p>
+<p>Auto update here who needs to be charged. + Charged for this week? Sort by that.</p>
+<p>Charge failure -- reinput cards</p>
+<p>Auto email everyone getting a box.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Item</td>
+      <td>Quantity</td>
+      <td>Frequency</td>
+      <td>Delivery Day</td>
+      <td>First Delivery</td>
+      <td>Price</td>
+      <td>Customer created on</td>
+      <td>Active?</td>
+      <td>Last Charge / Error?</td>
+      <td>Charge Link</td>
+    </tr>
+  </thead>
+  <tbody>
+<% @orders.each do |order|%>
+    <tr>
+      <td><%= order.product.name %></td>
+      <td><%= order.box_count_string %></td>
+      <td><%= order.frequency_string %></td>
+      <td><%= order.delivery_window_string %></td>
+      <td><%= order.first_delivery_string %></td>
+      <td><%= order.price_string(true) %></td>
+      <td><%= order.charge.created_at %></td>
+      <td>
+        <% if order.active? %>
+          <span class="success label">Active</span> (<a>Deactivate</a>)
+        <% else %>
+          <span class="secondary label">Inactive</span> (<a>Reactivate</a>)
+        <% end %>
+      </td>
+      <td>To Implement</td>
+      <td><a>charge link</a></td>
+    </tr>
+<% end %>
+    
+  </tbody>
+</table>

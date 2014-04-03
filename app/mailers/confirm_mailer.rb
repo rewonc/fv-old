@@ -1,9 +1,13 @@
 class ConfirmMailer < ActionMailer::Base
-  default from: "The Farmivore Team <rewon@farmivore.com>"
+  default from: "The Farmivore Team <orders@farmivore.com>"
 
   def box_alert(order)
     @order = order
-    mail(to: 'rewonc@gmail.com', subject: 'New confirmed order from ' + @order.fullname)
+    mail(to: 'orders@farmivore.com', subject: @order.fullname + 's order. ' + @order.product.name + '. ' + @order.price_string(true) + '. ' + @order.box_count_string + '. ' + @order.first_delivery_string + '. ' + @order.frequency_string)
   end
 
+  def welcome(order)
+    @order = order
+    mail(to: order.user.email, subject: 'Welcome to Farmivore, ' + @order.user.first)
+  end
 end

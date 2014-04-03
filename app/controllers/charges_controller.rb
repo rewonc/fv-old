@@ -14,12 +14,12 @@ class ChargesController < ApplicationController
   def create
     @customer = Stripe::Customer.create(
       email: current_user.email,
-      description: 'hi', 
+      description: @order.product.name + '. ' + @order.price_string(true) + '. ' + @order.box_count_string + '. ' + @order.first_delivery_string + '. ' + @order.frequency_string,
       card: allow_stripe_token
     )
     ConfirmMailer.box_alert(@order).deliver
-    #@order.product.name + '. ' + @order.price_string(true) + '. ' + @order.box_count_string + '. ' + @order.first_delivery_string + '. ' + @order.frequency_string,
-  
+    ConfirmMailer.welcome(@order).deliver
+
     #make it so they can make a new order now
     session[:order_id] = nil
     session[:product_id] = nil

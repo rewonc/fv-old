@@ -4,22 +4,11 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def farms
-  end
-
-  def team
-  end
-
-  def howitworks
-  end
-
-  def about
-  end
-
-  def features
-  end
-
-  def contact
+  def admin
+    if !(current_user.email === "rewonc@gmail.com")
+      redirect_to :root, alert: "You don't have permission to access that page"
+    end
+    @orders = Order.all.select{|x| !x.charge.nil? }
   end
 
   def settings
@@ -27,9 +16,6 @@ class WelcomeController < ApplicationController
       redirect_to :root, alert: "Please sign in first"
     end
     @orders = current_user.orders.select{|x| !x.charge.nil? }
-  end
-
-  def weekly_email
   end
 
   def referrer
