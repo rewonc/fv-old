@@ -1,8 +1,2 @@
-<% if user_signed_in? && is_order_set? %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% elsif user_signed_in? %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% else %>
-  <%= link_to '<h3>Order a box</h3>'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% end %>
 
+  <%= link_to '<h3>Join Now</h3><small>Click here to get started</small><p class="price-tag"><strong>$40</strong><br />per week</p>'.html_safe, products_select_path, class: "green-button signup-button-large" %>

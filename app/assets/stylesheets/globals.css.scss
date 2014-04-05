@@ -8,12 +8,14 @@
 }
 .green-button{
   position:relative;
-  @include button(1rem,$greenButton,10px,false,false,false);
-  border:4px solid white;
+  @include button(0.5rem,$lightgreen,10px,false,false,false);
+  //border:4px solid white;
   h3{
     color:white;
     font-weight:bold;
-    margin-bottom:0px;
+    font-size:40px;
+    margin:0px;
+    padding:0px;
   }
   small{
     color:$white2;
@@ -35,6 +37,7 @@
     border-radius: 50%;
   }
 }
+
 .signup-button-large{
 }
 

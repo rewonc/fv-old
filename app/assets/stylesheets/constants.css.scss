@@ -1,16 +1,29 @@
-
-$greenHeader: rgb(15, 100, 15);
-$greenDesaturated: #00be76;
-//$greenPrimary: #00b849; //old
-$greenPrimary: #00be4c;
-$greenButton: rgb(15, 160, 15);
-$orange: #fb7f23;
-$white2: #D0D0D0;
-$white3: #F0F0F0;
+$orange: #ff8e00;
+$lightgreen: #7ac943;
+$greybrown: #736357;
 $white4: #F8F8F8;
+$white3: #F0F0F0;
+$white2: #D0D0D0;
 $darkGray: #404041;
 $midGray: #666;
 $lightGray3: rgb(133, 133, 133);
+
+$orangeAccent: rgb(249, 135, 0);
+$greenButton: rgb(15, 160, 15);
+$lightGray1: rgb(155, 155, 155);
+$darkGray1: rgb(55, 55, 55);
+$navHeight: 60px;
+$splashBoxWidth: 750px;
+
+$white1: #A0A0A0;
+
+/*
+$greenHeader: rgb(15, 100, 15);
+$greenDesaturated: #00be76;
+$greenPrimary: #00b849; //old
+$greenPrimary: #00be4c;
+$orange: #fb7f23;
+
 $greenMute: desaturate($greenPrimary, 30%);
 $orangeLight: lighten($orange, 20%);
 $orangeDark: darken($orange, 20%);
@@ -20,7 +33,6 @@ $olive: #ebf4ef;
 $redAccent: rgb(243, 63, 0);
 $redSoft: desaturate(lighten($redAccent, 10%), 5%);
 
-$orangeAccent: rgb(249, 135, 0);
 
 /// relics
 
@@ -52,21 +64,18 @@ $black2: rgb(11, 11, 11);
 $black3: rgb(0, 0, 0);
 $darkGray3: rgb(33, 33, 33);
 $darkGray2: rgb(44, 44, 44);
-$darkGray1: rgb(55, 55, 55);
 
 $lightGray2: rgb(144, 144, 144);
-$lightGray1: rgb(155, 155, 155);
 
-$white1: #A0A0A0;
 
 
 
 //$navBg: rgba($darkGray1, 0.6);   rc: making opaque
-$navHeight: 60px;
+
 
 
 $splashBoxBg: rgba(255,255,255,0.6);
-$splashBoxWidth: 750px;
+
 
 $IMP: rgba(255,0,0,1);
 $IMPB: 1px solid $IMP;
@@ -106,11 +115,16 @@ $yellow: #ffe200;
   border-top: $size solid $color;
 }
 
+*/
+
+
 /*
  * A triangle mixin for classy triangles!
  * To use, create a concrete class and have it `@include tri(...)`
  * In the actual html, make sure your class has a .outer and a .inner
  */
+
+/*
 @mixin tri($width, $borderWidth, $innerColor, $outerColor) {
   $innerWidth: $width - $borderWidth;
   position:relative;
@@ -127,4 +141,6 @@ $yellow: #ffe200;
     left: $borderWidth;
   }
 }
+
+*/
 
