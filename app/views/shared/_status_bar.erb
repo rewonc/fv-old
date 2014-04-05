@@ -2,10 +2,10 @@
 <!--  Form Navigation -->
 <div class="row progress-bar">
   <div class="small-12 columns">
-    <div class="progress secondary success round">
+    <div class="progress secondary success">
       <% if stage === 1 %>
         <ul class="small-block-grid-3 centered labels">
-            <li class="active">Subscription</li>
+            <li class="active">Pick a Plan</li>
             <li>Delivery Info</li>
             <li>Payment</li>
           </ul>
@@ -13,7 +13,7 @@
         </span>
       <% elsif stage === 2%>
         <ul class="small-block-grid-3 centered labels">
-            <li><%= link_to 'Subscription', products_select_path %></li>
+            <li><%= link_to 'Pick a Plan', products_select_path %></li>
             <li class="active">Delivery Info</li>
             <li>Payment</li>
           </ul>
@@ -21,7 +21,7 @@
         </span>
       <% elsif stage === 3 %>
         <ul class="small-block-grid-3 centered labels">
-            <li><%= link_to 'Subscription', products_select_path %></li>
+            <li><%= link_to 'Pick a Plan', products_select_path %></li>
             <li><%= link_to 'Delivery Info', edit_order_path(order) %></li>
             <li class="active">Payment</li>
           </ul>

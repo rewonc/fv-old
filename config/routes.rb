@@ -13,7 +13,7 @@ Farmivore::Application.routes.draw do
   #get "welcome/weekly_email"
   #get "welcome/howitworks"
 
-  resources :products
+  #resources :products
 
   resources :orders
   #resources :subscriptions

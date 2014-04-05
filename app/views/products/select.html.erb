@@ -1,21 +1,35 @@
-<%= render 'shared/status_bar', stage: 1 %>
+<div class="bg">
+  <div class="row product-page">
+    <div class="small-12 columns">
+        <div class="row product-box">
+          <div class="small-12 columns">
+            <div class="row">
+              <div class="small-10 small-centered columns statusbar">
+                <%= render 'shared/status_bar', stage: 1 %>
+              </div>
+            </div>
+            <h1 class="centered">What's your type?</h1>
 
-3 diff products + description and prices.
+            <% if user_signed_in? %>
+            <br />
+            <%= link_to "Green", new_order_path(p: 8) %>
+            <br />
+            <%= link_to "Classic", new_order_path(p: 9) %><br />
+            <%= link_to "Alternating", new_order_path(p: 10) %>
+            <% else %>
+            <br />
+            <%= link_to "Green", new_user_registration_path(p: 8) %>
+            <br />
+            <%= link_to "Classic", new_user_registration_path(p: 9) %><br />
+            <%= link_to "Alternating", new_user_registration_path(p: 10) %>
+            <% end %>
 
-<% if user_signed_in? %>
+          </div>
+           
+      </div>
+    </div>
 
-<br />
-<%= link_to "Green", new_order_path(p: 8) %>
-<br />
-<%= link_to "Classic", new_order_path(p: 9) %><br />
-<%= link_to "Alternating", new_order_path(p: 10) %>
+  </div>
+</div>
 
-<% else %>
-
-<br />
-<%= link_to "Green", new_user_registration_path(p: 8) %>
-<br />
-<%= link_to "Classic", new_user_registration_path(p: 9) %><br />
-<%= link_to "Alternating", new_user_registration_path(p: 10) %>
-
-<% end %>
+    
