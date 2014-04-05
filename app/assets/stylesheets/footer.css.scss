@@ -1,7 +1,10 @@
 footer {
 
+  background-color: $midGray;
   //border-top: 1px solid $yellow;
-
+  hr{
+    border: 1px solid $white1;
+  }
   padding-top:35px;
   .threesplit{
     ul{
