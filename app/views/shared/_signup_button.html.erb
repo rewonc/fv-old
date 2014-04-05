@@ -1,8 +1,7 @@
-<% if user_signed_in? && is_order_set? %>
-  <%= link_to 'Get started!'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% elsif user_signed_in? %>
-  <%= link_to 'Get started!'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% else %>
-  <%= link_to 'Get started!'.html_safe, products_select_path, class: "green-button signup-button-large" %>
-<% end %>
+<div class="row">
+  <div class="small-9 medium-9 large-9 columns small-centered medium-centered large-centered">
 
+  <%= link_to '<h3>Get started >></h3>'.html_safe, products_select_path, class: "orange-button signup-button" %>
+
+  </div>
+</div>

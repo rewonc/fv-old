@@ -40,5 +40,36 @@
             margin-bottom:70px;
     }
   }  
+
+  section.juices{
+    padding-top:50px;
+    background-image: url(image-path("v100/greenjuice.png"));
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color:white;
+    min-height:350px;
+    h1{
+      margin-top:0px;
+      font-size:55px;
+      font-weight:bold;
+      text-transform:uppercase;
+      color:$midGray;
+      line-height:55px;
+    }
+    ul{
+      li{
+        h5{
+          font-size:20px;
+          margin-top:30px;
+          text-align:left;
+          color:$midGray;
+        }
+      }
+    }
+    .orange-button{
+        margin-top:5px;
+        margin-bottom:35px;
+    }
+  }  
 }
 
