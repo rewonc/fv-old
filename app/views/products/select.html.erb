@@ -10,19 +10,57 @@
             </div>
             <h1 class="centered">What's your type?</h1>
 
-            <% if user_signed_in? %>
-            <br />
-            <%= link_to "Green", new_order_path(p: 8) %>
-            <br />
-            <%= link_to "Classic", new_order_path(p: 9) %><br />
-            <%= link_to "Alternating", new_order_path(p: 10) %>
-            <% else %>
-            <br />
-            <%= link_to "Green", new_user_registration_path(p: 8) %>
-            <br />
-            <%= link_to "Classic", new_user_registration_path(p: 9) %><br />
-            <%= link_to "Alternating", new_user_registration_path(p: 10) %>
-            <% end %>
+            <ul class="small-block-grid-1 medium-block-grid-2 centered">
+              <li>
+                <div class="row">
+                  <div class="small-10 small-centered large-9 large-centered columns green">
+                    <div><%= image_tag('v100/greencube-row.png') %></div>
+                    <h1>green</h1>
+                    <%= render 'shared/product_button', number: 8 %>
+                    <p>
+                      You appreciate the complex ﬂavors of 
+                      a well-made green juice. You crave the 
+                      low-glycemic energy boost. You like 
+                      your juices bold and assertive.
+                    </p>
+                    <p>
+                      <strong>General Tasting Notes:</strong><br />
+                      Clean, bright, grassy, vegetal, herbal, 
+                      savory, creamy, lightly bitter, earthy
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="small-10 small-centered large-9 large-centered columns mixed">
+                    <div><%= image_tag('v100/mixedcube-row.png') %></div>
+                    <h1>mixed</h1>
+                    <%= render 'shared/product_button', number: 9 %>
+                    <p>
+                      You appreciate the complex ﬂavors of 
+                      a well-made green juice. You crave the 
+                      low-glycemic energy boost. You like 
+                      your juices bold and assertive.
+                    </p>
+                    <p>
+                      <strong>General Tasting Notes:</strong><br />
+                      Clean, bright, grassy, vegetal, herbal, 
+                      savory, creamy, lightly bitter, earthy
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="small-block-grid-1 medium-block-grid-3 bottomtips">
+              <li><%= image_tag('v100/8servings-icon.png', class: "servings") %>
+                <p>8 servings <br />in every box</p><br /><br /></li>
+              <li><%= image_tag('v100/servingsize-icon.png') %>
+                <p>10-16 ounces<br /> in every serving</p><br /><br /></li>
+              <li><%= image_tag('v100/recipe-icon.png') %>
+                <p>Plus recipes, tips,<br /> and nutrition info</p><br /><br /></li>
+            </ul>
 
           </div>
            
@@ -32,4 +70,4 @@
   </div>
 </div>
 
-    
+           

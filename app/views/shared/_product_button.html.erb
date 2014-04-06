@@ -1,0 +1,15 @@
+<div class="row">
+<div class="small-6 columns small-centered">
+
+<% if user_signed_in? %>
+
+      <%= link_to 'Pick me!', new_order_path(p: number), class: "grey-button" %>
+
+<% else %>
+
+      <%= link_to 'Pick me!', new_user_registration_path(p: number), class: "grey-button" %>
+      
+<% end %>
+
+</div>
+</div>

@@ -1,3 +1,9 @@
+.grey-button{
+  @include button(0.25rem,$darkGray,5px,true,false,false);
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
 .fv-button{
   @include button(1rem,$orangeAccent,10px,false,false,false);
   border:0px;

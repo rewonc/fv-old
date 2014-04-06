@@ -22,7 +22,66 @@
       }
       .statusbar{
         margin-top:20px;
+        
       }
+      .green{
+        h1{
+          margin-top:5px;
+          color:$lightgreen;
+        }
+        padding:20px;
+        background-image: url(image-path("v100/greentexture.png"));
+        background-repeat: repeat;
+        -moz-box-shadow:    1px 1px 2px 0px $lightGray3;
+        -webkit-box-shadow: 1px 1px 2px 0px $lightGray3;
+        box-shadow:         1px 1px 2px 0px $lightGray3;
+        p{
+          padding-left:20px;
+          padding-right:20px;
+        }
+      }
+      .mixed{
+        h1{
+          margin-top:5px;
+          color:$lightgreen;
+        }
+        padding:20px;
+        background-image: url(image-path("v100/mixedtexture.png"));
+        background-repeat: repeat;
+        -moz-box-shadow:    1px 1px 2px 0px $lightGray3;
+        -webkit-box-shadow: 1px 1px 2px 0px $lightGray3;
+        box-shadow:         1px 1px 2px 0px $lightGray3;
+        p{
+          padding-left:20px;
+          padding-right:20px;
+        }
+      }
+
+      .bottomtips{
+        padding-top:20px;
+        padding-bottom:20px;
+        li{
+          left:40px;
+          position:relative;
+          text-align:left;
+          p{
+            position:absolute;
+            left:32%;
+            font-weight:bold;
+          color:$darkGray;}
+          
+          img{
+            margin:10px;
+            position:absolute;
+            left:15%;
+            top:-5px;
+          }
+          .servings{
+            left:10%;
+          }
+        }
+      }
+
     }
 
   }
