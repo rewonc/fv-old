@@ -6,7 +6,7 @@
   <li>Frequency of delivery: <strong><%= @order.frequency_string %></strong></li>
   <li>Day of delivery: <strong><%= @order.delivery_window_string %></strong></li>
   <li>First delivery: <strong><%= @order.first_delivery_string %></strong></li>
-  <li>Price per delivery: <strong><%= @order.price_string(true) %></strong></li>
+  <li>Price per delivery: <strong><%= @order.total_string(true) %></strong></li>
 </ul>
 <p>If you have any concerns, questions, or concerns, feel free to respond to this email, or reach us at <%= mail_to 'orders@farmivore.com', 'orders@farmivore.com' %>.  We normally respond within minutes!</p>
 <p>Thank you again. Our whole team is happy to have you as a customer.</p>

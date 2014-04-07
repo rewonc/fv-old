@@ -71,6 +71,9 @@ class Order < ActiveRecord::Base
   end
 
   def shipping
+    if product.shipping.nil?
+      product.shipping = 0
+    end
     return box_count * product.shipping
   end
 

@@ -28,7 +28,7 @@
       <td><%= order.frequency_string %></td>
       <td><%= order.delivery_window_string %></td>
       <td><%= order.first_delivery_string %></td>
-      <td><%= order.price_string(true) %></td>
+      <td><%= order.total_string(true) %></td>
       <td><%= order.charge.created_at %></td>
       <td>
         <% if order.active? %>
