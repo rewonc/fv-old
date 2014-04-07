@@ -33,26 +33,17 @@ $('a.dater').click(function(){
 });
 
 function priceRefresh(){
-  switch($('#order_box_count').data('id')){
-    case 7:
-      price = ($('#order_box_count').data('price')/100).toString();
-      $('#totalprice').text('$' + price);
-      $('#subtotalprice').text('$' + price);
-      $('#totalprice').addClass('updated');
-      setTimeout( function(){
-          $('#totalprice').removeClass('updated');
-        },1000);
-      break;
-    default:
-      price = (($('#order_box_count').data('price') * $('#order_box_count').val())/100).toString();
-      $('#totalprice').text('$' + price);
-      $('#subtotalprice').text('$' + price);
+      var price = $('#order_box_count').data('price') * $('#order_box_count').val();  //( price /100).toString();
+      var shipping = $('#order_box_count').data('shipping') * $('#order_box_count').val();  
+      var total = price + shipping;
+      $('#subtotalprice').text('$' + (price/100).toString());
+      $('#shippingprice').text('$' + (shipping/100).toString());
+      $('#totalprice').text('$' + (total/100).toString());
       $('#totalprice').addClass('updated');
       setTimeout( function(){
           $('#totalprice').removeClass('updated');
         },1000);
 
-  }
 }
 
 function dateRefresh(){

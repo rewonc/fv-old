@@ -75,6 +75,9 @@ class Product < ActiveRecord::Base
   a.note = "This is the price per week. You will be charged this amount each time you receive a delivery. You can skip, cancel, or pause shipments by letting us know 4 days in advance."
   a.save
 
+  Product.find(8).destroy
+  Product.find(9).destroy
+  Product.find(10).destroy
   a = Product.new
   a.name = "Green"
   a.id = 8
@@ -82,7 +85,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4500
+  a.price = 4000
+  a.shipping = 500
   a.save
 
   a = Product.new
@@ -92,7 +96,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4500
+  a.price = 4000
+  a.shipping = 500
   a.save
 
   a = Product.new
@@ -102,7 +107,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4500
+  a.price = 4000
+  a.shipping = 500
   a.save
   
 =end

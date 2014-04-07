@@ -59,12 +59,7 @@ class Order < ActiveRecord::Base
   end
 
   def price
-    if product.id === 7
-      return product.price
-    else
       return box_count * product.price
-    end
-
   end
 
   def price_string(zeroes)
@@ -75,6 +70,29 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def shipping
+    return box_count * product.shipping
+  end
+
+  def shipping_string(zeroes)
+    if zeroes
+      return '$' + shipping.to_s.chop.chop + '.' + shipping.to_s.last(2)
+    else
+      return '$' + shipping.to_s.chop.chop
+    end
+  end
+
+  def total
+    return price + shipping
+  end
+
+  def total_string(zeroes)
+    if zeroes
+      return '$' + total.to_s.chop.chop + '.' + total.to_s.last(2)
+    else
+      return '$' + total.to_s.chop.chop
+    end
+  end
 
   def self.fd_date(day, weeksFromToday)
     return Date.commercial(Date.today.year, weeksFromToday+Date.today.cweek, day)
