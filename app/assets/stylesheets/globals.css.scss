@@ -24,7 +24,7 @@ a .fa-facebook-square{
 }
 .orange-button{
   position:relative;
-  @include button(0rem,$orange,0px,true,false,false);
+  @include button(0rem,$orange,7px,true,false,false);
   //border:4px solid white;
   -moz-box-shadow:    1px 1px 4px 0px $darkGray;
     -webkit-box-shadow: 1px 1px 4px 0px $darkGray;

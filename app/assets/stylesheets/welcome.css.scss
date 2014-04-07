@@ -119,10 +119,10 @@
     background-image: url(image-path("v100/strawberryscale.png"));
     background-repeat: no-repeat;
     background-position: 80%;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    -webkit-background-size: auto 80%;
+    -moz-background-size: auto 80%;
+    -o-background-size: auto 80%;
+    background-size: auto 80%;
     min-height:350px;
     padding-bottom:50px;
     h1{
