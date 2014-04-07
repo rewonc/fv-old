@@ -49,6 +49,7 @@
     background-position: right;
     background-color:white;
     min-height:350px;
+    padding-bottom:30px;
     h1{
       margin-top:0px;
       font-size:55px;
@@ -74,7 +75,8 @@
   }  
 
   section.plans{
-    padding-top:50px;
+    padding-top:60px;
+    padding-bottom:30px;
     background-image: url(image-path("v100/greybg-pattern.png"));
     background-repeat: repeat;
     background-position: right;
@@ -95,7 +97,7 @@
       li{
         h5{
           font-size:20px;
-          margin-top:30px;
+          margin-top:40px;
           text-align:left;
           color:$midGray;
         }
@@ -113,7 +115,7 @@
     background-repeat: repeat;
   }
   section.therest{
-    padding-top:50px;
+    padding-top:80px;
     background-image: url(image-path("v100/strawberryscale.png"));
     background-repeat: no-repeat;
     background-position: 80%;
@@ -122,6 +124,7 @@
     -o-background-size: contain;
     background-size: contain;
     min-height:350px;
+    padding-bottom:50px;
     h1{
       margin-top:0px;
       font-size:55px;
@@ -154,8 +157,8 @@
   }
 
   section.finalbutton{
-    padding-top:50px;
-    padding-bottom:50px;
+    padding-top:60px;
+    padding-bottom:40px;
     h1{
       color:$orange;
       margin-top:20px;
