@@ -1,3 +1,5 @@
+<%= render "shared/bg_start", columns: 10 %>
+
 <h1>Settings</h1>
 <h3>Your orders</h3>
 <table>
@@ -30,3 +32,5 @@
 <p>Got a question or a modification to your order? Let us know by emailing us at <%= mail_to 'orders@farmivore.com', 'orders@farmivore.com' %>.</p>
 <h3>Account settings</h3>
 <p><%= link_to 'Adjust your password or remove your account', edit_user_registration_path(current_user) %></p>
+
+<%= render "shared/bg_end" %>
