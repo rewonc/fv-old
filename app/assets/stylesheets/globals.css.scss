@@ -1,3 +1,13 @@
+a .fa-facebook-square{
+      color: #00be4c;
+    }
+    a .fa-twitter-square{
+      color: #ff8f00;
+    }
+    a .fa-tumblr-square{
+      color:#00a9e4;
+    }
+
 .grey-button{
   @include button(0.25rem,$darkGray,5px,true,false,false);
   text-transform:uppercase;

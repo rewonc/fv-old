@@ -1,3 +1,5 @@
+<%= render "shared/bg_start", columns: 12 %>
+
 <%= render 'shared/status_bar', stage: 1 %>    
 
 		<div class="row headline">
@@ -40,3 +42,6 @@
 
 <% #call with empty array: right column doesnt show.  %>
 <%= render 'shared/order_bg_2', summary: {} %> 
+
+
+<%= render "shared/bg_end" %>

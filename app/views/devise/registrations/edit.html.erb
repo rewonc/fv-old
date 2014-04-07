@@ -1,4 +1,4 @@
-<%= render 'shared/order_bg_1', stage: nil %>   
+<%= render "shared/bg_start", columns: 12 %>
 <h2>Account settings</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -28,4 +28,5 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
 <%= link_to "Back", :back %>
-<%= render 'shared/order_bg_2', summary: {} %> 
+
+<%= render "shared/bg_end" %>
