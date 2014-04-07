@@ -86,7 +86,7 @@ class Product < ActiveRecord::Base
   a.save
 
   a = Product.new
-  a.name = "Classic"
+  a.name = "Mixed"
   a.id = 9
   boxnummenu = Hash.new
   boxnummenu['title'] = 'Boxes per delivery'

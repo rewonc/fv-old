@@ -1,7 +1,6 @@
 //progress bar isn't wrapped inside a specific controller
 .progress-bar{
-  margin-top:20px;
-  margin-bottom:20px;
+  padding-bottom:30px;
   .progress{
     position:relative;
     ul{
@@ -24,5 +23,18 @@
   }
   .first_delivery_date.active{
     display:block;
+  }
+  h1{
+    font-weight:bold;
+    font-size:35px;
+    color:$darkGray;
+  }
+  h3{
+    font-weight:bolder;
+    color:$darkGray;
+  }
+  .summary{
+    padding-bottom:20px;
+    border:1px dashed $lightGray3;
   }
 }

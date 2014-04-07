@@ -1,3 +1,10 @@
+<%# Wrapper %>
+<div class="bg">
+  <div class="row product-page">
+    <div class="small-12 columns">
+      <div class="row product-box">
+<%# Wrapper %>
+
 <%= render 'shared/status_bar', stage: 3, order: @order %>
 
 
@@ -6,7 +13,7 @@
     
 <!-- CC Form Page 3-->
 <div id="page-3">
-  <h3 class="green">Payment information</h3>
+  <h1>Payment information</h1>
         <%= form_tag(charges_path, :'data-abide' => '', :id => 'payment-form' )%>
         
           <span class="payment-errors"></span>
@@ -93,6 +100,12 @@
 </div>
 
 
+<%# Wrapper %>
+      </div>
+    </div>
+  </div>
+</div>
+<%# Wrapper %>
 
 
 <!-- END  -->
