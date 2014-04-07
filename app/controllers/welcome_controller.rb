@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   end
 
   def admin
-    if !(current_user.email === "rewonc@gmail.com")
+    if !(current_user.email === "rewonc@gmail.com" || current_user.email === "raybears@gmail.com")
       redirect_to :root, alert: "You don't have permission to access that page"
     end
     @orders = Order.all.select{|x| !x.charge.nil? }
