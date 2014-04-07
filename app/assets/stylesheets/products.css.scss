@@ -1,4 +1,3 @@
-.products.select{
   .bg{
     background-image: url(image-path("v100/productpage-bg.jpg"));
     background-repeat: no-repeat;
@@ -14,14 +13,22 @@
     .product-box{
       background-color:white;
       border-radius:20px;
+      padding:50px;
+    }
+    .statusbar{
+        margin-bottom:20px;
+      }
+  }
+
+
+
+.products.select{
+    .product-box{
       h1{
         font-weight:bold;
         color:$darkGray;
-        margin-top:20px;
+        margin-top:10px;
         font-size:40px;        
-      }
-      .statusbar{
-        margin-top:20px;
       }
       p{
         font-weight:300;
@@ -83,8 +90,5 @@
           }
         }
       }
-
     }
-
-  }
 }
