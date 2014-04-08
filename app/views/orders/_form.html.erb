@@ -76,7 +76,7 @@
     <h2>&nbsp;</h2>
       <h5>Time preference</h5>
       <div class="field">
-        <%= f.label :delivery_window, "Delivery day  <a href='if you choose twice per week, you will get it on both days'>(?)</a>".html_safe %>
+        <%= f.label :delivery_window, "Delivery day".html_safe %>
         <%= f.select :delivery_window, options_for_select([["Tuesday", 2],["Thursday", 4]], order.delivery_window) %>
       </div>
       <div class="field">
