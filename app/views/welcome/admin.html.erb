@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <td>Item</td>
+      <td>Item</td>
       <td>Quantity</td>
       <td>Frequency</td>
       <td>Delivery Day</td>
@@ -23,6 +24,9 @@
   <tbody>
 <% @orders.each do |order|%>
     <tr>
+      <% order.user.first = 'nil' if order.user.first.nil? %>
+      <% order.user.last = 'nil' if order.user.last.nil? %>
+      <td><%= order.user.first + ' ' + order.user.last %> /// <%= order.user.email %></td>
       <td><%= order.product.name %></td>
       <td><%= order.box_count_string %></td>
       <td><%= order.frequency_string %></td>
