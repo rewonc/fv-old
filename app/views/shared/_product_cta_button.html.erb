@@ -1,0 +1,15 @@
+<div class="row">
+<div class="small-10 columns small-centered">
+
+<% if user_signed_in? %>
+
+      <%= link_to '<strong>$39.95</strong><br /><small>per week</small>'.html_safe, new_order_path(p: number), class: "product-cta-button" %>
+
+<% else %>
+
+      <%= link_to '<strong>$39.95</strong><br /><small>per week</small>'.html_safe, new_user_registration_path(p: number), class: "product-cta-button" %>
+      
+<% end %>
+
+</div>
+</div>
