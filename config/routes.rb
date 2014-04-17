@@ -10,6 +10,7 @@ Farmivore::Application.routes.draw do
   #get "welcome/terms"
   get "welcome/settings"
   get "welcome/admin"
+  get "welcome/faq"
   #get "welcome/weekly_email"
   #get "welcome/howitworks"
 
