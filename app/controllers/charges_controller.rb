@@ -17,6 +17,7 @@ class ChargesController < ApplicationController
       description: @order.product.name + '. ' + @order.price_string(true) + '. ' + @order.box_count_string + '. ' + @order.first_delivery_string + '. ' + @order.frequency_string,
       card: allow_stripe_token
     )
+    
     ConfirmMailer.box_alert(@order).deliver
     ConfirmMailer.welcome(@order).deliver
 
