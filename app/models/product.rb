@@ -85,8 +85,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4000
-  a.shipping = 500
+  a.price = 3995
+  a.shipping = 000
   a.save
 
   a = Product.new
@@ -96,8 +96,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4000
-  a.shipping = 500
+  a.price = 3995
+  a.shipping = 000
   a.save
 
   a = Product.new
@@ -107,8 +107,8 @@ class Product < ActiveRecord::Base
   boxnummenu['title'] = 'Boxes per delivery'
   boxnummenu['options'] = {:"1" => "1 box", :"2" => "2 boxes", :"3" => "3 boxes", :"4" => "4 boxes"}
   a.box_num_menu = boxnummenu
-  a.price = 4000
-  a.shipping = 500
+  a.price = 3995
+  a.shipping = 000
   a.save
   
 =end

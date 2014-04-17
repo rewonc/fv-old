@@ -77,7 +77,7 @@
       <h5>Time preference</h5>
       <div class="field">
         <%= f.label :delivery_window, "Delivery day".html_safe %>
-        <%= f.select :delivery_window, options_for_select([["Tuesday", 2],["Thursday", 4]], order.delivery_window) %>
+        <%= f.select :delivery_window, options_for_select([["Thursday", 4]], order.delivery_window) %>
       </div>
       <div class="field">
         <%= f.hidden_field :first_delivery %>
