@@ -3,11 +3,11 @@
 
 <% if user_signed_in? %>
 
-      <%= link_to '<strong>$39.95</strong><br /><small>per week</small>'.html_safe, new_order_path(p: number), class: "product-cta-button" %>
+      <%= link_to '<strong>PICK ME!</strong><br /><small>$39.95 / wk</small>'.html_safe, new_order_path(p: number), class: "product-cta-button" %>
 
 <% else %>
 
-      <%= link_to '<strong>$39.95</strong><br /><small>per week</small>'.html_safe, new_user_registration_path(p: number), class: "product-cta-button" %>
+      <%= link_to '<strong>PICK ME!</strong><br /><small>39.95 / wk</small>'.html_safe, new_user_registration_path(p: number), class: "product-cta-button" %>
       
 <% end %>
 
