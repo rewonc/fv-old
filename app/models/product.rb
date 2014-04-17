@@ -75,10 +75,11 @@ class Product < ActiveRecord::Base
   a.note = "This is the price per week. You will be charged this amount each time you receive a delivery. You can skip, cancel, or pause shipments by letting us know 4 days in advance."
   a.save
 
-  Product.find(8).destroy
-  Product.find(9).destroy
-  Product.find(10).destroy
-  a = Product.new
+  #Product.find(8).destroy
+  #Product.find(9).destroy
+  #Product.find(10).destroy
+  
+  a = Product.find(8)
   a.name = "Green"
   a.id = 8
   boxnummenu = Hash.new
@@ -89,7 +90,7 @@ class Product < ActiveRecord::Base
   a.shipping = 000
   a.save
 
-  a = Product.new
+  a = Product.find(9)
   a.name = "Mixed"
   a.id = 9
   boxnummenu = Hash.new
@@ -100,7 +101,7 @@ class Product < ActiveRecord::Base
   a.shipping = 000
   a.save
 
-  a = Product.new
+  a = Product.find(10)
   a.name = "Alternating"
   a.id = 10
   boxnummenu = Hash.new
