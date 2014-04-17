@@ -10,10 +10,14 @@
       </ul>
 
       <section class="top-bar-section">
+
+
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="#"><%= render 'devise/menu/registration_items' %></a></li>
-          <li class="active"><a href="#"><%= render 'devise/menu/login_items' %></a></li>
+          <li><a href="#"><%= link_to 'Home', root_path %></a></li>
+          <li><a href="#"><%= link_to 'Learn more', welcome_faq_path %></a></li>
+          <li><a href="#"><%= render 'devise/menu/registration_items' %></a></li>
+          <li><a href="#"><%= render 'devise/menu/login_items' %></a></li>
         </ul>
       </section>
     </nav>
