@@ -21,6 +21,12 @@
   }
 }
 
+.charges.new{
+  #promocode-show{
+    display:none;
+  }
+}
+
 .orders.new, .orders.edit, .charges.new, .orders.create{
   .first_delivery_date{
     display:none;
@@ -40,5 +46,8 @@
   .summary{
     padding-bottom:20px;
     border:1px dashed $lightGray3;
+  }
+  .promocode-field{
+    display:none;
   }
 }

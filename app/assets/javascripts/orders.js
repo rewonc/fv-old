@@ -1,3 +1,94 @@
+//promo code
+$('#promocode-show').click(function(){
+  $('.promocode-field').fadeIn();
+  $(this).hide();
+});
+
+
+    //we don't want to go through setting up a whole promocode system right now,
+    //and send an ajax request to the server, etc.
+    //We're just going to hardcode in prices and etc right now, and fill in a
+    //hidden form field that has a "promocode id" element. This is not secure
+    //and should be changed with the first opportunity, or else people
+    //could get access to all the promo codes pretty easily.
+
+    
+      //check the entered code against a list, then apply discount according to hard-coded values.
+      // WILL NOT VARY WITH CHANGES IN PRODUCT.PRICE. BEWARE.
+      $('#promocode-apply').click(function(){
+        var hash = new String($('#promocode-value').val()).hashCode();
+        switch(hash){
+          case 67107392:
+            alert('You got a 5% discount.');
+            $('#order_promocode_id').val(67107392);
+            $('#subtotalprice').text('$37.95');
+            $('#totalprice').text('$37.95');
+            $('#promocode-field').hide();
+            break;
+          case 1500531954:
+            alert('You got a 10% discount.');
+            $('#order_promocode_id').val(1500531954);
+            $('#subtotalprice').text('$35.95');
+            $('#totalprice').text('$35.95');
+            $('#promocode-field').hide();
+            break;
+          case -1719724056:
+            alert('You got a 20% discount.');
+            $('#order_promocode_id').val(-1719724056);
+            $('#subtotalprice').text('$31.96');
+            $('#totalprice').text('$31.96');
+            $('#promocode-field').hide();
+            break;
+          case 2132219500:
+            alert('You got a $5 discount.');
+            $('#order_promocode_id').val(2132219500);
+            $('#subtotalprice').text('$34.95');
+            $('#totalprice').text('$34.95');
+            $('#promocode-field').hide();
+            break;
+          case -190114793:
+            alert('You got a $10 discount.');
+            $('#order_promocode_id').val(-190114793);
+            $('#subtotalprice').text('$29.95');
+            $('#totalprice').text('$29.95');
+            $('#promocode-field').hide();
+            break;
+          case -1731342558:
+            alert('You got a $20 discount.');
+            $('#order_promocode_id').val(-1731342558);
+            $('#subtotalprice').text('$19.95');
+            $('#totalprice').text('$19.95');
+            $('#promocode-field').hide();
+            break;
+          default:
+          //alert error
+            alert('That did not match a valid code in our records. Please check to make sure the code is input correctly.');
+        }
+      });
+
+      //functions
+      String.prototype.hashCode = function() {
+        var hash = 0, i, chr, len;
+        if (this.length == 0) return hash;
+        for (i = 0, len = this.length; i < len; i++) {
+          chr   = this.charCodeAt(i);
+          hash  = ((hash << 5) - hash) + chr;
+          hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+      };
+
+
+
+
+
+
+//end promocode
+
+
+
+//form elements
+
 $('#order_box_count').change(function(event){
   $('p#boxcountstring').text($(this).find(":selected").text());
   $('p#boxcountstring').addClass('updated');

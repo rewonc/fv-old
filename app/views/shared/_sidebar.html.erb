@@ -1,5 +1,8 @@
+
+
 <div class="row summary">
       <div class="small-12 columns">
+        <%= order.promocode_id.inspect %><br />
         <h3 class="green">Summary</h3>
         <h5><%= order.product.box_num_menu['title'] %>:</h5>
         <p id="boxcountstring"><%= order.box_count_string %></p>
@@ -32,7 +35,7 @@
         <% end %>
           
 
-          
+       
         
         <h3 class="green">Total price</h3>
         <div class="pricer">
@@ -40,7 +43,25 @@
           <div class="text-right">Free shipping: <span id="shippingprice">$0<%#= order.shipping_string(true) %></div>
           <div class="text-right"><strong>Total: <span id="totalprice"><%= order.total_string(true) %></span></strong></div>
         </div>
-        <div class="centered"><br /><em>This is a recurring order, but you can pause or cancel at any time.</em></div>
+        
+        <div class="centered">
+          <br /><a id="promocode-show">Add a promo code</a><br /><br />
+
+           <div class="row promocode-field">
+            <div class="small-10 columns small-centered">
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input id="promocode-value" type="text" placeholder="Promo code">
+                </div>
+                <div class="small-2 columns">
+                  <a id="promocode-apply" class="button postfix">Apply</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <em>This is a recurring order, but you can pause or cancel at any time.</em>
+        </div>
 
       </div>
     </div>

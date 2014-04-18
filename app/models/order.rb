@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
   validates :first_delivery, presence: true
   belongs_to :user
   belongs_to :product
-  belongs_to :promocode
+  #belongs_to :promocode
   has_one :charge
   has_many :deliveries
   
@@ -59,7 +59,11 @@ class Order < ActiveRecord::Base
   end
 
   def price
+    if promocode_id.nil?
       return box_count * product.price
+    else
+      return promocodeDiscount(box_count, product.price, promocode_id)
+    end
   end
 
   def price_string(zeroes)
@@ -107,6 +111,29 @@ class Order < ActiveRecord::Base
 
   def self.price_string(integer)
     return '$' + integer.to_s.chop.chop + '.' + integer.to_s.last(2)
+  end
+
+  def promocodeDiscount(boxcount, price, id)
+    case id
+      when 67107392
+        #5% discount off 39.95
+        price = 3795
+      when 1500531954
+        price = 3595
+      when -1719724056
+        price = 3196
+      when 2132219500
+        price = 3495
+      when -190114793
+        price = 2995
+      when -1731342558
+        price = 1995  
+      else
+        price = price
+    end
+
+    return boxcount * price
+      
   end
 
 end
