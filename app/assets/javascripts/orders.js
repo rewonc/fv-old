@@ -19,46 +19,45 @@ $('#promocode-show').click(function(){
         var hash = new String($('#promocode-value').val()).hashCode();
         switch(hash){
           case 67107392:
-            alert('You got a 5% discount.');
             $('#order_promocode_id').val(67107392);
             $('#subtotalprice').text('$37.95');
             $('#totalprice').text('$37.95');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>5% discount applied</div><br />");
             break;
           case 1500531954:
             alert('You got a 10% discount.');
             $('#order_promocode_id').val(1500531954);
             $('#subtotalprice').text('$35.95');
             $('#totalprice').text('$35.95');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>10% discount applied</div><br />");
             break;
           case -1719724056:
             alert('You got a 20% discount.');
             $('#order_promocode_id').val(-1719724056);
             $('#subtotalprice').text('$31.96');
             $('#totalprice').text('$31.96');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>20% discount applied</div><br />");
             break;
           case 2132219500:
             alert('You got a $5 discount.');
             $('#order_promocode_id').val(2132219500);
             $('#subtotalprice').text('$34.95');
             $('#totalprice').text('$34.95');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>$5 discount applied</div><br />");
             break;
           case -190114793:
             alert('You got a $10 discount.');
             $('#order_promocode_id').val(-190114793);
             $('#subtotalprice').text('$29.95');
             $('#totalprice').text('$29.95');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>$10 discount applied</div><br />");
             break;
           case -1731342558:
             alert('You got a $20 discount.');
             $('#order_promocode_id').val(-1731342558);
             $('#subtotalprice').text('$19.95');
             $('#totalprice').text('$19.95');
-            $('#promocode-field').hide();
+            $('.promocode-field').hide().after("<div class='pc-done'>$20 discount applied</div><br />");
             break;
           default:
           //alert error
