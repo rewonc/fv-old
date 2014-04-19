@@ -49,8 +49,17 @@
   }
   .promocode-field{
     display:none;
+    a{
+      font-size:10px;
+    }
   }
   .pc-done{
     color:green;
+  }
+  .pricer{
+    span{
+      margin-top:5px;
+      line-height:22px;
+    }
   }
 }
