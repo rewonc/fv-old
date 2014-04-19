@@ -20,7 +20,7 @@ Farmivore::Application.configure do
   address:              'smtp.gmail.com',
   port:                 587,
   domain:               'farmivore.com',
-  user_name:            'rewon@farmivore.com',
+  user_name:            'support@farmivore.com',
   password:              ENV['GMAIL_PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true  }
